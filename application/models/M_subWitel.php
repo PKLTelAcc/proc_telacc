@@ -7,7 +7,7 @@ class M_subWitel extends CI_Model
 	
 	public function view()
 	{
-		$sql = "SELECT * from sub_witel inner join witel on SWIT_WTEL_ID = WTEL_ID";
+		$sql = "SELECT * from sub_witel";
 		$query= $this->db->query($sql);
 		$return = $query->result_array();
 		return $return;
@@ -16,7 +16,7 @@ class M_subWitel extends CI_Model
 	{
 		$sql="SELECT * from witel";
 		$query= $this->db->query($sql);
-		$return = $query->reult_array();
+		$return = $query->result_array();
 		return $return;
 	}
 	public function insert($data)
@@ -25,7 +25,7 @@ class M_subWitel extends CI_Model
 	}
 	public function update($data)
 	{
-		$sql="select * from sub_witel where SWIT_ID =".$data;
+		$sql="SELECT * from sub_witel where SWIT_ID =".$data;
 		$query=$this->db->query($sql);
 		$return = $query->result_array();
 		return $return;

@@ -4,4 +4,7 @@
 	<input type="text" name="txtNama" required="true" value="<?php echo($witel[0]['WTEL_NAME'])?>">
 	<button type="reset">Cancel</button>
 	<button type="submit">Input Data</button>
+	<button type="reset">Cancel</button>
+	<button type="submit">Input Data</button>
+</form>
 </form>

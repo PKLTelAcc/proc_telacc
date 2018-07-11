@@ -24,7 +24,7 @@ class C_subWitel extends CI_Controller
 	}
 	public function form()
 	{
-		$namaSub	= $_POST['txtnamaSub'];
+		$namaSub	= $_POST['txtsubWitel'];
 		$namaWitel	= $_POST['txtnamaWitel'];
 
 		$data = array(
@@ -35,29 +35,31 @@ class C_subWitel extends CI_Controller
 		$swit=$this->M_subWitel->insert($data);
 		redirect ('C_subWitel');
 	}
-	public function formUpdate()
+	public function formUpdate($id)
 	{
 		$view 		=$this->M_subWitel->view();
-		$update		=$this->M_subWitel->Update($id);	
+		$update		=$this->M_subWitel->update($id);	
 		$witel 	 	=$this->M_subWitel->getWitel();
 
 		$data = array(
+			'update'	=> $update,
 			'title' 	=> 'edit sub witel',
 			'content'	=> 'V_subWitel'
 		);
 
-		$this->load->view('tampilan/v_combine',$data);
+		$this->load->view('V_editSubWitel',$data);
 	}
 	public function updateData($id)
 	{
-		$namaSub	= $_POST['txtnamaSub'];
+		$namaSub	= $_POST['txtsubWitel'];
 		$namaWitel	= $_POST['txtnamaWitel'];
 
+
 		$data = array(
-			'SWIT_NAME' => $namaSub,
-			'SWIT_WTEL_ID' => $namaWitel
+			'SWIT_WTEL_ID' => $namaWitel,
+			'SWIT_NAME' => $namaSub
 		);
-		$swit=$this->M_subWitel->insert($data);
+		$swit=$this->M_subWitel->updateData($id, $data);
 		redirect ('C_subWitel');
 	}
 	public function delete($id)
