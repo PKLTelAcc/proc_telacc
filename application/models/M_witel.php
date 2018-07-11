@@ -3,7 +3,7 @@
 /**
  * 
  */
-class M_witelParent extends CI_Model
+class M_witel extends CI_Model
 {
 	
 	function view()
