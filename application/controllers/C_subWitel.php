@@ -12,12 +12,15 @@ class C_subWitel extends CI_Controller
 	}
 	public function index()
 	{
+		$subwitel=$this->M_subWitel->view();
+
 		$data = array(
 			'title' 	=> 'sub witel',
-			'content'	=> 'V_subWitel'
+			'content'	=> 'V_subWitel',
+			'sub_witel' => $subwitel
 		);
 
-		$this->load->view('tampilan/V_combine')
+		$this->load->view('tampilan/V_combine',$data);
 	}
 	public function form()
 	{

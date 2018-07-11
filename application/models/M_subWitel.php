@@ -9,7 +9,7 @@ class M_subWitel extends CI_Model
 	{
 		$sql = "SELECT * from sub_witel inner join witel on SWIT_WTEL_ID = WTEL_ID";
 		$query= $this->db->query($sql);
-		$return = $query->reult_array();
+		$return = $query->result_array();
 		return $return;
 	}
 	public function getWitel()
