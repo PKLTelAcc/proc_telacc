@@ -34,7 +34,8 @@ class C_witel extends CI_Controller
 		$witel=$this->M_witel->insert($data);
 		 redirect('C_witel');
 	}
-	public function formUpdate($id){
+	public function formUpdate($id)
+	{
 		$witel=$this->M_witel->update($id);
 		$data = array(
 			'content'=>'v_editWitel',
@@ -51,9 +52,8 @@ class C_witel extends CI_Controller
 		$data = array(
 			'WTEL_NAME' =>$nama
 			);
-		$parent=$this->M_witel->updateData($id, $data);
-		redirect('C_witel');
-
+		$witel=$this->M_witel->updateData($id, $data);
+		 redirect('C_witel');
 	}
 	public function delete($id)
 	{
