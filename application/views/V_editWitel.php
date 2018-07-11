@@ -1,4 +1,4 @@
-<form action="<?php echo base_url(). 'C_witel/updateData'; ?>" method="POST">
+<form action="<?php echo base_url(). 'C_witel/updateData/' .$witel[0]["WTEL_ID"]; ?>" method="POST">
 	<h3>Edit Witel</h3>
 	<label>Nama Witel</label>
 	<input type="text" name="txtNama" required="true" value="<?php echo($witel[0]['WTEL_NAME'])?>">
