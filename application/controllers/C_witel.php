@@ -16,11 +16,11 @@ class C_witel extends CI_Controller
 
 		$witel=$this->M_witel->view();
 		$data = array(
-			'title'=>'Witel',
+			'title'=>'Input Witel',
 			'content' => 'V_witel',
 			'witel' =>$witel
 		);
-		$this->load->view('tampilan/v_combine',$data);
+		$this->load->view('tampilan/V_combine',$data);
 
 	}
 	public function form()
