@@ -24,7 +24,7 @@
 				echo "<tr>";
 				echo "<td>".$no."</td>";
 				echo "<td>".$row['MTRA_NAME']."</td>";
-				echo "<td><a href='".base_url()."C_mitra/FormUpdate/".$row['MTRA_ID']."'>Edit</a> | <a href='".base_url()."C_witel/delete/".$row['MTRA_ID']."'>Delete</a></td>";
+				echo "<td><a href='".base_url()."C_mitra/FormUpdate/".$row['MTRA_ID']."'>Edit</a> | <a href='".base_url()."C_mitra/delete/".$row['MTRA_ID']."'>Delete</a></td>";
 				echo "</tr>";
 
 				$no++;
