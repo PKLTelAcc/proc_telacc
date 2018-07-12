@@ -1,5 +1,6 @@
+<h3>Input Witel</h3>
+
 <form action="<?php echo base_url(). 'C_witel/form'; ?>" method="POST">
-	<h3>Input Witel</h3>
 	<label>Nama Witel</label>
 	<input type="text" name="txtNama" required="true">
 	<button type="reset">Cancel</button>
