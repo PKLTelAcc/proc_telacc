@@ -60,7 +60,7 @@ class C_pegawai extends CI_Controller
 			'PEGA_PSA'	=>$psa,
 			'PEGA_NIK'	=>$nik
 			);
-		$psa=$this->M_pegawai->updateData($id, $data);
+		$pegawai=$this->M_pegawai->updateData($id, $data);
 		 redirect('C_pegawai');
 	}
 	public function delete($id)
