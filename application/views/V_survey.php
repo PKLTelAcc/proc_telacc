@@ -15,6 +15,8 @@
 	<input type="text" name="txtWtel" required="true" readonly="true"><br>
 	<label>Sub Witel</label>
 	<input type="text" name="txtSwit" required="true" readonly="true"><br>
+	<label>Program</label>
+	<input type="text" name="txtProg" required="true" readonly="true"><br>
 	<label>Nama Lokasi</label>
 	<input type="text" name="txtLokasi" required="true" readonly="true"><br>
 	<label>Nilai Material</label>
