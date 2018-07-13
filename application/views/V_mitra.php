@@ -44,9 +44,10 @@
 			  </div> <!-- col-input -->
 <!--'<div class="col-md-6">'; (itu di atas di echo) -->		
 	    }
+	    <div class="col-md-12">
 	    <div class="box box-info">
 	      <div class="box-header with-border">
-	        <h3 class="box-title">Data Mitra</h3>
+	        <h3 class="box-title">Data Level</h3>
 
 	        <div class="box-tools pull-right">
 	          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -54,15 +55,14 @@
 	      </div>
 	      <!-- /.box-header -->
 	      <div class="box-body">
-			<div class="col-md-12">
-				<table class="table table-bordered table-hover table-striped" id="urut">
-					<thead>
-						<tr>
-							<th>no</th>
-							<th>Nama Mita</th>>
-							<th style="text-align: center" >Action </th>
-						</tr>
-					</thead>
+			<table class="table table-bordered table-hover table-striped" id="lookup">
+				<thead>
+					<tr>
+						<th>No.</th>
+						<th>level</th>
+						<th style="text-align: center">Action </th>
+					</tr>
+				</thead>
 					<tbody>
 					 <tbody>
 		 			  	<tr>
