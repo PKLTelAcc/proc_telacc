@@ -26,14 +26,14 @@ class C_pegawai extends CI_Controller
 	public function form()
 	{
 		$nama = $_POST['txtNama'];
-		$psa  = $_POST['txtpsa'];
 		$nik  = $_POST['txtNik'];
+		$psa  = $_POST['txtpsa'];
 
 
 		$data = array(
 			'PEGA_NAME' =>$nama,
-			'PEGA_PSA'	=>$psa,
-			'PEGA_NIK'	=>$nik
+			'PEGA_NIK'	=>$nik,
+			'PEGA_PSA'	=>$psa
 			);
 		$pegawai=$this->M_pegawai->insert($data);
 		 redirect('C_pegawai');
@@ -42,7 +42,7 @@ class C_pegawai extends CI_Controller
 	{
 		$pegawai=$this->M_pegawai->update($id);
 		$data = array(
-			'content'=>'v_editPegawai',
+			'content'=>'V_editPegawai',
 			'title'=>'Edit Pegawai',
 			'pegawai' =>$pegawai
 		);
@@ -51,14 +51,14 @@ class C_pegawai extends CI_Controller
 	public function updateData($id)
 	{
 		$nama = $_POST['txtNama'];
-		$psa  = $_POST['txtpsa'];
 		$nik  = $_POST['txtNik'];
+		$psa  = $_POST['txtpsa'];
 
 
 		$data = array(
 			'PEGA_NAME' =>$nama,
-			'PEGA_PSA'	=>$psa,
-			'PEGA_NIK'	=>$nik
+			'PEGA_NIK'	=>$nik,
+			'PEGA_PSA'	=>$psa
 			);
 		$pegawai=$this->M_pegawai->updateData($id, $data);
 		 redirect('C_pegawai');
