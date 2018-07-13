@@ -26,12 +26,12 @@ class C_subWItel extends CI_Controller
 	}
 	public function form()
 	{
-		$nama = $_POST['txtNama'];
 		$witel = $_POST['txtWtel'];
+		$nama = $_POST['txtNama'];
 
 		$data = array(
-			'SWIT_NAME' 	=>$nama ,
-			'SWIT_WTEL_ID' 	=>$witel
+			'SWIT_WTEL_ID' 	=>$witel,
+			'SWIT_NAME' 	=>$nama
 			);
 		$subWitel=$this->M_subWitel->insert($data);
 		 redirect('C_subWitel');
@@ -49,12 +49,12 @@ class C_subWItel extends CI_Controller
 	}
 	public function updateData($id)
 	{
-		$nama = $_POST['txtNama'];
 		$witel = $_POST['txtWtel'];
+		$nama = $_POST['txtNama'];
 
 		$data = array(
-			'SWIT_NAME' 	=>$nama ,
-			'SWIT_WTEL_ID' 	=>$witel
+			'SWIT_WTEL_ID' 	=>$witel,
+			'SWIT_NAME' 	=>$nama
 			);
 		$subWitel=$this->M_subWitel->updateData($id, $data);
 		redirect('C_subWitel');
