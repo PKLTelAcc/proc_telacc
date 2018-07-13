@@ -68,7 +68,6 @@
                     Report
                   </a>
                 </li>
-
                 <!-- User Account Menu -->
                 <li class="dropdown user user-menu active">
                   <!-- Menu Toggle Button -->
@@ -76,7 +75,7 @@
                     <!-- The user image in the navbar-->
                     <img src="/proj_telacc/asset1/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                    <span class="hidden-xs">Krena Aji Hidayat</span>
+                    <span class="hidden-xs">SUDO</span>
                   </a>
                   <ul class="dropdown-menu">
                     <!-- The user image in the menu -->
@@ -84,7 +83,7 @@
                       <img src="/proj_telacc/asset1/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                       <p>
-                        Kresna Aji Hidayat - <span> Admin </span>
+                        SUDO - <span> Admin </span>
                         <small>Member since Nov. 2012</small>
                       </p>
                     </li>

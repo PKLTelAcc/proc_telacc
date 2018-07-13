@@ -2,7 +2,7 @@
 <div class="content">
 	<div class="row">
 	  		<div class="col-md-12">
-			    <div class="box box-info">
+			    <div class="box box-danger">
 			      <div class="box-header with-border">
 			        <h3 class="box-title">Input Mitra</h3>
 
@@ -29,7 +29,7 @@
 				                    <button type="reset" class="btn btn-default pull-right">Cancel</button>
 				                  </div>
 				                  <div class="col-md-1">
-				                    <button type="submit" class="btn btn-info pull-right">Input Data</button>
+				                    <button type="submit" class="btn btn-danger pull-right">Input Data</button>
 				                  </div>
 			                  </div>
 			              </div>
@@ -45,7 +45,7 @@
 <!--'<div class="col-md-6">'; (itu di atas di echo) -->		
 	    }
 	    <div class="col-md-12">
-	    <div class="box box-info">
+	    <div class="box box-danger">
 	      <div class="box-header with-border">
 	        <h3 class="box-title">Data Level</h3>
 

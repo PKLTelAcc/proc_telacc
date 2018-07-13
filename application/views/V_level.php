@@ -2,7 +2,7 @@
 <div class="content">
 	<div class="row">
 	  <div class="col-md-12">
-	    <div class="box box-info">
+	    <div class="box box-danger">
 	      <div class="box-header with-border">
 	        <h3 class="box-title">Input Level</h3>
 
@@ -29,7 +29,7 @@
 	                    <button type="reset" class="btn btn-default pull-right">Cancel</button>
 	                  </div>
 	                  <div class="col-md-2">
-	                    <button type="submit" class="btn btn-info pull-right" data-toggle="modal" data-target="#modal-success2" onclick="modalKonfirmasiTakJadi()" >Input Level</button>
+	                    <button type="submit" class="btn btn-danger pull-right" data-toggle="modal" data-target="#modal-success2" onclick="modalKonfirmasiTakJadi()" >Input Level</button>
 	                  </div>
 	                </div>
 	              </div>
@@ -43,7 +43,7 @@
 	      <!-- /.box -->
 	  </div> <!-- col-input -->
 	  <div class="col-md-12">
-	    <div class="box box-info">
+	    <div class="box box-danger">
 	      <div class="box-header with-border">
 	        <h3 class="box-title">Data Level</h3>
 
