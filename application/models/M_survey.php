@@ -60,5 +60,29 @@ class M_survey extends CI_Model
 		$return = $query->result_array();
 		return $return;
 	}
+
+	public function insert($data)
+	{
+		$this->db->insert('survey',$data);
+	}
+
+	public function update($data)
+	{
+		$sql="select * from survey where SURV_ID =".$data;
+		$query=$this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
+
+	public function updateData($id, $data)
+	{
+		$this->db->where('SURV_ID', $id);
+		$this->db->update('survey', $data);
+	}
+
+	public function delete($id)
+	{
+		$this->db->where('SURV_ID', $id);
+	}
 }
  ?>

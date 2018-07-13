@@ -39,7 +39,18 @@
 	<label>NIK Surveyer</label>
 	<input type="text" name="txtNIK" required="true" readonly="true"><br>
 	<label>Tanggal Selesai Survey</label>
+	<input type="date" name="dateSurvey" required="true"><br>
 	<label>Status</label>
+	<select name="txtStat" id="cmbStat" required="true">
+		<option value="0">== Pilih Status ==</option>
+		<?php  
+			foreach ($status as $row){
+				echo "<option value='".$row['STAT_ID']."'>";
+				echo $row ['STAT_NAME'];
+				echo "</option>";
+			}
+		?>
+	</select> <br>
 	<button type="reset">Cancel</button>
 	<button type="submit">Input Data</button>
 </form>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 13, 2018 at 03:27 AM
+-- Generation Time: Jul 13, 2018 at 08:15 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -95,6 +95,13 @@ CREATE TABLE `program` (
   `PROG_NAME` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `program`
+--
+
+INSERT INTO `program` (`PROG_ID`, `PROG_NAME`) VALUES
+(1, 'Pasang');
+
 -- --------------------------------------------------------
 
 --
@@ -105,6 +112,15 @@ CREATE TABLE `status` (
   `STAT_ID` int(11) NOT NULL,
   `STAT_NAME` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `status`
+--
+
+INSERT INTO `status` (`STAT_ID`, `STAT_NAME`) VALUES
+(1, 'Work Order'),
+(2, 'Survey'),
+(3, 'Instalasi');
 
 -- --------------------------------------------------------
 
@@ -117,6 +133,13 @@ CREATE TABLE `sub_witel` (
   `SWIT_NAME` varchar(100) NOT NULL,
   `SWIT_WTEL_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sub_witel`
+--
+
+INSERT INTO `sub_witel` (`SWIT_ID`, `SWIT_NAME`, `SWIT_WTEL_ID`) VALUES
+(1, 'BDG', 1);
 
 -- --------------------------------------------------------
 
@@ -167,6 +190,13 @@ CREATE TABLE `witel` (
   `WTEL_NAME` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `witel`
+--
+
+INSERT INTO `witel` (`WTEL_ID`, `WTEL_NAME`) VALUES
+(1, 'Bandung');
+
 -- --------------------------------------------------------
 
 --
@@ -175,7 +205,7 @@ CREATE TABLE `witel` (
 
 CREATE TABLE `work_order` (
   `WODE_ID` int(11) NOT NULL,
-  `WODE_ID_TA` int(11) NOT NULL,
+  `WODE_ID_TA` char(11) NOT NULL,
   `WODE_NAMA_LOKASI` text NOT NULL,
   `WODE_KOORDINAT` text NOT NULL,
   `WODE_ALAMAT` text NOT NULL,
@@ -186,6 +216,13 @@ CREATE TABLE `work_order` (
   `WODE_PROG_ID` int(11) NOT NULL,
   `WODE_STAT_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `work_order`
+--
+
+INSERT INTO `work_order` (`WODE_ID`, `WODE_ID_TA`, `WODE_NAMA_LOKASI`, `WODE_KOORDINAT`, `WODE_ALAMAT`, `WODE_TANGGAL`, `WODE_TIMESTAMP`, `WODE_WTEL_ID`, `WODE_SWIT_ID`, `WODE_PROG_ID`, `WODE_STAT_ID`) VALUES
+(1, 'BDG1', 'Jalan', '007', 'Jalan Jalan', '2018-07-01', '2018-07-13 04:31:06', 1, 1, 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -277,19 +314,19 @@ ALTER TABLE `pegawai`
 -- AUTO_INCREMENT for table `program`
 --
 ALTER TABLE `program`
-  MODIFY `PROG_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `PROG_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `status`
 --
 ALTER TABLE `status`
-  MODIFY `STAT_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `STAT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `sub_witel`
 --
 ALTER TABLE `sub_witel`
-  MODIFY `SWIT_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `SWIT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `survey`
@@ -307,13 +344,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `witel`
 --
 ALTER TABLE `witel`
-  MODIFY `WTEL_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `WTEL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `work_order`
 --
 ALTER TABLE `work_order`
-  MODIFY `WODE_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `WODE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

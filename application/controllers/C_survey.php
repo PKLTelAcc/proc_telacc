@@ -33,5 +33,27 @@ class C_survey extends CI_Controller
 		);
 		$this->load->view('tampilan/V_combine',$data);
 	}
+
+	public function form()
+	{	
+		$idta = $_POST['txtIDTA'];
+		$witel = $_POST['txtWtel'];
+		$subWitel = $_POST['txtSwit'];
+		$lokasi = $_POST['txtLokasi'];
+		$material = $_POST['txtMaterial'];
+		$jasa = $_POST['txtJasa'];
+		$total = $_POST['txtTotal'];
+		$odp = $_POST['txtODP'];
+		$surveyer = $_POST['txtSuveyer'];
+		$nik = $_POST['txtNIK'];
+		$date = $_POST['dateSurvey'];
+		$status = $_POST['txtStat'];
+		
+		$data = array(
+			'SURV_ID_TA' => $idta,
+		);
+		$survey=$this->M_survey->insert($data);
+		redirect('C_survey');
+	}
 }
  ?>
