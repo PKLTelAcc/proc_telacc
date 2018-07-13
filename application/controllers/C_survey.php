@@ -51,16 +51,16 @@ class C_survey extends CI_Controller
 		$program 	= $_POST['txtProg'];
 		
 		$data = array(
-			'SURV_WODE_ID_TA'	=> $idta,
+			'SURV_WODE_ID'		=> $idta,
 			'SURV_WTEL_ID' 		=> $witel,
 			'SURV_SWIT_ID' 		=> $subWitel,
-			'SURV_WODE_LOKASI' 	=> $lokasi,
+			'SURV_WODE_ID' 		=> $lokasi,
 			'SURV_MATERIAL' 	=> $material,
 			'SURV_JASA' 		=> $jasa,
 			'SURV_TOTAL' 		=> $total,
 			'SURV_ODP' 			=> $odp,
-			'SURV_PEGA_NAME' 	=> $surveyer,
-			'SURV_PEGA_NIK' 	=> $nik,
+			'SURV_PEGA_ID' 		=> $surveyer,
+			'SURV_PEGA_ID' 		=> $nik,
 			'SURV_TANGGAL' 		=> $date,
 			'SURV_STAT_ID' 		=> $status,
 			'SURV_PROG_ID' 		=> $program
@@ -109,16 +109,16 @@ class C_survey extends CI_Controller
 		$program 	= $_POST['txtProg'];
 		
 		$data = array(
-			'SURV_WODE_ID_TA'	=> $idta,
+			'SURV_WODE_ID'		=> $idta,
 			'SURV_WTEL_ID' 		=> $witel,
 			'SURV_SWIT_ID' 		=> $subWitel,
-			'SURV_WODE_LOKASI' 	=> $lokasi,
+			'SURV_WODE_ID' 		=> $lokasi,
 			'SURV_MATERIAL' 	=> $material,
 			'SURV_JASA' 		=> $jasa,
 			'SURV_TOTAL' 		=> $total,
 			'SURV_ODP' 			=> $odp,
-			'SURV_PEGA_NAME' 	=> $surveyer,
-			'SURV_PEGA_NIK' 	=> $nik,
+			'SURV_PEGA_ID' 		=> $surveyer,
+			'SURV_PEGA_ID' 		=> $nik,
 			'SURV_TANGGAL' 		=> $date,
 			'SURV_STAT_ID' 		=> $status,
 			'SURV_PROG_ID' 		=> $program
