@@ -32,25 +32,25 @@ class C_workOrder extends CI_Controller
 
 	public function form()
 	{	
-		$idta = $_POST['txtIDTA'];
-		$witel = $_POST['txtWtel'];
-		$subWitel = $_POST['txtSwit'];
-		$program = $_POST['txtProg'];
-		$lokasi = $_POST['txtLokasi'];
-		$alamat = $_POST['txtAlamat'];
-		$koordinat = $_POST['txtKoordinat'];
-		$date = $_POST['dateMasuk'];
-		$status = $_POST['txtStat'];
+		$idta 		= $_POST['txtIDTA'];
+		$witel 		= $_POST['txtWtel'];
+		$subWitel 	= $_POST['txtSwit'];
+		$program 	= $_POST['txtProg'];
+		$lokasi 	= $_POST['txtLokasi'];
+		$alamat 	= $_POST['txtAlamat'];
+		$koordinat 	= $_POST['txtKoordinat'];
+		$date 		= $_POST['dateMasuk'];
+		$status 	= $_POST['txtStat'];
 		$data = array(
-			'WODE_ID_TA' => $idta,
-			'WODE_WTEL_ID' => $witel,
-			'WODE_SWIT_ID' => $subWitel,
-			'WODE_PROG_ID' => $program,
-			'WODE_NAMA_LOKASI' => $lokasi,
-			'WODE_ALAMAT' => $alamat,
-			'WODE_KOORDINAT' => $koordinat,
-			'WODE_TANGGAL' => $date,
-			'WODE_STAT_ID' => $status
+			'WODE_ID_TA' 		=> $idta,
+			'WODE_WTEL_ID' 		=> $witel,
+			'WODE_SWIT_ID' 		=> $subWitel,
+			'WODE_PROG_ID' 		=> $program,
+			'WODE_NAMA_LOKASI' 	=> $lokasi,
+			'WODE_ALAMAT' 		=> $alamat,
+			'WODE_KOORDINAT' 	=> $koordinat,
+			'WODE_TANGGAL' 		=> $date,
+			'WODE_STAT_ID' 		=> $status
 		);
 		$workOrder=$this->M_workOrder->insert($data);
 		redirect('C_workOrder');
@@ -64,7 +64,7 @@ class C_workOrder extends CI_Controller
 		$program=$this->M_workOrder->getProgram();
 		$status=$this->M_workOrder->getStatus();
 		$data = array(
-			'title' 	=> 'Input Work Order',
+			'title' 	=> 'Edit Work Order',
 			'content'	=> 'V_editWorkOrder',
 			'workOrder'	=> $workOrder,
 			'witel'		=> $witel,
@@ -77,25 +77,25 @@ class C_workOrder extends CI_Controller
 
 	public function updateData($id)
 	{	
-		$idta = $_POST['txtIDTA'];
-		$witel = $_POST['txtWtel'];
-		$subWitel = $_POST['txtSwit'];
-		$program = $_POST['txtProg'];
-		$lokasi = $_POST['txtLokasi'];
-		$alamat = $_POST['txtAlamat'];
-		$koordinat = $_POST['txtKoordinat'];
-		$date = $_POST['dateMasuk'];
-		$status = $_POST['txtStat'];
+		$idta 		= $_POST['txtIDTA'];
+		$witel 		= $_POST['txtWtel'];
+		$subWitel 	= $_POST['txtSwit'];
+		$program 	= $_POST['txtProg'];
+		$lokasi 	= $_POST['txtLokasi'];
+		$alamat 	= $_POST['txtAlamat'];
+		$koordinat 	= $_POST['txtKoordinat'];
+		$date 		= $_POST['dateMasuk'];
+		$status 	= $_POST['txtStat'];
 		$data = array(
-			'WODE_ID_TA' => $idta,
-			'WODE_WTEL_ID' => $witel,
-			'WODE_SWIT_ID' => $subWitel,
-			'WODE_PROG_ID' => $program,
-			'WODE_NAMA_LOKASI' => $lokasi,
-			'WODE_ALAMAT' => $alamat,
-			'WODE_KOORDINAT' => $koordinat,
-			'WODE_TANGGAL' => $date,
-			'WODE_STAT_ID' => $status
+			'WODE_ID_TA' 		=> $idta,
+			'WODE_WTEL_ID' 		=> $witel,
+			'WODE_SWIT_ID' 		=> $subWitel,
+			'WODE_PROG_ID' 		=> $program,
+			'WODE_NAMA_LOKASI' 	=> $lokasi,
+			'WODE_ALAMAT' 		=> $alamat,
+			'WODE_KOORDINAT' 	=> $koordinat,
+			'WODE_TANGGAL' 		=> $date,
+			'WODE_STAT_ID' 		=> $status
 		);
 		$workOrder=$this->M_workOrder->updateData($id,$data);
 		redirect('C_workOrder');
