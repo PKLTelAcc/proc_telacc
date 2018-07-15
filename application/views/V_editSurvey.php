@@ -105,7 +105,7 @@
                 <h4 class="modal-title" id="myModalLabel">Data Surveyer</h4>
             </div>
             <div class="modal-body">
-                <table id="lookup" class="table table-bordered table-hover table-striped">
+                <table id="dataTableSurveyer" class="table table-bordered table-hover table-striped">
                     <thead>
                       <tr>
                         <th>No.</th>

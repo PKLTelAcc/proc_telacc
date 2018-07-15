@@ -3,7 +3,7 @@
 	<label>ID TA</label>
 	<input name="txtIDTAMuncul" id="myInput" required="true">
 	<input id="txtIDTA" type="hidden" name="txtIDTA">
-	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalIDTA">Search</button><br>	
+	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalIDTASurvey">Search</button><br>	
 	<label>Witel</label>
 	<input id="inputWitel" type="text" name="txtWtelMuncul" required="true" readonly="true">
 	<input id="witel" type="hidden" name="txtWtel"><br>
@@ -98,7 +98,7 @@
 </table>
 
 <!-- modal IDTA -->
-<div class="modal fade" id="modalIDTA" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalIDTASurvey" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="width:800px">
         <div class="modal-content">
             <div class="modal-header">
@@ -150,7 +150,7 @@
                 <h4 class="modal-title" id="myModalLabel">Data Surveyer</h4>
             </div>
             <div class="modal-body">
-                <table id="lookup" class="table table-bordered table-hover table-striped">
+                <table id="dataTableSurveyer" class="table table-bordered table-hover table-striped">
                     <thead>
                       <tr>
                         <th>No.</th>
@@ -190,14 +190,14 @@
         document.getElementById("inputSubWitel").value 	= $(this).attr('data-inputSubWitel');
         document.getElementById("witel").value 			= $(this).attr('data-witel');
         document.getElementById("inputWitel").value 	= $(this).attr('data-inputWitel');
-        // $('#modalIDTA').modal('hide');
+        $('#modalIDTASurvey').modal('hide');
 	});
 
     $(document).on('click', '.isi2', function (e) {
 		document.getElementById("txtSurveyer").value 		= $(this).attr('data-id2');
         document.getElementById("myInput2").value 		= $(this).attr('data-pegawai');
         document.getElementById("nik").value 			= $(this).attr('data-nik');
-        // $('#modalSurveyer').modal('hide');        
+        $('#modalSurveyer').modal('hide');        
     });
 </script>
 
