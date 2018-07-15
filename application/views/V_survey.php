@@ -57,7 +57,7 @@
 <!-- 			<th>Nama Witel</th>
 			<th>Nama Sub Witel</th>
 			<th>Program</th>
-			<th>Nama Lokasi</th -->>
+			<th>Nama Lokasi</th> -->
 			<th>Nilai Material</th>
 			<th>Nilai Jasa</th>
 			<th>Nilai Total</th>

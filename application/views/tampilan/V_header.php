@@ -1,9 +1,12 @@
+<?php
+date_default_timezone_set('Asia/Bangkok');
+?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Dashboard</title>
+  <title>PT. TELKOM AKSES | <?php if(isset($title)) echo $title ?></title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -12,18 +15,19 @@
   <link rel="stylesheet" href="/proj_telacc/asset1/bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="/proj_telacc/asset1/bower_components/Ionicons/css/ionicons.min.css">
-  <!-- Morris charts -->
-  <link rel="stylesheet" href="/proj_telacc/asset1/bower_components/morris.js/morris.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="/proj_telacc/asset1/dist/css/dataTables.bootstrap.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="/proj_telacc/asset1/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css"> -->
   <!-- Theme style -->
   <link rel="stylesheet" href="/proj_telacc/asset1/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/proj_telacc/asset1/dist/css/skins/_all-skins.min.css">
 
-    <!-- jQuery 3 -->
-<script src="/proj_telacc/asset1/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="/proj_telacc/asset1/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- Grafik -->
+  <!-- Morris charts -->
+  <link rel="stylesheet" href="/proj_telacc/asset1/bower_components/morris.js/morris.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,6 +38,76 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <style>
+
+    .autocomplete {
+  /*the container must be positioned relative:*/
+      position: relative;
+      
+      }
+    .autocomplete-items {
+      position: absolute;
+      border: 1px solid #d4d4d4;
+      border-bottom: none;
+      border-top: none;
+      z-index: 99;
+      /*position the autocomplete items to be the same width as the container:*/
+      top: 100%;
+      left: 0;
+      right: 0;
+    }
+    .autocomplete-items div {
+      padding: 10px;
+      cursor: pointer;
+      background-color: #fff; 
+      border-bottom: 1px solid #d4d4d4; 
+    }
+    .autocomplete-items div:hover {
+      /*when hovering an item:*/
+      background-color: #e9e9e9; 
+    }
+    .autocomplete-active {
+      /*when navigating through the items using the arrow keys:*/
+      background-color: DodgerBlue !important; 
+      color: #ffffff; 
+    }
+
+    .example-modal .modal {
+      position: relative;
+      top: auto;
+      bottom: auto;
+      right: auto;
+      left: auto;
+      display: block;
+      z-index: 1;
+    }
+
+    .example-modal .modal {
+      background: transparent !important;
+    }
+    /*tambahan*/
+    .right{
+      text-align: right !important;
+    }
+    .center{
+      text-align: center !important;
+    }
+    .left{
+      text-align: left !important;
+    }
+
+    thead tr th{
+      text-align: center !important; 
+    }
+    thead tr td{
+      text-align: center !important; 
+    }
+  </style>
+
+  <!-- jquery -->
+  <script src="/proj_telacc/asset1/dist/js/jquery-1.11.2.min.js"></script>
+  <script src="/proj_telacc/asset1/dist/js/adminlte.min.js"></script>
+ 
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 <body class="hold-transition skin-red layout-top-nav">
