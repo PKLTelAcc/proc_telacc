@@ -68,7 +68,7 @@ class M_survey extends CI_Model
 
 	public function update($data)
 	{
-		$sql="select * from survey where SURV_ID =".$data;
+		$sql="SELECT * FROM survey INNER JOIN work_order ON SURV_WODE_ID = WODE_ID INNER JOIN pegawai ON SURV_PEGA_ID = PEGA_ID INNER JOIN witel ON SURV_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON SURV_SWIT_ID = SWIT_ID INNER JOIN program ON SURV_PROG_ID = PROG_ID INNER JOIN status ON SURV_STAT_ID = STAT_ID AND SURV_ID =".$data;
 		$query=$this->db->query($sql);
 		$return = $query->result_array();
 		return $return;

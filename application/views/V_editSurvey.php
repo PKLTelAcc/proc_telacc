@@ -1,101 +1,56 @@
-<h3>Input Survey</h3>
-<form action="<?php echo base_url().'C_survey/form'; ?>" method="POST">
+<h3>Edit Survey</h3>
+<form action="<?php echo base_url().'C_survey/updateData/' .$survey[0]["SURV_ID"]; ?>" method="POST">
 	<label>ID TA</label>
-	<input name="txtIDTAMuncul" id="myInput" required="true">
-	<input id="txtIDTA" type="hidden" name="txtIDTA">
+	<input name="txtIDTAMuncul" id="myInput" required="true" value="<?php echo($survey[0]['WODE_ID_TA'])?>">
+	<input id="txtIDTA" type="hidden" name="txtIDTA" >
 	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalIDTA">Search</button><br>	
 	<label>Witel</label>
-	<input id="inputWitel" type="text" name="txtWtelMuncul" required="true" readonly="true">
-	<input id="witel" type="hidden" name="txtWtel"><br>
+	<input id="inputWitel" type="text" name="txtWtelMuncul" required="true" readonly="true" value="<?php echo($survey[0]['WTEL_NAME'])?>">
+	<input id="witel" type="hidden" name="txtWtel" value="<?php echo($survey[0]['WTEL_ID'])?>"><br>
 	<label>Sub Witel</label>
-	<input id="inputSubWitel" type="text" name="txtSwitMuncul" required="true" readonly="true">
-	<input id="subWitel" type="hidden" name="txtSwit"><br>
+	<input id="inputSubWitel" type="text" name="txtSwitMuncul" required="true" readonly="true" value="<?php echo($survey[0]['SWIT_NAME'])?>">
+	<input id="subWitel" type="hidden" name="txtSwit" value="<?php echo($survey[0]['SWIT_ID'])?>"><br>
 	<label>Program</label>
-	<input id="inputProgram" type="text" name="txtProgMuncul" required="true" readonly="true">
-	<input id="program" type="hidden" name="txtProg"><br>
+	<input id="inputProgram" type="text" name="txtProgMuncul" required="true" readonly="true" value="<?php echo($survey[0]['PROG_NAME'])?>">
+	<input id="program" type="hidden" name="txtProg" value="<?php echo($survey[0]['PROG_ID'])?>"><br>
 	<label>Nama Lokasi</label>
-	<input id="namaLokasi" type="text" name="txtLokasi" required="true" readonly="true"><br>
+	<input id="namaLokasi" type="text" name="txtLokasi" required="true" readonly="true" value="<?php echo($survey[0]['WODE_NAMA_LOKASI'])?>"><br>
 	<label>Nilai Material</label>
-	<input type="number" name="txtMaterial" required="true"><br>
+	<input type="number" name="txtMaterial" required="true" value="<?php echo($survey[0]['SURV_MATERIAL'])?>"><br>
 	<label>Nilai Jasa</label>
-	<input type="number" name="txtJasa" required="true"><br>
+	<input type="number" name="txtJasa" required="true" value="<?php echo($survey[0]['SURV_JASA'])?>"><br>
 	<label>Nilai Total</label>
-	<input type="number" name="txtTotal" required="true"><br>
+	<input type="number" name="txtTotal" required="true" value="<?php echo($survey[0]['SURV_TOTAL'])?>"><br>
 	<label>Jumlah ODP</label>
-	<input type="number" name="txtODP" required="true"><br>
+	<input type="number" name="txtODP" required="true" value="<?php echo($survey[0]['SURV_ODP'])?>"><br>
 	<label>Nama Surveyer</label>
-	<input name="txtSurveyerMuncul" id="myInput2" required="true">
-	<input id="txtSurveyer" type="hidden" name="txtSurveyer">
+	<input name="txtSurveyerMuncul" id="myInput2" required="true" value="<?php echo($survey[0]['PEGA_NAME'])?>">
+	<input id="txtSurveyer" type="hidden" name="txtSurveyer" value="<?php echo($survey[0]['PEGA_ID'])?>">
 	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSurveyer">Search</button><br>
 	<label>NIK Surveyer</label>
-	<input id="nik" type="text" name="txtNIK" required="true" readonly="true"><br>
+	<input id="nik" type="text" name="txtNIK" required="true" readonly="true" value="<?php echo($survey[0]['PEGA_NIK'])?>"><br>
 	<label>Tanggal Selesai Survey</label>
-	<input type="date" name="dateSurvey" required="true"><br>
+	<input type="date" name="dateSurvey" required="true" value="<?php echo($survey[0]['SURV_TANGGAL'])?>"><br>
 	<label>Status</label>
 	<select name="txtStat" id="cmbStat" required="true">
 		<option value="0">== Pilih Status ==</option>
 		<?php  
 			foreach ($status as $row){
-				echo "<option value='".$row['STAT_ID']."'>";
-				echo $row ['STAT_NAME'];
-				echo "</option>";
+				if ($row['STAT_ID'] == $survey[0]['SURV_STAT_ID']){
+		?>
+		    		<option value="<?php echo $row['STAT_ID'] ?>" selected><?php echo $row['STAT_NAME']?></option>
+		<?php
+		        } else {                               
+		?>
+		           	<option value="<?php echo $row['STAT_ID'] ?>" ><?php echo $row['STAT_NAME']?></option>
+		<?php
+		        }
 			}
 		?>
 	</select> <br>
 	<button type="reset">Cancel</button>
 	<button type="submit">Input Data</button>
 </form>
-
-<hr>
-
-<h3>Data Survey</h3>
-<table border="1">
-	<thead>
-		<tr>
-			<th>No.</th>
-			<th>ID TA</th>
-<!-- 			<th>Nama Witel</th>
-			<th>Nama Sub Witel</th>
-			<th>Program</th>
-			<th>Nama Lokasi</th -->>
-			<th>Nilai Material</th>
-			<th>Nilai Jasa</th>
-			<th>Nilai Total</th>
-			<th>Jumlah ODP</th>
-			<th>Nama Surveyer</th>
-			<th>NIK Surveyer</th>
-			<th>Tanggal Selesai Survey</th>
-			<th>Status</th>
-			<th>Action</th>
-		</tr>
-	</thead>
-	<tbody>
-		<?php 
-			$no=1;
-			foreach ($survey as $row) {
-				echo "<tr>";
-				echo "<td>".$no."</td>";
-				echo "<td>".$row['WODE_ID_TA']."</td>";
-				// echo "<td>".$row['WTEL_NAME']."</td>";
-				// echo "<td>".$row['SWIT_NAME']."</td>";
-				// echo "<td>".$row['PROG_NAME']."</td>";
-				// echo "<td>".$row['WODE_NAMA_LOKASI']."</td>";
-				echo "<td>".$row['SURV_MATERIAL']."</td>";
-				echo "<td>".$row['SURV_JASA']."</td>";
-				echo "<td>".$row['SURV_TOTAL']."</td>";
-				echo "<td>".$row['SURV_ODP']."</td>";
-				echo "<td>".$row['PEGA_NAME']."</td>";
-				echo "<td>".$row['PEGA_NIK']."</td>";
-				echo "<td>".$row['SURV_TANGGAL']."</td>";
-				echo "<td>".$row['STAT_NAME']."</td>";
-				echo "<td><a href='".base_url()."C_survey/formUpdate/".$row['SURV_ID']."'>Edit</a> | <a href='".base_url()."C_survey/delete/".$row['SURV_ID']."'>Delete</a></td>";
-				echo "</tr>";
-
-				$no++;
-			}
-		 ?>
-	</tbody>
-</table>
 
 <!-- modal IDTA -->
 <div class="modal fade" id="modalIDTA" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -200,4 +155,3 @@
         // $('#modalSurveyer').modal('hide');        
     });
 </script>
-
