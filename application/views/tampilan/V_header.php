@@ -126,20 +126,50 @@ date_default_timezone_set('Asia/Bangkok');
             <!-- Navbar Right Menu -->
             <div class="navbar-custom-menu">
               <ul class="nav navbar-nav">
-                <!-- Stock -->
+               <?php
+                  if ($_SESSION['level'] == 'SUPER USER') {
+                    ?>
+                      <li class="<?php if(isset($menu)) if($menu == 'work_order') echo 'active'?>">
+                        <!--sistem-->
+                        <a class="dropdown-toggle" style="cursor: pointer;" type="button" data-toggle="dropdown">
+                          <i class="fa fa-industry"></i>
+                          Sistem
+                          <span class="caret"></span></a>
+                          <ul class="dropdown-menu">  
+                            <li><a href="<?php echo base_url()?>c_witel">Input Witel</a></li>
+                            <li><a href="<?php echo base_url()?>c_subWitel">Input Sub Witel</a></li>
+                            <li><a href="<?php echo base_url()?>c_mitra">Input Mitra</a></li>
+                            <li><a href="<?php echo base_url()?>c_pegawai">Input Pegawai</a></li>
+                            <li><a href="<?php echo base_url()?>c_user">Input User</a></li>
+                            <li><a href="<?php echo base_url()?>c_level">Input Level</a></li>
+                            <li><a href="<?php echo base_url()?>c_status">Input Status</a></li>
+                            <li><a href="<?php echo base_url()?>c_program">Input Program</a></li>
+                          </ul>
+                      </li>
+                <!--WO-->
                 <li >
-                  <a href="stock.html">
-                    <i class="fa fa-industry"></i>
-                    Stock
+                  <a href="<?php echo base_url()?>c_workOrder">
+                    <i class="glyphicon glyphicon-list-alt"></i>
+                    Work Order
                   </a>
                 </li>
-                <!-- Keuangan -->
+                <!--survey-->
                 <li >
-                  <a href="finance.html">
-                    <i class="fa fa-balance-scale"></i>
-                    Finance
+                  <a href="<?php echo base_url()?>c_survey">
+                    <i class="glyphicon glyphicon-list-alt"></i>
+                    Survey
                   </a>
                 </li>
+                <!--instalasi-->
+                <li >
+                  <a href="<?php echo base_url()?>c_instalasi">
+                    <i class="glyphicon glyphicon-list-alt"></i>
+                    Instalasi
+                  </a>
+                </li>
+                <?php
+                  }
+                  ?>
                 <!-- Report -->
                 <li >
                   <a href="report.html">
