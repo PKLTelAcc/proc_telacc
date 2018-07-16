@@ -24,13 +24,14 @@
   <body>
 
     <!-- Navigation -->
-    <nav id="animated" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav id="animated" class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">TELKOM AKSES</a>
         <div >
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <button type="submit" class="btn btn-danger" name="button" data-toggle="modal" data-target="#myModal">Login Here</button>
+              <button type="submit" class="btn btn-dark
+              " name="button" data-toggle="modal" data-target="#myModal">Login Here</button>
             </li>
           </ul>
         </div>
@@ -80,13 +81,13 @@
 
           <div class="modal-body">
             <div class="container">
-              <form class="" action="<?php echo base_url() ?>c_login/forgotPassword" method="post">
+              <form class="" action="<?php echo base_url() ?>C_login/forgotPassword" method="post">
                 <button type="button" class="close" data-dismiss="modal">&times</button>
                 <div class="form-group text-center">
                   <img src="/dbo/assets/dist/img/" alt="foto profile" class="rounded-circle" width="130" height="120" id="img-login">
                 </div>
                 <div class="form-group text-center">
-                  <h4 class="text-idanger">Forgot Your Password ?</h4>
+                  <h4 class="text-danger">Forgot Your Password ?</h4>
                 </div>
                 <div class="form-group">
                   <input type="text" class="form-control col-sm-10 offset-sm-1" placeholder="Email"  name="email" id="email">
@@ -114,7 +115,7 @@
             <img src="/dbo/assets/dist/img/" class="img-fluid" alt="" width="100%" height="500">
             <div class="carousel-caption d-none d-md-block">
               <h3>Selamat Datang</h3>
-              <p>Selamat datang di Sistem Informasi Stok.</p>
+              <p></p>
             </div>
           </div>
           <!-- Slide Two - Set the background image for this slide in the line below -->
@@ -122,7 +123,7 @@
               <img src="/dbo/assets/dist/img/" class="img-fluid" alt="" width="100%" height="500">
             <div class="carousel-caption d-none d-md-block">
               <h3>Selamat Datang</h3>
-              <p>Selamat datang di Sistem Informasi Stok.</p>
+              <p></p>
             </div>
           </div>
         </div>
@@ -137,7 +138,7 @@
       </div>
     </header>
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
+    <footer class="py-5 bg-danger">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; BINARY Corporate 2018</p>
       </div>
