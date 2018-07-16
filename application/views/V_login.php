@@ -14,11 +14,11 @@
     <title>Home</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/dbo/assets/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/proj_telacc/asset1/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/dbo/assets/css/half-slider.css" rel="stylesheet">
-    <link href="/dbo/assets/css/style-custem.css" rel="stylesheet">
+    <link href="/proj_telacc/asset1/css/half-slider.css" rel="stylesheet">
+    <link href="/proj_telacc/asset1/css/style-custem.css" rel="stylesheet">
   </head>
 
   <body>
@@ -47,7 +47,7 @@
               <form class="" action="<?php echo base_url() ?>C_login/login" method="post">
                 <button type="button" class="close" data-dismiss="modal">&times</button>
                 <div class="form-group text-center">
-                  <img src="/dbo/assets/dist/img/" style="margin-left: 27px" alt="foto profile" class="rounded-circle" width="130" id="img-login">
+                  <img src="/proj_telacc/asset1/dist/img/" style="margin-left: 27px" alt="foto profile" class="rounded-circle" width="130" id="img-login">
                 </div>
                 <div class="form-group text-center">
                   <h4 class="text-danger">Login Here</h4>
@@ -84,7 +84,7 @@
               <form class="" action="<?php echo base_url() ?>C_login/forgotPassword" method="post">
                 <button type="button" class="close" data-dismiss="modal">&times</button>
                 <div class="form-group text-center">
-                  <img src="/dbo/assets/dist/img/" alt="foto profile" class="rounded-circle" width="130" height="120" id="img-login">
+                  <img src="/proj_telacc/asset1/dist/img/" alt="foto profile" class="rounded-circle" width="130" height="120" id="img-login">
                 </div>
                 <div class="form-group text-center">
                   <h4 class="text-danger">Forgot Your Password ?</h4>
@@ -112,7 +112,7 @@
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
           <div class="carousel-item active">
-            <img src="/dbo/assets/dist/img/" class="img-fluid" alt="" width="100%" height="500">
+            <img src="/proj_telacc/asset1/dist/img/" class="img-fluid" alt="" width="100%" height="500">
             <div class="carousel-caption d-none d-md-block">
               <h3>Selamat Datang</h3>
               <p></p>
@@ -120,7 +120,7 @@
           </div>
           <!-- Slide Two - Set the background image for this slide in the line below -->
           <div class="carousel-item">
-              <img src="/dbo/assets/dist/img/" class="img-fluid" alt="" width="100%" height="500">
+              <img src="/proj_telacc/asset1/dist/img/" class="img-fluid" alt="" width="100%" height="500">
             <div class="carousel-caption d-none d-md-block">
               <h3>Selamat Datang</h3>
               <p></p>
@@ -147,8 +147,8 @@
 
 
     <!-- Bootstrap core JavaScript -->
-    <script src="/dbo/assets/vendor/jquery/jquery.min.js"></script>
-    <script src="/dbo/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/proj_telacc/asset1/vendor/jquery/jquery.min.js"></script>
+    <script src="/proj_telacc/asset1/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript">
     	$(document).on('click', '#forgot', function (e) {
 	        $('#myModal').modal('hide');

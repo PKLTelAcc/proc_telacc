@@ -9,7 +9,7 @@ class C_login extends CI_controller
 	function __construct(){
 		parent::__construct();
 		$this->load->model('M_login');
-		$this->load->library("phpmailer_library");
+		// $this->load->library("phpmailer_library");
 	}
 	public function index()
 	{
@@ -43,7 +43,7 @@ class C_login extends CI_controller
 		$subject = "Atur Ulang Kata Sandi";
 		$message = "Anda baru saja mengatur ulang kata sandi anda <br> Kata sandi anda yang baru adalah : ".$this->random_password();
 		$email 	 = $this->input->post('email');
-        $objMail = $this->phpmailer_library->load($subject, $message, $email);
+        // $objMail = $this->phpmailer_library->load($subject, $message, $email);
 	}
 	function random_password() {
 		$length = 8;

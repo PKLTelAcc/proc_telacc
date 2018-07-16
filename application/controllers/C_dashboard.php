@@ -13,13 +13,18 @@ class C_dashboard extends CI_Controller
 	}
 
 	public function index(){
-		$view = 'tampilan/V_content';
+		if (empty($_SESSION['level'])) {
+			redirect('c_login','refresh');
+		}
+		if ($_SESSION['level'] == 'SUPER USER' || $_SESSION['level'] == 'ADMIN' ) {
+			$view = 'tampilan/v_content';
+			}else{
+			$view = 'tampilan/index';
+		}
 		$data = array(
-			'title'		=> 'Dashboard',
-			'content' 	=> $view 
+			'content' => $view	
 		);
-		$this->load->view('tampilan/V_combine',$data);
+			$this->load->view('tampilan/v_combine',$data);
 	}
 }
-
  ?>
