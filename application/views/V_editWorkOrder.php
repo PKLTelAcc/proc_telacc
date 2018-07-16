@@ -1,89 +1,175 @@
-<h3>Edit Work Order</h3>
-<form action="<?php echo base_url().'C_workOrder/updateData/' .$workOrder[0]["WODE_ID"]; ?>" method="POST">
-	<label>ID TA</label>
-	<input type="text" name="txtIDTA" required="true" value="<?php echo($workOrder[0]['WODE_ID_TA'])?>"><br>
-	<label>Witel</label>
-	<select name="txtWtel" id="cmbWtel" required="true">
-		<option value="0">== Pilih Witel ==</option>
-		<?php  
-			foreach ($witel as $row){
-				if ($row['WTEL_ID'] == $workOrder[0]['WODE_WTEL_ID']){
-		?>
-		    		<option value="<?php echo $row['WTEL_ID'] ?>" selected><?php echo $row['WTEL_NAME']?></option>
-		<?php
-		        } else {                               
-		?>
-		           	<option value="<?php echo $row['WTEL_ID'] ?>" ><?php echo $row['WTEL_NAME']?></option>
-		<?php
-		        }
-			}
-		?>
-	</select>
-	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWodeWtel">Search</button><br>
-	<label>Sub Witel</label>
-	<select name="txtSwit" id="cmbSwit" required="true">
-		<option value="0">== Pilih Sub Witel ==</option>
-		<?php  
-			foreach ($subWitel as $row){
-				if ($row['SWIT_ID'] == $workOrder[0]['WODE_SWIT_ID']){
-		?>
-		    		<option value="<?php echo $row['SWIT_ID'] ?>" selected><?php echo $row['SWIT_NAME']?></option>
-		<?php
-		        } else {                               
-		?>
-		           	<option value="<?php echo $row['SWIT_ID'] ?>" ><?php echo $row['SWIT_NAME']?></option>
-		<?php
-		        }
-			}
-		?>
-	</select>
-	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWodeSwit">Search</button><br>
-	<label>Program</label>
-	<select name="txtProg" id="cmbProg" required="true">
-		<option value="0">== Pilih Program ==</option>
-		<?php  
-			foreach ($program as $row){
-				if ($row['PROG_ID'] == $workOrder[0]['WODE_PROG_ID']){
-		?>
-		    		<option value="<?php echo $row['PROG_ID'] ?>" selected><?php echo $row['PROG_NAME']?></option>
-		<?php
-		        } else {                               
-		?>
-		           	<option value="<?php echo $row['PROG_ID'] ?>" ><?php echo $row['PROG_NAME']?></option>
-		<?php
-		        }
-			}
-		?>
-	</select>
-	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWodeProg">Search</button><br>
-	<label>Nama Lokasi</label>
-	<textarea type="text" name="txtLokasi" required="true"><?php echo($workOrder[0]['WODE_NAMA_LOKASI'])?></textarea><br>
-	<label>Alamat Lokasi</label>
-	<textarea type="text" name="txtAlamat"><?php echo($workOrder[0]['WODE_ALAMAT'])?></textarea><br>
-	<label>Koordinat Lokasi</label>
-	<textarea type="text" name="txtKoordinat"><?php echo($workOrder[0]['WODE_KOORDINAT'])?></textarea><br>
-	<label>Tanggal Masuk</label>
-	<input type="date" name="dateMasuk" required="true" value="<?php echo($workOrder[0]['WODE_TANGGAL'])?>"><br>
-	<label>Status</label>
-	<select name="txtStat" id="cmbStat" required="true">
-		<option value="0">== Pilih Status ==</option>
-		<?php  
-			foreach ($status as $row){
-				if ($row['STAT_ID'] == $workOrder[0]['WODE_STAT_ID']){
-		?>
-		    		<option value="<?php echo $row['STAT_ID'] ?>" selected><?php echo $row['STAT_NAME']?></option>
-		<?php
-		        } else {                               
-		?>
-		           	<option value="<?php echo $row['STAT_ID'] ?>" ><?php echo $row['STAT_NAME']?></option>
-		<?php
-		        }
-			}
-		?>
-	</select> <br>
-	<button type="reset">Cancel</button>
-	<button type="submit">Input Data</button>
-</form>
+<!-- Main content -->
+<div class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-danger">
+        <div class="box-header with-border">
+          <h3 class="box-title">Input Work Order</h3>
+
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+          </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="row">
+            <div class="col-md-12 ">
+              <form action="<?php echo base_url().'C_workOrder/updateData/' .$workOrder[0]["WODE_ID"]; ?>" method="POST">
+                <div class="form-group">
+                    <label class=" control-label">ID TA</label>
+                    <div>
+                      <span id="qty">
+                        <input class="form-control" type="text" placeholder="ID TA" name="txtIDTA" required="true" value="<?php echo($workOrder[0]['WODE_ID_TA'])?>">  
+                      </span>
+                    </div>
+                  </div>
+                <div class="form-group">
+            <label class="control-label">Witel</label>
+            <div class="input-group">
+              <select name="txtWtel" id="cmbWtel" required="true" class="form-control">
+                <option value="0">== Pilih Witel ==</option>
+                  <?php  
+                    foreach ($witel as $row){
+                      if ($row['WTEL_ID'] == $workOrder[0]['WODE_WTEL_ID']){
+                  ?>
+                          <option value="<?php echo $row['WTEL_ID'] ?>" selected><?php echo $row['WTEL_NAME']?></option>
+                  <?php
+                          } else {                               
+                  ?>
+                              <option value="<?php echo $row['WTEL_ID'] ?>" ><?php echo $row['WTEL_NAME']?></option>
+                  <?php
+                          }
+                    }
+                  ?>
+                </select>
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWodeWtel">Search</button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Sub Witel</label>
+            <div class="input-group">
+              <select name="txtSwit" id="cmbSwit" required="true" class="form-control">
+                <option value="0">== Pilih Sub Witel ==</option>
+                  <?php  
+                    foreach ($subWitel as $row){
+                      if ($row['SWIT_ID'] == $workOrder[0]['WODE_SWIT_ID']){
+                  ?>
+                          <option value="<?php echo $row['SWIT_ID'] ?>" selected><?php echo $row['SWIT_NAME']?></option>
+                  <?php
+                          } else {                               
+                  ?>
+                              <option value="<?php echo $row['SWIT_ID'] ?>" ><?php echo $row['SWIT_NAME']?></option>
+                  <?php
+                          }
+                    }
+                  ?>
+                </select>
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWodeSwit">Search</button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Program</label>
+            <div class="input-group">
+              <select name="txtProg" id="cmbProg" required="true" class="form-control">
+                <option value="0">== Pilih Program ==</option>
+                  <?php  
+                    foreach ($program as $row){
+                      if ($row['PROG_ID'] == $workOrder[0]['WODE_PROG_ID']){
+                  ?>
+                          <option value="<?php echo $row['PROG_ID'] ?>" selected><?php echo $row['PROG_NAME']?></option>
+                  <?php
+                          } else {                               
+                  ?>
+                              <option value="<?php echo $row['PROG_ID'] ?>" ><?php echo $row['PROG_NAME']?></option>
+                  <?php
+                          }
+                    }
+                  ?>
+                </select>
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWodeProg">Search</button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+                  <label class=" control-label">Nama Lokasi</label>
+                    <div>
+                      <span id="qty">
+                        <textarea class="form-control" type="text" name="txtLokasi" placeholder="Nama Lokasi" required="true"><?php echo($workOrder[0]['WODE_NAMA_LOKASI'])?></textarea>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class=" control-label">Alamat Lokasi</label>
+                    <div>
+                      <span id="qty">
+                        <textarea class="form-control" type="text" name="txtAlamat" placeholder="Alamat Lokasi"><?php echo($workOrder[0]['WODE_ALAMAT'])?></textarea>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class=" control-label">Koordinat Lokasi</label>
+                    <div>
+                      <span id="qty">
+                        <textarea class="form-control" type="text" name="txtKoordinat" placeholder="Alamat Lokasi"><?php echo($workOrder[0]['WODE_KOORDINAT'])?></textarea>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class=" control-label">Tanggal Masuk</label>
+                    <div>
+                      <span id="qty">
+                        <input class="form-control" type="date" name="dateMasuk" required="true" value="<?php echo($workOrder[0]['WODE_TANGGAL'])?>"> 
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+            <label class="control-label">Status</label>
+            <div class="input-group">
+              <select name="txtStat" id="cmbStat" required="true" class="form-control">
+                <option value="0">== Pilih Status ==</option>
+                  <?php  
+                    foreach ($status as $row){
+                      if ($row['STAT_ID'] == $workOrder[0]['WODE_STAT_ID']){
+                  ?>
+                          <option value="<?php echo $row['STAT_ID'] ?>" selected><?php echo $row['STAT_NAME']?></option>
+                  <?php
+                          } else {                               
+                  ?>
+                              <option value="<?php echo $row['STAT_ID'] ?>" ><?php echo $row['STAT_NAME']?></option>
+                  <?php
+                          }
+                    }
+                  ?>
+              </select>
+            </div>
+          </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-10">
+                      <button type="reset" class="btn btn-danger pull-right">Cancel</button>
+                    </div>
+                    <div class="col-md-2">
+                      <button type="submit" class="btn btn-danger pull-right" data-toggle="modal" data-target="#modal-success2" onclick="modalKonfirmasiTakJadi()" >Input Data</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+        </div>
+      </div>
+        <!-- /.box -->
+    </div> <!-- col-input -->
+  </div>
+</div>
+<!-- /.content -->
 
 <!-- modal WodeWtel -->
 <div class="modal fade" id="modalWodeWtel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -194,18 +280,108 @@
 </div>
 
 <script type="text/javascript">
-		$(document).on('click', '.search', function (e) {
-		document.getElementById("cmbWtel").value 		= $(this).attr('data-id');
+    $(document).on('click', '.search', function (e) {
+    document.getElementById("cmbWtel").value    = $(this).attr('data-id');
         $('#modalWodeWtel').modal('hide');
-	});
+  });
 
-		$(document).on('click', '.search2', function (e) {
-		document.getElementById("cmbSwit").value 		= $(this).attr('data-id2');
+    $(document).on('click', '.search2', function (e) {
+    document.getElementById("cmbSwit").value    = $(this).attr('data-id2');
         $('#modalWodeSwit').modal('hide');
-	});
+  });
 
-		$(document).on('click', '.search3', function (e) {
-		document.getElementById("cmbProg").value 		= $(this).attr('data-id3');
+    $(document).on('click', '.search3', function (e) {
+    document.getElementById("cmbProg").value    = $(this).attr('data-id3');
         $('#modalWodeProg').modal('hide');
-	});
+  });
 </script>
+
+
+<!-- =========================================================================================================================================== -->
+
+<!-- <h3>Edit Work Order</h3>
+<form action="<?php echo base_url().'C_workOrder/updateData/' .$workOrder[0]["WODE_ID"]; ?>" method="POST">
+	<label>ID TA</label>
+	<input type="text" name="txtIDTA" required="true" value="<?php echo($workOrder[0]['WODE_ID_TA'])?>"><br>
+	<label>Witel</label>
+	<select name="txtWtel" id="cmbWtel" required="true">
+		<option value="0">== Pilih Witel ==</option>
+		<?php  
+			foreach ($witel as $row){
+				if ($row['WTEL_ID'] == $workOrder[0]['WODE_WTEL_ID']){
+		?>
+		    		<option value="<?php echo $row['WTEL_ID'] ?>" selected><?php echo $row['WTEL_NAME']?></option>
+		<?php
+		        } else {                               
+		?>
+		           	<option value="<?php echo $row['WTEL_ID'] ?>" ><?php echo $row['WTEL_NAME']?></option>
+		<?php
+		        }
+			}
+		?>
+	</select>
+	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWodeWtel">Search</button><br>
+	<label>Sub Witel</label>
+	<select name="txtSwit" id="cmbSwit" required="true">
+		<option value="0">== Pilih Sub Witel ==</option>
+		<?php  
+			foreach ($subWitel as $row){
+				if ($row['SWIT_ID'] == $workOrder[0]['WODE_SWIT_ID']){
+		?>
+		    		<option value="<?php echo $row['SWIT_ID'] ?>" selected><?php echo $row['SWIT_NAME']?></option>
+		<?php
+		        } else {                               
+		?>
+		           	<option value="<?php echo $row['SWIT_ID'] ?>" ><?php echo $row['SWIT_NAME']?></option>
+		<?php
+		        }
+			}
+		?>
+	</select>
+	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWodeSwit">Search</button><br>
+	<label>Program</label>
+	<select name="txtProg" id="cmbProg" required="true">
+		<option value="0">== Pilih Program ==</option>
+		<?php  
+			foreach ($program as $row){
+				if ($row['PROG_ID'] == $workOrder[0]['WODE_PROG_ID']){
+		?>
+		    		<option value="<?php echo $row['PROG_ID'] ?>" selected><?php echo $row['PROG_NAME']?></option>
+		<?php
+		        } else {                               
+		?>
+		           	<option value="<?php echo $row['PROG_ID'] ?>" ><?php echo $row['PROG_NAME']?></option>
+		<?php
+		        }
+			}
+		?>
+	</select>
+	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWodeProg">Search</button><br>
+	<label>Nama Lokasi</label>
+	<textarea type="text" name="txtLokasi" required="true"><?php echo($workOrder[0]['WODE_NAMA_LOKASI'])?></textarea><br>
+	<label>Alamat Lokasi</label>
+	<textarea type="text" name="txtAlamat"><?php echo($workOrder[0]['WODE_ALAMAT'])?></textarea><br>
+	<label>Koordinat Lokasi</label>
+	<textarea type="text" name="txtKoordinat"><?php echo($workOrder[0]['WODE_KOORDINAT'])?></textarea><br>
+	<label>Tanggal Masuk</label>
+	<input type="date" name="dateMasuk" required="true" value="<?php echo($workOrder[0]['WODE_TANGGAL'])?>"><br>
+	<label>Status</label>
+	<select name="txtStat" id="cmbStat" required="true">
+		<option value="0">== Pilih Status ==</option>
+		<?php  
+			foreach ($status as $row){
+				if ($row['STAT_ID'] == $workOrder[0]['WODE_STAT_ID']){
+		?>
+		    		<option value="<?php echo $row['STAT_ID'] ?>" selected><?php echo $row['STAT_NAME']?></option>
+		<?php
+		        } else {                               
+		?>
+		           	<option value="<?php echo $row['STAT_ID'] ?>" ><?php echo $row['STAT_NAME']?></option>
+		<?php
+		        }
+			}
+		?>
+	</select> <br>
+	<button type="reset">Cancel</button>
+	<button type="submit">Input Data</button>
+</form> 

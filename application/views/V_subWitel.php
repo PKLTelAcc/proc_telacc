@@ -59,7 +59,7 @@
 	      <!-- /.box -->
 	  </div> <!-- col-input -->
 	  <div class="col-md-12">
-	    <div class="box box-witel">
+	    <div class="box box-danger">
 	      <div class="box-header with-border">
 	        <h3 class="box-title">Data Sub Witel</h3>
 
