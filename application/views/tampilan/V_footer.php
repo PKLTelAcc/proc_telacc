@@ -39,13 +39,13 @@
         $("#surveyer").dataTable();
 
         //witel
-        $("#witel").dataTable();
+        $("#tableWitel").dataTable();
 
         //sub witel
-        $("#subWitel").dataTable();
+        $("#tableSubWitel").dataTable();
 
         //program
-        $("#program").dataTable();
+        $("#tableProgram").dataTable();
 
     });
 </script>

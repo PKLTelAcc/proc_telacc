@@ -145,13 +145,13 @@
         document.getElementById("inputSubWitel").value 	= $(this).attr('data-inputSubWitel');
         document.getElementById("witel").value 			= $(this).attr('data-witel');
         document.getElementById("inputWitel").value 	= $(this).attr('data-inputWitel');
-        // $('#modalIDTA').modal('hide');
+        $('#modalIDTA').modal('hide');
 	});
 
     $(document).on('click', '.isi2', function (e) {
 		document.getElementById("txtSurveyer").value 		= $(this).attr('data-id2');
         document.getElementById("myInput2").value 		= $(this).attr('data-pegawai');
         document.getElementById("nik").value 			= $(this).attr('data-nik');
-        // $('#modalSurveyer').modal('hide');        
+        $('#modalSurveyer').modal('hide');        
     });
 </script>

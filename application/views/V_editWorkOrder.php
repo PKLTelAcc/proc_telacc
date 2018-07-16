@@ -180,7 +180,7 @@
                 <h4 class="modal-title" id="myModalLabel">Data Witel</h4>
             </div>
             <div class="modal-body">
-                <table id="witel" class="table table-bordered table-hover table-striped">
+                <table id="tableWitel" class="table table-bordered table-hover table-striped">
                     <thead>
                       <tr>
                         <th>No.</th>
@@ -216,7 +216,7 @@
                 <h4 class="modal-title" id="myModalLabel">Data Sub Witel</h4>
             </div>
             <div class="modal-body">
-                <table id="subWitel" class="table table-bordered table-hover table-striped">
+                <table id="tableSubWitel" class="table table-bordered table-hover table-striped">
                     <thead>
                       <tr>
                         <th>No.</th>
@@ -252,7 +252,7 @@
                 <h4 class="modal-title" id="myModalLabel">Data Program</h4>
             </div>
             <div class="modal-body">
-                <table id="program" class="table table-bordered table-hover table-striped">
+                <table id="tableProgram" class="table table-bordered table-hover table-striped">
                     <thead>
                       <tr>
                         <th>No.</th>

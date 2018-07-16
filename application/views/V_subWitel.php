@@ -111,7 +111,7 @@
                 <h4 class="modal-title" id="myModalLabel">Data Witel</h4>
             </div>
             <div class="modal-body">
-                <table id="witel" class="table table-bordered table-hover table-striped">
+                <table id="tableWitel" class="table table-bordered table-hover table-striped">
                     <thead>
                       <tr>
                         <th>No.</th>
