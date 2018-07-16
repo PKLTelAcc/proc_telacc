@@ -27,52 +27,52 @@
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Witel</label>
-	                  <div class="input-group">
+	                  <div>
 	                      <input class="form-control" placeholder="Witel" id="inputWitel" type="text" name="txtWtelMuncul" required="true" readonly="true">
 	                      <input class="form-control" id="witel" type="hidden" name="txtWtel">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Sub Witel</label>
-	                  <div class="input-group">
+	                  <div>
 	                      <input class="form-control" placeholder="Sub Witel" id="inputSubWitel" type="text" name="txtSwitMuncul" required="true" readonly="true">
 	                      <input class="form-control" id="subWitel" type="hidden" name="txtSwit">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Program</label>
-	                  <div class="input-group">
+	                  <div>
 	                      <input class="form-control" placeholder="Program" id="inputProgram" type="text" name="txtProgMuncul" required="true" readonly="true">
 	                      <input class="form-control" id="program" type="hidden" name="txtProg">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Nama Lokasi</label>
-	                  <div class="input-group">
+	                  <div>
 	                      <input class="form-control" placeholder="Nama Lokasi" id="namaLokasi" type="text" name="txtLokasi" required="true" readonly="true">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Nilai Material</label>
-	                  <div class="input-group">
+	                  <div>
 	                      <input class="form-control" placeholder="Nilai Material" type="number" name="txtMaterial" required="true">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Nilai Jasa</label>
-	                  <div class="input-group">
+	                  <div>
 	                      <input class="form-control" placeholder="Nilai Jasa" type="number" name="txtJasa" required="true">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Nilai Total</label>
-	                  <div class="input-group">
+	                  <div>
 	                      <input class="form-control" placeholder="Nilai Total" type="number" name="txtTotal" required="true">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Jumlah ODP</label>
-	                  <div class="input-group">
+	                  <div>
 	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtODP" required="true">
 	                  </div>
 	              	</div>
@@ -87,8 +87,8 @@
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
-	                  <label class=" control-label">NIK SUrveyer</label>
-	                  <div class="input-group">
+	                  <label class=" control-label">NIK Surveyer</label>
+	                  <div>
 	                      <input class="form-control" placeholder="NIK Surveyer" id="nik" type="text" name="txtNIK" required="true" readonly="true">
 	                  </div>
 	              	</div>
@@ -102,7 +102,7 @@
 	              	</div>
 	              	<div class="form-group">
 						<label class="control-label">Status</label>
-						<div class="input-group">
+						<div>
 							<select class="form-control" name="txtStat" id="cmbStat" required="true" >
 								<option value="0">== Pilih Status ==</option>
 									<?php  

@@ -129,7 +129,7 @@
                   </div>
                   <div class="form-group">
             <label class="control-label">Status</label>
-            <div class="input-group">
+            <div>
               <select class="form-control" name="txtStat" id="cmbStat" required="true">
                 <option value="0">== Pilih Status ==</option>
                   <?php  
