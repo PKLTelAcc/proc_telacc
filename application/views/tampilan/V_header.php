@@ -173,7 +173,7 @@ date_default_timezone_set('Asia/Bangkok');
                         <a href="profile.html" class="btn btn-default btn-flat">Profile</a>
                       </div>
                       <div class="pull-right">
-                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                        <a href="<?php echo base_url() ?>C_login/logout" class="btn btn-default btn-flat">Sign out</a>
                       </div>
                     </li>
                   </ul>
