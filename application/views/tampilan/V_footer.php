@@ -32,8 +32,20 @@
 
         $("#lookup").dataTable();
 
+        // survey ID TA
+        $("#surveyIDTA").dataTable();
+
         // surveyer
-        $("#dataTableSurveyer").dataTable();
+        $("#surveyer").dataTable();
+
+        //witel
+        $("#witel").dataTable();
+
+        //sub witel
+        $("#subWitel").dataTable();
+
+        //program
+        $("#program").dataTable();
 
     });
 </script>

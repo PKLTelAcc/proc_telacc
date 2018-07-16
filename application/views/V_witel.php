@@ -29,7 +29,7 @@
 	                    <button type="reset" class="btn btn-default pull-right">Cancel</button>
 	                  </div>
 	                  <div class="col-md-2">
-	                    <button type="submit" class="btn btn-danger pull-right" data-toggle="modal" data-target="#modal-success2" onclick="modalKonfirmasiTakJadi()" >Input Level</button>
+	                    <button type="submit" class="btn btn-danger pull-right" data-toggle="modal" data-target="#modal-success2" onclick="modalKonfirmasiTakJadi()" >Input Data</button>
 	                  </div>
 	                </div>
 	              </div>
