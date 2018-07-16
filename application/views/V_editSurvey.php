@@ -1,59 +1,152 @@
-<h3>Edit Survey</h3>
-<form action="<?php echo base_url().'C_survey/updateData/' .$survey[0]["SURV_ID"]; ?>" method="POST">
-	<label>ID TA</label>
-	<input name="txtIDTAMuncul" id="myInput" required="true" value="<?php echo($survey[0]['WODE_ID_TA'])?>">
-	<input id="txtIDTA" type="hidden" name="txtIDTA" >
-	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalIDTA">Search</button><br>	
-	<label>Witel</label>
-	<input id="inputWitel" type="text" name="txtWtelMuncul" required="true" readonly="true" value="<?php echo($survey[0]['WTEL_NAME'])?>">
-	<input id="witel" type="hidden" name="txtWtel" value="<?php echo($survey[0]['WTEL_ID'])?>"><br>
-	<label>Sub Witel</label>
-	<input id="inputSubWitel" type="text" name="txtSwitMuncul" required="true" readonly="true" value="<?php echo($survey[0]['SWIT_NAME'])?>">
-	<input id="subWitel" type="hidden" name="txtSwit" value="<?php echo($survey[0]['SWIT_ID'])?>"><br>
-	<label>Program</label>
-	<input id="inputProgram" type="text" name="txtProgMuncul" required="true" readonly="true" value="<?php echo($survey[0]['PROG_NAME'])?>">
-	<input id="program" type="hidden" name="txtProg" value="<?php echo($survey[0]['PROG_ID'])?>"><br>
-	<label>Nama Lokasi</label>
-	<input id="namaLokasi" type="text" name="txtLokasi" required="true" readonly="true" value="<?php echo($survey[0]['WODE_NAMA_LOKASI'])?>"><br>
-	<label>Nilai Material</label>
-	<input type="number" name="txtMaterial" required="true" value="<?php echo($survey[0]['SURV_MATERIAL'])?>"><br>
-	<label>Nilai Jasa</label>
-	<input type="number" name="txtJasa" required="true" value="<?php echo($survey[0]['SURV_JASA'])?>"><br>
-	<label>Nilai Total</label>
-	<input type="number" name="txtTotal" required="true" value="<?php echo($survey[0]['SURV_TOTAL'])?>"><br>
-	<label>Jumlah ODP</label>
-	<input type="number" name="txtODP" required="true" value="<?php echo($survey[0]['SURV_ODP'])?>"><br>
-	<label>Nama Surveyer</label>
-	<input name="txtSurveyerMuncul" id="myInput2" required="true" value="<?php echo($survey[0]['PEGA_NAME'])?>">
-	<input id="txtSurveyer" type="hidden" name="txtSurveyer" value="<?php echo($survey[0]['PEGA_ID'])?>">
-	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSurveyer">Search</button><br>
-	<label>NIK Surveyer</label>
-	<input id="nik" type="text" name="txtNIK" required="true" readonly="true" value="<?php echo($survey[0]['PEGA_NIK'])?>"><br>
-	<label>Tanggal Selesai Survey</label>
-	<input type="date" name="dateSurvey" required="true" value="<?php echo($survey[0]['SURV_TANGGAL'])?>"><br>
-	<label>Status</label>
-	<select name="txtStat" id="cmbStat" required="true">
-		<option value="0">== Pilih Status ==</option>
-		<?php  
-			foreach ($status as $row){
-				if ($row['STAT_ID'] == $survey[0]['SURV_STAT_ID']){
-		?>
-		    		<option value="<?php echo $row['STAT_ID'] ?>" selected><?php echo $row['STAT_NAME']?></option>
-		<?php
-		        } else {                               
-		?>
-		           	<option value="<?php echo $row['STAT_ID'] ?>" ><?php echo $row['STAT_NAME']?></option>
-		<?php
-		        }
-			}
-		?>
-	</select> <br>
-	<button type="reset">Cancel</button>
-	<button type="submit">Input Data</button>
-</form>
+<!-- Main content -->
+<div class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-danger">
+        <div class="box-header with-border">
+          <h3 class="box-title">Input Work Order</h3>
+
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+          </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="row">
+            <div class="col-md-12 ">
+              <form action="<?php echo base_url().'C_survey/updateData/' .$survey[0]["SURV_ID"]; ?>" method="POST">
+                <div class="form-group">
+                    <label class=" control-label">ID TA</label>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true" value="<?php echo($survey[0]['WODE_ID_TA'])?>">
+                        <input class="form-control" id="txtIDTA" type="hidden" name="txtIDTA" value="<?php echo($survey[0]['WTEL_ID'])?>">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalIDTASurvey">Search</button>
+            </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class=" control-label">Witel</label>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="Witel" id="inputWitel" type="text" name="txtWtelMuncul" required="true" readonly="true" value="<?php echo($survey[0]['WTEL_NAME'])?>">
+                        <input class="form-control" id="witel" type="hidden" name="txtWtel" value="<?php echo($survey[0]['WTEL_ID'])?>">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class=" control-label">Sub Witel</label>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="Sub Witel" id="inputSubWitel" type="text" name="txtSwitMuncul" required="true" readonly="true" value="<?php echo($survey[0]['SWIT_NAME'])?>">
+                        <input class="form-control" id="subWitel" type="hidden" name="txtSwit"  value="<?php echo($survey[0]['SWIT_ID'])?>">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class=" control-label">Program</label>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="Program" id="inputProgram" type="text" name="txtProgMuncul" required="true" readonly="true" value="<?php echo($survey[0]['PROG_NAME'])?>">
+                        <input class="form-control" id="program" type="hidden" name="txtProg" value="<?php echo($survey[0]['PROG_ID'])?>">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class=" control-label">Nama Lokasi</label>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="Nama Lokasi" id="namaLokasi" type="text" name="txtLokasi" required="true" readonly="true" value="<?php echo($survey[0]['WODE_NAMA_LOKASI'])?>">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class=" control-label">Nilai Material</label>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="Nilai Material" type="number" name="txtMaterial" required="true" value="<?php echo($survey[0]['SURV_MATERIAL'])?>">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class=" control-label">Nilai Jasa</label>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="Nilai Jasa" type="number" name="txtJasa" required="true" value="<?php echo($survey[0]['SURV_JASA'])?>">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class=" control-label">Nilai Total</label>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="Nilai Total" type="number" name="txtTotal" required="true" value="<?php echo($survey[0]['SURV_TOTAL'])?>">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class=" control-label">Jumlah ODP</label>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtODP" required="true" value="<?php echo($survey[0]['SURV_ODP'])?>">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class=" control-label">Nama Surveyer</label>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="== Pilih Surveyer ==" name="txtSurveyerMuncul" id="myInput2" required="true" value="<?php echo($survey[0]['PEGA_NAME'])?>">
+                        <input class="form-control" id="txtSurveyer" type="hidden" name="txtSurveyer" value="<?php echo($survey[0]['PEGA_ID'])?>">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSurveyer">Search</button>
+            </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class=" control-label">NIK SUrveyer</label>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="NIK Surveyer" id="nik" type="text" name="txtNIK" required="true" readonly="true" value="<?php echo($survey[0]['PEGA_NIK'])?>">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class=" control-label">Tanggal Selesai Survey</label>
+                    <div>
+                      <span id="qty">
+                        <input class="form-control" type="date" name="dateSurvey" required="true" value="<?php echo($survey[0]['PEGA_NIK'])?>">  
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+            <label class="control-label">Status</label>
+            <div class="input-group">
+              <select name="txtStat" id="cmbStat" required="true" class="form-control">
+                <option value="0">== Pilih Status ==</option>
+                <?php  
+                  foreach ($status as $row){
+                    if ($row['STAT_ID'] == $survey[0]['SURV_STAT_ID']){
+                ?>
+                        <option value="<?php echo $row['STAT_ID'] ?>" selected><?php echo $row['STAT_NAME']?></option>
+                <?php
+                        } else {                               
+                ?>
+                            <option value="<?php echo $row['STAT_ID'] ?>" ><?php echo $row['STAT_NAME']?></option>
+                <?php
+                        }
+                  }
+                ?>
+              </select>
+            </div>
+          </div>
+                
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-10">
+                      <button type="reset" class="btn btn-danger pull-right">Cancel</button>
+                    </div>
+                    <div class="col-md-2">
+                      <button type="submit" class="btn btn-danger pull-right" data-toggle="modal" data-target="#modal-success2" onclick="modalKonfirmasiTakJadi()" >Input Data</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+        </div>
+      </div>
+        <!-- /.box -->
+    </div> <!-- col-input -->
+  </div>
+</div>
+<!-- /.content -->
 
 <!-- modal IDTA -->
-<div class="modal fade" id="modalIDTA" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalIDTASurvey" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="width:800px">
         <div class="modal-content">
             <div class="modal-header">
@@ -69,7 +162,7 @@
                         <th>Witel</th>
                         <th>Sub Witel</th>
                         <th>Program</th>
-                       	<th>Nama Lokasi</th>
+                        <th>Nama Lokasi</th>
                       </tr>
                     </thead>        
                     <tbody>
@@ -135,23 +228,80 @@
 </div>
 
 <script type="text/javascript">
-	$(document).on('click', '.isi', function (e) {
-		document.getElementById("txtIDTA").value 		= $(this).attr('data-id');
-        document.getElementById("myInput").value 		= $(this).attr('data-idta');
-        document.getElementById("namaLokasi").value 	= $(this).attr('data-lokasi');
-        document.getElementById("program").value 		= $(this).attr('data-program');
-        document.getElementById("inputProgram").value 	= $(this).attr('data-inputProgram');
-        document.getElementById("subWitel").value 		= $(this).attr('data-subWitel');
-        document.getElementById("inputSubWitel").value 	= $(this).attr('data-inputSubWitel');
-        document.getElementById("witel").value 			= $(this).attr('data-witel');
-        document.getElementById("inputWitel").value 	= $(this).attr('data-inputWitel');
-        $('#modalIDTA').modal('hide');
-	});
+  $(document).on('click', '.isi', function (e) {
+    document.getElementById("txtIDTA").value    = $(this).attr('data-id');
+        document.getElementById("myInput").value    = $(this).attr('data-idta');
+        document.getElementById("namaLokasi").value   = $(this).attr('data-lokasi');
+        document.getElementById("program").value    = $(this).attr('data-program');
+        document.getElementById("inputProgram").value   = $(this).attr('data-inputProgram');
+        document.getElementById("subWitel").value     = $(this).attr('data-subWitel');
+        document.getElementById("inputSubWitel").value  = $(this).attr('data-inputSubWitel');
+        document.getElementById("witel").value      = $(this).attr('data-witel');
+        document.getElementById("inputWitel").value   = $(this).attr('data-inputWitel');
+        $('#modalIDTASurvey').modal('hide');
+  });
 
     $(document).on('click', '.isi2', function (e) {
-		document.getElementById("txtSurveyer").value 		= $(this).attr('data-id2');
-        document.getElementById("myInput2").value 		= $(this).attr('data-pegawai');
-        document.getElementById("nik").value 			= $(this).attr('data-nik');
+    document.getElementById("txtSurveyer").value    = $(this).attr('data-id2');
+        document.getElementById("myInput2").value     = $(this).attr('data-pegawai');
+        document.getElementById("nik").value      = $(this).attr('data-nik');
         $('#modalSurveyer').modal('hide');        
     });
 </script>
+
+
+<!-- ========================================================================================================================================== -->
+
+<!-- <h3>Edit Survey</h3>
+<form action="<?php echo base_url().'C_survey/updateData/' .$survey[0]["SURV_ID"]; ?>" method="POST">
+	<label>ID TA</label>
+	<input name="txtIDTAMuncul" id="myInput" required="true" value="<?php echo($survey[0]['WODE_ID_TA'])?>">
+	<input id="txtIDTA" type="hidden" name="txtIDTA" >
+	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalIDTA">Search</button><br>	
+	<label>Witel</label>
+	<input id="inputWitel" type="text" name="txtWtelMuncul" required="true" readonly="true" value="<?php echo($survey[0]['WTEL_NAME'])?>">
+	<input id="witel" type="hidden" name="txtWtel" value="<?php echo($survey[0]['WTEL_ID'])?>"><br>
+	<label>Sub Witel</label>
+	<input id="inputSubWitel" type="text" name="txtSwitMuncul" required="true" readonly="true" value="<?php echo($survey[0]['SWIT_NAME'])?>">
+	<input id="subWitel" type="hidden" name="txtSwit" value="<?php echo($survey[0]['SWIT_ID'])?>"><br>
+	<label>Program</label>
+	<input id="inputProgram" type="text" name="txtProgMuncul" required="true" readonly="true" value="<?php echo($survey[0]['PROG_NAME'])?>">
+	<input id="program" type="hidden" name="txtProg" value="<?php echo($survey[0]['PROG_ID'])?>"><br>
+	<label>Nama Lokasi</label>
+	<input id="namaLokasi" type="text" name="txtLokasi" required="true" readonly="true" value="<?php echo($survey[0]['WODE_NAMA_LOKASI'])?>"><br>
+	<label>Nilai Material</label>
+	<input type="number" name="txtMaterial" required="true" value="<?php echo($survey[0]['SURV_MATERIAL'])?>"><br>
+	<label>Nilai Jasa</label>
+	<input type="number" name="txtJasa" required="true" value="<?php echo($survey[0]['SURV_JASA'])?>"><br>
+	<label>Nilai Total</label>
+	<input type="number" name="txtTotal" required="true" value="<?php echo($survey[0]['SURV_TOTAL'])?>"><br>
+	<label>Jumlah ODP</label>
+	<input type="number" name="txtODP" required="true" value="<?php echo($survey[0]['SURV_ODP'])?>"><br>
+	<label>Nama Surveyer</label>
+	<input name="txtSurveyerMuncul" id="myInput2" required="true" value="<?php echo($survey[0]['PEGA_NAME'])?>">
+	<input id="txtSurveyer" type="hidden" name="txtSurveyer" value="<?php echo($survey[0]['PEGA_ID'])?>">
+	<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSurveyer">Search</button><br>
+	<label>NIK Surveyer</label>
+	<input id="nik" type="text" name="txtNIK" required="true" readonly="true" value="<?php echo($survey[0]['PEGA_NIK'])?>"><br>
+	<label>Tanggal Selesai Survey</label>
+	<input type="date" name="dateSurvey" required="true" value="<?php echo($survey[0]['SURV_TANGGAL'])?>"><br>
+	<label>Status</label>
+	<select name="txtStat" id="cmbStat" required="true">
+		<option value="0">== Pilih Status ==</option>
+		<?php  
+			foreach ($status as $row){
+				if ($row['STAT_ID'] == $survey[0]['SURV_STAT_ID']){
+		?>
+		    		<option value="<?php echo $row['STAT_ID'] ?>" selected><?php echo $row['STAT_NAME']?></option>
+		<?php
+		        } else {                               
+		?>
+		           	<option value="<?php echo $row['STAT_ID'] ?>" ><?php echo $row['STAT_NAME']?></option>
+		<?php
+		        }
+			}
+		?>
+	</select> <br>
+	<button type="reset">Cancel</button>
+	<button type="submit">Input Data</button>
+</form> -->

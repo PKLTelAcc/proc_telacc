@@ -130,7 +130,7 @@
                   <div class="form-group">
             <label class="control-label">Status</label>
             <div class="input-group">
-              <select name="txtStat" id="cmbStat" required="true" class="form-control">
+              <select class="form-control" name="txtStat" id="cmbStat" required="true">
                 <option value="0">== Pilih Status ==</option>
                   <?php  
                     foreach ($status as $row){

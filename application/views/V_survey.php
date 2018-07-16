@@ -96,14 +96,14 @@
 	                  <label class=" control-label">Tanggal Selesai Survey</label>
 	                  <div>
 	                    <span id="qty">
-	                      <input type="date" name="dateSurvey" required="true">  
+	                      <input class="form-control" type="date" name="dateSurvey" required="true">  
 	                    </span>
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 						<label class="control-label">Status</label>
 						<div class="input-group">
-							<select name="txtStat" id="cmbStat" required="true" class="form-control">
+							<select class="form-control" name="txtStat" id="cmbStat" required="true" >
 								<option value="0">== Pilih Status ==</option>
 									<?php  
 										foreach ($status as $row){
