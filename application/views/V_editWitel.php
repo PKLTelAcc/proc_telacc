@@ -29,7 +29,7 @@
 	                    <button type="reset" class="btn btn-default pull-right">Cancel</button>
 	                  </div>
 	                  <div class="col-md-2">
-	                    <button type="submit" class="btn btn-danger pull-right" data-toggle="modal" data-target="#modal-success2" onclick="modalKonfirmasiTakJadi()" >Input Level</button>
+	                    <button type="submit" class="btn btn-danger pull-right" data-toggle="modal" data-target="#modal-success2" onclick="modalKonfirmasiTakJadi()" >Input Data</button>
 	                  </div>
 	                </div>
 	              </div>
@@ -49,3 +49,47 @@
 	</div>
 </div>
 <!-- /.content -->
+
+<!-- modal Witel -->
+<div class="modal fade" id="modalWtel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:800px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Data Witel</h4>
+            </div>
+            <div class="modal-body">
+                <table id="witel" class="table table-bordered table-hover table-striped">
+                    <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th>Witel</th>
+                      </tr>
+                    </thead>        
+                    <tbody>
+                      <?php 
+                      $no=1;
+                      foreach ($witel as $row) {
+                        ?>
+                          <tr class="search" style="cursor: pointer;" data-id = "<?=$row['WTEL_ID']?>">
+                            <td><?php echo $no?></td>
+                            <td><?php echo $row['WTEL_NAME']?></td>
+                          </tr>
+                        <?php
+                        $no++;
+                      }
+                      ?>
+                    </tbody>
+                </table>  
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+		$(document).on('click', '.search', function (e) {
+		document.getElementById("cmbWtel").value 		= $(this).attr('data-id');
+        $('#modalWtel').modal('hide');
+	});
+
+</script>

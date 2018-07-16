@@ -106,7 +106,7 @@
                 <h4 class="modal-title" id="myModalLabel">Data Work Order</h4>
             </div>
             <div class="modal-body">
-                <table id="lookup" class="table table-bordered table-hover table-striped">
+                <table id="surveyIDTA" class="table table-bordered table-hover table-striped">
                     <thead>
                       <tr>
                         <th>No.</th>
@@ -150,7 +150,7 @@
                 <h4 class="modal-title" id="myModalLabel">Data Surveyer</h4>
             </div>
             <div class="modal-body">
-                <table id="dataTableSurveyer" class="table table-bordered table-hover table-striped">
+                <table id="surveyer" class="table table-bordered table-hover table-striped">
                     <thead>
                       <tr>
                         <th>No.</th>

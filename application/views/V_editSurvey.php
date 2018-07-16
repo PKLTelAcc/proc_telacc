@@ -61,7 +61,7 @@
                 <h4 class="modal-title" id="myModalLabel">Data Work Order</h4>
             </div>
             <div class="modal-body">
-                <table id="lookup" class="table table-bordered table-hover table-striped">
+                <table id="surveyIDTA" class="table table-bordered table-hover table-striped">
                     <thead>
                       <tr>
                         <th>No.</th>
@@ -105,7 +105,7 @@
                 <h4 class="modal-title" id="myModalLabel">Data Surveyer</h4>
             </div>
             <div class="modal-body">
-                <table id="dataTableSurveyer" class="table table-bordered table-hover table-striped">
+                <table id="surveyer" class="table table-bordered table-hover table-striped">
                     <thead>
                       <tr>
                         <th>No.</th>
@@ -145,13 +145,13 @@
         document.getElementById("inputSubWitel").value 	= $(this).attr('data-inputSubWitel');
         document.getElementById("witel").value 			= $(this).attr('data-witel');
         document.getElementById("inputWitel").value 	= $(this).attr('data-inputWitel');
-        // $('#modalIDTA').modal('hide');
+        $('#modalIDTA').modal('hide');
 	});
 
     $(document).on('click', '.isi2', function (e) {
 		document.getElementById("txtSurveyer").value 		= $(this).attr('data-id2');
         document.getElementById("myInput2").value 		= $(this).attr('data-pegawai');
         document.getElementById("nik").value 			= $(this).attr('data-nik');
-        // $('#modalSurveyer').modal('hide');        
+        $('#modalSurveyer').modal('hide');        
     });
 </script>
