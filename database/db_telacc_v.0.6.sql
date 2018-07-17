@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2018 at 10:22 AM
+-- Generation Time: Jul 17, 2018 at 03:25 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -60,6 +60,13 @@ CREATE TABLE `level` (
   `LEVE_NAME` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `level`
+--
+
+INSERT INTO `level` (`LEVE_ID`, `LEVE_NAME`) VALUES
+(1, 'SUPER USER');
+
 -- --------------------------------------------------------
 
 --
@@ -83,6 +90,13 @@ CREATE TABLE `pegawai` (
   `PEGA_NIK` int(11) NOT NULL,
   `PEGA_PSA` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pegawai`
+--
+
+INSERT INTO `pegawai` (`PEGA_ID`, `PEGA_NAME`, `PEGA_NIK`, `PEGA_PSA`) VALUES
+(1, 'SUDO', 1, '001');
 
 -- --------------------------------------------------------
 
@@ -155,6 +169,13 @@ CREATE TABLE `user` (
   `USER_LEVE_ID` int(11) NOT NULL,
   `USER_PEGA_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`USER_ID`, `USER_NAME`, `USER_PASSWORD`, `USER_PICTURE`, `USER_TIMESTAMP`, `USER_LEVE_ID`, `USER_PEGA_ID`) VALUES
+(1, 'SUDO', '28a4437b86f15b3e4204252dd75327fe', '-', '2018-07-17 01:23:23', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -271,7 +292,7 @@ ALTER TABLE `instalasi`
 -- AUTO_INCREMENT for table `level`
 --
 ALTER TABLE `level`
-  MODIFY `LEVE_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `LEVE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `mitra`
@@ -283,7 +304,7 @@ ALTER TABLE `mitra`
 -- AUTO_INCREMENT for table `pegawai`
 --
 ALTER TABLE `pegawai`
-  MODIFY `PEGA_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `PEGA_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `program`
@@ -313,7 +334,7 @@ ALTER TABLE `survey`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `USER_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `USER_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `witel`
