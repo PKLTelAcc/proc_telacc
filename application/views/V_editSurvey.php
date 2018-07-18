@@ -96,7 +96,7 @@
                     <label class=" control-label">Tanggal Selesai Survey</label>
                     <div>
                       <span id="qty">
-                        <input class="form-control" type="date" name="dateSurvey" required="true" value="<?php echo($survey[0]['PEGA_NIK'])?>">  
+                        <input class="form-control" type="date" name="dateSurvey" required="true" value="<?php echo($survey[0]['SURV_TANGGAL'])?>">  
                       </span>
                     </div>
                   </div>
