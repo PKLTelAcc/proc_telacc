@@ -227,6 +227,41 @@
     </div>
 </div>
 
+<div class="modal fade" id="modalMitra" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:800px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Data instalasi</h4>
+            </div>
+            <div class="modal-body">
+                <table id="tableMitra" class="table table-bordered table-hover table-striped">
+                    <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th>Nama Mitra</th>
+                      </tr>
+                    </thead>        
+                    <tbody>
+                      <?php 
+                      $no=1;
+                      foreach ($mitra as $row) {
+                        ?>
+                          <tr class="isi3" style="cursor: pointer;" data-id3 = "<?=$row['MTRA_ID']?>" data-mitra="<?php echo $row['MTRA_NAME']; ?>">
+                            <td><?php echo $no?></td>
+                            <td><?php echo $row['MTRA_NAME']?></td>
+                          </tr>
+                        <?php
+                        $no++;
+                      }
+                      ?>
+                    </tbody>
+                </table>  
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
   $(document).on('click', '.isi', function (e) {
     document.getElementById("txtIDTA").value    = $(this).attr('data-id');
@@ -246,6 +281,10 @@
         document.getElementById("myInput2").value     = $(this).attr('data-pegawai');
         document.getElementById("nik").value      = $(this).attr('data-nik');
         $('#modalSurveyer').modal('hide');        
+    });
+       $(document).on('click', '.isi3', function (e) {
+    document.getElementById("cmbMitra").value     = $(this).attr('data-id3');
+        $('#modalMitra').modal('hide');        
     });
 </script>
 
