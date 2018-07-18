@@ -40,6 +40,30 @@
 	                  </div>
 	              </div>
 	              <div class="form-group">
+            <label class="control-label">Witel</label>
+            <div class="input-group">
+              <select name="txtWtel" id="cmbWtel" required="true" class="form-control">
+                <option value="0">== Pilih Witel ==</option>
+                  <?php  
+                    foreach ($witel as $row){
+                      if ($row['WTEL_ID'] == $pegawai[0]['PEGA_WTEL_ID']){
+                  ?>
+                          <option value="<?php echo $row['WTEL_ID'] ?>" selected><?php echo $row['WTEL_NAME']?></option>
+                  <?php
+                          } else {                               
+                  ?>
+                              <option value="<?php echo $row['WTEL_ID'] ?>" ><?php echo $row['WTEL_NAME']?></option>
+                  <?php
+                          }
+                    }
+                  ?>
+                </select>
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWodeWtel">Search</button>
+              </div>
+            </div>
+          </div>
+	              <div class="form-group">
 	                <div class="row">
 	                  <div class="col-md-10">
 	                    <button type="reset" class="btn btn-default pull-right">Cancel</button>
@@ -65,3 +89,46 @@
 	</div>
 </div>
 <!-- /.content -->
+
+<!-- modal WodeWtel -->
+<div class="modal fade" id="modalWodeWtel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:800px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Data Witel</h4>
+            </div>
+            <div class="modal-body">
+                <table id="tableWitel" class="table table-bordered table-hover table-striped">
+                    <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th>Witel</th>
+                      </tr>
+                    </thead>        
+                    <tbody>
+                      <?php 
+                      $no=1;
+                      foreach ($witel as $row) {
+                        ?>
+                          <tr class="search" style="cursor: pointer;" data-id = "<?=$row['WTEL_ID']?>">
+                            <td><?php echo $no?></td>
+                            <td><?php echo $row['WTEL_NAME']?></td>
+                          </tr>
+                        <?php
+                        $no++;
+                      }
+                      ?>
+                    </tbody>
+                </table>  
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).on('click', '.search', function (e) {
+    document.getElementById("cmbWtel").value    = $(this).attr('data-id');
+        $('#modalWodeWtel').modal('hide');
+  });
+</script>
