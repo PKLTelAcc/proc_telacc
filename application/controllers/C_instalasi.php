@@ -82,7 +82,7 @@ class C_instalasi extends CI_Controller
 
 	public function formUpdate($id)
 	{
-		$INSTey=$this->M_instalasi->update($id);
+		$instalasi=$this->M_instalasi->update($id);
 		$witel=$this->M_instalasi->getWitel();
 		$subWitel=$this->M_instalasi->getSubWitel();
 		$program=$this->M_instalasi->getProgram();

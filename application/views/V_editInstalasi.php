@@ -4,7 +4,7 @@
     <div class="col-md-12">
       <div class="box box-danger">
         <div class="box-header with-border">
-          <h3 class="box-title">Input Survey</h3>
+          <h3 class="box-title">Input Instalasi</h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -14,7 +14,7 @@
         <div class="box-body">
           <div class="row">
             <div class="col-md-12 ">
-              <form action="<?php echo base_url().'C_survey/updateData/' .$survey[0]["SURV_ID"]; ?>" method="POST">
+              <form action="<?php echo base_url().'C_Instalasi/updateData/' .$Instalasi[0]["INST_ID"]; ?>" method="POST">
                 <div class="form-group">
                     <label class=" control-label">ID TA</label>
                     <div class="input-group">
@@ -29,74 +29,74 @@
                     <label class=" control-label">Witel</label>
                     <div>
                         <input class="form-control" placeholder="Witel" id="inputWitel" type="text" name="txtWtelMuncul" required="true" readonly="true" value="<?php echo($survey[0]['WTEL_NAME'])?>">
-                        <input class="form-control" id="witel" type="hidden" name="txtWtel" value="<?php echo($survey[0]['WTEL_ID'])?>">
+                        <input class="form-control" id="witel" type="hidden" name="txtWtel" value="<?php echo($instalasi[0]['WTEL_ID'])?>">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class=" control-label">Sub Witel</label>
                     <div>
-                        <input class="form-control" placeholder="Sub Witel" id="inputSubWitel" type="text" name="txtSwitMuncul" required="true" readonly="true" value="<?php echo($survey[0]['SWIT_NAME'])?>">
-                        <input class="form-control" id="subWitel" type="hidden" name="txtSwit"  value="<?php echo($survey[0]['SWIT_ID'])?>">
+                        <input class="form-control" placeholder="Sub Witel" id="inputSubWitel" type="text" name="txtSwitMuncul" required="true" readonly="true" value="<?php echo($instalasi[0]['SWIT_NAME'])?>">
+                        <input class="form-control" id="subWitel" type="hidden" name="txtSwit"  value="<?php echo($instalasi[0]['SWIT_ID'])?>">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class=" control-label">Program</label>
                     <div>
-                        <input class="form-control" placeholder="Program" id="inputProgram" type="text" name="txtProgMuncul" required="true" readonly="true" value="<?php echo($survey[0]['PROG_NAME'])?>">
-                        <input class="form-control" id="program" type="hidden" name="txtProg" value="<?php echo($survey[0]['PROG_ID'])?>">
+                        <input class="form-control" placeholder="Program" id="inputProgram" type="text" name="txtProgMuncul" required="true" readonly="true" value="<?php echo($instalasi[0]['PROG_NAME'])?>">
+                        <input class="form-control" id="program" type="hidden" name="txtProg" value="<?php echo($instalasi[0]['PROG_ID'])?>">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class=" control-label">Nama Lokasi</label>
                     <div>
-                        <input class="form-control" placeholder="Nama Lokasi" id="namaLokasi" type="text" name="txtLokasi" required="true" readonly="true" value="<?php echo($survey[0]['WODE_NAMA_LOKASI'])?>">
+                        <input class="form-control" placeholder="Nama Lokasi" id="namaLokasi" type="text" name="txtLokasi" required="true" readonly="true" value="<?php echo($instalasi[0]['WODE_NAMA_LOKASI'])?>">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class=" control-label">Nilai Material</label>
                     <div>
-                        <input class="form-control" placeholder="Nilai Material" type="number" name="txtMaterial" required="true" value="<?php echo($survey[0]['SURV_MATERIAL'])?>">
+                        <input class="form-control" placeholder="Nilai Material" type="number" name="txtMaterial" required="true" value="<?php echo($instalasi[0]['INST_MATERIAL'])?>">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class=" control-label">Nilai Jasa</label>
                     <div>
-                        <input class="form-control" placeholder="Nilai Jasa" type="number" name="txtJasa" required="true" value="<?php echo($survey[0]['SURV_JASA'])?>">
+                        <input class="form-control" placeholder="Nilai Jasa" type="number" name="txtJasa" required="true" value="<?php echo($instalasi[0]['INST_JASA'])?>">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class=" control-label">Nilai Total</label>
                     <div>
-                        <input class="form-control" placeholder="Nilai Total" type="number" name="txtTotal" required="true" value="<?php echo($survey[0]['SURV_TOTAL'])?>">
+                        <input class="form-control" placeholder="Nilai Total" type="number" name="txtTotal" required="true" value="<?php echo($instalasi[0]['INST_TOTAL'])?>">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class=" control-label">Jumlah ODP</label>
                     <div>
-                        <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtODP" required="true" value="<?php echo($survey[0]['SURV_ODP'])?>">
+                        <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtODP" required="true" value="<?php echo($instalasi[0]['INST_ODP'])?>">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class=" control-label">Nama Surveyer</label>
+                    <label class=" control-label">Nama Pangwas</label>
                     <div class="input-group">
-                        <input class="form-control" placeholder="== Pilih Surveyer ==" name="txtSurveyerMuncul" id="myInput2" required="true" value="<?php echo($survey[0]['PEGA_NAME'])?>">
-                        <input class="form-control" id="txtSurveyer" type="hidden" name="txtSurveyer" value="<?php echo($survey[0]['PEGA_ID'])?>">
+                        <input class="form-control" placeholder="== Pilih Surveyer ==" name="txtSurveyerMuncul" id="myInput2" required="true" value="<?php echo($instalsai[0]['PEGA_NAME'])?>">
+                        <input class="form-control" id="txtSurveyer" type="hidden" name="txtSurveyer" value="<?php echo($instalasi0]['PEGA_ID'])?>">
             <div class="input-group-btn">
               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSurveyer">Search</button>
             </div>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class=" control-label">NIK SUrveyer</label>
+                    <label class=" control-label">NIK Pangwas</label>
                     <div>
-                        <input class="form-control" placeholder="NIK Surveyer" id="nik" type="text" name="txtNIK" required="true" readonly="true" value="<?php echo($survey[0]['PEGA_NIK'])?>">
+                        <input class="form-control" placeholder="NIK Surveyer" id="nik" type="text" name="txtNIK" required="true" readonly="true" value="<?php echo($instalasi[0]['PEGA_NIK'])?>">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class=" control-label">Tanggal Selesai Survey</label>
                     <div>
                       <span id="qty">
-                        <input class="form-control" type="date" name="dateSurvey" required="true" value="<?php echo($survey[0]['PEGA_NIK'])?>">  
+                        <input class="form-control" type="date" name="dateSurvey" required="true" value="<?php echo($instalasi[0]['PEGA_NIK'])?>">  
                       </span>
                     </div>
                   </div>
@@ -107,7 +107,7 @@
                 <option value="0">== Pilih Status ==</option>
                 <?php  
                   foreach ($status as $row){
-                    if ($row['STAT_ID'] == $survey[0]['SURV_STAT_ID']){
+                    if ($row['STAT_ID'] == $instalasi[0]['INST_STAT_ID']){
                 ?>
                         <option value="<?php echo $row['STAT_ID'] ?>" selected><?php echo $row['STAT_NAME']?></option>
                 <?php
