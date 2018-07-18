@@ -45,5 +45,38 @@ class M_subWitel extends CI_Model
 		$this->db->delete('sub_witel');
 	}
 
+	public function cekWtel($data)
+	{
+		$sql = "SELECT * FROM witel WHERE WTEL_NAME ='".$data."'";
+		$query = $this->db->query($sql);
+		$return = $query->row();
+		return $return;
+	}
+	public function insertWtel($data)
+	{
+		$this->db->insert('witel',$data);
+		
+	}
+
+	public function ambilID($data)
+	{
+		$sql = "SELECT * FROM witel WHERE WTEL_NAME ='".$data."'";
+		$query = $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
+
+	public function cekData($data)
+	{
+		$sql = "SELECT * FROM sub_witel WHERE SWIT_NAME ='".$data."'";
+		$query = $this->db->query($sql);
+		$return = $query->row();
+		return $return;
+	}
+
+	public function insertData($data)
+	{
+		$this->db->insert('sub_witel',$data);
+	}
 }
 ?>

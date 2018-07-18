@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 18, 2018 at 06:08 AM
+-- Generation Time: Jul 18, 2018 at 06:47 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -357,6 +357,136 @@ CREATE TABLE `sub_witel` (
   `SWIT_WTEL_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `sub_witel`
+--
+
+INSERT INTO `sub_witel` (`SWIT_ID`, `SWIT_NAME`, `SWIT_WTEL_ID`) VALUES
+(1, 'BDK', 7),
+(2, 'CCD', 7),
+(3, 'CJA', 7),
+(4, 'DGO', 7),
+(5, 'GGK', 7),
+(6, 'HGM', 7),
+(7, 'LBG', 7),
+(8, 'TAS', 7),
+(9, 'TLE', 7),
+(10, 'TRG', 7),
+(11, 'UBR', 7),
+(12, 'SMD', 7),
+(13, 'BJA', 8),
+(14, 'BTJ', 8),
+(15, 'CCL', 8),
+(16, 'CKW', 8),
+(17, 'CLL', 8),
+(18, 'CPT', 8),
+(19, 'CSA', 8),
+(20, 'CWD', 8),
+(21, 'GNH', 8),
+(22, 'LEM', 8),
+(23, 'MJY', 8),
+(24, 'NJG', 8),
+(25, 'PCH', 8),
+(26, 'PNL', 8),
+(27, 'RCK', 8),
+(28, 'RJW', 8),
+(29, 'SOR', 8),
+(30, 'CMI', 8),
+(31, 'CBE', 9),
+(32, 'CJG', 9),
+(33, 'CJR', 9),
+(34, 'CKK', 9),
+(35, 'SDL', 9),
+(36, 'SGA', 9),
+(37, 'SKM', 9),
+(38, 'TGE', 9),
+(39, 'BGL', 9),
+(40, 'CBD', 9),
+(41, 'CCR', 9),
+(42, 'CKB', 9),
+(43, 'CMO', 9),
+(44, 'JPK', 9),
+(45, 'KLU', 9),
+(46, 'NLD', 9),
+(47, 'PLR', 9),
+(48, 'SGN', 9),
+(49, 'SKB', 9),
+(50, 'BNJ', 10),
+(51, 'BJS', 10),
+(52, 'CMS', 10),
+(53, 'KAW', 10),
+(54, 'PAX', 10),
+(55, 'CBT', 10),
+(56, 'CKJ', 10),
+(57, 'CSP', 10),
+(58, 'GRU', 10),
+(59, 'KDN', 10),
+(60, 'LAG', 10),
+(61, 'MLB', 10),
+(62, 'PMP', 10),
+(63, 'WNR', 10),
+(64, 'CBL', 10),
+(65, 'CIW', 10),
+(66, 'KNU', 10),
+(67, 'MNJ', 10),
+(68, 'RJP', 10),
+(69, 'SPA', 10),
+(70, 'TSM', 10),
+(71, 'AWN', 11),
+(72, 'CBN', 11),
+(73, 'CKC', 11),
+(74, 'CKY', 11),
+(75, 'JBN', 11),
+(76, 'LOS', 11),
+(77, 'PAB', 11),
+(78, 'PRD', 11),
+(79, 'SDU', 11),
+(80, 'BON', 11),
+(81, 'HAR', 11),
+(82, 'IMY', 11),
+(83, 'JTB', 11),
+(84, 'KRM', 11),
+(85, 'LSR', 11),
+(86, 'PTR', 11),
+(87, 'CLI', 11),
+(88, 'KNG', 11),
+(89, 'CKI', 11),
+(90, 'JTW', 11),
+(91, 'KAD', 11),
+(92, 'MJL', 11),
+(93, 'RGA', 11),
+(94, 'CKP', 12),
+(95, 'CLM', 12),
+(96, 'CPL', 12),
+(97, 'KLI', 12),
+(98, 'KRL', 12),
+(99, 'KRW', 12),
+(100, 'RDK', 12),
+(101, 'TLJ', 12),
+(102, 'WDS', 12),
+(103, 'CBU', 12),
+(104, 'JTS', 12),
+(105, 'PLD', 12),
+(106, 'PWK', 12),
+(107, 'CAS', 12),
+(108, 'JCG', 12),
+(109, 'KIA', 12),
+(110, 'PBS', 12),
+(111, 'PGD', 12),
+(112, 'PMN', 12),
+(113, 'SUB', 12),
+(114, 'BAY', 13),
+(115, 'BJG', 13),
+(116, 'BPB', 13),
+(117, 'JBE', 13),
+(118, 'LBU', 13),
+(119, 'LWD', 13),
+(120, 'MEN', 13),
+(121, 'MLP', 13),
+(122, 'PDG', 13),
+(123, 'RKS', 13),
+(124, 'SKE', 13);
+
 -- --------------------------------------------------------
 
 --
@@ -418,12 +548,19 @@ CREATE TABLE `witel` (
 --
 
 INSERT INTO `witel` (`WTEL_ID`, `WTEL_NAME`) VALUES
-(1, 'WITEL BANDUNG'),
-(2, 'WITEL TASIKMALAYA'),
-(3, 'WITEL BANDUNG BARAT'),
-(4, 'WITEL CIREBON'),
-(5, 'WITEL KARAWANG'),
-(6, 'WITEL SUKABUMI');
+(1, ' BANDUNG'),
+(2, ' TASIKMALAYA'),
+(3, ' BANDUNG BARAT'),
+(4, ' CIREBON'),
+(5, ' KARAWANG'),
+(6, ' SUKABUMI'),
+(7, 'BANDUNG'),
+(8, 'BANDUNG BARAT'),
+(9, 'JABAR SELATAN'),
+(10, 'JABAR TIMSEL'),
+(11, 'JABAR TIMUR'),
+(12, 'JABAR UTARA'),
+(13, 'NYASAR');
 
 -- --------------------------------------------------------
 
@@ -559,7 +696,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `sub_witel`
 --
 ALTER TABLE `sub_witel`
-  MODIFY `SWIT_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `SWIT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
 
 --
 -- AUTO_INCREMENT for table `survey`
@@ -577,7 +714,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `witel`
 --
 ALTER TABLE `witel`
-  MODIFY `WTEL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `WTEL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `work_order`
