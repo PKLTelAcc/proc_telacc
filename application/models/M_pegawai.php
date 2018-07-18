@@ -70,7 +70,7 @@ class M_pegawai extends CI_Model
 
 	public function cekData($data)
 	{
-		$sql = "SELECT * FROM pegawai WHERE PEGA_NIK ='".$data."'";
+		$sql = "SELECT * FROM pegawai WHERE PEGA_ID_OBJ =".$data."'";
 		$query = $this->db->query($sql);
 		$return = $query->row();
 		return $return;

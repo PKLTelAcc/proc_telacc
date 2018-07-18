@@ -146,7 +146,7 @@ class C_pegawai extends CI_Controller
      "PEGA_WTEL_ID"=> $ambilID[0]["WTEL_ID"]
     );
 
-     $cekData=$this->M_pegawai->cekData($rowData[0][2]);
+     $cekData=$this->M_pegawai->cekData($rowData[0][0]);
 
      //jika data duplicate ditemukan
      if ($cekData!=null) {
