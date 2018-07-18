@@ -14,12 +14,12 @@
         <div class="box-body">
           <div class="row">
             <div class="col-md-12 ">
-              <form action="<?php echo base_url().'C_Instalasi/updateData/' .$Instalasi[0]["INST_ID"]; ?>" method="POST">
+              <form action="<?php echo base_url().'C_Instalasi/updateData/' .$instalasi[0]["INST_ID"]; ?>" method="POST">
                 <div class="form-group">
                     <label class=" control-label">ID TA</label>
                     <div class="input-group">
-                        <input class="form-control" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true" value="<?php echo($survey[0]['WODE_ID_TA'])?>">
-                        <input class="form-control" id="txtIDTA" type="hidden" name="txtIDTA" value="<?php echo($survey[0]['WTEL_ID'])?>">
+                        <input class="form-control" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true" value="<?php echo($instalasi[0]['WODE_ID_TA'])?>">
+                        <input class="form-control" id="txtIDTA" type="hidden" name="txtIDTA" value="<?php echo($instalasi[0]['WTEL_ID'])?>">
             <div class="input-group-btn">
               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalIDTASurvey">Search</button>
             </div>
@@ -28,7 +28,7 @@
                   <div class="form-group">
                     <label class=" control-label">Witel</label>
                     <div>
-                        <input class="form-control" placeholder="Witel" id="inputWitel" type="text" name="txtWtelMuncul" required="true" readonly="true" value="<?php echo($survey[0]['WTEL_NAME'])?>">
+                        <input class="form-control" placeholder="Witel" id="inputWitel" type="text" name="txtWtelMuncul" required="true" readonly="true" value="<?php echo($instalasi[0]['WTEL_NAME'])?>">
                         <input class="form-control" id="witel" type="hidden" name="txtWtel" value="<?php echo($instalasi[0]['WTEL_ID'])?>">
                     </div>
                   </div>
@@ -79,8 +79,8 @@
                   <div class="form-group">
                     <label class=" control-label">Nama Pangwas</label>
                     <div class="input-group">
-                        <input class="form-control" placeholder="== Pilih Surveyer ==" name="txtSurveyerMuncul" id="myInput2" required="true" value="<?php echo($instalsai[0]['PEGA_NAME'])?>">
-                        <input class="form-control" id="txtSurveyer" type="hidden" name="txtSurveyer" value="<?php echo($instalasi0]['PEGA_ID'])?>">
+                        <input class="form-control" placeholder="== Pilih Pangwas ==" name="txtSurveyerMuncul" id="myInput2" required="true" value="<?php echo($instalasi[0]['PEGA_NAME'])?>">
+                        <input class="form-control" id="txtSurveyer" type="hidden" name="txtSurveyer" value="<?php echo($instalasi[0]['PEGA_ID'])?>">
             <div class="input-group-btn">
               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSurveyer">Search</button>
             </div>
@@ -93,13 +93,45 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class=" control-label">Tanggal Selesai Survey</label>
+            <label class="control-label">Mitra</label>
+            <div>
+              <select name="txtMitra" id="cmbStat" required="true" class="form-control">
+                <option value="0">== Pilih Status ==</option>
+                <?php  
+                  foreach ($mitra as $row){
+                    if ($row['STAT_ID'] == $instalasi[0]['INST_MTRA_ID']){
+                ?>
+                        <option value="<?php echo $row['MTRA_ID'] ?>" selected><?php echo $row['MTRA_NAME']?></option>
+                <?php
+                        } else {                               
+                ?>
+                            <option value="<?php echo $row['MTRA_ID'] ?>" ><?php echo $row['MTRA_NAME']?></option>
+                <?php
+                        }
+                  }
+                ?>
+              </select>
+            </div>
+          </div>
+
+
+                  <div class="form-group">
+                    <label class=" control-label">Tanggal Selesai Instalasi</label>
                     <div>
                       <span id="qty">
-                        <input class="form-control" type="date" name="dateSurvey" required="true" value="<?php echo($instalasi[0]['PEGA_NIK'])?>">  
+                        <input class="form-control" type="date" name="dateSurvey" required="true" value="<?php echo($instalasi[0]['INST_TANGGAL'])?>">  
                       </span>
                     </div>
                   </div>
+                  <div class="form-group">
+                    <label class=" control-label">Target Selesai Instalasi</label>
+                    <div>
+                      <span id="qty">
+                        <input class="form-control" type="date" name="dateTarget" required="true" value="<?php echo($instalasi[0]['INST_TARGET'])?>">  
+                      </span>
+                    </div>
+                  </div>
+
                   <div class="form-group">
             <label class="control-label">Status</label>
             <div>
@@ -121,7 +153,23 @@
               </select>
             </div>
           </div>
-                
+                </div>
+                    <div class="form-group">
+                    <label class=" control-label">Progres</label>
+                    <div>
+                      <span id="qty">
+                        <textarea class="form-control" type="text" name="txtprogres" placeholder="Alamat Lokasi" value="<?php echo($instalasi[0]['INST_PROGRES'])?>"></textarea>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class=" control-label">Kendala</label>
+                    <div>
+                      <span id="qty">
+                        <textarea class="form-control" type="text" name="txtkendala" placeholder="Alamat Lokasi value="<?php echo($instalasi[0]['INST_KENDALA'])?>""></textarea>
+                      </span>
+                    </div>
+                  </div>
                 <div class="form-group">
                   <div class="row">
                     <div class="col-md-10">

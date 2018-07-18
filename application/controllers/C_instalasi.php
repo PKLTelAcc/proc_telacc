@@ -89,10 +89,11 @@ class C_instalasi extends CI_Controller
 		$status=$this->M_instalasi->getStatus();
 		$workOrder=$this->M_instalasi->getWorkOrder();
 		$pegawai=$this->M_instalasi->getPegawai();
+		$mitra=$this->M_instalasi->getMitra();
 		$data = array(
 			'title' 	=> 'Edit Instalasi',
 			'content'	=> 'V_editInstalasi',
-			'survey'	=> $survey,
+			'instalasi'	=> $instalasi,
 			'witel'		=> $witel,
 			'subWitel'	=> $subWitel,
 			'program'	=> $program,
@@ -114,7 +115,7 @@ class C_instalasi extends CI_Controller
 		$jasa 		= $_POST['txtJasa'];
 		$total 		= $_POST['txtTotal'];
 		$odp 		= $_POST['txtODP'];
-		$surveyer 	= $_POST['txtsurveyer'];
+		$surveyer 	= $_POST['txtSurveyer'];
 		$mitra 		= $_POST['txtMitra'];
 		// $nik 		= $_POST['txtNIK'];
 		$date 		= $_POST['dateSurvey'];
@@ -143,7 +144,7 @@ class C_instalasi extends CI_Controller
 			'INST_PROGRES'		=> $progres,
 			'INST_KENDALA'		=> $kendala
 		);
-		$Iinstalasi=$this->M_instalasi->updateData($id,$data);
+		$instalasi=$this->M_instalasi->updateData($id,$data);
 		redirect('C_instalasi');
 	}
 
