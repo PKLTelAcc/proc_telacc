@@ -79,5 +79,12 @@ class M_instalasi extends CI_Model
 	{
 		$this->db->where('INST_ID', $id);
 	}
+	public function getProgram()
+	{
+		$sql = "SELECT * FROM program";
+		$query=$this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
 }
 ?>
