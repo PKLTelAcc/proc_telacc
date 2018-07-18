@@ -47,5 +47,7 @@
         //program
         $("#tableProgram").dataTable();
 
+        //mitra
+        $("#tableMitra").dataTable();
     });
 </script>
