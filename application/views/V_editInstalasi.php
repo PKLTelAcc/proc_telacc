@@ -77,9 +77,9 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class=" control-label">Nama Pangwas</label>
+                    <label class=" control-label">Nama Waspang</label>
                     <div class="input-group">
-                        <input class="form-control" placeholder="== Pilih Pangwas ==" name="txtSurveyerMuncul" id="myInput2" required="true" value="<?php echo($instalasi[0]['PEGA_NAME'])?>">
+                        <input class="form-control" placeholder="== Pilih Waspang ==" name="txtSurveyerMuncul" id="myInput2" required="true" readonly="true"> value="<?php echo($instalasi[0]['PEGA_NAME'])?>">
                         <input class="form-control" id="txtSurveyer" type="hidden" name="txtSurveyer" value="<?php echo($instalasi[0]['PEGA_ID'])?>">
             <div class="input-group-btn">
               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSurveyer">Search</button>
@@ -87,7 +87,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class=" control-label">NIK Pangwas</label>
+                    <label class=" control-label">NIK Waspang</label>
                     <div>
                         <input class="form-control" placeholder="NIK Surveyer" id="nik" type="text" name="txtNIK" required="true" readonly="true" value="<?php echo($instalasi[0]['PEGA_NIK'])?>">
                     </div>
@@ -119,7 +119,7 @@
                     <label class=" control-label">Tanggal Selesai Instalasi</label>
                     <div>
                       <span id="qty">
-                        <input class="form-control" type="date" name="dateSurvey" required="true" value="<?php echo($instalasi[0]['INST_TANGGAL'])?>">  
+                        <input class="form-control" type="date" name="dateInstalasi" required="true" value="<?php echo($instalasi[0]['INST_TANGGAL'])?>">  
                       </span>
                     </div>
                   </div>
@@ -158,7 +158,7 @@
                     <label class=" control-label">Progres</label>
                     <div>
                       <span id="qty">
-                        <textarea class="form-control" type="text" name="txtprogres" placeholder="Alamat Lokasi" value="<?php echo($instalasi[0]['INST_PROGRES'])?>"></textarea>
+                        <textarea class="form-control" type="text" name="txtprogres" placeholder="Progres" value="<?php echo($instalasi[0]['INST_PROGRES'])?>"></textarea>
                       </span>
                     </div>
                   </div>
@@ -166,7 +166,7 @@
                     <label class=" control-label">Kendala</label>
                     <div>
                       <span id="qty">
-                        <textarea class="form-control" type="text" name="txtkendala" placeholder="Alamat Lokasi value="<?php echo($instalasi[0]['INST_KENDALA'])?>""></textarea>
+                        <textarea class="form-control" type="text" name="txtkendala" placeholder="Kendala" value="<?php echo($instalasi[0]['INST_KENDALA'])?>""></textarea>
                       </span>
                     </div>
                   </div>
@@ -371,7 +371,7 @@
 	<label>NIK Surveyer</label>
 	<input id="nik" type="text" name="txtNIK" required="true" readonly="true" value="<?php echo($survey[0]['PEGA_NIK'])?>"><br>
 	<label>Tanggal Selesai Survey</label>
-	<input type="date" name="dateSurvey" required="true" value="<?php echo($survey[0]['SURV_TANGGAL'])?>"><br>
+	<input type="date" name="dateInstalasi" required="true" value="<?php echo($survey[0]['SURV_TANGGAL'])?>"><br>
 	<label>Status</label>
 	<select name="txtStat" id="cmbStat" required="true">
 		<option value="0">== Pilih Status ==</option>

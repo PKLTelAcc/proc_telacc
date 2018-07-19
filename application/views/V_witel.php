@@ -58,7 +58,7 @@
 					<tr>
 						<th>No.</th>
 						<th>witel</th>
-						<th style="text-align: center">Action </th>
+						<th style="text-align: center;">Action </th>
 					</tr>
 				</thead>
 				<tbody>

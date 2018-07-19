@@ -50,7 +50,7 @@ class C_instalasi extends CI_Controller
 		$surveyer 	= $_POST['txtSurveyer'];
 		$mitra 		= $_POST['txtMitra'];
 		// $nik 		= $_POST['txtNIK'];
-		$date 		= $_POST['dateSurvey'];
+		$date 		= $_POST['dateInstalasi'];
 		$target		= $_POST['dateTarget'];
 		$status 	= $_POST['txtStat'];
 		$program 	= $_POST['txtProg'];
@@ -118,7 +118,7 @@ class C_instalasi extends CI_Controller
 		$surveyer 	= $_POST['txtSurveyer'];
 		$mitra 		= $_POST['txtMitra'];
 		// $nik 		= $_POST['txtNIK'];
-		$date 		= $_POST['dateSurvey'];
+		$date 		= $_POST['dateInstalasi'];
 		$target		= $_POST['dateTarget'];
 		$status 	= $_POST['txtStat'];
 		$program 	= $_POST['txtProg'];

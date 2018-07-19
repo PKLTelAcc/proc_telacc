@@ -79,7 +79,7 @@
                   <div class="form-group">
                     <label class=" control-label">Nama Surveyer</label>
                     <div class="input-group">
-                        <input class="form-control" placeholder="== Pilih Surveyer ==" name="txtSurveyerMuncul" id="myInput2" required="true" value="<?php echo($survey[0]['PEGA_NAME'])?>">
+                        <input class="form-control" placeholder="== Pilih Surveyer ==" name="txtSurveyerMuncul" id="myInput2" required="true" readonly="true"> value="<?php echo($survey[0]['PEGA_NAME'])?>">
                         <input class="form-control" id="txtSurveyer" type="hidden" name="txtSurveyer" value="<?php echo($survey[0]['PEGA_ID'])?>">
             <div class="input-group-btn">
               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSurveyer">Search</button>

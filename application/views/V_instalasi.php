@@ -79,7 +79,7 @@
 	              	<div class="form-group">
 	                  <label class=" control-label">Nama Waspang</label>
 	                  <div class="input-group">
-	                      <input class="form-control" placeholder="== Pilih Surveyer ==" name="txtSurveyerMuncul" id="myInput2" required="true">
+	                      <input class="form-control" placeholder="== Pilih Waspang ==" name="txtSurveyerMuncul" id="myInput2" required="true" readonly="true">
 	                      <input class="form-control" id="txtSurveyer" type="hidden" name="txtSurveyer">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSurveyer">Search</button>
@@ -114,7 +114,7 @@
 	                  <label class=" control-label">Tanggal Selesai Instalasi</label>
 	                  <div>
 	                    <span id="qty">
-	                      <input class="form-control" type="date" name="dateSurvey" required="true">  
+	                      <input class="form-control" type="date" name="dateInstalasi" required="true">  
 	                    </span>
 	                  </div>
 	              	</div>
@@ -145,7 +145,7 @@
 	                  <label class=" control-label">Progres</label>
 	                  <div>
 	                    <span id="qty">
-	                      <textarea class="form-control" type="text" name="txtprogres" placeholder="Alamat Lokasi"></textarea>
+	                      <textarea class="form-control" type="text" name="txtprogres" placeholder="Progres"></textarea>
 	                    </span>
 	                  </div>
 	              	</div>
@@ -153,7 +153,7 @@
 	                  <label class=" control-label">Kendala</label>
 	                  <div>
 	                    <span id="qty">
-	                      <textarea class="form-control" type="text" name="txtkendala" placeholder="Alamat Lokasi"></textarea>
+	                      <textarea class="form-control" type="text" name="txtkendala" placeholder="Kendala"></textarea>
 	                    </span>
 	                  </div>
 	              	</div>
@@ -428,7 +428,7 @@
 	<label>NIK Surveyer</label>
 	<input id="nik" type="text" name="txtNIK" required="true" readonly="true"><br>
 	<label>Tanggal Selesai Survey</label>
-	<input type="date" name="dateSurvey" required="true"><br>
+	<input type="date" name="dateInstalasi" required="true"><br>
 	<label>Status</label>
 	<select name="txtStat" id="cmbStat" required="true">
 		<option value="0">== Pilih Status ==</option>
