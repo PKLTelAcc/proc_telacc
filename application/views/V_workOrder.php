@@ -25,8 +25,8 @@
 	              	</div>
 		            <div class="form-group">
 						<label class="control-label">Witel</label>
-						<div class="input-group readonly">
-						  <input class="form-control" placeholder="== Pilih Witel ==" name="txtWtelMuncul" id="myInput" required="true">
+						<div class="input-group">
+						  <input class="form-control readonly" placeholder="== Pilih Witel ==" name="txtWtelMuncul" id="myInput" required="true">
 	                      <input class="form-control" id="txtWtel" type="hidden" name="txtWtel">
 							<!-- <select name="txtWtel" id="cmbWtel" required="true" class="form-control">
 							  <option value="0">== Pilih Witel ==</option>

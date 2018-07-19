@@ -26,7 +26,9 @@
                 <div class="form-group">
             <label class="control-label">Witel</label>
             <div class="input-group">
-              <select name="txtWtel" id="cmbWtel" required="true" class="form-control">
+              <input class="form-control readonly" placeholder="== Pilih Witel ==" name="txtWtelMuncul" id="myInput" required="true" value="<?php echo($witel[0]['WTEL_NAME'])?>">
+                        <input class="form-control" id="txtWtel" type="hidden" name="txtWtel" value="<?php echo($witel[0]['WTEL_ID'])?>">
+              <!-- <select name="txtWtel" id="cmbWtel" required="true" class="form-control">
                 <option value="0">== Pilih Witel ==</option>
                   <?php  
                     foreach ($witel as $row){
@@ -41,7 +43,7 @@
                           }
                     }
                   ?>
-                </select>
+                </select> -->
               <div class="input-group-btn">
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWodeWtel">Search</button>
               </div>
@@ -50,7 +52,9 @@
           <div class="form-group">
             <label class="control-label">Sub Witel</label>
             <div class="input-group">
-              <select name="txtSwit" id="cmbSwit" required="true" class="form-control">
+              <input class="form-control readonly" placeholder="== Pilih Sub Witel ==" name="txtSwitMuncul" id="myInput2" required="true" value="<?php echo($subWitel[0]['SWIT_NAME'])?>">
+              <input class="form-control" id="txtSwit" type="hidden" name="txtSwit" value="<?php echo($subWitel[0]['SWIT_ID'])?>">
+              <!-- <select name="txtSwit" id="cmbSwit" required="true" class="form-control">
                 <option value="0">== Pilih Sub Witel ==</option>
                   <?php  
                     foreach ($subWitel as $row){
@@ -65,7 +69,7 @@
                           }
                     }
                   ?>
-                </select>
+                </select> -->
               <div class="input-group-btn">
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWodeSwit">Search</button>
               </div>
@@ -74,7 +78,9 @@
           <div class="form-group">
             <label class="control-label">Program</label>
             <div class="input-group">
-              <select name="txtProg" id="cmbProg" required="true" class="form-control">
+              <input class="form-control readonly" placeholder="== Pilih Program ==" name="txtProgMuncul" id="myInput3" required="true" value="<?php echo($program[0]['PROG_NAME'])?>">
+              <input class="form-control" id="txtProg" type="hidden" name="txtProg" value="<?php echo($program[0]['PROG_ID'])?>">
+              <!-- <select name="txtProg" id="cmbProg" required="true" class="form-control">
                 <option value="0">== Pilih Program ==</option>
                   <?php  
                     foreach ($program as $row){
@@ -89,7 +95,7 @@
                           }
                     }
                   ?>
-                </select>
+                </select> -->
               <div class="input-group-btn">
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWodeProg">Search</button>
               </div>
@@ -192,7 +198,7 @@
                       $no=1;
                       foreach ($witel as $row) {
                         ?>
-                          <tr class="search" style="cursor: pointer;" data-id = "<?=$row['WTEL_ID']?>">
+                          <tr class="search" style="cursor: pointer;" data-id = "<?=$row['WTEL_ID']?>" data-wtel = "<?=$row['WTEL_NAME']?>">
                             <td><?php echo $no?></td>
                             <td><?php echo $row['WTEL_NAME']?></td>
                           </tr>
@@ -206,6 +212,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- modal WodeSwit -->
 <div class="modal fade" id="modalWodeSwit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -228,7 +235,7 @@
                       $no=1;
                       foreach ($subWitel as $row) {
                         ?>
-                          <tr class="search2" style="cursor: pointer;" data-id2 = "<?=$row['SWIT_ID']?>">
+                          <tr class="search2" style="cursor: pointer;" data-id2 = "<?=$row['SWIT_ID']?>" data-swit = "<?=$row['SWIT_NAME']?>">
                             <td><?php echo $no?></td>
                             <td><?php echo $row['SWIT_NAME']?></td>
                           </tr>
@@ -264,7 +271,7 @@
                       $no=1;
                       foreach ($program as $row) {
                         ?>
-                          <tr class="search3" style="cursor: pointer;" data-id3 = "<?=$row['PROG_ID']?>">
+                          <tr class="search3" style="cursor: pointer;" data-id3 = "<?=$row['PROG_ID']?>" data-prog = "<?=$row['PROG_NAME']?>">
                             <td><?php echo $no?></td>
                             <td><?php echo $row['PROG_NAME']?></td>
                           </tr>
@@ -281,17 +288,20 @@
 
 <script type="text/javascript">
     $(document).on('click', '.search', function (e) {
-    document.getElementById("cmbWtel").value    = $(this).attr('data-id');
+    document.getElementById("txtWtel").value    = $(this).attr('data-id');
+    document.getElementById("myInput").value    = $(this).attr('data-wtel');
         $('#modalWodeWtel').modal('hide');
-  });
+  });;
 
     $(document).on('click', '.search2', function (e) {
-    document.getElementById("cmbSwit").value    = $(this).attr('data-id2');
+    document.getElementById("txtSwit").value    = $(this).attr('data-id2');
+    document.getElementById("myInput2").value     = $(this).attr('data-swit');
         $('#modalWodeSwit').modal('hide');
   });
 
     $(document).on('click', '.search3', function (e) {
-    document.getElementById("cmbProg").value    = $(this).attr('data-id3');
+    document.getElementById("txtProg").value    = $(this).attr('data-id3');
+    document.getElementById("myInput3").value     = $(this).attr('data-prog');
         $('#modalWodeProg').modal('hide');
   });
 </script>
