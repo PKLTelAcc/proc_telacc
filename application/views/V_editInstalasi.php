@@ -18,7 +18,7 @@
                 <div class="form-group">
                     <label class=" control-label">ID TA</label>
                     <div class="input-group">
-                        <input class="form-control" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true" value="<?php echo($instalasi[0]['WODE_ID_TA'])?>">
+                        <input class="form-control" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true" readonly="true"> value="<?php echo($instalasi[0]['WODE_ID_TA'])?>">
                         <input class="form-control" id="txtIDTA" type="hidden" name="txtIDTA" value="<?php echo($instalasi[0]['WTEL_ID'])?>">
             <div class="input-group-btn">
               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalIDTASurvey">Search</button>
