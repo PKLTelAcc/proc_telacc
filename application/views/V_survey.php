@@ -79,7 +79,7 @@
 	              	<div class="form-group">
 	                  <label class=" control-label">Nama Surveyer</label>
 	                  <div class="input-group">
-	                      <input class="form-control" placeholder="== Pilih Surveyer ==" name="txtSurveyerMuncul" id="myInput2" required="true">
+	                      <input class="form-control" placeholder="== Pilih Surveyer ==" name="txtSurveyerMuncul" id="myInput2" required="true" readonly="true">
 	                      <input class="form-control" id="txtSurveyer" type="hidden" name="txtSurveyer">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSurveyer">Search</button>

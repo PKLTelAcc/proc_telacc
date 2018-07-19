@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 19, 2018 at 05:31 AM
+-- Generation Time: Jul 19, 2018 at 06:16 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -31,6 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `bast` (
   `BAST_ID` int(11) NOT NULL,
   `BAST_TANGGAL` date NOT NULL,
+  `BAST_NO` int(11) NOT NULL,
   `BAST_TIMESTAMP` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `BAST_WODE_ID` int(11) NOT NULL,
   `BAST_INST_ID` int(11) NOT NULL,
@@ -92,6 +93,13 @@ CREATE TABLE `mitra` (
   `MTRA_ID` int(11) NOT NULL,
   `MTRA_NAME` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mitra`
+--
+
+INSERT INTO `mitra` (`MTRA_ID`, `MTRA_NAME`) VALUES
+(1, 'Telkom');
 
 -- --------------------------------------------------------
 
@@ -745,7 +753,7 @@ ALTER TABLE `level`
 -- AUTO_INCREMENT for table `mitra`
 --
 ALTER TABLE `mitra`
-  MODIFY `MTRA_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `MTRA_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pegawai`
