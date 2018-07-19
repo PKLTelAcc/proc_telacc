@@ -19,7 +19,7 @@
                     <label class=" control-label">ID TA</label>
                     <div class="input-group">
                         <input class="form-control readonly" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true" value="<?php echo($survey[0]['WODE_ID_TA'])?>">
-                        <input class="form-control" id="txtIDTA" type="" name="txtIDTA" value="<?php echo($survey[0]['SURV_WODE_ID'])?>">
+                        <input class="form-control" id="txtIDTA" type="hidden" name="txtIDTA" value="<?php echo($survey[0]['SURV_WODE_ID'])?>">
             <div class="input-group-btn">
               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalIDTASurvey">Search</button>
             </div>
@@ -87,7 +87,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class=" control-label">NIK SUrveyer</label>
+                    <label class=" control-label">NIK Surveyer</label>
                     <div>
                         <input class="form-control readonly" placeholder="NIK Surveyer" id="nik" type="text" name="txtNIK" required="true" value="<?php echo($survey[0]['PEGA_NIK'])?>">
                     </div>
@@ -96,31 +96,38 @@
                     <label class=" control-label">Tanggal Selesai Survey</label>
                     <div>
                       <span id="qty">
-                        <input class="form-control" type="date" name="dateSurvey" required="true" value="<?php echo($survey[0]['SURV_TANGGAL'])?>">  
+                        <input class="form-control" type="date" name="dateSurvey" required="true" value="<?php echo($survey[0]['SURV_TANGGAL'])?>"> 
                       </span>
                     </div>
                   </div>
                   <div class="form-group">
-            <label class="control-label">Status</label>
-            <div>
-              <select name="txtStat" id="cmbStat" required="true" class="form-control">
-                <option value="0">== Pilih Status ==</option>
-                <?php  
-                  foreach ($status as $row){
-                    if ($row['STAT_ID'] == $survey[0]['SURV_STAT_ID']){
-                ?>
-                        <option value="<?php echo $row['STAT_ID'] ?>" selected><?php echo $row['STAT_NAME']?></option>
-                <?php
-                        } else {                               
-                ?>
-                            <option value="<?php echo $row['STAT_ID'] ?>" ><?php echo $row['STAT_NAME']?></option>
-                <?php
+                  <label class="control-label">Status</label>
+                  <div class="input-group">
+                    <input class="form-control readonly" placeholder="== Pilih Status ==" name="txtStatMuncul" id="myInput3" required="true" value="<?php echo($survey[0]['STAT_NAME'])?>">
+                    <input class="form-control" id="txtStat" type="hidden" name="txtStat" value="<?php echo($survey[0]['SURV_STAT_ID'])?>">
+                  <!-- <div>
+                    <select name="txtStat" id="cmbStat" required="true" class="form-control">
+                      <option value="0">== Pilih Status ==</option>
+                      <?php  
+                        foreach ($status as $row){
+                          if ($row['STAT_ID'] == $survey[0]['SURV_STAT_ID']){
+                      ?>
+                              <option value="<?php echo $row['STAT_ID'] ?>" selected><?php echo $row['STAT_NAME']?></option>
+                      <?php
+                              } else {                               
+                      ?>
+                                  <option value="<?php echo $row['STAT_ID'] ?>" ><?php echo $row['STAT_NAME']?></option>
+                      <?php
+                              }
                         }
-                  }
-                ?>
-              </select>
-            </div>
-          </div>
+                      ?>
+                    </select>
+                  </div> -->
+                    <div class="input-group-btn">
+                      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSurvStat">Search</button>
+                    </div>
+                  </div>
+                </div>
                 
                 <div class="form-group">
                   <div class="row">
@@ -227,6 +234,42 @@
     </div>
 </div>
 
+<!-- modal SurvStat -->
+<div class="modal fade" id="modalSurvStat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:800px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Data Status</h4>
+            </div>
+            <div class="modal-body">
+                <table id="tableStatus" class="table table-bordered table-hover table-striped">
+                    <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>        
+                    <tbody>
+                      <?php 
+                      $no=1;
+                      foreach ($status as $row) {
+                        ?>
+                          <tr class="isi3" style="cursor: pointer;" data-id3 = "<?=$row['STAT_ID']?>" data-stat = "<?=$row['STAT_NAME']?>">
+                            <td><?php echo $no?></td>
+                            <td><?php echo $row['STAT_NAME']?></td>
+                          </tr>
+                        <?php
+                        $no++;
+                      }
+                      ?>
+                    </tbody>
+                </table>  
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
   $(document).on('click', '.isi', function (e) {
     document.getElementById("txtIDTA").value    = $(this).attr('data-id');
@@ -247,6 +290,12 @@
         document.getElementById("nik").value      = $(this).attr('data-nik');
         $('#modalSurveyer').modal('hide');        
     });
+
+    $(document).on('click', '.isi3', function (e) {
+    document.getElementById("txtStat").value    = $(this).attr('data-id3');
+    document.getElementById("myInput3").value     = $(this).attr('data-stat');
+        $('#modalSurvStat').modal('hide');
+  });
 </script>
 
 
