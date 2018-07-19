@@ -18,8 +18,8 @@
                 <div class="form-group">
                     <label class=" control-label">ID TA</label>
                     <div class="input-group">
-                        <input class="form-control" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true" readonly="true"> value="<?php echo($survey[0]['WODE_ID_TA'])?>">
-                        <input class="form-control" id="txtIDTA" type="hidden" name="txtIDTA" value="<?php echo($survey[0]['WTEL_ID'])?>">
+                        <input class="form-control readonly" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true" value="<?php echo($survey[0]['WODE_ID_TA'])?>">
+                        <input class="form-control" id="txtIDTA" type="" name="txtIDTA" value="<?php echo($survey[0]['SURV_WODE_ID'])?>">
             <div class="input-group-btn">
               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalIDTASurvey">Search</button>
             </div>
@@ -28,28 +28,28 @@
                   <div class="form-group">
                     <label class=" control-label">Witel</label>
                     <div>
-                        <input class="form-control" placeholder="Witel" id="inputWitel" type="text" name="txtWtelMuncul" required="true" readonly="true" value="<?php echo($survey[0]['WTEL_NAME'])?>">
-                        <input class="form-control" id="witel" type="hidden" name="txtWtel" value="<?php echo($survey[0]['WTEL_ID'])?>">
+                        <input class="form-control readonly" placeholder="Witel" id="inputWitel" type="text" name="txtWtelMuncul" required="true" value="<?php echo($survey[0]['WTEL_NAME'])?>">
+                        <input class="form-control" id="witel" type="hidden" name="txtWtel" value="<?php echo($survey[0]['SURV_WTEL_ID'])?>">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class=" control-label">Sub Witel</label>
                     <div>
-                        <input class="form-control" placeholder="Sub Witel" id="inputSubWitel" type="text" name="txtSwitMuncul" required="true" readonly="true" value="<?php echo($survey[0]['SWIT_NAME'])?>">
-                        <input class="form-control" id="subWitel" type="hidden" name="txtSwit"  value="<?php echo($survey[0]['SWIT_ID'])?>">
+                        <input class="form-control readonly" placeholder="Sub Witel" id="inputSubWitel" type="text" name="txtSwitMuncul" required="true" value="<?php echo($survey[0]['SWIT_NAME'])?>">
+                        <input class="form-control" id="subWitel" type="hidden" name="txtSwit"  value="<?php echo($survey[0]['SURV_SWIT_ID'])?>">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class=" control-label">Program</label>
                     <div>
-                        <input class="form-control" placeholder="Program" id="inputProgram" type="text" name="txtProgMuncul" required="true" readonly="true" value="<?php echo($survey[0]['PROG_NAME'])?>">
-                        <input class="form-control" id="program" type="hidden" name="txtProg" value="<?php echo($survey[0]['PROG_ID'])?>">
+                        <input class="form-control readonly" placeholder="Program" id="inputProgram" type="text" name="txtProgMuncul" required="true" value="<?php echo($survey[0]['PROG_NAME'])?>">
+                        <input class="form-control" id="program" type="hidden" name="txtProg" value="<?php echo($survey[0]['SURV_PROG_ID'])?>">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class=" control-label">Nama Lokasi</label>
                     <div>
-                        <input class="form-control" placeholder="Nama Lokasi" id="namaLokasi" type="text" name="txtLokasi" required="true" readonly="true" value="<?php echo($survey[0]['WODE_NAMA_LOKASI'])?>">
+                        <input class="form-control readonly" placeholder="Nama Lokasi" id="namaLokasi" type="text" name="txtLokasi" required="true" value="<?php echo($survey[0]['WODE_NAMA_LOKASI'])?>">
                     </div>
                   </div>
                   <div class="form-group">
@@ -79,8 +79,8 @@
                   <div class="form-group">
                     <label class=" control-label">Nama Surveyer</label>
                     <div class="input-group">
-                        <input class="form-control" placeholder="== Pilih Surveyer ==" name="txtSurveyerMuncul" id="myInput2" required="true" readonly="true"> value="<?php echo($survey[0]['PEGA_NAME'])?>">
-                        <input class="form-control" id="txtSurveyer" type="hidden" name="txtSurveyer" value="<?php echo($survey[0]['PEGA_ID'])?>">
+                        <input class="form-control readonly" placeholder="== Pilih Surveyer ==" name="txtSurveyerMuncul" id="myInput2" required="true" value="<?php echo($survey[0]['PEGA_NAME'])?>">
+                        <input class="form-control" id="txtSurveyer" type="hidden" name="txtSurveyer" value="<?php echo($survey[0]['SURV_PEGA_ID'])?>">
             <div class="input-group-btn">
               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSurveyer">Search</button>
             </div>
@@ -89,7 +89,7 @@
                   <div class="form-group">
                     <label class=" control-label">NIK SUrveyer</label>
                     <div>
-                        <input class="form-control" placeholder="NIK Surveyer" id="nik" type="text" name="txtNIK" required="true" readonly="true" value="<?php echo($survey[0]['PEGA_NIK'])?>">
+                        <input class="form-control readonly" placeholder="NIK Surveyer" id="nik" type="text" name="txtNIK" required="true" value="<?php echo($survey[0]['PEGA_NIK'])?>">
                     </div>
                   </div>
                   <div class="form-group">

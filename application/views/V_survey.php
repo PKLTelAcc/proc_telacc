@@ -18,7 +18,7 @@
 	            	<div class="form-group">
 	                  <label class=" control-label">ID TA</label>
 	                  <div class="input-group">
-	                      <input class="form-control" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true">
 	                      <input class="form-control" id="txtIDTA" type="hidden" name="txtIDTA">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalIDTASurvey">Search</button>
@@ -28,28 +28,28 @@
 	              	<div class="form-group">
 	                  <label class=" control-label">Witel</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Witel" id="inputWitel" type="text" name="txtWtelMuncul" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="Witel" id="inputWitel" type="text" name="txtWtelMuncul" required="true">
 	                      <input class="form-control" id="witel" type="hidden" name="txtWtel">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Sub Witel</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Sub Witel" id="inputSubWitel" type="text" name="txtSwitMuncul" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="Sub Witel" id="inputSubWitel" type="text" name="txtSwitMuncul" required="true">
 	                      <input class="form-control" id="subWitel" type="hidden" name="txtSwit">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Program</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Program" id="inputProgram" type="text" name="txtProgMuncul" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="Program" id="inputProgram" type="text" name="txtProgMuncul" required="true">
 	                      <input class="form-control" id="program" type="hidden" name="txtProg">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Nama Lokasi</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Nama Lokasi" id="namaLokasi" type="text" name="txtLokasi" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="Nama Lokasi" id="namaLokasi" type="text" name="txtLokasi" required="true">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
@@ -79,7 +79,7 @@
 	              	<div class="form-group">
 	                  <label class=" control-label">Nama Surveyer</label>
 	                  <div class="input-group">
-	                      <input class="form-control" placeholder="== Pilih Surveyer ==" name="txtSurveyerMuncul" id="myInput2" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="== Pilih Surveyer ==" name="txtSurveyerMuncul" id="myInput2" required="true">
 	                      <input class="form-control" id="txtSurveyer" type="hidden" name="txtSurveyer">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSurveyer">Search</button>
@@ -89,7 +89,7 @@
 	              	<div class="form-group">
 	                  <label class=" control-label">NIK Surveyer</label>
 	                  <div>
-	                      <input class="form-control" placeholder="NIK Surveyer" id="nik" type="text" name="txtNIK" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="NIK Surveyer" id="nik" type="text" name="txtNIK" required="true">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">

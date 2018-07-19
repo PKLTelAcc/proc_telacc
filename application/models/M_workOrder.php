@@ -52,7 +52,7 @@ class M_workOrder extends CI_Model
 
 	public function update($data)
 	{
-		$sql="select * from work_order where WODE_ID =".$data;
+		$sql="SELECT * FROM work_order INNER JOIN witel ON WODE_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON WODE_SWIT_ID = SWIT_ID INNER JOIN program ON WODE_PROG_ID = PROG_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID AND WODE_ID=".$data; 
 		$query=$this->db->query($sql);
 		$return = $query->result_array();
 		return $return;
