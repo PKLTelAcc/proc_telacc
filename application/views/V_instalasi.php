@@ -18,7 +18,7 @@
 	            	<div class="form-group">
 	                  <label class=" control-label">ID TA</label>
 	                  <div class="input-group">
-	                      <input class="form-control" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true">
+	                      <input class="form-control" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true" readonly="true">
 	                      <input class="form-control" id="txtIDTA" type="hidden" name="txtIDTA">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalIDTAInstalasi">Search</button>

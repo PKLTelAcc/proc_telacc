@@ -47,7 +47,7 @@
               <form class="" action="<?php echo base_url() ?>C_login/login" method="post">
                 <button type="button" class="close" data-dismiss="modal">&times</button>
                 <div class="form-group text-center">
-                  <img src="/proj_telacc/asset1/dist/img/" style="margin-left: 27px" alt="foto profile" class="rounded-circle" width="130" id="img-login">
+                  <img src="/proj_telacc/asset1/dist/img/tel_acc1.png" style="margin-left: 27px" alt="foto profile" class="rounded-circle" width="130" id="img-login">
                 </div>
                 <div class="form-group text-center">
                   <h4 class="text-danger">Login Here</h4>
@@ -112,7 +112,7 @@
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
           <div class="carousel-item active">
-            <img src="/proj_telacc/asset1/dist/img/" class="img-fluid" alt="" width="100%" height="500">
+            <img src="/proj_telacc/asset1/dist/img/tel_acc1.png" class="img-fluid" alt="" width="100%" height="500">
             <div class="carousel-caption d-none d-md-block">
               <h3>Selamat Datang</h3>
               <p></p>
