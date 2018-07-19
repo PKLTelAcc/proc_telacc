@@ -18,7 +18,7 @@
 	            	<div class="form-group">
 	                  <label class=" control-label">ID TA</label>
 	                  <div class="input-group">
-	                      <input class="form-control" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true">
 	                      <input class="form-control" id="txtIDTA" type="hidden" name="txtIDTA">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalIDTASurvey">Search</button>
@@ -28,28 +28,28 @@
 	              	<div class="form-group">
 	                  <label class=" control-label">Witel</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Witel" id="inputWitel" type="text" name="txtWtelMuncul" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="Witel" id="inputWitel" type="text" name="txtWtelMuncul" required="true">
 	                      <input class="form-control" id="witel" type="hidden" name="txtWtel">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Sub Witel</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Sub Witel" id="inputSubWitel" type="text" name="txtSwitMuncul" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="Sub Witel" id="inputSubWitel" type="text" name="txtSwitMuncul" required="true">
 	                      <input class="form-control" id="subWitel" type="hidden" name="txtSwit">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Program</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Program" id="inputProgram" type="text" name="txtProgMuncul" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="Program" id="inputProgram" type="text" name="txtProgMuncul" required="true">
 	                      <input class="form-control" id="program" type="hidden" name="txtProg">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Nama Lokasi</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Nama Lokasi" id="namaLokasi" type="text" name="txtLokasi" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="Nama Lokasi" id="namaLokasi" type="text" name="txtLokasi" required="true">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
@@ -79,7 +79,7 @@
 	              	<div class="form-group">
 	                  <label class=" control-label">Nama Surveyer</label>
 	                  <div class="input-group">
-	                      <input class="form-control" placeholder="== Pilih Surveyer ==" name="txtSurveyerMuncul" id="myInput2" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="== Pilih Surveyer ==" name="txtSurveyerMuncul" id="myInput2" required="true">
 	                      <input class="form-control" id="txtSurveyer" type="hidden" name="txtSurveyer">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSurveyer">Search</button>
@@ -89,7 +89,7 @@
 	              	<div class="form-group">
 	                  <label class=" control-label">NIK Surveyer</label>
 	                  <div>
-	                      <input class="form-control" placeholder="NIK Surveyer" id="nik" type="text" name="txtNIK" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="NIK Surveyer" id="nik" type="text" name="txtNIK" required="true">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
@@ -102,7 +102,10 @@
 	              	</div>
 	              	<div class="form-group">
 						<label class="control-label">Status</label>
-						<div>
+						<div class="input-group">
+						  <input class="form-control readonly" placeholder="== Pilih Status ==" name="txtStatMuncul" id="myInput3" required="true" >
+	                      <input class="form-control" id="txtStat" type="hidden" name="txtStat">
+						<!-- <div>
 							<select class="form-control" name="txtStat" id="cmbStat" required="true" >
 								<option value="0">== Pilih Status ==</option>
 									<?php  
@@ -113,6 +116,10 @@
 										}
 									?>
 							</select>
+						</div> -->
+							<div class="input-group-btn">
+							  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSurvStat">Search</button>
+							</div>
 						</div>
 					</div>
 	            	
@@ -283,6 +290,42 @@
     </div>
 </div>
 
+<!-- modal SurvStat -->
+<div class="modal fade" id="modalSurvStat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:800px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Data Status</h4>
+            </div>
+            <div class="modal-body">
+                <table id="tableStatus" class="table table-bordered table-hover table-striped">
+                    <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>        
+                    <tbody>
+                      <?php 
+                      $no=1;
+                      foreach ($status as $row) {
+                        ?>
+                          <tr class="isi3" style="cursor: pointer;" data-id3 = "<?=$row['STAT_ID']?>" data-stat = "<?=$row['STAT_NAME']?>">
+                            <td><?php echo $no?></td>
+                            <td><?php echo $row['STAT_NAME']?></td>
+                          </tr>
+                        <?php
+                        $no++;
+                      }
+                      ?>
+                    </tbody>
+                </table>  
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
 	$(document).on('click', '.isi', function (e) {
 		document.getElementById("txtIDTA").value 		= $(this).attr('data-id');
@@ -303,6 +346,12 @@
         document.getElementById("nik").value 			= $(this).attr('data-nik');
         $('#modalSurveyer').modal('hide');        
     });
+
+    $(document).on('click', '.isi3', function (e) {
+		document.getElementById("txtStat").value 		= $(this).attr('data-id3');
+		document.getElementById("myInput3").value 		= $(this).attr('data-stat');
+        $('#modalSurvStat').modal('hide');
+	});
 </script>
 
 <!-- =========================================================================================================================================== -->

@@ -51,7 +51,7 @@
 	              <div class="form-group">
 	                <div class="row">
 	                  <div class="col-md-10">
-	                    <button type="reset" class="btn btn-danger pull-right">Cancel</button>
+	                    <button type="back" class="btn btn-danger pull-right">Cancel</button>
 	                  </div>
 	                  <div class="col-md-2">
 	                    <button type="submit" class="btn btn-danger pull-right" data-toggle="modal" data-target="#modal-success2" onclick="modalKonfirmasiTakJadi()" >Input Data</button>
