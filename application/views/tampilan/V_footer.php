@@ -47,7 +47,17 @@
         //program
         $("#tableProgram").dataTable();
 
+        //status
+        $("#tableStatus").dataTable();
+
         //mitra
         $("#tableMitra").dataTable();
+    });
+</script>
+
+<!-- untuk <input class="read only" required="true"> -->
+<script>
+    $(".readonly").on('keydown paste', function(e){
+        e.preventDefault();
     });
 </script>

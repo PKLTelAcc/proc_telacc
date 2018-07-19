@@ -25,8 +25,8 @@
 	              	</div>
 		            <div class="form-group">
 						<label class="control-label">Witel</label>
-						<div class="input-group">
-						  <input class="form-control" placeholder="== Pilih Witel ==" name="txtWtelMuncul" id="myInput" required="true" readonly="true">
+						<div class="input-group readonly">
+						  <input class="form-control" placeholder="== Pilih Witel ==" name="txtWtelMuncul" id="myInput" required="true">
 	                      <input class="form-control" id="txtWtel" type="hidden" name="txtWtel">
 							<!-- <select name="txtWtel" id="cmbWtel" required="true" class="form-control">
 							  <option value="0">== Pilih Witel ==</option>
@@ -46,7 +46,7 @@
 					<div class="form-group">
 						<label class="control-label">Sub Witel</label>
 						<div class="input-group">
-						  <input class="form-control" placeholder="== Pilih Sub Witel ==" name="txtSwitMuncul" id="myInput2" required="true" readonly="true">
+						  <input class="form-control readonly" placeholder="== Pilih Sub Witel ==" name="txtSwitMuncul" id="myInput2" required="true" >
 	                      <input class="form-control" id="txtSwit" type="hidden" name="txtSwit">
 							<!-- <select name="txtSwit" id="cmbSwit" required="true" class="form-control">
 							  <option value="0">== Pilih Sub Witel ==</option>
@@ -66,7 +66,7 @@
 					<div class="form-group">
 						<label class="control-label">Program</label>
 						<div class="input-group">
-						  <input class="form-control" placeholder="== Pilih Program ==" name="txtProgMuncul" id="myInput3" required="true" readonly="true">
+						  <input class="form-control readonly" placeholder="== Pilih Program ==" name="txtProgMuncul" id="myInput3" required="true">
 	                      <input class="form-control" id="txtProg" type="hidden" name="txtProg">
 							<!-- <select name="txtProg" id="cmbProg" required="true" class="form-control">
 							  <option value="0">== Pilih Program ==</option>
@@ -117,7 +117,10 @@
 	              	</div>
 	              	<div class="form-group">
 						<label class="control-label">Status</label>
-						<div>
+						<div class="input-group">
+						  <input class="form-control readonly" placeholder="== Pilih Status ==" name="txtStatMuncul" id="myInput4" required="true" >
+	                      <input class="form-control" id="txtStat" type="hidden" name="txtStat">
+	                      <!-- <div>
 							<select name="txtStat" id="cmbStat" required="true" class="form-control">
 								<option value="0">== Pilih Status ==</option>
 								<?php  
@@ -128,6 +131,10 @@
 									}
 								?>
 							</select>
+						</div> -->
+							<div class="input-group-btn">
+							  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWodeStat">Search</button>
+							</div>
 						</div>
 					</div>
 	              <div class="form-group">
@@ -315,6 +322,42 @@
     </div>
 </div>
 
+<!-- modal WodeStat -->
+<div class="modal fade" id="modalWodeStat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:800px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Data Status</h4>
+            </div>
+            <div class="modal-body">
+                <table id="tableStatus" class="table table-bordered table-hover table-striped">
+                    <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>        
+                    <tbody>
+                      <?php 
+                      $no=1;
+                      foreach ($status as $row) {
+                        ?>
+                          <tr class="search4" style="cursor: pointer;" data-id4 = "<?=$row['STAT_ID']?>" data-stat = "<?=$row['STAT_NAME']?>">
+                            <td><?php echo $no?></td>
+                            <td><?php echo $row['STAT_NAME']?></td>
+                          </tr>
+                        <?php
+                        $no++;
+                      }
+                      ?>
+                    </tbody>
+                </table>  
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
 		$(document).on('click', '.search', function (e) {
 		document.getElementById("txtWtel").value 		= $(this).attr('data-id');
@@ -333,9 +376,13 @@
 		document.getElementById("myInput3").value 		= $(this).attr('data-prog');
         $('#modalWodeProg').modal('hide');
 	});
+
+		$(document).on('click', '.search4', function (e) {
+		document.getElementById("txtStat").value 		= $(this).attr('data-id4');
+		document.getElementById("myInput4").value 		= $(this).attr('data-stat');
+        $('#modalWodeStat').modal('hide');
+	});
 </script>
-
-
 
 
 
