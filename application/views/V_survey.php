@@ -101,10 +101,10 @@
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
-						<label class="control-label">Status</label>
+					<label class="control-label">Status</label>
 						<div class="input-group">
-						  <input class="form-control readonly" placeholder="== Pilih Status ==" name="txtStatMuncul" id="myInput3" required="true" >
-	                      <input class="form-control" id="txtStat" type="hidden" name="txtStat">
+						<input class="form-control readonly" placeholder="== Pilih Status ==" name="txtStatMuncul" id="myInput3" required="true" >
+	                    <input class="form-control" id="txtStat" type="hidden" name="txtStat">
 						<!-- <div>
 							<select class="form-control" name="txtStat" id="cmbStat" required="true" >
 								<option value="0">== Pilih Status ==</option>
@@ -117,9 +117,9 @@
 									?>
 							</select>
 						</div> -->
-							<div class="input-group-btn">
-							  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSurvStat">Search</button>
-							</div>
+						<div class="input-group-btn">
+							 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSurvStat">Search</button>
+						</div>
 						</div>
 					</div>
 	            	

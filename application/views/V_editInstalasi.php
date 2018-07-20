@@ -14,42 +14,42 @@
         <div class="box-body">
           <div class="row">
             <div class="col-md-12 ">
-              <form action="<?php echo base_url().'C_Instalasi/updateData/' .$instalasi[0]["INST_ID"]; ?>" method="POST">
+              <form action="<?php echo base_url().'C_instalasi/updateData/' .$instalasi[0]["INST_ID"]; ?>" method="POST">
                 <div class="form-group">
                     <label class=" control-label">ID TA</label>
                     <div class="input-group">
-                        <input class="form-control" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true" readonly="true"> value="<?php echo($instalasi[0]['WODE_ID_TA'])?>">
-                        <input class="form-control" id="txtIDTA" type="hidden" name="txtIDTA" value="<?php echo($instalasi[0]['WTEL_ID'])?>">
+                        <input class="form-control readonly" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true" value="<?php echo($instalasi[0]['WODE_ID_TA'])?>">
+                        <input class="form-control" id="txtIDTA" type="hidden" name="txtIDTA" value="<?php echo($instalasi[0]['INST_WODE_ID'])?>">
             <div class="input-group-btn">
-              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalIDTASurvey">Search</button>
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalIDTAInstalasi">Search</button>
             </div>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class=" control-label">Witel</label>
                     <div>
-                        <input class="form-control" placeholder="Witel" id="inputWitel" type="text" name="txtWtelMuncul" required="true" readonly="true" value="<?php echo($instalasi[0]['WTEL_NAME'])?>">
-                        <input class="form-control" id="witel" type="hidden" name="txtWtel" value="<?php echo($instalasi[0]['WTEL_ID'])?>">
+                        <input class="form-control readonly" placeholder="Witel" id="inputWitel" type="text" name="txtWtelMuncul" required="true"value="<?php echo($instalasi[0]['WTEL_NAME'])?>">
+                        <input class="form-control" id="witel" type="hidden" name="txtWtel" value="<?php echo($instalasi[0]['INST_WTEL_ID'])?>">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class=" control-label">Sub Witel</label>
                     <div>
-                        <input class="form-control" placeholder="Sub Witel" id="inputSubWitel" type="text" name="txtSwitMuncul" required="true" readonly="true" value="<?php echo($instalasi[0]['SWIT_NAME'])?>">
-                        <input class="form-control" id="subWitel" type="hidden" name="txtSwit"  value="<?php echo($instalasi[0]['SWIT_ID'])?>">
+                        <input class="form-control readonly" placeholder="Sub Witel" id="inputSubWitel" type="text" name="txtSwitMuncul" required="true" value="<?php echo($instalasi[0]['SWIT_NAME'])?>">
+                        <input class="form-control" id="subWitel" type="hidden" name="txtSwit"  value="<?php echo($instalasi[0]['INST_SWIT_ID'])?>">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class=" control-label">Program</label>
                     <div>
-                        <input class="form-control" placeholder="Program" id="inputProgram" type="text" name="txtProgMuncul" required="true" readonly="true" value="<?php echo($instalasi[0]['PROG_NAME'])?>">
-                        <input class="form-control" id="program" type="hidden" name="txtProg" value="<?php echo($instalasi[0]['PROG_ID'])?>">
+                        <input class="form-control readonly" placeholder="Program" id="inputProgram" type="text" name="txtProgMuncul" required="true" value="<?php echo($instalasi[0]['PROG_NAME'])?>">
+                        <input class="form-control" id="program" type="hidden" name="txtProg" value="<?php echo($instalasi[0]['INST_PROG_ID'])?>">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class=" control-label">Nama Lokasi</label>
                     <div>
-                        <input class="form-control" placeholder="Nama Lokasi" id="namaLokasi" type="text" name="txtLokasi" required="true" readonly="true" value="<?php echo($instalasi[0]['WODE_NAMA_LOKASI'])?>">
+                        <input class="form-control readonly" placeholder="Nama Lokasi" id="namaLokasi" type="text" name="txtLokasi" required="true" value="<?php echo($instalasi[0]['WODE_NAMA_LOKASI'])?>">
                     </div>
                   </div>
                   <div class="form-group">
@@ -79,8 +79,8 @@
                   <div class="form-group">
                     <label class=" control-label">Nama Waspang</label>
                     <div class="input-group">
-                        <input class="form-control" placeholder="== Pilih Waspang ==" name="txtSurveyerMuncul" id="myInput2" required="true" readonly="true"> value="<?php echo($instalasi[0]['PEGA_NAME'])?>">
-                        <input class="form-control" id="txtSurveyer" type="hidden" name="txtSurveyer" value="<?php echo($instalasi[0]['PEGA_ID'])?>">
+                        <input class="form-control readonly" placeholder="== Pilih Waspang ==" name="txtSurveyerMuncul" id="myInput2" required="true" value="<?php echo($instalasi[0]['PEGA_NAME'])?>">
+                        <input class="form-control" id="txtSurveyer" type="hidden" name="txtSurveyer" value="<?php echo($instalasi[0]['INST_PEGA_ID'])?>">
             <div class="input-group-btn">
               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSurveyer">Search</button>
             </div>
@@ -89,17 +89,17 @@
                   <div class="form-group">
                     <label class=" control-label">NIK Waspang</label>
                     <div>
-                        <input class="form-control" placeholder="NIK Surveyer" id="nik" type="text" name="txtNIK" required="true" readonly="true" value="<?php echo($instalasi[0]['PEGA_NIK'])?>">
+                        <input class="form-control readonly" placeholder="NIK Surveyer" id="nik" type="text" name="txtNIK" required="true" value="<?php echo($instalasi[0]['PEGA_NIK'])?>">
                     </div>
                   </div>
                   <div class="form-group">
             <label class="control-label">Mitra</label>
             <div>
               <select name="txtMitra" id="cmbStat" required="true" class="form-control">
-                <option value="0">== Pilih Status ==</option>
+                <option value="0">== Mitra ==</option>
                 <?php  
                   foreach ($mitra as $row){
-                    if ($row['STAT_ID'] == $instalasi[0]['INST_MTRA_ID']){
+                    if ($row['MTRA_ID'] == $instalasi[0]['INST_MTRA_ID']){
                 ?>
                         <option value="<?php echo $row['MTRA_ID'] ?>" selected><?php echo $row['MTRA_NAME']?></option>
                 <?php
@@ -113,13 +113,11 @@
               </select>
             </div>
           </div>
-
-
                   <div class="form-group">
                     <label class=" control-label">Tanggal Selesai Instalasi</label>
                     <div>
                       <span id="qty">
-                        <input class="form-control" type="date" name="dateInstalasi" required="true" value="<?php echo($instalasi[0]['INST_TANGGAL'])?>">  
+                        <input class="form-control" type="date" name="dateInstalasi" value="<?php echo($instalasi[0]['INST_TANGGAL'])?>">  
                       </span>
                     </div>
                   </div>
@@ -194,7 +192,7 @@
 <!-- /.content -->
 
 <!-- modal IDTA -->
-<div class="modal fade" id="modalIDTASurvey" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalIDTAInstalasi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="width:800px">
         <div class="modal-content">
             <div class="modal-header">
@@ -321,7 +319,7 @@
         document.getElementById("inputSubWitel").value  = $(this).attr('data-inputSubWitel');
         document.getElementById("witel").value      = $(this).attr('data-witel');
         document.getElementById("inputWitel").value   = $(this).attr('data-inputWitel');
-        $('#modalIDTASurvey').modal('hide');
+        $('#modalIDTAInstalasi').modal('hide');
   });
 
     $(document).on('click', '.isi2', function (e) {
