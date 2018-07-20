@@ -52,19 +52,19 @@ class C_spTelkom extends CI_Controller
 	}
 	public function formUpdate($id)
 	{
-		$spTelkom=$this->M_spTelkom->update($id);
+		$sp_telkom=$this->M_spTelkom->update($id);
 		$workOrder=$this->M_spTelkom->getWorkOrder();
 		$survey=$this->M_spTelkom->getSurvey();
 		$data = array(
 			'title' 	=> 'Edit SP_Telkom',
 			'content'	=> 'V_editSpTelkom',
-			'sp_telkom'	=> $spTelkom,
+			'sp_telkom'	=> $sp_telkom,
 			'workOrder'	=> $workOrder,
 			'survey'	=> $survey
 		);
 		$this->load->view('tampilan/V_combine',$data);
 	}
-	public function updateData($id)
+	public function updateData()
 	{
 		$idTa		= $_POST['txtIDTA'];
 		$nospTelkom	= $_POST['txtnoSpTelkom'];
@@ -87,7 +87,7 @@ class C_spTelkom extends CI_Controller
 		'SURV_JASA'		=> $jasa,
 		'SURV_TOTAL'	=> $total
 		);
-	$spTelkom=$this->M_spTelkom->insert($id, $data, $data2);
+	$spTelkom=$this->M_spTelkom->insert( $data, $data2);
 	redirect('C_spTelkom');
 	}
 	public function delete($id)
