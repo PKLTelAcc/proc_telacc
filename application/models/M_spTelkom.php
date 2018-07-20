@@ -32,7 +32,7 @@ class M_spTelkom extends CI_Model
 	}
 	public function insert($data)
 	{
-		$this->db->insert('sp_telkom',$data);
+		$this->db->insert('sp_telkom','survey',$data);
 	}
 	public function update($data)
 	{

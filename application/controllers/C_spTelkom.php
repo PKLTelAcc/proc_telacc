@@ -31,15 +31,17 @@ class C_spTelkom extends CI_Controller
 		$idp		= $_POST['idp'];
 		$noPo		= $_POST['txtnoPo'];
 		$material	= $_POST['txtmaterial'];
-		$jasa		= $_POST['jasa'];
-		$total		= $_POST['total'];
+		$jasa		= $_POST['txtjasa'];
+		$total		= $_POST['txttotal'];
 		
 	$data = array(
 		'SPTL_WODE_ID'	=> $IdTa,
 		'SPTL_NO'		=> $noSpTelkom,
 		'SPTL_IDP'		=> $idp,
 		'SPTL_NO_PO'	=> $noPo,
-		'SPTL_SURV_ID'	=> $total
+		'SURV_MATERIAL'	=> $material,
+		'SURV_JASA'		=> $jasa,
+		'SURV_TOTAL'	=> $total
 		);
 	$spTelkom=$this->M_spTelkom->insert($data);
 	redirect('C_spTelkom');
