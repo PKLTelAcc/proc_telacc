@@ -93,26 +93,33 @@
                     </div>
                   </div>
                   <div class="form-group">
-            <label class="control-label">Mitra</label>
-            <div>
-              <select name="txtMitra" id="cmbStat" required="true" class="form-control">
-                <option value="0">== Mitra ==</option>
-                <?php  
-                  foreach ($mitra as $row){
-                    if ($row['MTRA_ID'] == $instalasi[0]['INST_MTRA_ID']){
-                ?>
-                        <option value="<?php echo $row['MTRA_ID'] ?>" selected><?php echo $row['MTRA_NAME']?></option>
-                <?php
-                        } else {                               
-                ?>
-                            <option value="<?php echo $row['MTRA_ID'] ?>" ><?php echo $row['MTRA_NAME']?></option>
-                <?php
+                  <label class="control-label">Mitra</label>
+                  <div class="input-group">
+                      <input class="form-control readonly" placeholder="== Pilih Mitra ==" name="txtMitraMuncul" id="myInput3" required="true" value="<?php echo($instalasi[0]['MTRA_NAME'])?>">
+                      <input class="form-control" id="txtMitra" type="hidden" name="txtMitra" value="<?php echo($instalasi[0]['INST_MTRA_ID'])?>">
+                  <!-- <div>
+                    <select name="txtMitra" id="cmbStat" required="true" class="form-control">
+                      <option value="0">== Mitra ==</option>
+                      <?php  
+                        foreach ($mitra as $row){
+                          if ($row['MTRA_ID'] == $instalasi[0]['INST_MTRA_ID']){
+                      ?>
+                              <option value="<?php echo $row['MTRA_ID'] ?>" selected><?php echo $row['MTRA_NAME']?></option>
+                      <?php
+                              } else {                               
+                      ?>
+                                  <option value="<?php echo $row['MTRA_ID'] ?>" ><?php echo $row['MTRA_NAME']?></option>
+                      <?php
+                              }
                         }
-                  }
-                ?>
-              </select>
-            </div>
-          </div>
+                      ?>
+                    </select>
+                  </div> -->
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalMitra">Search</button>
+                      </div>
+                  </div>
+                  </div>
                   <div class="form-group">
                     <label class=" control-label">Tanggal Selesai Instalasi</label>
                     <div>
@@ -131,26 +138,32 @@
                   </div>
 
                   <div class="form-group">
-            <label class="control-label">Status</label>
-            <div>
-              <select name="txtStat" id="cmbStat" required="true" class="form-control">
-                <option value="0">== Pilih Status ==</option>
-                <?php  
-                  foreach ($status as $row){
-                    if ($row['STAT_ID'] == $instalasi[0]['INST_STAT_ID']){
-                ?>
-                        <option value="<?php echo $row['STAT_ID'] ?>" selected><?php echo $row['STAT_NAME']?></option>
-                <?php
-                        } else {                               
-                ?>
-                            <option value="<?php echo $row['STAT_ID'] ?>" ><?php echo $row['STAT_NAME']?></option>
-                <?php
+                  <label class="control-label">Status</label>
+                  <div class="input-group">
+                      <input class="form-control readonly" placeholder="== Pilih Status ==" name="txtStatMuncul" id="myInput4" required="true" >
+                      <input class="form-control" id="txtStat" type="hidden" name="txtStat">
+                  <!-- <div>
+                    <select name="txtStat" id="cmbStat" required="true" class="form-control">
+                      <option value="0">== Pilih Status ==</option>
+                      <?php  
+                        foreach ($status as $row){
+                          if ($row['STAT_ID'] == $instalasi[0]['INST_STAT_ID']){
+                      ?>
+                              <option value="<?php echo $row['STAT_ID'] ?>" selected><?php echo $row['STAT_NAME']?></option>
+                      <?php
+                              } else {                               
+                      ?>
+                                  <option value="<?php echo $row['STAT_ID'] ?>" ><?php echo $row['STAT_NAME']?></option>
+                      <?php
+                              }
                         }
-                  }
-                ?>
-              </select>
-            </div>
-          </div>
+                      ?>
+                    </select>
+                  </div> -->
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalInstStat">Search</button>
+                      </div>
+                </div>
                 </div>
                     <div class="form-group">
                     <label class=" control-label">Progres</label>
@@ -308,29 +321,73 @@
     </div>
 </div>
 
+<!-- modal InstStat -->
+<div class="modal fade" id="modalInstStat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:800px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Data Status</h4>
+            </div>
+            <div class="modal-body">
+                <table id="tableStatus" class="table table-bordered table-hover table-striped">
+                    <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>        
+                    <tbody>
+                      <?php 
+                      $no=1;
+                      foreach ($status as $row) {
+                        ?>
+                          <tr class="isi4" style="cursor: pointer;" data-id4 = "<?=$row['STAT_ID']?>" data-stat = "<?=$row['STAT_NAME']?>">
+                            <td><?php echo $no?></td>
+                            <td><?php echo $row['STAT_NAME']?></td>
+                          </tr>
+                        <?php
+                        $no++;
+                      }
+                      ?>
+                    </tbody>
+                </table>  
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
   $(document).on('click', '.isi', function (e) {
-    document.getElementById("txtIDTA").value    = $(this).attr('data-id');
-        document.getElementById("myInput").value    = $(this).attr('data-idta');
-        document.getElementById("namaLokasi").value   = $(this).attr('data-lokasi');
-        document.getElementById("program").value    = $(this).attr('data-program');
-        document.getElementById("inputProgram").value   = $(this).attr('data-inputProgram');
-        document.getElementById("subWitel").value     = $(this).attr('data-subWitel');
-        document.getElementById("inputSubWitel").value  = $(this).attr('data-inputSubWitel');
-        document.getElementById("witel").value      = $(this).attr('data-witel');
-        document.getElementById("inputWitel").value   = $(this).attr('data-inputWitel');
-        $('#modalIDTAInstalasi').modal('hide');
+    document.getElementById("txtIDTA").value        = $(this).attr('data-id');
+    document.getElementById("myInput").value        = $(this).attr('data-idta');
+    document.getElementById("namaLokasi").value     = $(this).attr('data-lokasi');
+    document.getElementById("program").value        = $(this).attr('data-program');
+    document.getElementById("inputProgram").value   = $(this).attr('data-inputProgram');
+    document.getElementById("subWitel").value       = $(this).attr('data-subWitel');
+    document.getElementById("inputSubWitel").value  = $(this).attr('data-inputSubWitel');
+    document.getElementById("witel").value          = $(this).attr('data-witel');
+    document.getElementById("inputWitel").value     = $(this).attr('data-inputWitel');
+    $('#modalIDTAInstalasi').modal('hide');
   });
 
     $(document).on('click', '.isi2', function (e) {
-    document.getElementById("txtSurveyer").value    = $(this).attr('data-id2');
-        document.getElementById("myInput2").value     = $(this).attr('data-pegawai');
-        document.getElementById("nik").value      = $(this).attr('data-nik');
-        $('#modalSurveyer').modal('hide');        
+      document.getElementById("txtSurveyer").value    = $(this).attr('data-id2');
+      document.getElementById("myInput2").value       = $(this).attr('data-pegawai');
+      document.getElementById("nik").value            = $(this).attr('data-nik');
+      $('#modalSurveyer').modal('hide');        
     });
-       $(document).on('click', '.isi3', function (e) {
-    document.getElementById("cmbMitra").value     = $(this).attr('data-id3');
-        $('#modalMitra').modal('hide');        
+      
+    $(document).on('click', '.isi3', function (e) {
+      document.getElementById("txtMitra").value       = $(this).attr('data-id3');
+      document.getElementById("myInput3").value       = $(this).attr('data-mitra');
+      $('#modalMitra').modal('hide');        
+    });
+
+    $(document).on('click', '.isi4', function (e) {
+      document.getElementById("txtStat").value    = $(this).attr('data-id4');
+      document.getElementById("myInput4").value     = $(this).attr('data-stat');
+      $('#modalInstStat').modal('hide');
     });
 </script>
 
