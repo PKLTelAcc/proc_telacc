@@ -4,7 +4,7 @@
 	  <div class="col-md-12">
 	    <div class="box box-danger">
 	      <div class="box-header with-border">
-	        <h3 class="box-title">Input Instalsai</h3>
+	        <h3 class="box-title">Input Instalasi</h3>
 
 	        <div class="box-tools pull-right">
 	          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -95,7 +95,9 @@
 	              	<div class="form-group">
 						<label class="control-label">Mitra</label>
 						<div class="input-group">
-							<select class="form-control" name="txtMitra" id="cmbMitra" required="true" >
+							<input class="form-control readonly" placeholder="== Pilih Mitra ==" name="txtMitraMuncul" id="myInput3" required="true">
+	                      	<input class="form-control" id="txtMitra" type="hidden" name="txtMitra">
+							<!-- <select class="form-control" name="txtMitra" id="cmbMitra" required="true" >
 								<option value="0">== Pilih Mitra ==</option>
 									<?php  
 										foreach ($mitra as $row){
@@ -104,7 +106,7 @@
 											echo "</option>";
 										}
 									?>
-							</select>
+							</select> -->
 							<div class="input-group-btn">
 						  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalMitra">Search</button>
 						</div>
@@ -114,7 +116,7 @@
 	                  <label class=" control-label">Tanggal Selesai Instalasi</label>
 	                  <div>
 	                    <span id="qty">
-	                      <input class="form-control" type="date" name="dateInstalasi" required="true">  
+	                      <input class="form-control" type="date" name="dateInstalasi">  
 	                    </span>
 	                  </div>
 	              	</div>
@@ -127,18 +129,25 @@
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
-						<label class="control-label">Status</label>
-						<div>
-							<select class="form-control" name="txtStat" id="cmbStat" required="true" >
-								<option value="0">== Pilih Status ==</option>
-									<?php  
-										foreach ($status as $row){
-											echo "<option value='".$row['STAT_ID']."'>";
-											echo $row ['STAT_NAME'];
-											echo "</option>";
-										}
-									?>
-							</select>
+					<label class="control-label">Status</label>
+						<div class="input-group">
+							<input class="form-control readonly" placeholder="== Pilih Status ==" name="txtStatMuncul" id="myInput4" required="true" >
+		                    <input class="form-control" id="txtStat" type="hidden" name="txtStat">
+							<!-- <div>
+								<select class="form-control" name="txtStat" id="cmbStat" required="true" >
+									<option value="0">== Pilih Status ==</option>
+										<?php  
+											foreach ($status as $row){
+												echo "<option value='".$row['STAT_ID']."'>";
+												echo $row ['STAT_NAME'];
+												echo "</option>";
+											}
+										?>
+								</select>
+							</div> -->
+							<div class="input-group-btn">
+								 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalInstStat">Search</button>
+							</div>
 						</div>
 					</div>
 	                  <div class="form-group">
@@ -334,6 +343,7 @@
     </div>
 </div>
 
+<!-- Modal Mitra -->
 <div class="modal fade" id="modalMitra" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="width:800px">
         <div class="modal-content">
@@ -357,6 +367,42 @@
                           <tr class="isi3" style="cursor: pointer;" data-id3 = "<?=$row['MTRA_ID']?>" data-mitra="<?php echo $row['MTRA_NAME']; ?>">
                             <td><?php echo $no?></td>
                             <td><?php echo $row['MTRA_NAME']?></td>
+                          </tr>
+                        <?php
+                        $no++;
+                      }
+                      ?>
+                    </tbody>
+                </table>  
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal InstStat -->
+<div class="modal fade" id="modalInstStat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:800px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Data Status</h4>
+            </div>
+            <div class="modal-body">
+                <table id="tableStatus" class="table table-bordered table-hover table-striped">
+                    <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>        
+                    <tbody>
+                      <?php 
+                      $no=1;
+                      foreach ($status as $row) {
+                        ?>
+                          <tr class="isi4" style="cursor: pointer;" data-id4 = "<?=$row['STAT_ID']?>" data-stat = "<?=$row['STAT_NAME']?>">
+                            <td><?php echo $no?></td>
+                            <td><?php echo $row['STAT_NAME']?></td>
                           </tr>
                         <?php
                         $no++;
@@ -394,9 +440,16 @@
         $('#modalSurveyer').modal('hide');        
     });
     $(document).on('click', '.isi3', function (e) {
-		document.getElementById("cmbMitra").value 		= $(this).attr('data-id3');
+		document.getElementById("txtMitra").value 		= $(this).attr('data-id3');
+		document.getElementById("myInput3").value 		= $(this).attr('data-mitra');
         $('#modalMitra').modal('hide');        
     });
+
+    $(document).on('click', '.isi4', function (e) {
+		document.getElementById("txtStat").value 		= $(this).attr('data-id4');
+		document.getElementById("myInput4").value 		= $(this).attr('data-stat');
+        $('#modalInstStat').modal('hide');
+	});
 </script>
 
 <!-- =========================================================================================================================================== -->
