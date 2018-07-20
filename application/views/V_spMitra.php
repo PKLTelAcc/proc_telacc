@@ -20,22 +20,21 @@
 	                  <div class="input-group">
 	                      <input class="form-control readonly" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true">
 	                      <input class="form-control" id="txtIDTA" type="hidden" name="txtIDTA">
-	                      <input class="form-control" id="txtSurvey" type="hidden" name="txtSurvey">
 						<div class="input-group-btn">
-							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalspTelkom">Search</button>
+							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalspMitra">Search</button>
 						</div>
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">No SP Mitra</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtno" required="true">
+	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtNo" required="true">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">ID PR</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtidPr" required="true">
+	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtIDPR" required="true">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
@@ -123,7 +122,7 @@
 				<tbody>
 					<?php 
 						$no=1;
-						foreach ($sp_telkom as $row) {
+						foreach ($sp_mitra as $row) {
 							echo "<tr>";
 							echo "<td>".$no."</td>";
 							echo "<td>".$row['WODE_ID_TA']."</td>";
@@ -152,7 +151,7 @@
 <!-- /.content -->
 
 <!-- modal IDTA -->
-<div class="modal fade" id="modalspTelkom" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalspMitra" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="width:800px">
         <div class="modal-content">
             <div class="modal-header">
@@ -173,6 +172,7 @@
                       foreach ($workOrder as $row) {
                         ?>
                           <tr class="isi" style="cursor: pointer;" data-id = "<?=$row['WODE_ID']?>" data-idta="<?php echo $row['WODE_ID_TA']; ?>" >
+                          	<td><?php echo $no ?></td>
                             <td><?php echo $row['WODE_ID_TA']?></td>
                           </tr>
                         <?php
@@ -192,6 +192,6 @@
 	$(document).on('click', '.isi', function (e) {
 		document.getElementById("txtIDTA").value 		= $(this).attr('data-id');
         document.getElementById("myInput").value 		= $(this).attr('data-idta');
-         $('#modalspTelkom').modal('hide');
+         $('#modalspMitra').modal('hide');
     });
 </script>

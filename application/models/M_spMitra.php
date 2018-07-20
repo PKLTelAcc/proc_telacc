@@ -18,14 +18,14 @@ class M_spmitra extends CI_Model
 	}
 	public function getWorkOrder()
 	{
-		$sql="SELECT * from work_order inner join survey on WODE_ID = SURV_WODE_ID";
+		$sql="SELECT * from work_order";
 		$query=$this->db->query($sql);
        	 $return = $query->result_array();
      	 return $return;
 	}
-	public function insert($data, $id)
+	public function insert($data)
 	{
-		$this->db->insert('sp_telkom',$data);
+		$this->db->insert('sp_mitra',$data);
 	}
 	public function update($data)
 	{
