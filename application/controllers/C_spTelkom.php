@@ -12,17 +12,17 @@ class C_spTelkom extends CI_Controller
 	}
 	public function index()
 	{
-		$spTelkom=$this->M_spTelkom->view();
+		$sp_telkom=$this->M_spTelkom->view();
 		$workOrder=$this->M_spTelkom->getWorkOrder();
 		$survey=$this->M_spTelkom->getSurvey();
 		$data = array(
 			'title' 	=> 'Input SP Telkom',
 			'content'	=> 'V_spTelkom',
-			'sp_telkom'	=> $spTelkom,
+			'sp_telkom'	=> $sp_telkom,
 			'workOrder'	=> $workOrder,
 			'survey'	=> $survey
 		);
-		$this->load->view('tampilan/V_combine',$data);
+		$this->load->view('tampilan/V_combine', $data);
 	}
 	public function form()        
 	{

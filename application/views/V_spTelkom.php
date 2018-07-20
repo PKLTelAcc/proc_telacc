@@ -109,7 +109,7 @@
 				<tbody>
 					<?php 
 						$no=1;
-						foreach ($sptelkom as $row) {
+						foreach ($sp_telkom as $row) {
 							echo "<tr>";
 							echo "<td>".$no."</td>";
 							echo "<td>".$row['WODE_ID_TA']."</td>";

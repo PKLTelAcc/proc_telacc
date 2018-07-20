@@ -140,8 +140,8 @@
                   <div class="form-group">
                   <label class="control-label">Status</label>
                   <div class="input-group">
-                      <input class="form-control readonly" placeholder="== Pilih Status ==" name="txtStatMuncul" id="myInput4" required="true" >
-                      <input class="form-control" id="txtStat" type="hidden" name="txtStat">
+                      <input class="form-control readonly" placeholder="== Pilih Status ==" name="txtStatMuncul" id="myInput4" required="true" value="<?php echo($instalasi[0]['STAT_NAME'])?>">
+                      <input class="form-control" id="txtStat" type="hidden" name="txtStat" value="<?php echo($instalasi[0]['INST_STAT_ID'])?>">
                   <!-- <div>
                     <select name="txtStat" id="cmbStat" required="true" class="form-control">
                       <option value="0">== Pilih Status ==</option>
