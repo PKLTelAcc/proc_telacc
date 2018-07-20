@@ -14,11 +14,11 @@
 	      <div class="box-body">
 	        <div class="row">
 	          <div class="col-md-12 ">
-	            <form action="<?php echo base_url().'C_spTelkom/form'; ?>" method="POST">
+	            <form action="<?php echo base_url().'C_spTelkom/updateData/'; ?>" method="POST">
 	            	<div class="form-group">
 	                  <label class=" control-label">ID TA</label>
 	                  <div class="input-group">
-	                      <input class="form-control readonly" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true">
+	                      <input class="form-control readonly" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true" value="<?php echo($sp_telkom[0]['SPTL_SURV_ID'])?>">
 	                      <input class="form-control" id="txtIDTA" type="hidden" name="txtIDTA">
 	                      <input class="form-control" id="txtSurvey" type="hidden" name="txtSurvey">
 						<div class="input-group-btn">
@@ -29,37 +29,37 @@
 	              	<div class="form-group">
 	                  <label class=" control-label">No SP Telkom</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtnoSpTelkom" required="true" value="<?php echo($spTelkom[0]['SPTL_NO'])?>">
+	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtnoSpTelkom" required="true" value="<?php echo($sp_telkom[0]['SPTL_NO'])?>">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">IDP</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtidp" required="true" value="<?php echo($spTelkom[0]['SPTL_ID'])?>">
+	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtidp" required="true" value="<?php echo($sp_telkom[0]['SPTL_ID'])?>">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Nomor PO</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtnoPo" required="true"value="<?php echo($spTelkom[0]['SPTL_NO_PO'])?>">
+	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtnoPo" required="true"value="<?php echo($sp_telkom[0]['SPTL_NO_PO'])?>">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Nilai Material</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Nilai Material" type="number" name="txtMaterial" required="true" id="survMaterial">
+	                      <input class="form-control" placeholder="Nilai Material" type="number" name="txtMaterial" required="true" id="survMaterial" value="<?php echo($sp_telkom[0]['SURV_MATERIAL'])?>">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Nilai Jasa</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Nilai Jasa" type="number" name="txtJasa" required="true" id="survJasa">
+	                      <input class="form-control" placeholder="Nilai Jasa" type="number" name="txtJasa" required="true" id="survJasa" value="<?php echo($sp_telkom[0]['SURV_JASA'])?>">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Nilai Total</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Nilai Total" type="number" name="txtTotal" required="true" id="survTotal">
+	                      <input class="form-control" placeholder="Nilai Total" type="number" name="txtTotal" required="true" id="survTotal" value="<?php echo($sp_telkom[0]['SURV_TOTAL'])?>">
 	                  </div>
 	              	</div>
 	              <div class="form-group">
