@@ -29,19 +29,19 @@
 	              	<div class="form-group">
 	                  <label class=" control-label">No SP Telkom</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtnospTelkom" required="true">
+	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtnoSpTelkom" required="true" value="<?php echo($spTelkom[0]['SPTL_NO'])?>">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">IDP</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtidp" required="true">
+	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtidp" required="true" value="<?php echo($spTelkom[0]['SPTL_ID'])?>">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Nomor PO</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtnoPo" required="true">
+	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtnoPo" required="true"value="<?php echo($spTelkom[0]['SPTL_NO_PO'])?>">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
@@ -81,59 +81,11 @@
 	    </div>
 	      <!-- /.box -->
 	  </div> <!-- col-input -->
-	  <div class="col-md-12">
-	    <div class="box box-danger">
-	      <div class="box-header with-border">
-	        <h3 class="box-title">Data SP Telkom</h3>
-
-	        <div class="box-tools pull-right">
-	          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-	        </div>
-	      </div>
-	      <!-- /.box-header -->
-	      <div class="box-body">
-			<table class="table table-bordered table-hover table-striped" id="lookup">
-				<thead>
-					<tr>
-						<th>No.</th>
-						<th>ID TA</th>
-						<th>No SP Telkom</th>
-						<th>IDP</th>
-						<th>No PO</th>
-						<th>Nilai Material</th>
-						<th>Nilai Jasa</th>
-						<th>Nilai Total</th>
-						<th style="text-align: center">Action</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php 
-						$no=1;
-						foreach ($sptelkom as $row) {
-							echo "<tr>";
-							echo "<td>".$no."</td>";
-							echo "<td>".$row['WODE_ID_TA']."</td>";
-							echo "<td>".$row['SPTL_NO']."</td>";
-							echo "<td>".$row['SPTL_IDP']."</td>";
-							echo "<td>".$row['SPTL_NO_PO']."</td>";
-							echo "<td>".$row['SURV_MATERIAL']."</td>";
-							echo "<td>".$row['SURV_JASA']."</td>";
-							echo "<td>".$row['SURV_TOTAL']."</td>";
-							echo "<td><a href='".base_url()."C_spTelkom/formUpdate/".$row['SPTL_ID']."'>Edit</a> | <a href='".base_url()."C_spTelkom/delete/".$row['SPTL_ID']."'>Delete</a></td>";
-							echo "</tr>";
-
-							$no++;
-						}
-					 ?>
-				</tbody>
-			</table>
-	      </div>
 	    </div>
 	      <!-- /.box -->
 	  </div> <!-- col-input -->
 	</div>
 </div>
-<!-- /.content -->
 
 <!-- modal IDTA -->
 <div class="modal fade" id="modalspTelkom" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

@@ -43,10 +43,11 @@ class M_spTelkom extends CI_Model
 		return $return;
 	}
 
-	public function updateData($id, $data)
+	public function updateData($id, $data, $data2)
 	{
 		$this->db->where('SPTL_ID', $id);
 		$this->db->update('sp_telkom', $data);
+		$this->db->update('survey', $data2);
 	}
 
 	public function delete($id)
