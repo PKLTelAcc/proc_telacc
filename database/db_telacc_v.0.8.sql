@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 19, 2018 at 06:16 AM
+-- Generation Time: Jul 20, 2018 at 10:55 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -93,13 +93,6 @@ CREATE TABLE `mitra` (
   `MTRA_ID` int(11) NOT NULL,
   `MTRA_NAME` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `mitra`
---
-
-INSERT INTO `mitra` (`MTRA_ID`, `MTRA_NAME`) VALUES
-(1, 'Telkom');
 
 -- --------------------------------------------------------
 
@@ -372,9 +365,9 @@ CREATE TABLE `sp_mitra` (
   `SPMT_JASA` int(11) NOT NULL,
   `SPMT_TOTAL` int(11) NOT NULL,
   `SPMT_ODP` int(11) NOT NULL,
-  `SMPT_NO_APM` int(11) NOT NULL,
-  `SMPT_TIMESTAMP` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `SMPT_WODE_ID` int(11) NOT NULL
+  `SPMT_NO_APM` int(11) NOT NULL,
+  `SPMT_TIMESTAMP` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `SPMT_WODE_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -753,7 +746,7 @@ ALTER TABLE `level`
 -- AUTO_INCREMENT for table `mitra`
 --
 ALTER TABLE `mitra`
-  MODIFY `MTRA_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `MTRA_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `pegawai`
