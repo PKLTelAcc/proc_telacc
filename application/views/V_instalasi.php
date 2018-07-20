@@ -18,7 +18,7 @@
 	            	<div class="form-group">
 	                  <label class=" control-label">ID TA</label>
 	                  <div class="input-group">
-	                      <input class="form-control" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true">
 	                      <input class="form-control" id="txtIDTA" type="hidden" name="txtIDTA">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalIDTAInstalasi">Search</button>
@@ -28,58 +28,58 @@
 	              	<div class="form-group">
 	                  <label class=" control-label">Witel</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Witel" id="inputWitel" type="text" name="txtWtelMuncul" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="Witel" id="inputWitel" type="text" name="txtWtelMuncul" required="true">
 	                      <input class="form-control" id="witel" type="hidden" name="txtWtel">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Sub Witel</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Sub Witel" id="inputSubWitel" type="text" name="txtSwitMuncul" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="Sub Witel" id="inputSubWitel" type="text" name="txtSwitMuncul" required="true">
 	                      <input class="form-control" id="subWitel" type="hidden" name="txtSwit">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Program</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Program" id="inputProgram" type="text" name="txtProgMuncul" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="Program" id="inputProgram" type="text" name="txtProgMuncul" required="true">
 	                      <input class="form-control" id="program" type="hidden" name="txtProg">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Nama Lokasi</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Nama Lokasi" id="namaLokasi" type="text" name="txtLokasi" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="Nama Lokasi" id="namaLokasi" type="text" name="txtLokasi" required="true">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Nilai Material</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Nilai Material" type="number" name="txtMaterial" required="true">
+	                      <input class="form-control" id="survMaterial" placeholder="Nilai Material" type="number" name="txtMaterial" required="true">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Nilai Jasa</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Nilai Jasa" type="number" name="txtJasa" required="true">
+	                      <input class="form-control" id="survJasa" placeholder="Nilai Jasa" type="number" name="txtJasa" required="true">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Nilai Total</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Nilai Total" type="number" name="txtTotal" required="true">
+	                      <input class="form-control" id="survTotal" placeholder="Nilai Total" type="number" name="txtTotal" required="true">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Jumlah ODP</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtODP" required="true">
+	                      <input class="form-control" id="survODP" placeholder="Jumlah ODP" type="number" name="txtODP" required="true">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Nama Waspang</label>
 	                  <div class="input-group">
-	                      <input class="form-control" placeholder="== Pilih Waspang ==" name="txtSurveyerMuncul" id="myInput2" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="== Pilih Waspang ==" name="txtSurveyerMuncul" id="myInput2" required="true">
 	                      <input class="form-control" id="txtSurveyer" type="hidden" name="txtSurveyer">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSurveyer">Search</button>
@@ -89,7 +89,7 @@
 	              	<div class="form-group">
 	                  <label class=" control-label">NIK Waspang</label>
 	                  <div>
-	                      <input class="form-control" placeholder="NIK Surveyer" id="nik" type="text" name="txtNIK" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="NIK Surveyer" id="nik" type="text" name="txtNIK" required="true">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
@@ -276,7 +276,8 @@
                       $no=1;
                       foreach ($workOrder as $row) {
                         ?>
-                          <tr class="isi" style="cursor: pointer;" data-id = "<?=$row['WODE_ID']?>" data-lokasi="<?php echo $row['WODE_NAMA_LOKASI']; ?>" data-program="<?php echo $row['PROG_ID']; ?>" data-inputProgram="<?php echo $row['PROG_NAME']; ?>" data-subWitel="<?php echo $row['SWIT_ID']; ?>" data-inputSubWitel="<?php echo $row['SWIT_NAME']; ?>" data-witel="<?php echo $row['WTEL_ID']; ?>" data-idta="<?php echo $row['WODE_ID_TA']; ?>" data-inputWitel="<?php echo $row['WTEL_NAME']; ?>">
+                          <tr class="isi" style="cursor: pointer;" data-id = "<?=$row['WODE_ID']?>" data-lokasi="<?php echo $row['WODE_NAMA_LOKASI']; ?>" data-program="<?php echo $row['PROG_ID']; ?>" data-inputProgram="<?php echo $row['PROG_NAME']; ?>" data-subWitel="<?php echo $row['SWIT_ID']; ?>" data-inputSubWitel="<?php echo $row['SWIT_NAME']; ?>" data-witel="<?php echo $row['WTEL_ID']; ?>" data-idta="<?php echo $row['WODE_ID_TA']; ?>" data-inputWitel="<?php echo $row['WTEL_NAME']; ?>" data-survMaterial="<?php echo $row['SURV_MATERIAL']; ?>" data-survJasa="<?php echo $row['SURV_JASA']; ?>"
+                          	data-survTotal="<?php echo $row['SURV_TOTAL']; ?>" data-survODP="<?php echo $row['SURV_ODP']; ?>">
                             <td><?php echo $no?></td>
                             <td><?php echo $row['WODE_ID_TA']?></td>
                             <td><?php echo $row['WTEL_NAME']?></td>
@@ -379,6 +380,10 @@
         document.getElementById("inputSubWitel").value 	= $(this).attr('data-inputSubWitel');
         document.getElementById("witel").value 			= $(this).attr('data-witel');
         document.getElementById("inputWitel").value 	= $(this).attr('data-inputWitel');
+        document.getElementById("survMaterial").value 	= $(this).attr('data-survMaterial');
+        document.getElementById("survJasa").value 		= $(this).attr('data-survJasa');
+        document.getElementById("survTotal").value 		= $(this).attr('data-survTotal');
+        document.getElementById("survODP").value 		= $(this).attr('data-survODP');
         $('#modalIDTAInstalasi').modal('hide');
 	});
 
