@@ -28,22 +28,26 @@ class C_spTelkom extends CI_Controller
 	{
 		$idTa		= $_POST['txtIDTA'];
 		$nospTelkom	= $_POST['txtnoSpTelkom'];
-		$idp		= $_POST['idp'];
+		$idp		= $_POST['txtidp'];
 		$noPo		= $_POST['txtnoPo'];
-		$material	= $_POST['txtmaterial'];
-		$jasa		= $_POST['txtjasa'];
-		$total		= $_POST['txttotal'];
+		$material	= $_POST['txtMaterial'];
+		$jasa		= $_POST['txtJasa'];
+		$total		= $_POST['txtTotal'];
+		$idSurvey	= $_POST['txtSurvey'];
 		
 	$data = array(
-		'SPTL_WODE_ID'	=> $IdTa,
-		'SPTL_NO'		=> $noSpTelkom,
+		'SPTL_WODE_ID'	=> $idTa,
+		'SPTL_NO'		=> $nospTelkom,
 		'SPTL_IDP'		=> $idp,
 		'SPTL_NO_PO'	=> $noPo,
+		'SPTL_SURV_ID'	=> $idSurvey
+		);
+	$id = array(
 		'SURV_MATERIAL'	=> $material,
 		'SURV_JASA'		=> $jasa,
 		'SURV_TOTAL'	=> $total
 		);
-	$spTelkom=$this->M_spTelkom->insert($data);
+	$spTelkom=$this->M_spTelkom->insert($data, $id);
 	redirect('C_spTelkom');
 	}
 	public function formUpdate()

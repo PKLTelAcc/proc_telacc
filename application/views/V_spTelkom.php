@@ -18,10 +18,11 @@
 	            	<div class="form-group">
 	                  <label class=" control-label">ID TA</label>
 	                  <div class="input-group">
-	                      <input class="form-control" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true">
 	                      <input class="form-control" id="txtIDTA" type="hidden" name="txtIDTA">
+	                      <input class="form-control" id="txtSurvey" type="hidden" name="txtSurvey">
 						<div class="input-group-btn">
-							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalIDTASurvey">Search</button>
+							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalspTelkom">Search</button>
 						</div>
 	                  </div>
 	              	</div>
@@ -46,19 +47,19 @@
 	              	<div class="form-group">
 	                  <label class=" control-label">Nilai Material</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Nilai Material" type="number" name="txtMaterial" required="true">
+	                      <input class="form-control" placeholder="Nilai Material" type="number" name="txtMaterial" required="true" id="survMaterial">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Nilai Jasa</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Nilai Jasa" type="number" name="txtJasa" required="true">
+	                      <input class="form-control" placeholder="Nilai Jasa" type="number" name="txtJasa" required="true" id="survJasa">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Nilai Total</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Nilai Total" type="number" name="txtTotal" required="true">
+	                      <input class="form-control" placeholder="Nilai Total" type="number" name="txtTotal" required="true" id="survTotal">
 	                  </div>
 	              	</div>
 	              <div class="form-group">
@@ -102,7 +103,6 @@
 						<th>Nilai Material</th>
 						<th>Nilai Jasa</th>
 						<th>Nilai Total</th>
-						<th>Jumlah ODP</th>
 						<th style="text-align: center">Action</th>
 					</tr>
 				</thead>
@@ -136,7 +136,7 @@
 <!-- /.content -->
 
 <!-- modal IDTA -->
-<div class="modal fade" id="modalIDTASurvey" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalspTelkom" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="width:800px">
         <div class="modal-content">
             <div class="modal-header">
@@ -156,7 +156,8 @@
                       $no=1;
                       foreach ($workOrder as $row) {
                         ?>
-                          <tr class="isi" style="cursor: pointer;" data-id = "<?=$row['WODE_ID']?>">
+                          <tr class="isi" style="cursor: pointer;" data-id = "<?=$row['WODE_ID']?>" data-survMaterial="<?php echo $row['SURV_MATERIAL']; ?>" data-survJasa="<?php echo $row['SURV_JASA']; ?>"
+                          	data-survTotal="<?php echo $row['SURV_TOTAL']; ?>" data-survODP="<?php echo $row['SURV_ODP']; ?>" data-idta="<?php echo $row['WODE_ID_TA']; ?>" data-survey="<?php echo $row['SURV_ID']; ?>">
                             <td><?php echo $no?></td>
                             <td><?php echo $row['WODE_ID_TA']?></td>
                           </tr>
@@ -177,4 +178,10 @@
 	$(document).on('click', '.isi', function (e) {
 		document.getElementById("txtIDTA").value 		= $(this).attr('data-id');
         document.getElementById("myInput").value 		= $(this).attr('data-idta');
+        document.getElementById("survMaterial").value 	= $(this).attr('data-survMaterial');
+        document.getElementById("survJasa").value 		= $(this).attr('data-survJasa');
+        document.getElementById("survTotal").value 		= $(this).attr('data-survTotal');
+        document.getElementById("txtSurvey").value 		= $(this).attr('data-survey');
+         $('#modalspTelkom').modal('hide');
+    });
 </script>
