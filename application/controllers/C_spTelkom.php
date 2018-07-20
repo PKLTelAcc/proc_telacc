@@ -18,7 +18,7 @@ class C_spTelkom extends CI_Controller
 		$data = array(
 			'title' 	=> 'Input SP Telkom',
 			'content'	=> 'V_spTelkom',
-			'spTelkom'	=> $spTelkom,
+			'sp_telkom'	=> $spTelkom,
 			'workOrder'	=> $workOrder,
 			'survey'	=> $survey
 		);
@@ -50,9 +50,9 @@ class C_spTelkom extends CI_Controller
 	$spTelkom=$this->M_spTelkom->insert($data, $id);
 	redirect('C_spTelkom');
 	}
-	public function formUpdate()
+	public function formUpdate($id)
 	{
-		$spTelkom=$this->M_spTelkom->view();
+		$spTelkom=$this->M_spTelkom->update($id);
 		$workOrder=$this->M_spTelkom->getWorkOrder();
 		$survey=$this->M_spTelkom->getSurvey();
 		$data = array(
@@ -68,20 +68,26 @@ class C_spTelkom extends CI_Controller
 	{
 		$idTa		= $_POST['txtIDTA'];
 		$nospTelkom	= $_POST['txtnoSpTelkom'];
-		$idp		= $_POST['idp'];
+		$idp		= $_POST['txtidp'];
 		$noPo		= $_POST['txtnoPo'];
-		$material	= $_POST['txtmaterial'];
-		$jasa		= $_POST['jasa'];
-		$total		= $_POST['total'];
+		$material	= $_POST['txtMaterial'];
+		$jasa		= $_POST['txtJasa'];
+		$total		= $_POST['txtTotal'];
+		$idSurvey	= $_POST['txtSurvey'];
 		
 	$data = array(
-		'SPTL_WODE_ID'	=> $IdTa,
-		'SPTL_NO'		=> $noSpTelkom,
+		'SPTL_WODE_ID'	=> $idTa,
+		'SPTL_NO'		=> $nospTelkom,
 		'SPTL_IDP'		=> $idp,
 		'SPTL_NO_PO'	=> $noPo,
-		'SPTL_SURV_ID'	=> $total
+		'SPTL_SURV_ID'	=> $idSurvey
 		);
-	$spTelkom=$this->M_spTelkom->insert($id, $data);
+	$data2 = array(
+		'SURV_MATERIAL'	=> $material,
+		'SURV_JASA'		=> $jasa,
+		'SURV_TOTAL'	=> $total
+		);
+	$spTelkom=$this->M_spTelkom->insert($id, $data, $data2);
 	redirect('C_spTelkom');
 	}
 	public function delete($id)
