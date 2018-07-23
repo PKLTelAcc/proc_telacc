@@ -24,28 +24,29 @@ class C_spMitra extends CI_Controller
 	}
 	public function form()
 	{
-		$idTa		= $_POST['txtIDTA'];
-		$no			= $_POST['txtNo'];
-		$idPr		= $_POST['txtIDPR'];
-		$status		= $_POST['txtStatus'];
-		$material	= $_POST['txtMaterial'];
-		$jasa		= $_POST['txtJasa'];
-		$total		= $_POST['txtTotal'];
-		$odp		= $_POST['txtOdp'];
-		$apm		= $_POST['txtApm'];
+		$idta 		= $_POST['txtIDTA'];
+		$noSPMitra	= $_POST['txtNo'];
+		$idPR 		= $_POST['txtIDPR'];
+		$status 	= $_POST['txtStatus'];
+		$material 	= $_POST['txtMaterial'];
+		$jasa 		= $_POST['txtJasa'];
+		$total 		= $_POST['txtTotal'];
+		$odp 		= $_POST['txtOdp'];
+		$apm 		= $_POST['txtApm'];
 
 		$data = array(
-			'SPMT_WODE_ID'	=> $idTa,
-			'SPMT_NO'		=> $no,
-			'SPMT_ID_PR'	=> $idPr,
+			'SPMT_WODE_ID' 	=> $idta,
+			'SPMT_NO'		=> $noSPMitra,
+			'SPMT_ID_PR'	=> $idPR,
 			'SPMT_STATUS'	=> $status,
 			'SPMT_MATERIAL'	=> $material,
 			'SPMT_JASA'		=> $jasa,
 			'SPMT_TOTAL'	=> $total,
 			'SPMT_ODP'		=> $odp,
-			'SPMT NO_APM'	=> $apm
-		 );
-		$spMitra=$this->M_spMitra->insert($data, $id);
+			'SPMT_NO_APM'	=> $apm 
+			 );
+
+		$spMitra=$this->M_spMitra->insert($data);
 	redirect('C_spMitra');
 	}
 	public function formUpdate($id)
@@ -62,27 +63,27 @@ class C_spMitra extends CI_Controller
 	}
 	public function updateData()
 	{
-		$idTa		= $_POST['txtIDTA'];
-		$no			= $_POST['txtNo'];
-		$idPr		= $_POST['txtIDPR'];
-		$status		= $_POST['txtStatus'];
-		$material	= $_POST['txtMaterial'];
-		$jasa		= $_POST['txtJasa'];
-		$total		= $_POST['txtTotal'];
-		$odp		= $_POST['txtOdp'];
-		$apm		= $_POST['txtApm'];
+		$idta 		= $_POST['txtIDTA'];
+		$noSPMitra	= $_POST['txtNo'];
+		$idPR 		= $_POST['txtIDPR'];
+		$status 	= $_POST['txtStatus'];
+		$material 	= $_POST['txtMaterial'];
+		$jasa 		= $_POST['txtJasa'];
+		$total 		= $_POST['txtTotal'];
+		$odp 		= $_POST['txtOdp'];
+		$apm 		= $_POST['txtApm'];
 
 		$data = array(
-			'SPMT_WODE_ID'	=> $idTa,
-			'SPMT_NO'		=> $no,
-			'SPMT_ID_PR'	=> $idPr,
+			'SPMT_WODE_ID' 	=> $idta,
+			'SPMT_NO'		=> $noSPMitra,
+			'SPMT_ID_PR'	=> $idPR,
 			'SPMT_STATUS'	=> $status,
 			'SPMT_MATERIAL'	=> $material,
 			'SPMT_JASA'		=> $jasa,
 			'SPMT_TOTAL'	=> $total,
 			'SPMT_ODP'		=> $odp,
-			'SPMT NO_APM'	=> $apm
-		 );
+			'SPMT_NO_APM'	=> $apm 
+			 );
 		$spMitra=$this->M_spMitra->insert($data, $id);
 	redirect('C_spMitra');
 	}

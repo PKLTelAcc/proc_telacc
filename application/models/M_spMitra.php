@@ -2,7 +2,7 @@
 /**
  * 
  */
-class M_spmitra extends CI_Model
+class M_spMitra extends CI_Model
 {
 	
 	function __construct()

@@ -133,8 +133,8 @@
 							echo "<td>".$row['SPMT_JASA']."</td>";
 							echo "<td>".$row['SPMT_TOTAL']."</td>";
 							echo "<td>".$row['SPMT_ODP']."</td>";
-							echo "<td>".$row['SPMT_N0_APM']."</td>";
-							echo "<td><a href='".base_url()."C_spTelkom/formUpdate/".$row['SPTL_ID']."'>Edit</a> | <a href='".base_url()."C_spTelkom/delete/".$row['SPTL_ID']."'>Delete</a></td>";
+							echo "<td>".$row['SPMT_NO_APM']."</td>";
+							echo "<td><a href='".base_url()."C_spMitra/formUpdate/".$row['SPMT_ID']."'>Edit</a> | <a href='".base_url()."C_spMitra/delete/".$row['SPMT_ID']."'>Delete</a></td>";
 							echo "</tr>";
 
 							$no++;
