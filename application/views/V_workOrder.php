@@ -27,7 +27,7 @@
 						<label class="control-label">Witel</label>
 						<div class="input-group">
 						  <input class="form-control readonly" placeholder="== Pilih Witel ==" name="txtWtelMuncul" id="myInput" required="true">
-	                      <input class="form-control" id="txtWtel" type="hidden" name="txtWtel">
+	                      <input class="form-control" id="txtWtel" type="hidden" name="txtWtel" onchange="showSwit(this.value)">
 							<!-- <select name="txtWtel" id="cmbWtel" required="true" class="form-control">
 							  <option value="0">== Pilih Witel ==</option>
 								<?php  
@@ -39,13 +39,13 @@
 								?>
 								</select> -->
 							<div class="input-group-btn">
-							  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWodeWtel">Search</button>
+							  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWodeWtel" >Search</button>
 							</div>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="control-label">Sub Witel</label>
-						<div class="input-group">
+						<div class="input-group" id="showSwit">
 						  <input class="form-control readonly" placeholder="== Pilih Sub Witel ==" name="txtSwitMuncul" id="myInput2" required="true" >
 	                      <input class="form-control" id="txtSwit" type="hidden" name="txtSwit">
 							<!-- <select name="txtSwit" id="cmbSwit" required="true" class="form-control">
@@ -59,7 +59,7 @@
 								?>
 								</select> -->
 							<div class="input-group-btn">
-							  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWodeSwit">Search</button>
+							  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWodeSwit" onclick="modalCariSwit()">Search</button>
 							</div>
 						</div>
 					</div>
@@ -252,37 +252,8 @@
 
 <!-- modal WodeSwit -->
 <div class="modal fade" id="modalWodeSwit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" style="width:800px">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Data Sub Witel</h4>
-            </div>
-            <div class="modal-body">
-                <table id="tableSubWitel" class="table table-bordered table-hover table-striped">
-                    <thead>
-                      <tr>
-                        <th>No.</th>
-                        <th>Sub Witel</th>
-                      </tr>
-                    </thead>        
-                    <tbody>
-                      <?php 
-                      $no=1;
-                      foreach ($subWitel as $row) {
-                        ?>
-                          <tr class="search2" style="cursor: pointer;" data-id2 = "<?=$row['SWIT_ID']?>" data-swit = "<?=$row['SWIT_NAME']?>">
-                            <td><?php echo $no?></td>
-                            <td><?php echo $row['SWIT_NAME']?></td>
-                          </tr>
-                        <?php
-                        $no++;
-                      }
-                      ?>
-                    </tbody>
-                </table>  
-            </div>
-        </div>
+    <div class="modal-dialog" style="width:800px" id="modalCariSwit">
+        
     </div>
 </div>
 
@@ -358,11 +329,39 @@
     </div>
 </div>
 
+<script>
+function showSwit(str) {
+  var xhttp;
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("showSwit").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "<?php echo base_url()?>C_workOrder/searchSwit?q="+str, true);
+  xhttp.send();   
+}
+
+function modalCariSwit() {
+    wtel    = document.getElementById('txtWtel').value;
+    $.ajax({
+        type: "GET", 
+        url: "<?php echo base_url()?>C_workOrder/modalSwit?wtel="+wtel,
+        success: function(html) {
+            $("#modalCariSwit").html(html);
+            $('#tableSubWitel').DataTable({ 
+           });
+        }
+    });
+  }
+</script>
+
 <script type="text/javascript">
 		$(document).on('click', '.search', function (e) {
 		document.getElementById("txtWtel").value 		= $(this).attr('data-id');
 		document.getElementById("myInput").value 		= $(this).attr('data-wtel');
         $('#modalWodeWtel').modal('hide');
+        showSwit($(this).attr('data-id'));
 	});
 
 		$(document).on('click', '.search2', function (e) {
