@@ -52,6 +52,15 @@
 
         //mitra
         $("#tableMitra").dataTable();
+
+        //report work order
+        $("#reportWorkOrder").dataTable();
+
+        //report survey
+        $("#reportSurvey").dataTable();
+
+        //report instalasi
+        $("#reportInstalasi").dataTable();
     });
 </script>
 
