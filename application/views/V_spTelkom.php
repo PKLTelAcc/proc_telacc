@@ -29,19 +29,19 @@
 	              	<div class="form-group">
 	                  <label class=" control-label">No SP Telkom</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtnoSpTelkom" required="true">
+	                      <input class="form-control" placeholder="No SP Telkom" type="number" name="txtnoSpTelkom" required="true">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">IDP</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtidp" required="true">
+	                      <input class="form-control" placeholder="IDP" type="number" name="txtidp" required="true">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
 	                  <label class=" control-label">Nomor PO</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtnoPo" required="true">
+	                      <input class="form-control" placeholder="Nomor PO" type="number" name="txtnoPo" required="true">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
