@@ -22,7 +22,7 @@ class C_bast extends CI_Controller
 			'content'	=> 'V_bast',
 			'bast'		=> $bast,
 			'workOrder'	=> $workOrder,
-			'sp_telkom'	=> $spTelkom,
+			'sp_telkom'	=> $sp_telkom,
 			'instalasi'	=> $instalasi,
 			'status'	=> $status
 		);
@@ -34,18 +34,25 @@ class C_bast extends CI_Controller
 		$noBast		= $_POST['txtnoBast'];
 		$noPo		= $_POST['txtnoPo'];
 		$material	= $_POST['txtmaterial'];
-		$jasa		= $_POST['jasa'];
-		$total		= $_POST['total'];
-		$odp		= $_POST['odp'];
-		$tanggal	= $_POST['tanggal'];
+		$jasa		= $_POST['txtjasa'];
+		$total		= $_POST['txttotal'];
+		$odp		= $_POST['txtodp'];
+		$tanggal	= $_POST['txttanggal'];
+		$instalasi 	= $_POST['txtinstalasi'];
 	
 	$data = array(
 		'BATS_WODE_ID'	=> $IdTa,
 		'BATS_NO'		=> $noBast,
 		'BAST_SPTL_ID'	=> $noPo,
-		'BAST_INST_ID'	=> $material,
-		'BAST_TANGGAL'	=> $tanggal
+		'BAST_TANGGAL'	=> $tanggal,
+		'BAST_INST_ID'	=> $instalasi
 		);
+	$id = array(
+		'INST_ODP' 		=> $odp,
+		'INST_MATERIAL'	=> $material,
+		'INST_JASA'		=> $jasa,
+		'INST_TOTAL'	=> $total
+	);
 	$bast=$this->M_bast->insert($data);
 	redirect('C_bast');
 	}
@@ -61,7 +68,7 @@ class C_bast extends CI_Controller
 			'content'	=> 'V_editBast',
 			'bast'		=> $bast,
 			'workOrder'	=> $workOrder,
-			'sp_telkom'	=> $spTelkom,
+			'sp_telkom'	=> $sp_telkom,
 			'instalasi'	=> $instalasi,
 			'status'	=> $status
 			);
@@ -69,24 +76,32 @@ class C_bast extends CI_Controller
 	}
 	public function updateData($id)
 	{
+		{
 		$idTa		= $_POST['txtIDTA'];
 		$noBast		= $_POST['txtnoBast'];
 		$noPo		= $_POST['txtnoPo'];
-		$material	= $_POST['txtmaterial'];
-		$jasa		= $_POST['jasa'];
-		$total		= $_POST['total'];
-		$odp		= $_POST['odp'];
-		$tanggal	= $_POST['tanggal'];
+		$material	= $_POST['txtMaterial'];
+		$jasa		= $_POST['txtJasa'];
+		$total		= $_POST['txtTotal'];
+		$odp		= $_POST['txtOdp'];
+		$tanggal	= $_POST['txtTanggal'];
+		$instalasi 	= $_POST['txtInstalasi'];
 	
 	$data = array(
 		'BATS_WODE_ID'	=> $IdTa,
 		'BATS_NO'		=> $noBast,
 		'BAST_SPTL_ID'	=> $noPo,
-		'BAST_INST_ID'	=> $material,
-		'BAST_TANGGAL'	=> $tanggal
+		'BAST_TANGGAL'	=> $tanggal,
+		'BAST_INST_ID'	=> $instalasi
 		);
-	$bast=$this->M_bast->updateData($id,$data);
-		redirect('C_bast');
+	$data2 = array(
+		'INST_ODP' 		=> $odp,
+		'INST_MATERIAL'	=> $material,
+		'INST_JASA'		=> $jasa,
+		'INST_TOTAL'	=> $total
+	);
+	$bast=$this->M_bast->updateDatat($id, $data, $data2);
+	redirect('C_bast');
 	}
 	public function delete($id)
 	{
