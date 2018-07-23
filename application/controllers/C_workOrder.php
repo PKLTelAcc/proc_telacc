@@ -106,5 +106,60 @@ class C_workOrder extends CI_Controller
 		$this->db->delete('work_order', array('WODE_ID' => $id));
 		redirect('C_workOrder');
 	}
+
+	public function searchSwit()
+	{
+		$str = $_GET['q'];
+    	$subWitel  = $this->M_workOrder->getSwitName($str);
+    	?>
+    		<input class="form-control readonly" placeholder="== Pilih Sub Witel ==" name="txtSwitMuncul" id="myInput2" required="true" >
+	        <input class="form-control" id="txtSwit" type="hidden" name="txtSwit">
+			<div class="input-group-btn">
+				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWodeSwit" onclick="modalCariSwit()">Search</button>
+			</div>
+    	<?php
+	}
+
+	public function modalSwit()
+	{
+		$txtWtel = $_GET['wtel'];
+     	$subWitel = $this->M_workOrder->getSwitByWtelId($txtWtel);
+     	$data = array(
+      	'txtWtel' => $txtWtel ,
+      	'subWitel' => $subWitel 
+    );
+		?>
+		<div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Data Sub Witel</h4>
+            </div>
+            <div class="modal-body">
+                <table id="tableSubWitel" class="table table-bordered table-hover table-striped">
+                    <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th>Sub Witel</th>
+                      </tr>
+                    </thead>        
+                    <tbody>
+                      <?php 
+                      $no=1;
+                      foreach ($subWitel as $row) {
+                        ?>
+                          <tr class="search2" style="cursor: pointer;" data-id2 = "<?=$row['SWIT_ID']?>" data-swit = "<?=$row['SWIT_NAME']?>">
+                            <td><?php echo $no?></td>
+                            <td><?php echo $row['SWIT_NAME']?></td>
+                          </tr>
+                        <?php
+                        $no++;
+                      }
+                      ?>
+                    </tbody>
+                </table>  
+            </div>
+        </div>
+		<?php
+	}
 }
  ?>

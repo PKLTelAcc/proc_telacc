@@ -69,5 +69,20 @@ class M_workOrder extends CI_Model
 		$this->db->where('WODE_ID', $id);
 	}
 	
+	public function getSwitName($str)
+    {
+      $sql="select * from sub_witel where SWIT_WTEL_ID =".$str;
+      $query=$this->db->query($sql);
+      $return = $query->result_array();
+      return $return;
+    }
+
+    public function getSwitByWtelId($id)
+    {
+      $sql    = "SELECT * FROM sub_witel INNER JOIN witel ON SWIT_WTEL_ID = WTEL_ID WHERE SWIT_WTEL_ID =".$id;
+      $query  = $this->db->query($sql);
+      $return = $query->result_array();
+      return $return; 
+    }
 }
  ?>
