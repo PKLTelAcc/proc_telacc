@@ -146,7 +146,7 @@ date_default_timezone_set('Asia/Bangkok');
                             <li><a href="<?php echo base_url()?>c_program">Input Program</a></li>
                           </ul>
                       </li>
-                <!--WO-->
+                <!--Work Order-->
                 <li >
                   <a href="<?php echo base_url()?>c_workOrder">
                     <i class="glyphicon glyphicon-list-alt"></i>
@@ -167,12 +167,31 @@ date_default_timezone_set('Asia/Bangkok');
                     Instalasi
                   </a>
                 </li>
+                <!--bast-->
+                <li >
+                  <a href="<?php echo base_url()?>c_bast">
+                    <i class="glyphicon glyphicon-list-alt"></i>
+                    BAST
+                  </a>
+                </li>
+
+                <!--sp-->
+                <li >
+                  <a class="dropdown-toggle" style="cursor: pointer;" type="button" data-toggle="dropdown">
+                    <i class="glyphicon glyphicon-list-alt"></i>
+                    SP
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">  
+                      <li><a href="<?php echo base_url()?>c_spTelkom">SP Telkom</a></li>
+                      <li><a href="<?php echo base_url()?>c_spMitra">SP Mitra</a></li>
+                    </ul>
+                </li>
                 <?php
                   }
                   ?>
                 <!-- Report -->
                 <li >
-                  <a href="report.html">
+                  <a href="<?php echo base_url()?>c_report">
                     <i class="fa fa-bar-chart-o"></i>
                     Report
                   </a>
