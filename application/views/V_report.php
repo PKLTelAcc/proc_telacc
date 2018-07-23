@@ -37,7 +37,7 @@
 		 					echo "<td>".$row['WTEL_NAME']."</td>";
 		 					echo "<td>".$row['SWIT_NAME']."</td>";
 		 					echo "<td>".$row['PROG_NAME']."</td>";
-		 					echo "<td>".$row['WODE_LOKASI']."</td>";
+		 					echo "<td>".$row['WODE_NAMA_LOKASI']."</td>";
 		 					echo "<td>".$row['WODE_ALAMAT']."</td>";
 		 					echo "<td>".$row['WODE_KOORDINAT']."</td>";
 		 					echo "<td>".$row['WODE_TANGGAL']."</td>";
@@ -98,7 +98,7 @@
 		 					echo "<td>".$row['WTEL_NAME']."</td>";
 		 					echo "<td>".$row['SWIT_NAME']."</td>";
 		 					echo "<td>".$row['PROG_NAME']."</td>";
-		 					echo "<td>".$row['WODE_LOKASI']."</td>";
+		 					echo "<td>".$row['WODE_NAMA_LOKASI']."</td>";
 		 					echo "<td>".$row['SURV_MATERIAL']."</td>";
 		 					echo "<td>".$row['SURV_JASA']."</td>";
 		 					echo "<td>".$row['SURV_TOTAL']."</td>";
@@ -159,14 +159,14 @@
 				<tbody>
 					<?php
 					$no=1; 
-		 				foreach ($dataSurvey as $row) {
+		 				foreach ($dataInstalasi as $row) {
 		 					echo "<tr>";
 		 					echo "<td>".$no."</td>";
 		 					echo "<td>".$row['WODE_ID_TA']."</td>";
 		 					echo "<td>".$row['WTEL_NAME']."</td>";
 		 					echo "<td>".$row['SWIT_NAME']."</td>";
 		 					echo "<td>".$row['PROG_NAME']."</td>";
-		 					echo "<td>".$row['WODE_LOKASI']."</td>";
+		 					echo "<td>".$row['WODE_NAMA_LOKASI']."</td>";
 		 					echo "<td>".$row['INST_MATERIAL']."</td>";
 		 					echo "<td>".$row['INST_JASA']."</td>";
 		 					echo "<td>".$row['INST_TOTAL']."</td>";
