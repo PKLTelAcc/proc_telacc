@@ -27,12 +27,13 @@ class C_spTelkom extends CI_Controller
 	public function form()        
 	{
 		$idTa 		= $_POST['txtIDTA'];
-			$nospTelkom = $_POST['txtnoSpTelkom'];
-			$idp 		= $_POST['txtidp'];
-			$noPo 		= $_POST['txtnoPo'];
-			$idSurvey 	= $_POST['txtSurvey'];
-			$material 	= $_POST['txtMaterial'];
-			$jasa 		= $_POST['txtJasa'];	
+		$nospTelkom = $_POST['txtnoSpTelkom'];
+		$idp 		= $_POST['txtidp'];
+		$noPo 		= $_POST['txtnoPo'];
+		$idSurvey 	= $_POST['txtSurvey'];
+		$material 	= $_POST['txtMaterial'];
+		$jasa 		= $_POST['txtJasa'];
+		$total		= $_POST['txtTotal'];
 	$data = array(
 		'SPTL_WODE_ID'	=> $idTa,
 		'SPTL_NO'		=> $nospTelkom,
@@ -62,15 +63,16 @@ class C_spTelkom extends CI_Controller
 		);
 		$this->load->view('tampilan/V_combine',$data);
 	}
-	public function updateData()
+	public function updateData($id)
 	{
-			$idTa 		= $_POST['txtIDTA'];
-			$nospTelkom = $_POST['txtnoSpTelkom'];
-			$idp 		= $_POST['txtidp'];
-			$noPo 		= $_POST['txtnoPo'];
-			$idSurvey 	= $_POST['txtSurvey'];
-			$material 	= $_POST['txtMaterial'];
-			$jasa 		= $_POST['txtJasa'];	
+		$idTa 		= $_POST['txtIDTA'];
+		$nospTelkom = $_POST['txtnoSpTelkom'];
+		$idp 		= $_POST['txtidp'];
+		$noPo 		= $_POST['txtnoPo'];
+		$idSurvey 	= $_POST['txtSurvey'];
+		$material 	= $_POST['txtMaterial'];
+		$jasa 		= $_POST['txtJasa'];
+		$total		= $_POST['txtTotal'];	
 	$data = array(
 		'SPTL_WODE_ID'	=> $idTa,
 		'SPTL_NO'		=> $nospTelkom,
@@ -83,7 +85,7 @@ class C_spTelkom extends CI_Controller
 		'SURV_JASA'		=> $jasa,
 		'SURV_TOTAL'	=> $total
 		);
-	$spTelkom=$this->M_spTelkom->insert( $data, $data2);
+	$spTelkom=$this->M_spTelkom->updateData($id, $data, $data2);
 	redirect('C_spTelkom');
 	}
 	public function delete($id)

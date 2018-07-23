@@ -4,7 +4,7 @@
 	  <div class="col-md-12">
 	    <div class="box box-danger">
 	      <div class="box-header with-border">
-	        <h3 class="box-title">Input SP Telkom</h3>
+	        <h3 class="box-title">Edit SP Telkom</h3>
 
 	        <div class="box-tools pull-right">
 	          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -14,7 +14,7 @@
 	      <div class="box-body">
 	        <div class="row">
 	          <div class="col-md-12 ">
-	            <form action="<?php echo base_url().'C_spTelkom/updateData/'; ?>" method="POST">
+	            <form action="<?php echo base_url().'C_spTelkom/updateData/'.$sp_telkom[0]["SPTL_ID"]; ?>" method="POST">
 	            	<div class="form-group">
 	                  <label class=" control-label">ID TA</label>
 	                  <div class="input-group">
