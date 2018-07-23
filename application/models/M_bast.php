@@ -7,7 +7,7 @@ class M_bast extends CI_Model
 	
 	function __construct()
 	{
-		parent::__construct()
+		parent::__construct();
 	}
 	public function view()
 	{
@@ -18,7 +18,7 @@ class M_bast extends CI_Model
 	}
 	public function getWorkOrder()
 	{
-		$sql="SELECT * from  work_order";
+		$sql="SELECT * from  work_order inner join instalasi on WODE_ID = INST_WODE_ID ";
 		 $query=$this->db->query($sql);
       $return = $query->result_array();
       return $return;
@@ -61,7 +61,7 @@ class M_bast extends CI_Model
 	{
 		$this->db->where('BAST_ID', $id);
 		$this->db->update('bast', $data);
-		$this->db->update('instalasi', $data2)
+		$this->db->update('instalasi', $data2);
 	}
 
 	public function delete($id)

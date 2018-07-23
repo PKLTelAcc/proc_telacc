@@ -14,9 +14,9 @@ class C_bast extends CI_Controller
 	{
 		$bast=$this->M_bast->view();
 		$workOrder=$this->M_bast->getWorkOrder();
-		$spTelkom=$this->M_bast->getSpTelkom();
+		$sp_telkom=$this->M_bast->getSpTelkom();
 		$instalasi=$this->M_bast->getInstalasi();
-		$status=->$this->M_bast->getStatus();
+		$status=$this->M_bast->getStatus();
 		$data = array(
 			'title' 	=> 'Input BAST',
 			'content'	=> 'V_bast',
@@ -30,19 +30,20 @@ class C_bast extends CI_Controller
 	}
 	public function form()        
 	{
-		$idTa		= $_POST['txtIDTA'];
+		$IdTa 		= $_POST['txtIDTA'];
 		$noBast		= $_POST['txtnoBast'];
-		$noPo		= $_POST['txtnoPo'];
-		$material	= $_POST['txtmaterial'];
-		$jasa		= $_POST['txtjasa'];
-		$total		= $_POST['txttotal'];
-		$odp		= $_POST['txtodp'];
-		$tanggal	= $_POST['txttanggal'];
-		$instalasi 	= $_POST['txtinstalasi'];
+		$noPo 		= $_POST['txtnoPo'];
+		$tanggal 	= $_POST['txtBast'];
+		$instalasi 	= $_POST['txtInstalasi'];
+		$odp 		= $_POST['txtOdp'];
+		$material 	= $_POST['txtMaterial'];
+		$jasa 		= $_POST['txtJasa'];
+		$total 		= $_POST['txtTotal'];
+
 	
 	$data = array(
-		'BATS_WODE_ID'	=> $IdTa,
-		'BATS_NO'		=> $noBast,
+		'BAST_WODE_ID'	=> $IdTa,
+		'BAST_NO'		=> $noBast,
 		'BAST_SPTL_ID'	=> $noPo,
 		'BAST_TANGGAL'	=> $tanggal,
 		'BAST_INST_ID'	=> $instalasi
@@ -60,9 +61,9 @@ class C_bast extends CI_Controller
 	{
 		$bast=$this->M_bast->view($id);
 		$workOrder=$this->M_bast->getWorkOrder();
-		$spTelkom=$this->M_bast->getSpTelkom();
+		$sp_telkom=$this->M_bast->getSpTelkom();
 		$instalasi=$this->M_bast->getInstalasi();
-		$status=->$this->M_bast->getStatus();
+		$status=$this->M_bast->getStatus();
 		$data = array(
 			'title' 	=> 'Edit BAST',
 			'content'	=> 'V_editBast',
@@ -76,20 +77,20 @@ class C_bast extends CI_Controller
 	}
 	public function updateData($id)
 	{
-		{
-		$idTa		= $_POST['txtIDTA'];
+		$IdTa 		= $_POST['txtIDTA'];
 		$noBast		= $_POST['txtnoBast'];
-		$noPo		= $_POST['txtnoPo'];
-		$material	= $_POST['txtMaterial'];
-		$jasa		= $_POST['txtJasa'];
-		$total		= $_POST['txtTotal'];
-		$odp		= $_POST['txtOdp'];
-		$tanggal	= $_POST['txtTanggal'];
+		$noPo 		= $_POST['txtnoPo'];
+		$tanggal 	= $_POST['txtBast'];
 		$instalasi 	= $_POST['txtInstalasi'];
+		$odp 		= $_POST['txtOdp'];
+		$material 	= $_POST['txtMaterial'];
+		$jasa 		= $_POST['txtJasa'];
+		$total 		= $_POST['txtTotal'];
+
 	
 	$data = array(
-		'BATS_WODE_ID'	=> $IdTa,
-		'BATS_NO'		=> $noBast,
+		'BAST_WODE_ID'	=> $IdTa,
+		'BAST_NO'		=> $noBast,
 		'BAST_SPTL_ID'	=> $noPo,
 		'BAST_TANGGAL'	=> $tanggal,
 		'BAST_INST_ID'	=> $instalasi
@@ -105,7 +106,7 @@ class C_bast extends CI_Controller
 	}
 	public function delete($id)
 	{
-		$this->db->delete('BAST', array('BAST_ID' => $id));
+		$this->db->delete('bast', array('BAST_ID' => $id));
 		redirect('C_bast');
 	}
 }

@@ -18,9 +18,9 @@
 	            	<div class="form-group">
 	                  <label class=" control-label">ID TA</label>
 	                  <div class="input-group">
-	                      <input class="form-control readonly" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true" value="<?php echo($sp_telkom[0]['SPTL_SURV_ID'])?>">
-	                      <input class="form-control" id="txtIDTA" type="hidden" name="txtIDTA">
-	                      <input class="form-control" id="txtSurvey" type="hidden" name="txtSurvey">
+	                      <input class="form-control readonly" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true" value="<?php echo($sp_telkom[0]['WODE_ID_TA'])?>">
+	                      <input class="form-control" id="txtIDTA" type="hidden" name="txtIDTA" value="<?php echo($sp_telkom[0]['SPTL_WODE_ID'])?>">
+	                      <input class="form-control" id="txtSurvey" type="hidden" name="txtSurvey" value="<?php echo($sp_telkom[0]['SPTL_SURV_ID'])?>">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalspTelkom">Search</button>
 						</div>
@@ -35,7 +35,7 @@
 	              	<div class="form-group">
 	                  <label class=" control-label">IDP</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtidp" required="true" value="<?php echo($sp_telkom[0]['SPTL_ID'])?>">
+	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtidp" required="true" value="<?php echo($sp_telkom[0]['SPTL_IDP'])?>">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
