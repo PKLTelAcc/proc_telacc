@@ -1,32 +1,83 @@
- <?php
+<?php 
 /**
  * 
  */
 class M_report extends CI_Model
 {
+	
 	function __construct()
 	{
 		parent::__construct();
 	}
-	public function getWeek()
+
+	public function getWitel()
 	{
-		$week = date('w');
-		return $week;
+		$sql 	= "SELECT * FROM witel";
+		$query 	= $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
 	}
-	public function getMonth()
+
+	public function getSubWitel()
 	{
-		$month = date('m');
-		return $month;
+		$sql 	= "SELECT * FROM sub_witel";
+		$query 	= $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
 	}
-	public function getYear()
+
+	public function getProgram()
 	{
-		$year = date('y');
-		return $year;
+		$sql 	= "SELECT * FROM program";
+		$query 	= $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
 	}
-	public function instalasiPerProgram()
+
+	public function getStatus()
 	{
-		$sql = "SELECT * from instalasi, program where YEARWEEK(INST_TIMESTAMP)= YEARWEEK(CURRENT_DATE()) order by INST_PROG_ID desc";
-		$query = $this->db->query($sql);
+		$sql 	= "SELECT * FROM status";
+		$query 	= $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
+
+	public function getMitra()
+	{
+		$sql 	= "SELECT * FROM mitra";
+		$query 	= $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
+
+	public function getWorkOrder()
+	{
+		$sql 	= "SELECT * FROM work_order";
+		$query 	= $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
+
+	public function getSurvey()
+	{
+		$sql 	= "SELECT * FROM survey";
+		$query 	= $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
+
+	public function getInstalasi()
+	{
+		$sql 	= "SELECT * FROM instalasi";
+		$query 	= $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
+
+	public function getBast()
+	{
+		$sql 	= "SELECT * FROM bast";
+		$query 	= $this->db->query($sql);
 		$return = $query->result_array();
 		return $return;
 	}
