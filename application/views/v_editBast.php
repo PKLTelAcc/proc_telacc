@@ -14,11 +14,11 @@
 	      <div class="box-body">
 	        <div class="row">
 	          <div class="col-md-12 ">
-	            <form action="<?php echo base_url().'C_spTelkom/updateData/'; ?>" method="POST">
+	            <form action="<?php echo base_url().'C_bast/updateData/'; ?>" method="POST">
 	            	<div class="form-group">
 	                  <label class=" control-label">ID TA</label>
 	                  <div class="input-group">
-	                      <input class="form-control" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true" readonly="true" value="<?php echo($bast[0]['WODE_ID_TA'])?>">
+	                      <input class="form-control readonly" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true" value="<?php echo($bast[0]['WODE_ID_TA'])?>">
 	                      <input class="form-control" id="txtIDTA" type="hidden" name="txtIDTA" value="<?php echo($bast[0]['BAST_WODE_ID'])?>">
 	                      <input class="form-control" id="txtInstalasi" type="hidden" name="txtInstalasi" value="<?php echo($bast[0]['BAST_INST_ID'])?>">
 						<div class="input-group-btn">
@@ -35,7 +35,7 @@
 	              	<div class="form-group">
 	                  <label class=" control-label">Nomor PO</label>
 	                  <div class="input-group">
-	                      <input class="form-control" placeholder="== Pilih NO PO ==" name="txtIDTAMuncul" id="myInput2" required="true" readonly="true" value="<?php echo($bast[0]['SPTL_NO_PO'])?>">
+	                      <input class="form-control readonly" placeholder="== Pilih NO PO ==" name="txtIDTAMuncul" id="myInput2" required="true" value="<?php echo($bast[0]['SPTL_NO_PO'])?>">
 	                      <input class="form-control" id="txtnoPo" type="hidden" name="txtnoPo" value="<?php echo($bast[0]['BAST_SPTL_ID'])?>">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalPo">Search</button>

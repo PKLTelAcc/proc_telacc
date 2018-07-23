@@ -18,7 +18,7 @@
 	            	<div class="form-group">
 	                  <label class=" control-label">ID TA</label>
 	                  <div class="input-group">
-	                      <input class="form-control" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true">
 	                      <input class="form-control" id="txtIDTA" type="hidden" name="txtIDTA">
 	                      <input class="form-control" id="txtInstalasi" type="hidden" name="txtInstalasi">
 						<div class="input-group-btn">
@@ -35,7 +35,7 @@
 	              	<div class="form-group">
 	                  <label class=" control-label">Nomor PO</label>
 	                  <div class="input-group">
-	                      <input class="form-control" placeholder="== Pilih NO PO ==" name="txtIDTAMuncul" id="myInput2" required="true" readonly="true">
+	                      <input class="form-control readonly" placeholder="== Pilih NO PO ==" name="txtIDTAMuncul" id="myInput2" required="true">
 	                      <input class="form-control" id="txtnoPo" type="hidden" name="txtnoPo">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalPo">Search</button>

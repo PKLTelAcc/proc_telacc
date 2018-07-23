@@ -101,7 +101,7 @@ class C_bast extends CI_Controller
 		'INST_JASA'		=> $jasa,
 		'INST_TOTAL'	=> $total
 	);
-	$bast=$this->M_bast->updateDatat($id, $data, $data2);
+	$bast=$this->M_bast->updateData($id, $data, $data2);
 	redirect('C_bast');
 	}
 	public function delete($id)
