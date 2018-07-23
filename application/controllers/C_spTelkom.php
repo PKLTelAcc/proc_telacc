@@ -26,15 +26,13 @@ class C_spTelkom extends CI_Controller
 	}
 	public function form()        
 	{
-		$idTa		= $_POST['txtIDTA'];
-		$nospTelkom	= $_POST['txtnoSpTelkom'];
-		$idp		= $_POST['txtidp'];
-		$noPo		= $_POST['txtnoPo'];
-		$material	= $_POST['txtMaterial'];
-		$jasa		= $_POST['txtJasa'];
-		$total		= $_POST['txtTotal'];
-		$idSurvey	= $_POST['txtSurvey'];
-		
+		$idTa 		= $_POST['txtIDTA'];
+			$nospTelkom = $_POST['txtnoSpTelkom'];
+			$idp 		= $_POST['txtidp'];
+			$noPo 		= $_POST['txtnoPo'];
+			$idSurvey 	= $_POST['txtSurvey'];
+			$material 	= $_POST['txtMaterial'];
+			$jasa 		= $_POST['txtJasa'];	
 	$data = array(
 		'SPTL_WODE_ID'	=> $idTa,
 		'SPTL_NO'		=> $nospTelkom,
@@ -66,15 +64,13 @@ class C_spTelkom extends CI_Controller
 	}
 	public function updateData()
 	{
-		$idTa		= $_POST['txtIDTA'];
-		$nospTelkom	= $_POST['txtnoSpTelkom'];
-		$idp		= $_POST['txtidp'];
-		$noPo		= $_POST['txtnoPo'];
-		$material	= $_POST['txtMaterial'];
-		$jasa		= $_POST['txtJasa'];
-		$total		= $_POST['txtTotal'];
-		$idSurvey	= $_POST['txtSurvey'];
-		
+			$idTa 		= $_POST['txtIDTA'];
+			$nospTelkom = $_POST['txtnoSpTelkom'];
+			$idp 		= $_POST['txtidp'];
+			$noPo 		= $_POST['txtnoPo'];
+			$idSurvey 	= $_POST['txtSurvey'];
+			$material 	= $_POST['txtMaterial'];
+			$jasa 		= $_POST['txtJasa'];	
 	$data = array(
 		'SPTL_WODE_ID'	=> $idTa,
 		'SPTL_NO'		=> $nospTelkom,

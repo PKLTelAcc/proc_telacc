@@ -29,7 +29,7 @@
 	              	<div class="form-group">
 	                  <label class=" control-label">No SP Telkom</label>
 	                  <div>
-	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtnospTelkom" required="true">
+	                      <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtnoSpTelkom" required="true">
 	                  </div>
 	              	</div>
 	              	<div class="form-group">
