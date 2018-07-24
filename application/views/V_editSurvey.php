@@ -76,14 +76,15 @@
                         <input class="form-control" placeholder="Jumlah ODP" type="number" name="txtODP" required="true" value="<?php echo($survey[0]['SURV_ODP'])?>">
                     </div>
                   </div>
-                  <div class="form-group">
+<!-- KOMEN JANGAN DIHAPUS  -->
+                  <!-- <div class="form-group">
                     <label class=" control-label">Nama Surveyer</label>
                     <div class="input-group">
                         <input class="form-control readonly" placeholder="== Pilih Surveyer ==" name="txtSurveyerMuncul" id="myInput2" required="true" value="<?php echo($survey[0]['PEGA_NAME'])?>">
                         <input class="form-control" id="txtSurveyer" type="hidden" name="txtSurveyer" value="<?php echo($survey[0]['SURV_PEGA_ID'])?>">
-            <div class="input-group-btn">
-              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSurveyer">Search</button>
-            </div>
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSurveyer">Search</button>
+                      </div>
                     </div>
                   </div>
                   <div class="form-group">
@@ -91,7 +92,8 @@
                     <div>
                         <input class="form-control readonly" placeholder="NIK Surveyer" id="nik" type="text" name="txtNIK" required="true" value="<?php echo($survey[0]['PEGA_NIK'])?>">
                     </div>
-                  </div>
+                  </div> -->
+<!-- SAMPAI SINI -->
                   <div class="form-group">
                     <label class=" control-label">Tanggal Selesai Survey</label>
                     <div>
@@ -353,4 +355,4 @@
 	</select> <br>
 	<button type="reset">Cancel</button>
 	<button type="submit">Input Data</button>
-</form> -->
+</form>

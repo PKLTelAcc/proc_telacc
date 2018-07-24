@@ -158,16 +158,14 @@
 					<tr>
 						<th>No.</th>
 						<th>ID TA</th>
-			<!-- 			<th>Nama Witel</th>
-						<th>Nama Sub Witel</th>
-						<th>Program</th>
-						<th>Nama Lokasi</th> -->
 						<th>Nilai Material</th>
 						<th>Nilai Jasa</th>
 						<th>Nilai Total</th>
 						<th>Jumlah ODP</th>
-						<th>Nama Surveyer</th>
-						<th>NIK Surveyer</th>
+<!-- KOMEN INI JANGAN DIHAPUS -->
+						<!-- <th>Nama Surveyer</th>
+						<th>NIK Surveyer</th> -->
+<!-- SAMPAI SINI -->
 						<th>Tanggal Selesai Survey</th>
 						<th>Status</th>
 						<th style="text-align: center">Action</th>
@@ -180,16 +178,14 @@
 							echo "<tr>";
 							echo "<td>".$no."</td>";
 							echo "<td>".$row['WODE_ID_TA']."</td>";
-							// echo "<td>".$row['WTEL_NAME']."</td>";
-							// echo "<td>".$row['SWIT_NAME']."</td>";
-							// echo "<td>".$row['PROG_NAME']."</td>";
-							// echo "<td>".$row['WODE_NAMA_LOKASI']."</td>";
 							echo "<td>".$row['SURV_MATERIAL']."</td>";
 							echo "<td>".$row['SURV_JASA']."</td>";
 							echo "<td>".$row['SURV_TOTAL']."</td>";
 							echo "<td>".$row['SURV_ODP']."</td>";
-							echo "<td>".$row['PEGA_NAME']."</td>";
-							echo "<td>".$row['PEGA_NIK']."</td>";
+//KOMEN INI JANGAN DIHAPUS
+							// echo "<td>".$row['PEGA_NAME']."</td>";
+							// echo "<td>".$row['PEGA_NIK']."</td>";
+//SAMPAI SINI
 							echo "<td>".$row['SURV_TANGGAL']."</td>";
 							echo "<td>".$row['STAT_NAME']."</td>";
 							echo "<td><a href='".base_url()."C_survey/formUpdate/".$row['SURV_ID']."'>Edit</a> | <a href='".base_url()."C_survey/delete/".$row['SURV_ID']."'>Delete</a></td>";
