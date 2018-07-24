@@ -70,76 +70,76 @@ class C_subWItel extends CI_Controller
 	{
 		$fileName = $this->input->post('file', TRUE);
 
-  $config['upload_path'] = './upload/uploadSTO/'; 
-  $config['file_name'] = $fileName;
-  $config['allowed_types'] = 'xls|xlsx|csv|ods|ots';
-  $config['max_size'] = 10000;
+		$config['upload_path'] = './upload/uploadSTO/'; 
+		$config['file_name'] = $fileName;
+		$config['allowed_types'] = 'xls|xlsx|csv|ods|ots';
+		$config['max_size'] = 10000;
 
-  $this->load->library('upload', $config);
-  $this->upload->initialize($config); 
-  
-  if (!$this->upload->do_upload('file')) {
-   $error = array('error' => $this->upload->display_errors());
-   $this->session->set_flashdata('msg','Ada kesalahan dalam upload'); 
-   redirect('C_subWitel'); 
-  } else {
-   $media = $this->upload->data();
-   $inputFileName = 'upload/uploadSTO/'.$media['file_name'];
-   
-   try {
-    $inputFileType = IOFactory::identify($inputFileName);
-    $objReader = IOFactory::createReader($inputFileType);
-    $objPHPExcel = $objReader->load($inputFileName);
-   } catch(Exception $e) {
-    die('Error loading file "'.pathinfo($inputFileName,PATHINFO_BASENAME).'": '.$e->getMessage());
-   }
+		$this->load->library('upload', $config);
+		$this->upload->initialize($config); 
+		  
+		if (!$this->upload->do_upload('file')) {
+		   $error = array('error' => $this->upload->display_errors());
+		   $this->session->set_flashdata('msg','Ada kesalahan dalam upload'); 
+		   redirect('C_subWitel'); 
+		} else {
+		   $media = $this->upload->data();
+		   $inputFileName = 'upload/uploadSTO/'.$media['file_name'];
+		   
+		   try {
+		    $inputFileType = IOFactory::identify($inputFileName);
+		    $objReader = IOFactory::createReader($inputFileType);
+		    $objPHPExcel = $objReader->load($inputFileName);
+		   } catch(Exception $e) {
+		    die('Error loading file "'.pathinfo($inputFileName,PATHINFO_BASENAME).'": '.$e->getMessage());
+		   }
 
-   $sheet = $objPHPExcel->getSheet(0);
-   $highestRow = $sheet->getHighestRow();
-   $highestColumn = $sheet->getHighestColumn();
+		   $sheet = $objPHPExcel->getSheet(0);
+		   $highestRow = $sheet->getHighestRow();
+		   $highestColumn = $sheet->getHighestColumn();
 
-   for ($row = 2; $row <= $highestRow; $row++){  
-     $rowData = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row,
-       NULL,
-       TRUE,
-       FALSE);
-     $data = array(
-     "WTEL_NAME"=> $rowData[0][7]
-    );
-     
+		   for ($row = 2; $row <= $highestRow; $row++){  
+		     $rowData = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row,
+		       NULL,
+		       TRUE,
+		       FALSE);
+		     $data = array(
+		     "WTEL_NAME"=> $rowData[0][7]
+		    );
+		     
 
-     $cekWtel=$this->M_subWitel->cekWtel($rowData[0][7]);
+		     $cekWtel=$this->M_subWitel->cekWtel($rowData[0][7]);
 
-     //jika data duplicate ditemukan
-     if ($cekWtel!=null) {
-     	echo "gak masuk database";
-     }else{
-     	$this->M_subWitel->insertWtel($data);
-     }
+		     //jika data duplicate ditemukan
+		     if ($cekWtel!=null) {
+		     	echo "gak masuk database";
+		     }else{
+		     	$this->M_subWitel->insertWtel($data);
+		     }
 
-     
+		     
 
-     $ambilID=$this->M_subWitel->ambilID($rowData[0][7]);
+		     $ambilID=$this->M_subWitel->ambilID($rowData[0][7]);
 
-     $id = array(
-     "SWIT_NAME"=> $rowData[0][4],
-     "SWIT_WTEL_ID"=> $ambilID[0]["WTEL_ID"]
-    );
+		     $id = array(
+		     "SWIT_NAME"=> $rowData[0][4],
+		     "SWIT_WTEL_ID"=> $ambilID[0]["WTEL_ID"]
+		    );
 
-     $cekData=$this->M_subWitel->cekData($rowData[0][4]);
+		     $cekData=$this->M_subWitel->cekData($rowData[0][4]);
 
-     //jika data duplicate ditemukan
-     if ($cekData!=null) {
-     	echo "gak masuk database";
-     }else{
-     	$this->M_subWitel->insertData($id);
-     }
-     
+		     //jika data duplicate ditemukan
+		     if ($cekData!=null) {
+		     	echo "gak masuk database";
+		     }else{
+		     	$this->M_subWitel->insertData($id);
+		     }
+		     
 
-   } 
-   $this->session->set_flashdata('msg','Berhasil upload ...!!'); 
-   redirect('C_subWitel');
-  }  
- } 
+		   } 
+		   $this->session->set_flashdata('msg','Berhasil upload ...!!'); 
+		   redirect('C_subWitel');
+		}  
+	} 
 }
 ?>

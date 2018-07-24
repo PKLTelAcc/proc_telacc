@@ -61,6 +61,9 @@
 
         //report instalasi
         $("#reportInstalasi").dataTable();
+
+        //report
+        $("#report").dataTable();
     });
 </script>
 
