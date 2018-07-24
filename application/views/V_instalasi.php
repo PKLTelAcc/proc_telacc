@@ -202,17 +202,15 @@
 					<tr>
 						<th>No.</th>
 						<th>ID TA</th>
-			<!-- 			<th>Nama Witel</th>
-						<th>Nama Sub Witel</th>
-						<th>Program</th>
-						<th>Nama Lokasi</th> -->
 						<th>Nilai Material</th>
 						<th>Nilai Jasa</th>
 						<th>Nilai Total</th>
 						<th>Jumlah ODP</th>
 						<th>Mitra</th>
-						<th>Nama Waspang</th>
-						<th>NIK Waspang</th>
+<!-- KOMEN INI JANGAN DIHAPUS -->
+						<!-- <th>Nama Waspang</th>
+						<th>NIK Waspang</th> -->
+<!-- SAMPAI SINI -->
 						<th>Tanggal Selesai Survey</th>
 						<th>Target Selesai</th>
 						<th>Status</th>
@@ -228,17 +226,15 @@
 							echo "<tr>";
 							echo "<td>".$no."</td>";
 							echo "<td>".$row['WODE_ID_TA']."</td>";
-							// echo "<td>".$row['WTEL_NAME']."</td>";
-							// echo "<td>".$row['SWIT_NAME']."</td>";
-							// echo "<td>".$row['PROG_NAME']."</td>";
-							// echo "<td>".$row['WODE_NAMA_LOKASI']."</td>";
 							echo "<td>".$row['INST_MATERIAL']."</td>";
 							echo "<td>".$row['INST_JASA']."</td>";
 							echo "<td>".$row['INST_TOTAL']."</td>";
 							echo "<td>".$row['INST_ODP']."</td>";
 							echo "<td>".$row['MTRA_NAME']."</td>";
-							echo "<td>".$row['PEGA_NAME']."</td>";
-							echo "<td>".$row['PEGA_NIK']."</td>";
+//KOMEN INI JANGAN DIHAPUS							
+							// echo "<td>".$row['PEGA_NAME']."</td>";
+							// echo "<td>".$row['PEGA_NIK']."</td>";
+//SAMPAI SINI
 							echo "<td>".$row['INST_TANGGAL']."</td>";
 							echo "<td>".$row['INST_TARGET']."</td>";
 							echo "<td>".$row['STAT_NAME']."</td>";

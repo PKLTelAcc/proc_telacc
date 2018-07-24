@@ -25,6 +25,7 @@
 						<th>Nilai Material</th>
 						<th>Nilai Jasa</th>
 						<th>Nilai Total</th>
+						<th>Mitra</th>
 						<th>Status</th>
 					</tr>
 				</thead>
@@ -43,6 +44,7 @@
 		 					echo "<td>".$row['INST_MATERIAL']."</td>";
 		 					echo "<td>".$row['INST_JASA']."</td>";
 		 					echo "<td>".$row['INST_TOTAL']."</td>";
+		 					echo "<td>".$row['MTRA_NAME']."</td>";
 		 					echo "<td>".$row['STAT_NAME']."</td>";
 		 					echo "</tr>";
 		 					$no++;

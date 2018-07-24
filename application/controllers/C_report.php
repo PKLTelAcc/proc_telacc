@@ -14,27 +14,11 @@ class C_report extends CI_Controller
 
 	public function index()
 	{
-		$dataWitel 			= $this->M_report->getWitel();
-		$dataSubWitel 		= $this->M_report->getSubWitel();
-		$dataProgram 		= $this->M_report->getProgram();
-		$dataStatus 		= $this->M_report->getStatus();
-		$dataMitra			= $this->M_report->getMitra();
-		$dataWorkOrder 		= $this->M_report->getWorkOrder();
-		$dataSurvey 		= $this->M_report->getSurvey();
-		$dataInstalasi 		= $this->M_report->getInstalasi();
 		$dataReport			= $this->M_report->getReport();
 
 		$data = array(
 			'title'			=> 'Report',
 			'content' 		=> 'V_report',
-			'dataWitel' 	=> $dataWitel,
-			'dataSubWitel'	=> $dataSubWitel,
-			'dataProgram'	=> $dataProgram,
-			'dataStatus'	=> $dataStatus,
-			'dataMitra'		=> $dataMitra,
-			'dataWorkOrder'	=> $dataWorkOrder,
-			'dataSurvey'	=> $dataSurvey,
-			'dataInstalasi'	=> $dataInstalasi,
 			'dataReport'	=> $dataReport
 		);
 
@@ -173,6 +157,19 @@ class C_report extends CI_Controller
 		     	$this->M_report->insertProg($idProg);
 		     }
 
+		     $idMtra = array(
+		     	"MTRA_NAME" => $rowData[0][21]
+		     );
+		     
+		     $cekMtra=$this->M_report->cekMtra($rowData[0][21]);
+
+		     //jika data duplicate ditemukan
+		     if ($cekMtra!=null) {
+		     	echo "";
+		     }else{
+		     	$this->M_report->insertMtra($idMtra);
+		     }
+
 		     $idStat = array(
 		     	"STAT_NAME" => $rowData[0][23]
 		     );
@@ -209,6 +206,7 @@ class C_report extends CI_Controller
 		     }
 
 		     $ambilIDWode=$this->M_report->ambilIDWode($rowData[0][4]);
+		     $ambilIDMtra=$this->M_report->ambilIDMtra($rowData[0][21]);
 
 		     $idInst = array(
 		     "INST_MATERIAL"=> $rowData[0][12],
@@ -219,7 +217,8 @@ class C_report extends CI_Controller
 		     "INST_SWIT_ID"	=> $ambilIDSwit[0]["SWIT_ID"],
 		     "INST_PROG_ID"	=> $ambilIDProg[0]["PROG_ID"],
 		     "INST_STAT_ID"	=> $ambilIDStat[0]["STAT_ID"],
-		     "INST_WODE_ID"	=> $ambilIDWode[0]["WODE_ID"]
+		     "INST_WODE_ID"	=> $ambilIDWode[0]["WODE_ID"],
+		     "INST_MTRA_ID"	=> $ambilIDMtra[0]["MTRA_ID"]
 		    );
 
 		     $cekInst=$this->M_report->cekInst($rowData[0][14]);
@@ -229,6 +228,27 @@ class C_report extends CI_Controller
 		     	echo "";
 		     }else{
 		     	$this->M_report->insertInst($idInst);
+		     }
+
+		     $idSurv = array(
+		     "SURV_MATERIAL"=> $rowData[0][12],
+		     "SURV_JASA"	=> $rowData[0][13],
+		     "SURV_TOTAL"	=> $rowData[0][14],
+		     "SURV_ODP"		=> $rowData[0][10],
+		     "SURV_WTEL_ID"	=> $ambilIDWtel[0]["WTEL_ID"],
+		     "SURV_SWIT_ID"	=> $ambilIDSwit[0]["SWIT_ID"],
+		     "SURV_PROG_ID"	=> $ambilIDProg[0]["PROG_ID"],
+		     "SURV_STAT_ID"	=> $ambilIDStat[0]["STAT_ID"],
+		     "SURV_WODE_ID"	=> $ambilIDWode[0]["WODE_ID"]
+		    );
+
+		     $cekSurv=$this->M_report->cekSurv($rowData[0][14]);
+
+		     //jika data duplicate ditemukan
+		     if ($cekSurv!=null) {
+		     	echo "";
+		     }else{
+		     	$this->M_report->insertSurv($idSurv);
 		     }
 
 		   } 
