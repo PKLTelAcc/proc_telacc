@@ -194,8 +194,49 @@ date_default_timezone_set('Asia/Bangkok');
                   </a>
                 </li>
                 <?php
+                  }elseif ($_SESSION['level'] == 'ADMIN WORK ORDER') {
+                  ?>
+                  <!--Work Order-->
+                <li >
+                  <a href="<?php echo base_url()?>c_workOrder">
+                    <i class="glyphicon glyphicon-list-alt"></i>
+                    Work Order
+                  </a>
+                </li>
+                  <?php
+                  }else if ($_SESSION['level'] == 'ADMIN SURVEY') {
+                    ?>
+                    <!--survey-->
+                <li >
+                  <a href="<?php echo base_url()?>c_survey">
+                    <i class="glyphicon glyphicon-list-alt"></i>
+                    Survey
+                  </a>
+                </li>
+                <?php
+                  }else if ($_SESSION['level'] == 'ADMIN INSTALASI') {
+                    ?>
+                    <!--instalasi-->
+                <li >
+                  <a href="<?php echo base_url()?>c_instalasi">
+                    <i class="glyphicon glyphicon-list-alt"></i>
+                    Instalasi
+                  </a>
+                </li>
+                <?php
+                  }else if($_SESSION['level'] == 'ADMIN BAST'){
+                  ?>
+                   <!--bast-->
+                <li >
+                  <a href="<?php echo base_url()?>c_bast">
+                    <i class="glyphicon glyphicon-list-alt"></i>
+                    BAST
+                  </a>
+                </li>
+                <?php
                   }
                   ?>
+
                 <!-- User Account Menu -->
                 <li class="dropdown user user-menu active">
                   <!-- Menu Toggle Button -->

@@ -1,6 +1,9 @@
-Main content -->
+<!--Main content -->
 <div class="content">
   <div class="row">
+     <?php
+      if ($_SESSION['level'] == 'SUPER USER' || $_SESSION['level'] == 'ADMIN INSTALASI') {
+        ?>
     <div class="col-md-12">
       <div class="box box-danger">
         <div class="box-header with-border">
@@ -249,6 +252,14 @@ Main content -->
         </div>
     </div>
 </div>
+<?php
+      }
+      if ($_SESSION['level'] != 'SUPER USER' || $_SESSION['level'] != 'ADMIN INSTALASI') {
+        echo '<div class="col-md-12">';
+      }else{
+        echo '<div class="col-md-6">';
+      }
+    ?>
 
 <!-- Modal Surveyer -->
 <div class="modal fade" id="modalSurveyer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

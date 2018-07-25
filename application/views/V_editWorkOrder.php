@@ -1,6 +1,8 @@
 <!-- Main content -->
 <div class="content">
-  <div class="row">
+  <div class="row"><?php
+      if ($_SESSION['level'] == 'SUPER USER' || $_SESSION['level'] == 'ADMIN WORK ORDER' ) {
+        ?>
     <div class="col-md-12">
       <div class="box box-danger">
         <div class="box-header with-border">
@@ -328,6 +330,15 @@
         </div>
     </div>
 </div>
+
+<?php
+      }
+      if ($_SESSION['level'] != 'SUPER USER' || $_SESSION['level'] != 'ADMIN WORK ORDER') {
+        echo '<div class="col-md-12">';
+      }else{
+        echo '<div class="col-md-6">';
+      }
+    ?>
 
 <script type="text/javascript">
     $(document).on('click', '.search', function (e) {

@@ -1,6 +1,9 @@
 <!-- Main content -->
 <div class="content">
   <div class="row">
+     <?php
+      if ($_SESSION['level'] == 'SUPER USER' || $_SESSION['level'] == 'ADMIN SURVEY') {
+        ?>
     <div class="col-md-12">
       <div class="box box-danger">
         <div class="box-header with-border">
@@ -153,6 +156,14 @@
   </div>
 </div>
 <!-- /.content -->
+<?php
+      }
+      if ($_SESSION['level'] != 'SUPER USER' || $_SESSION['level'] != 'ADMIN SURVEY') {
+        echo '<div class="col-md-12">';
+      }else{
+        echo '<div class="col-md-6">';
+      }
+    ?>
 
 <!-- modal IDTA -->
 <div class="modal fade" id="modalIDTASurvey" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -271,6 +282,7 @@
         </div>
     </div>
 </div>
+
 
 <script type="text/javascript">
   $(document).on('click', '.isi', function (e) {
