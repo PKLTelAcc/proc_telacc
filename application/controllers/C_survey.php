@@ -62,10 +62,12 @@ class C_survey extends CI_Controller
 			'SURV_PEGA_ID' 		=> $surveyer,
 			// 'SURV_PEGA_ID' 		=> $nik,
 			'SURV_TANGGAL' 		=> $date,
-			'SURV_STAT_ID' 		=> $status,
 			'SURV_PROG_ID' 		=> $program
 		);
-		$survey=$this->M_survey->insert($data);
+		$data2 = array(
+			'WODE_STAT_ID' 		=> $status
+		);
+		$survey=$this->M_survey->insert($data,$data2);
 		redirect('C_survey');
 	}
 
@@ -120,10 +122,12 @@ class C_survey extends CI_Controller
 			'SURV_PEGA_ID' 		=> $surveyer,
 			// 'SURV_PEGA_ID' 		=> $nik,
 			'SURV_TANGGAL' 		=> $date,
-			'SURV_STAT_ID' 		=> $status,
 			'SURV_PROG_ID' 		=> $program
 		);
-		$survey=$this->M_survey->updateData($id,$data);
+		$data2 = array(
+			'WODE_STAT_ID' 		=> $status
+		);
+		$survey=$this->M_survey->updateData($id,$data, $data2);
 		redirect('C_survey');
 	}
 

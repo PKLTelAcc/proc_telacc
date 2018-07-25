@@ -108,8 +108,8 @@
                   <div class="form-group">
                   <label class="control-label">Status</label>
                   <div class="input-group">
-                    <input class="form-control readonly" placeholder="== Pilih Status ==" name="txtStatMuncul" id="myInput3" required="true" value="<?php echo($survey[0]['STAT_NAME'])?>">
-                    <input class="form-control" id="txtStat" type="hidden" name="txtStat" value="<?php echo($survey[0]['SURV_STAT_ID'])?>">
+                    <input class="form-control readonly" placeholder="== Pilih Status ==" name="txtStatMuncul" id="myInput3" required="true" value="<?php echo($workOrder[0]['STAT_NAME'])?>">
+                    <input class="form-control" id="txtStat" type="hidden" name="txtStat" value="<?php echo($workOrder[0]['WODE_STAT_ID'])?>">
                   <!-- <div>
                     <select name="txtStat" id="cmbStat" required="true" class="form-control">
                       <option value="0">== Pilih Status ==</option>
@@ -190,7 +190,7 @@
                       $no=1;
                       foreach ($workOrder as $row) {
                         ?>
-                          <tr class="isi" style="cursor: pointer;" data-id = "<?=$row['WODE_ID']?>" data-lokasi="<?php echo $row['WODE_NAMA_LOKASI']; ?>" data-program="<?php echo $row['PROG_ID']; ?>" data-inputProgram="<?php echo $row['PROG_NAME']; ?>" data-subWitel="<?php echo $row['SWIT_ID']; ?>" data-inputSubWitel="<?php echo $row['SWIT_NAME']; ?>" data-witel="<?php echo $row['WTEL_ID']; ?>" data-idta="<?php echo $row['WODE_ID_TA']; ?>" data-inputWitel="<?php echo $row['WTEL_NAME']; ?>">
+                          <tr class="isi" style="cursor: pointer;" data-id = "<?=$row['WODE_ID']?>" data-lokasi="<?php echo $row['WODE_NAMA_LOKASI']; ?>" data-program="<?php echo $row['PROG_ID']; ?>" data-inputProgram="<?php echo $row['PROG_NAME']; ?>" data-subWitel="<?php echo $row['SWIT_ID']; ?>" data-inputSubWitel="<?php echo $row['SWIT_NAME']; ?>" data-witel="<?php echo $row['WTEL_ID']; ?>" data-idta="<?php echo $row['WODE_ID_TA']; ?>" data-inputWitel="<?php echo $row['WTEL_NAME']; ?>" data-id3 = "<?=$row['STAT_ID']?>" data-stat = "<?=$row['STAT_NAME']?>">
                             <td><?php echo $no?></td>
                             <td><?php echo $row['WODE_ID_TA']?></td>
                             <td><?php echo $row['WTEL_NAME']?></td>
@@ -295,6 +295,8 @@
         document.getElementById("inputSubWitel").value  = $(this).attr('data-inputSubWitel');
         document.getElementById("witel").value      = $(this).attr('data-witel');
         document.getElementById("inputWitel").value   = $(this).attr('data-inputWitel');
+        document.getElementById("txtStat").value    = $(this).attr('data-id3');
+        document.getElementById("myInput3").value     = $(this).attr('data-stat');
         $('#modalIDTASurvey').modal('hide');
   });
 

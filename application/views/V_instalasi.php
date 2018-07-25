@@ -285,7 +285,7 @@
                       foreach ($workOrder as $row) {
                         ?>
                           <tr class="isi" style="cursor: pointer;" data-id = "<?=$row['WODE_ID']?>" data-lokasi="<?php echo $row['WODE_NAMA_LOKASI']; ?>" data-program="<?php echo $row['PROG_ID']; ?>" data-inputProgram="<?php echo $row['PROG_NAME']; ?>" data-subWitel="<?php echo $row['SWIT_ID']; ?>" data-inputSubWitel="<?php echo $row['SWIT_NAME']; ?>" data-witel="<?php echo $row['WTEL_ID']; ?>" data-idta="<?php echo $row['WODE_ID_TA']; ?>" data-inputWitel="<?php echo $row['WTEL_NAME']; ?>" data-survMaterial="<?php echo $row['SURV_MATERIAL']; ?>" data-survJasa="<?php echo $row['SURV_JASA']; ?>"
-                          	data-survTotal="<?php echo $row['SURV_TOTAL']; ?>" data-survODP="<?php echo $row['SURV_ODP']; ?>">
+                          	data-survTotal="<?php echo $row['SURV_TOTAL']; ?>" data-survODP="<?php echo $row['SURV_ODP']; ?>" data-id4 = "<?=$row['STAT_ID']?>" data-stat = "<?=$row['STAT_NAME']?>">
                             <td><?php echo $no?></td>
                             <td><?php echo $row['WODE_ID_TA']?></td>
                             <td><?php echo $row['WTEL_NAME']?></td>
@@ -438,6 +438,8 @@
         document.getElementById("survJasa").value 		= $(this).attr('data-survJasa');
         document.getElementById("survTotal").value 		= $(this).attr('data-survTotal');
         document.getElementById("survODP").value 		= $(this).attr('data-survODP');
+        document.getElementById("txtStat").value 		= $(this).attr('data-id4');
+		document.getElementById("myInput4").value 		= $(this).attr('data-stat');
         $('#modalIDTAInstalasi').modal('hide');
 	});
 
