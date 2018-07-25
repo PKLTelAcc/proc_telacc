@@ -186,9 +186,6 @@ date_default_timezone_set('Asia/Bangkok');
                       <li><a href="<?php echo base_url()?>c_spMitra">SP Mitra</a></li>
                     </ul>
                 </li>
-                <?php
-                  }
-                  ?>
                 <!-- Report -->
                 <li >
                   <a href="<?php echo base_url()?>c_report">
@@ -196,6 +193,9 @@ date_default_timezone_set('Asia/Bangkok');
                     Report
                   </a>
                 </li>
+                <?php
+                  }
+                  ?>
                 <!-- User Account Menu -->
                 <li class="dropdown user user-menu active">
                   <!-- Menu Toggle Button -->
