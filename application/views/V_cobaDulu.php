@@ -1,31 +1,3 @@
-<!-- <table border="1">
-	<thead>
-		<tr>
-			<th>No</th>
-			<th>Witel</th>
-			<th>Work Order</th>
-			<th>Survey</th>
-		</tr>
-	</thead>
-	<?php 
-	 ?>
-	<tbody>
-		<?php 
-			$no=1;
-			foreach ($dataStat as $row) {
-		?>	
-			<tr>
-				<td><?php echo $no; ?></td>
-				<td><?php echo $row['WTEL_NAME']; ?></td>
-				<td><?php echo $row['jumlah'];?></td>
-			</tr>
-		<?php
-			$no++;
-			}
-		?>
-	</tbody>
-</table> -->
-
 <table border="1">
 	<thead align="center">
 		<tr>
@@ -64,5 +36,3 @@
 		?>
 	</tbody>
 </table>
-
-<h1><strong><marquee>HEHEHEHEHEHEHEHEHEHE :)</marquee></strong></h1>

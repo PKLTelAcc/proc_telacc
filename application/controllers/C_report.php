@@ -25,57 +25,6 @@ class C_report extends CI_Controller
 		$this->load->view('tampilan/V_combine',$data);
 	}
 
-	/*public function upload(){
-  $fileName = $this->input->post('file', TRUE);
-
-  $config['upload_path'] = './upload/'; 
-  $config['file_name'] = $fileName;
-  $config['allowed_types'] = 'xls|xlsx|csv|ods|ots';
-  $config['max_size'] = 10000;
-
-  $this->load->library('upload', $config);
-  $this->upload->initialize($config); 
-  
-  if (!$this->upload->do_upload('file')) {
-   $error = array('error' => $this->upload->display_errors());
-   $this->session->set_flashdata('msg','Ada kesalah dalam upload'); 
-   redirect('C_report'); 
-  } else {
-   $media = $this->upload->data();
-   $inputFileName = 'upload/'.$media['file_name'];
-   
-   try {
-    $inputFileType = IOFactory::identify($inputFileName);
-    $objReader = IOFactory::createReader($inputFileType);
-    $objPHPExcel = $objReader->load($inputFileName);
-   } catch(Exception $e) {
-    die('Error loading file "'.pathinfo($inputFileName,PATHINFO_BASENAME).'": '.$e->getMessage());
-   }
-
-   $sheet = $objPHPExcel->getSheet(0);
-   $highestRow = $sheet->getHighestRow();
-   $highestColumn = $sheet->getHighestColumn();
-
-   for ($row = 2; $row <= $highestRow; $row++){  
-     $rowData = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row,
-       NULL,
-       TRUE,
-       FALSE);
-     $data = array(
-     "INST_PROGRES"	=> $rowData[0][4],
-     "INST_KENDALA"	=> $rowData[0][7],
-     "INST_DOKUMENTASI"	=> $rowData[0][23],
-     "INST_MATERIAL"=> $rowData[0][11],
-     "INST_JASA"=> $rowData[0][12],
-     "INST_TOTAL"=> $rowData[0][13],
-    );
-    $this->M_report->insert($data);
-   } 
-   $this->session->set_flashdata('msg','Berhasil upload ...!!'); 
-   redirect('C_report');
-  }  
- } */
-
  public function upload()
 	{
 		$fileName = $this->input->post('file', TRUE);
@@ -216,7 +165,6 @@ class C_report extends CI_Controller
 		     "INST_WTEL_ID"	=> $ambilIDWtel[0]["WTEL_ID"],
 		     "INST_SWIT_ID"	=> $ambilIDSwit[0]["SWIT_ID"],
 		     "INST_PROG_ID"	=> $ambilIDProg[0]["PROG_ID"],
-		     "INST_STAT_ID"	=> $ambilIDStat[0]["STAT_ID"],
 		     "INST_WODE_ID"	=> $ambilIDWode[0]["WODE_ID"],
 		     "INST_MTRA_ID"	=> $ambilIDMtra[0]["MTRA_ID"]
 		    );
@@ -238,7 +186,6 @@ class C_report extends CI_Controller
 		     "SURV_WTEL_ID"	=> $ambilIDWtel[0]["WTEL_ID"],
 		     "SURV_SWIT_ID"	=> $ambilIDSwit[0]["SWIT_ID"],
 		     "SURV_PROG_ID"	=> $ambilIDProg[0]["PROG_ID"],
-		     "SURV_STAT_ID"	=> $ambilIDStat[0]["STAT_ID"],
 		     "SURV_WODE_ID"	=> $ambilIDWode[0]["WODE_ID"]
 		    );
 
