@@ -25,7 +25,8 @@ class C_workOrder extends CI_Controller
 			'witel'		=> $witel,
 			'subWitel'	=> $subWitel,
 			'program'	=> $program,
-			'status'	=> $status
+			'status'	=> $status,
+			'menu'      =>'Input Work Order'
 		);
 		$this->load->view('tampilan/V_combine',$data);
 	}
@@ -70,7 +71,8 @@ class C_workOrder extends CI_Controller
 			'witel'		=> $witel,
 			'subWitel'	=> $subWitel,
 			'program'	=> $program,
-			'status'	=> $status
+			'status'	=> $status,
+			'menu'      =>'Input Work Order'
 		);
 		$this->load->view('tampilan/V_combine',$data);
 	}

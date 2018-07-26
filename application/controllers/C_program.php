@@ -16,9 +16,10 @@ class C_program extends CI_Controller
 
 		$program=$this->M_program->view();
 		$data = array(
-			'title'=>'Input Program',
-			'content' => 'V_program',
-			'program' =>$program
+			'title'		=>'Input Program',
+			'content' 	=> 'V_program',
+			'program' 	=>$program,
+			'menu'      =>'system'
 		);
 		$this->load->view('tampilan/V_combine',$data);
 
@@ -38,9 +39,10 @@ class C_program extends CI_Controller
 	{
 		$program=$this->M_program->update($id);
 		$data = array(
-			'content'=>'v_editProgram',
-			'title'=>'Edit Program',
-			'program' =>$program
+			'content'	=>'v_editProgram',
+			'title'		=>'Edit Program',
+			'program' 	=>$program,
+			'menu'      =>'system'
 		);
 		$this->load->view('tampilan/v_combine',$data);
 	}

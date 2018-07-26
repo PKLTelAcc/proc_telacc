@@ -20,7 +20,8 @@ class C_spTelkom extends CI_Controller
 			'content'	=> 'V_spTelkom',
 			'sp_telkom'	=> $sp_telkom,
 			'workOrder'	=> $workOrder,
-			'survey'	=> $survey
+			'survey'	=> $survey,
+			'menu'      =>'SP'
 		);
 		$this->load->view('tampilan/V_combine', $data);
 	}
@@ -59,7 +60,8 @@ class C_spTelkom extends CI_Controller
 			'content'	=> 'V_editSpTelkom',
 			'sp_telkom'	=> $sp_telkom,
 			'workOrder'	=> $workOrder,
-			'survey'	=> $survey
+			'survey'	=> $survey,
+			'menu'      =>'SP'
 		);
 		$this->load->view('tampilan/V_combine',$data);
 	}

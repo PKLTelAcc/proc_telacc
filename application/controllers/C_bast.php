@@ -24,7 +24,8 @@ class C_bast extends CI_Controller
 			'workOrder'	=> $workOrder,
 			'sp_telkom'	=> $sp_telkom,
 			'instalasi'	=> $instalasi,
-			'status'	=> $status
+			'status'	=> $status,
+			'menu'      =>'Input Bast'
 		);
 		$this->load->view('tampilan/V_combine',$data);
 	}
@@ -71,7 +72,8 @@ class C_bast extends CI_Controller
 			'workOrder'	=> $workOrder,
 			'sp_telkom'	=> $sp_telkom,
 			'instalasi'	=> $instalasi,
-			'status'	=> $status
+			'status'	=> $status,
+			'menu'      =>'Input Bast'
 			);
 	$this->load->view('tampilan/V_combine',$data);
 	}

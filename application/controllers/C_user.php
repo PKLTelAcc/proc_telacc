@@ -21,6 +21,7 @@ class C_user extends CI_Controller
 			'dataLevel' 	=> $dataLevel,
 			'dataUser' 		=> $dataUser,
 			'dataPegawai'	=> $dataPegawai,
+			'menu'      	=>'system'
 		);
 
 		$this->load->view('tampilan/v_combine', $data);
@@ -49,13 +50,14 @@ class C_user extends CI_Controller
 		$dataUser=$this->M_user->viewData($id);
 		$dataPegawai 	= $this->M_user->getPegawai();
 		$data = array(
-			'title'=>'Edit User',
-			'content'=>'V_editUser',
-			'dataLevel' =>$dataLevel,
-			'id'=>$id,
-			'dataUser'=>$dataUser,
-			'menu'         => 'Input User',
-			'dataPegawai'	=> $dataPegawai, 
+			'title'			=>'Edit User',
+			'content'		=>'V_editUser',
+			'dataLevel' 	=>$dataLevel,
+			'id'			=>$id,
+			'dataUser'		=>$dataUser,
+			'menu'         	=> 'Input User',
+			'dataPegawai'	=> $dataPegawai,
+			'menu'      	=>'system'
 		);
 
 		$this->load->view('tampilan/v_combine',$data);

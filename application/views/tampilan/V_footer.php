@@ -64,6 +64,9 @@
 
         //report
         $("#report").dataTable();
+
+        //regist
+        $("#registForm").dataTable();
     });
 </script>
 

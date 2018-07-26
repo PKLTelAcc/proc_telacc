@@ -19,7 +19,8 @@ class C_report extends CI_Controller
 		$data = array(
 			'title'			=> 'Report',
 			'content' 		=> 'V_report',
-			'dataReport'	=> $dataReport
+			'dataReport'	=> $dataReport,
+			'menu'      	=>'Report'
 		);
 
 		$this->load->view('tampilan/V_combine',$data);

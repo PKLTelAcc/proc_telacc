@@ -18,7 +18,8 @@ class C_spMitra extends CI_Controller
 			'title' 	=> 'Input SP Mitra',
 			'content'	=> 'V_spMitra',
 			'sp_mitra'	=> $sp_mitra,
-			'workOrder'	=> $workOrder
+			'workOrder'	=> $workOrder,
+			'menu'      =>'SP'
 		);
 		$this->load->view('tampilan/V_combine', $data);
 	}
@@ -57,7 +58,8 @@ class C_spMitra extends CI_Controller
 			'title' 	=> 'Input SP Mitra',
 			'content'	=> 'V_editSpMitra',
 			'sp_mitra'	=> $sp_mitra,
-			'workOrder'	=> $workOrder
+			'workOrder'	=> $workOrder,
+			'menu'      =>'SP'
 		);
 		$this->load->view('tampilan/V_combine', $data);
 	}

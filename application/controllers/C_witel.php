@@ -16,9 +16,10 @@ class C_witel extends CI_Controller
 
 		$witel=$this->M_witel->view();
 		$data = array(
-			'title'=>'Input Witel',
-			'content' => 'V_witel',
-			'witel' =>$witel
+			'title'		=>'Input Witel',
+			'content' 	=> 'V_witel',
+			'witel' 	=>$witel,
+			'menu'      =>'system'
 		);
 		$this->load->view('tampilan/V_combine',$data);
 
@@ -38,9 +39,10 @@ class C_witel extends CI_Controller
 	{
 		$witel=$this->M_witel->update($id);
 		$data = array(
-			'content'=>'v_editWitel',
-			'title'=>'Edit Witel',
-			'witel' =>$witel
+			'content'	=>'v_editWitel',
+			'title'		=>'Edit Witel',
+			'witel' 	=>$witel,
+			'menu'      =>'system'
 		);
 		$this->load->view('tampilan/v_combine',$data);
 	}

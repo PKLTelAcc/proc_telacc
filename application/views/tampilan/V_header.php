@@ -130,7 +130,7 @@ $user=$this->M_dashboard->viewData($_SESSION['USER_ID']);
                <?php
                   if ($_SESSION['level'] == 'SUPER USER') {
                     ?>
-                      <li class="<?php if(isset($menu)) if($menu == 'work_order') echo 'active'?>">
+                      <li class="<?php if(isset($menu)) if($menu == 'system') echo 'active'?>">
                         <!--sistem-->
                         <a class="dropdown-toggle" style="cursor: pointer;" type="button" data-toggle="dropdown">
                           <i class="fa fa-industry"></i>
@@ -148,28 +148,29 @@ $user=$this->M_dashboard->viewData($_SESSION['USER_ID']);
                           </ul>
                       </li>
                 <!--Work Order-->
-                <li >
-                  <a href="<?php echo base_url()?>c_workOrder">
+                <li class="<?php if(isset($menu)) if($menu == 'Input Work Order') echo 'active'?>">
+                  <a href="<?php echo base_url()?>c_workOrder"> 
                     <i class="glyphicon glyphicon-list-alt"></i>
                     Work Order
                   </a>
                 </li>
                 <!--survey-->
-                <li >
+                 <li class="<?php if(isset($menu)) if($menu == 'Input Survey') echo 'active'?>">
                   <a href="<?php echo base_url()?>c_survey">
                     <i class="glyphicon glyphicon-list-alt"></i>
                     Survey
                   </a>
                 </li>
                 <!--instalasi-->
-                <li >
+                <li class="<?php if(isset($menu)) if($menu == 'Input Instalasi') echo 'active'?>">
                   <a href="<?php echo base_url()?>c_instalasi">
+                     
                     <i class="glyphicon glyphicon-list-alt"></i>
                     Instalasi
                   </a>
                 </li>
                 <!--bast-->
-                <li >
+                <li class="<?php if(isset($menu)) if($menu == 'Input Bast') echo 'active'?>">
                   <a href="<?php echo base_url()?>c_bast">
                     <i class="glyphicon glyphicon-list-alt"></i>
                     BAST
@@ -177,7 +178,7 @@ $user=$this->M_dashboard->viewData($_SESSION['USER_ID']);
                 </li>
 
                 <!--sp-->
-                <li >
+                <li class="<?php if(isset($menu)) if($menu == 'SP') echo 'active'?>">
                   <a class="dropdown-toggle" style="cursor: pointer;" type="button" data-toggle="dropdown">
                     <i class="glyphicon glyphicon-list-alt"></i>
                     SP
@@ -188,7 +189,7 @@ $user=$this->M_dashboard->viewData($_SESSION['USER_ID']);
                     </ul>
                 </li>
                 <!-- Report -->
-                <li >
+                <li class="<?php if(isset($menu)) if($menu == 'Report') echo 'active'?>">
                   <a href="<?php echo base_url()?>c_report">
                     <i class="fa fa-bar-chart-o"></i>
                     Report

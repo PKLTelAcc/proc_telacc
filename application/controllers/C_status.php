@@ -16,9 +16,10 @@ class C_status extends CI_Controller
 
 		$status=$this->M_status->view();
 		$data = array(
-			'title'=>'Input Status',
-			'content' => 'V_status',
-			'status' =>$status
+			'title'		=>'Input Status',
+			'content' 	=> 'V_status',
+			'status' 	=>$status,
+			'menu'      =>'system'
 		);
 		$this->load->view('tampilan/V_combine',$data);
 
@@ -38,9 +39,10 @@ class C_status extends CI_Controller
 	{
 		$status=$this->M_status->update($id);
 		$data = array(
-			'content'=>'v_editStatus',
-			'title'=>'Edit Status',
-			'status' =>$status
+			'content'	=>'v_editStatus',
+			'title'		=>'Edit Status',
+			'status' 	=>$status,
+			'menu'      =>'system'
 		);
 		$this->load->view('tampilan/v_combine',$data);
 	}

@@ -31,7 +31,8 @@ class C_instalasi extends CI_Controller
 			'status'	=> $status,
 			'workOrder'	=> $workOrder,
 			'pegawai'	=> $pegawai,
-			'mitra'		=> $mitra
+			'mitra'		=> $mitra,
+			'menu'      =>'Input Instalasi'
 		);
 		$this->load->view('tampilan/V_combine',$data);
 	}
@@ -102,7 +103,8 @@ class C_instalasi extends CI_Controller
 			'status'	=> $status,
 			'workOrder'	=> $workOrder,
 			'pegawai'	=> $pegawai,
-			'mitra'		=> $mitra
+			'mitra'		=> $mitra,
+			'menu'      =>'Input Instalasi'
 		);
 		$this->load->view('tampilan/V_combine',$data);
 	}

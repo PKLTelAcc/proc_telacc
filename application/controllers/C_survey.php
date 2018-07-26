@@ -29,7 +29,8 @@ class C_survey extends CI_Controller
 			'program'	=> $program,
 			'status'	=> $status,
 			'workOrder'	=> $workOrder,
-			'pegawai'	=> $pegawai
+			'pegawai'	=> $pegawai,
+			'menu'      =>'Input Survey'
 		);
 		$this->load->view('tampilan/V_combine',$data);
 	}
@@ -89,7 +90,8 @@ class C_survey extends CI_Controller
 			'program'	=> $program,
 			'status'	=> $status,
 			'workOrder'	=> $workOrder,
-			'pegawai'	=> $pegawai
+			'pegawai'	=> $pegawai,
+			'menu'      =>'Input Survey'
 		);
 		$this->load->view('tampilan/V_combine',$data);
 	}

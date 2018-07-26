@@ -20,7 +20,8 @@ class C_subWItel extends CI_Controller
 			'sub_witel' =>$subWitel,
 			'witel' 	=>$witel,
 			'title'		=>'Input Sub Witel',
-			'content' 	=> 'V_subWitel'
+			'content' 	=> 'V_subWitel',
+			'menu'      =>'system'
 		);
 		$this->load->view('tampilan/V_combine',$data);
 
@@ -41,10 +42,11 @@ class C_subWItel extends CI_Controller
 		$subWitel=$this->M_subWitel->update($id); 
 		$witel=$this->M_subWitel->getWitel();
 		$data  = array(
-			'content'=>'V_editSubWitel',
-			'witel' =>$witel,
-			'title'=>'Edit Sub Witel',
-			'sub_witel' =>$subWitel
+			'content'	=>'V_editSubWitel',
+			'witel' 	=>$witel,
+			'title'		=>'Edit Sub Witel',
+			'sub_witel' =>$subWitel,
+			'menu'      =>'system'
 		);
 		$this->load->view('tampilan/V_combine',$data);
 	}

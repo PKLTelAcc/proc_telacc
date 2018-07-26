@@ -16,9 +16,10 @@ class C_mitra extends CI_Controller
 
 		$mitra=$this->M_mitra->view();
 		$data = array(
-			'title'=>'Input mitra',
-			'content' => 'V_mitra',
-			'mitra' =>$mitra
+			'title'		=>'Input mitra',
+			'content' 	=> 'V_mitra',
+			'mitra' 	=>$mitra,
+			'menu'      =>'system'
 		);
 		$this->load->view('tampilan/V_combine',$data);
 
@@ -38,9 +39,10 @@ class C_mitra extends CI_Controller
 	{
 		$mitra=$this->M_mitra->update($id);
 		$data = array(
-			'content'=>'v_editMitra',
-			'title'=>'Edit Mitra',
-			'mitra' =>$mitra
+			'content'	=>'v_editMitra',
+			'title'		=>'Edit Mitra',
+			'mitra' 	=>$mitra,
+			'menu'      =>'system'
 		);
 		$this->load->view('tampilan/v_combine',$data);
 	}

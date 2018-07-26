@@ -19,10 +19,11 @@ class C_pegawai extends CI_Controller
 		$pegawai=$this->M_pegawai->view();
 		$witel=$this->M_pegawai->getWitel();
 		$data = array(
-			'title'=>'Input Pegawai',
-			'content' => 'V_pegawai',
-			'pegawai' =>$pegawai,
-			'witel' =>$witel
+			'title'		=>'Input Pegawai',
+			'content' 	=> 'V_pegawai',
+			'pegawai' 	=>$pegawai,
+			'witel' 	=>$witel,
+			'menu'      =>'system'
 		);
 		$this->load->view('tampilan/V_combine',$data);
 
@@ -51,10 +52,11 @@ class C_pegawai extends CI_Controller
 		$pegawai=$this->M_pegawai->update($id);
 		$witel=$this->M_pegawai->getWitel();
 		$data = array(
-			'content'=>'V_editPegawai',
-			'title'=>'Edit Pegawai',
-			'pegawai' =>$pegawai,
-			'witel' =>$witel
+			'content'	=>'V_editPegawai',
+			'title'		=>'Edit Pegawai',
+			'pegawai' 	=>$pegawai,
+			'witel' 	=>$witel,
+			'menu'      =>'system'
 		);
 		$this->load->view('tampilan/v_combine',$data);
 	}
