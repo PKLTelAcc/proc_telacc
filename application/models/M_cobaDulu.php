@@ -10,12 +10,29 @@ class M_cobaDulu extends CI_Model
 		parent::__construct();
 	}
 
-	public function getIDTA()
+	public function getStat()
 	{
-		$sql 	= "SELECT WTEL_NAME, WODE_WTEL_ID, COUNT(WODE_WTEL_ID) AS jumlah FROM work_order INNER JOIN witel ON WODE_WTEL_ID = WTEL_ID GROUP BY WODE_WTEL_ID";
+		$sql 	= "SELECT WTEL_NAME, COUNT(*) AS jumlah FROM work_order INNER JOIN witel ON WODE_WTEL_ID = WTEL_ID WHERE WODE_STAT_ID=1 GROUP BY WTEL_NAME";
 		$query 	= $this->db->query($sql);
 		$return = $query->result_array();
 		return $return;
 	}
+
+	public function getStat2()
+	{
+		$sql 	= "SELECT WTEL_NAME, COUNT(*) AS jumlah FROM work_order INNER JOIN witel ON WODE_WTEL_ID = WTEL_ID WHERE WODE_STAT_ID=2 GROUP BY WTEL_NAME";
+		$query 	= $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
+
+	public function getStat3()
+	{
+		$sql 	= "SELECT WTEL_NAME, COUNT(*) AS jumlah FROM work_order INNER JOIN witel ON WODE_WTEL_ID = WTEL_ID WHERE WODE_STAT_ID=3 GROUP BY WTEL_NAME";
+		$query 	= $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
+		
 }
 ?>

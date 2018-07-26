@@ -13,12 +13,16 @@ class C_cobaDulu extends CI_Controller
 
 	public function index()
 	{
-		$dataIDTA=$this->M_cobaDulu->getIDTA();
+		$dataStat=$this->M_cobaDulu->getStat();
+		$dataStat2=$this->M_cobaDulu->getStat2();
+		$dataStat3=$this->M_cobaDulu->getStat3();
 
 		$data = array(
 			'title' 	=>	'Coba Dulu',
 			'content'	=>	'V_cobaDulu',
-			'dataIDTA'	=>	$dataIDTA 
+			'dataStat'	=>	$dataStat,
+			'dataStat2'	=>	$dataStat2,
+			'dataStat3'	=>	$dataStat3,
 		);
 
 		$this->load->view('tampilan/V_combine', $data);
