@@ -1,6 +1,10 @@
 <!-- Main content -->
 <div class="content">
 	<div class="row">
+		<?php
+	  	if ($_SESSION['level'] == 'SUPER USER' || $_SESSION['level'] == 'ADMIN WORK ORDER' ) {
+	  		?>
+	  	}
 	  <div class="col-md-12">
 	    <div class="box box-danger">
 	      <div class="box-header with-border">
@@ -382,6 +386,14 @@ function modalCariSwit() {
         $('#modalWodeStat').modal('hide');
 	});
 </script>
+<?php
+	  	}
+	  	if ($_SESSION['level'] != 'KEUANGAN' || $_SESSION['level'] != 'SUPER ADMIN' || $_SESSION['level'] != 'OWNER') {
+	  		echo '<div class="col-md-12">';
+	  	}else{
+	  		echo '<div class="col-md-6">';
+	  	}
+	  ?>
 
 
 

@@ -71,12 +71,14 @@ class C_instalasi extends CI_Controller
 			// 'INST_PEGA_ID' 		=> $nik,
 			'INST_TANGGAL' 		=> $date,
 			'INST_TARGET'		=> $target,
-			'INST_STAT_ID' 		=> $status,
 			'INST_PROG_ID' 		=> $program,
 			'INST_PROGRES'		=> $progres,
 			'INST_KENDALA'		=> $kendala
 		);
-		$instalasi=$this->M_instalasi->insert($data);
+		$data2 = array(
+			'WODE_STAT_ID' 		=> $status
+		);
+		$instalasi=$this->M_instalasi->insert($data,$data2);
 		redirect('C_instalasi');
 	}
 
@@ -139,12 +141,14 @@ class C_instalasi extends CI_Controller
 			// 'INST_PEGA_ID' 		=> $nik,
 			'INST_TANGGAL' 		=> $date,
 			'INST_TARGET'		=> $target,
-			'INST_STAT_ID' 		=> $status,
 			'INST_PROG_ID' 		=> $program,
 			'INST_PROGRES'		=> $progres,
 			'INST_KENDALA'		=> $kendala
 		);
-		$instalasi=$this->M_instalasi->updateData($id,$data);
+		$data2 = array(
+			'WODE_STAT_ID' 		=> $status
+		);
+		$instalasi=$this->M_instalasi->updateData($id,$data,$data2);
 		redirect('C_instalasi');
 	}
 
