@@ -81,4 +81,8 @@ class C_user extends CI_Controller
 		$dataDelete=$this->M_user->Delete($id);
 		redirect('C_user','refresh');
 	}
+	public function viewData()
+	{
+		$user=$this->M_user->viewData();
+	}
 }

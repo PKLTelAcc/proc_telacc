@@ -1,5 +1,6 @@
 <?php
 date_default_timezone_set('Asia/Bangkok');
+$user=$this->M_dashboard->viewData($_SESSION['USER_ID']);
 ?>
 <!DOCTYPE html>
 <html>
@@ -244,16 +245,16 @@ date_default_timezone_set('Asia/Bangkok');
                     <!-- The user image in the navbar-->
                     <img src="/proj_telacc/asset1/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                    <span class="hidden-xs">SUDO</span>
+                    <span class="hidden-xs"><?php echo($user[0]['USER_NAME'])?></span>
                   </a>
                   <ul class="dropdown-menu">
                     <!-- The user image in the menu -->
                     <li class="user-header">
-                      <img src="/proj_telacc/asset1/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                      <img src="<?php echo($user[0]['USER_PICTURE'])?>" class="img-circle" alt="User Image">
 
                       <p>
-                        SUDO - <span> Admin </span>
-                        <small>Member since Nov. 2012</small>
+                        <?php echo($user[0]['USER_NAME'])?> - <span> <?php echo($user[0]['LEVE_NAME'])?></span>
+                        <small>Member since <?php echo date("M, Y", strtotime( $_SESSION['since']));?></small>
                       </p>
                     </li>
 

@@ -30,24 +30,38 @@
 	<thead align="center">
 		<tr>
 			<th>WITEL</th>
-			<th>DROP</th>
-			<th> - </th>
-			<th>GOLIVE</th>
+			<?php
+			$s=$this->M_cobaDulu->status();
+			foreach ($s as $row) {
+				echo "<th>".$row['STAT_NAME']."</th>";
+			}
+			 ?>
+			 <th>Total</th>
 		</tr>
 	</thead>
 	<tbody align="center">
-		<tr>
-			<td><?php echo $dataStat[0]['WTEL_NAME']; ?></td>
-			<td><?php echo $dataStat[0]['jumlah']; ?></td>
-			<td><?php echo $dataStat2[0]['jumlah']; ?></td>
-			<td><?php echo $dataStat3[0]['jumlah']; ?></td>
-		</tr>
-		<tr>
-			<td><?php echo $dataStat[1]['WTEL_NAME']; ?></td>
-			<td><?php echo $dataStat[1]['jumlah']; ?></td>
-			<td><?php echo $dataStat2[1]['jumlah']; ?></td>
-			<td><?php echo $dataStat3[1]['jumlah']; ?></td>
-		</tr>
+		<?php
+		$i=$this->M_cobaDulu->getWitel();
+		$total = 0;
+		foreach ($i as $row) {
+			?>
+			<tr>
+				<th><?=$row['WTEL_NAME']?></th>
+				<?php
+					$hanip = $this->M_cobaDulu->getStat($row['WTEL_ID']);
+					foreach ($hanip as $key) {
+						?>
+						<td><?=$key['jumlah']?></td>
+						<?php
+						$total = $total + $key['jumlah'];
+					}
+				?>
+				<td><?=$total?></td>
+			</tr>
+			<?php
+			$total = 0;
+		}
+		?>
 	</tbody>
 </table>
 
