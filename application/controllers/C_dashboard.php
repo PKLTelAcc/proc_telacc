@@ -22,7 +22,8 @@ class C_dashboard extends CI_Controller
 			$view = 'tampilan/index';
 		}
 		$data = array(
-			'content' => $view	
+			'title'		=> 'Dashboard',
+			'content' 	=> $view
 		);
 			$this->load->view('tampilan/v_combine',$data);
 	}
