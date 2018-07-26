@@ -243,7 +243,7 @@ $user=$this->M_dashboard->viewData($_SESSION['USER_ID']);
                   <!-- Menu Toggle Button -->
                   <a href="dashboard.html" class="dropdown-toggle" data-toggle="dropdown">
                     <!-- The user image in the navbar-->
-                    <img src="/proj_telacc/asset1/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                    <img src="<?php echo($user[0]['USER_PICTURE'])?>" class="user-image" alt="User Image">
                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
                     <span class="hidden-xs"><?php echo($user[0]['USER_NAME'])?></span>
                   </a>
