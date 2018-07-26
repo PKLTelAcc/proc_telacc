@@ -3,8 +3,8 @@
 		<tr>
 			<th>WITEL</th>
 			<?php
-			$s=$this->M_cobaDulu->status();
-			foreach ($s as $row) {
+			$thead=$this->M_cobaDulu->getStatus();
+			foreach ($thead as $row) {
 				echo "<th>".$row['STAT_NAME']."</th>";
 			}
 			 ?>
@@ -13,15 +13,15 @@
 	</thead>
 	<tbody align="center">
 		<?php
-		$i=$this->M_cobaDulu->getWitel();
+		$witel=$this->M_cobaDulu->getWitel();
 		$total = 0;
-		foreach ($i as $row) {
+		foreach ($witel as $row) {
 			?>
 			<tr>
 				<th><?=$row['WTEL_NAME']?></th>
 				<?php
-					$hanip = $this->M_cobaDulu->getStat($row['WTEL_ID']);
-					foreach ($hanip as $key) {
+					$count = $this->M_cobaDulu->getCount($row['WTEL_ID']);
+					foreach ($count as $key) {
 						?>
 						<td><?=$key['jumlah']?></td>
 						<?php

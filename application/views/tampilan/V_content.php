@@ -15,111 +15,45 @@
           <thead>
           <tr>
             <th>WITEL</th>
-            <th>WORK ORDER</th>
-            <th>SURVEY</th>
-            <th>INSTALASI</th>
-            <th>BAST</th>
-            <th>MORE</th>
+            <?php
+            $thead=$this->M_dashboard->getStatus();
+            foreach ($thead as $row) {
+              echo "<th>".$row['STAT_NAME']."</th>";
+            }
+             ?>
+             <th>Total</th>
+             <th>Detail</th>
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <td>
-              Some Product
-            </td>
-            <td>$13 USD</td>
-            <td>
-              <small class="text-success mr-1">
-                <i class="fa fa-arrow-up"></i>
-                12%
-              </small>
-              12,000 Sold
-            </td>
-            <td>
-              test
-            </td>
-            <td>
-              test
-            </td>
-            <td>
-              <a href="#" class="text-muted">
-                <i class="fa fa-search"></i>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Another Product
-            </td>
-            <td>$29 USD</td>
-            <td>
-              <small class="text-warning mr-1">
-                <i class="fa fa-arrow-down"></i>
-                0.5%
-              </small>
-              123,234 Sold
-            </td>
-            <td>
-              test
-            </td>
-            <td>
-              test
-            </td>
-            <td>
-              <a href="#" class="text-muted">
-                 <i class="fa fa-search"></i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                test
-                <Amazing> Product
-              </td>
-              <td>$1,230 USD</td>
-              <td>
-              <small class="text-danger mr-1">
-                <i class="fa fa-arrow-down"></i>
-                3%
-              </small>
-              198 Sold
-            </td>
-            <td>
-              test
-            </td>
-            <td>
-              test
-            </td>
-            <td>
-              <a href="#" class="text-muted">
-                <i class="fa fa-search"></i>
-              </a>
-             </td>
-          </tr>
-          <tr>
-            <td>
-              Perfect Item
-            </td>
-            <td>$199 USD</td>
-            <td>
-              <small class="text-success mr-1">
-                <i class="fa fa-arrow-up"></i>
-                63%
-              </small>
-              87 Sold
-            </td>
-            <td>
-              test
-            </td>
-            <td>
-              test
-            </td>
-            <td>
-              <a href="#" class="text-muted">
-                <i class="fa fa-search"></i>
-              </a>
-             </td>
-          </tr>
+            <?php
+            $witel=$this->M_dashboard->getWitel();
+            $total = 0;
+            foreach ($witel as $row) {
+              ?>
+              <tr>
+                <th><?=$row['WTEL_NAME']?></th>
+                <?php
+                  $count = $this->M_dashboard->getCount($row['WTEL_ID']);
+                  foreach ($count as $key) {
+                ?>
+                    <td><?=$key['jumlah']?></td>
+                <?php
+                    $total = $total + $key['jumlah'];
+                  }
+                ?>
+                <td><?=$total?></td>
+                <td>
+                  <a href="#" class="text-muted">
+                    <i class="fa fa-search"></i>
+                  </a>
+                </td>
+              </tr>
+              <?php
+              $total = 0;
+            }
+            ?>
+            
           </tbody>
         </table>
        </div>
