@@ -51,7 +51,7 @@ class C_profil extends CI_Controller
 	public function upload()
 	{
 		$t=time();
-		$target_dir = "assets/img/profil/";
+		$target_dir = "asset1/img/";
 		$target_file = $target_dir .date("Y_m_d_H_i_s_",$t). basename($_FILES["fileToUpload"]["name"]);
 		$nama_picture = str_replace(' ', '_', $target_file);
 		$uploadOk = 1;
@@ -127,12 +127,12 @@ class C_profil extends CI_Controller
 		} else 
 			{
 		    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $nama_picture)) {
-		        // echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " Berhasil Di Upload.";
+		        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " Berhasil Di Upload.";
 		        $picture 		= $nama_picture;
 		        $data = array(
 				'USER_PICTURE' 	=>$picture
 				);
-				$this->m_profil->Update($data);
+				$this->M_profil->Update($data);
 				redirect('C_profil');
 		    } else 
 		    {
