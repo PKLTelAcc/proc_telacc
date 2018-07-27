@@ -12,7 +12,7 @@
 	      </div>
 	      <!-- /.box-header -->
 	      <div class="box-body">
-			<table class="table table-bordered table-hover table-striped" id="report">
+			<table class="table table-bordered table-hover table-striped" id="LAPORAN">
 				<thead>
 					<tr>
 						<th>No</th>
@@ -72,3 +72,12 @@
 	</div>
 </div>
 <!-- /.content -->
+<script type="text/javascript">
+    $(function () {
+        $('#LAPORAN').dataTable( {
+          "bSort": false,
+          dom:'B <"content-header" <"col-sm-2"l> f>tipH',
+          buttons: [ 'excel' ]
+        } );
+  });
+</script>

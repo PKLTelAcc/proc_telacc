@@ -240,7 +240,7 @@ $user=$this->M_dashboard->viewData($_SESSION['USER_ID']);
                   ?>
 
                 <!-- User Account Menu -->
-                <li class="dropdown user user-menu active">
+                <li class="dropdown user user-menu ">
                   <!-- Menu Toggle Button -->
                   <a href="dashboard.html" class="dropdown-toggle" data-toggle="dropdown">
                     <!-- The user image in the navbar-->
