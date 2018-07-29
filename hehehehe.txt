@@ -1,0 +1,1 @@
+select WTEL_NAME, count(work_order.WODE_STAT_ID) from witel,work_order,status where work_order.WODE_STAT_ID = status.STAT_ID and work_order.WODE_WTEL_ID = witel.WTEL_ID and witel.WTEL_ID = 1 GROUP by work_order.WODE_STAT_ID

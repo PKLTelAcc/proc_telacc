@@ -25,7 +25,7 @@
              <th>Detail</th>
           </tr>
           </thead>
-          <tbody>
+          <tbody align="center">
             <?php
             $witel=$this->M_dashboard->getWitel();
             $total = 0;
@@ -34,6 +34,7 @@
               <tr>
                 <th><?=$row['WTEL_NAME']?></th>
                 <?php
+                if(""){
                   $count = $this->M_dashboard->getCount($row['WTEL_ID']);
                   foreach ($count as $key) {
                 ?>
@@ -41,6 +42,14 @@
                 <?php
                     $total = $total + $key['jumlah'];
                   }
+                }else{
+                  $null = $this->M_dashboard->getStatus();
+                  foreach ($null as $key) {
+                ?>
+                    <td>0</td>
+                <?php
+                  }
+                }
                 ?>
                 <td><?=$total?></td>
                 <td>
