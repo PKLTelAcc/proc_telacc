@@ -117,7 +117,7 @@ $user=$this->M_dashboard->viewData($_SESSION['USER_ID']);
     <nav class="navbar navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="<?php echo base_url()?>C_Dashboard"" class="navbar-brand"><b>TELKOM AKSES</b></a>
+          <a href="<?php echo base_url()?>C_dashboard"" class="navbar-brand"><b>TELKOM AKSES</b></a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
             <i class="fa fa-bars"></i>
           </button>
