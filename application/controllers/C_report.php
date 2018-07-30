@@ -203,6 +203,20 @@ class C_report extends CI_Controller
 		   $this->session->set_flashdata('msg','Berhasil upload ...!!'); 
 		   redirect('C_report');
 		}  
+	}
+
+	public function detailWitel($id)
+	{
+		$dataReportByWitel		= $this->M_report->getReportByWitelId($id);
+		$data = array(
+			'dataReportByWitel' 	=> $dataReportByWitel,
+			'content' 				=> 'V_reportDetailWitel',
+			'title'					=> 'Detail '.$dataReportByWitel[0]['WTEL_NAME'],
+			'menu'         			=> 'Report'
+		);
+		var_dump($dataReportByWitel[0]['WTEL_NAME']);
+		exit();
+		$this->load->view('tampilan/v_combine',$data);	
 	} 
 }
  ?>

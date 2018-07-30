@@ -39,7 +39,7 @@ class M_dashboard extends CI_Model
 	}
 	public function getWitel()
 	{
-		$sql 	= "SELECT * FROM witel,status /*INNER JOIN work_order ON WTEL_ID = WODE_WTEL_ID*/ GROUP by WTEL_ID";
+		$sql 	= "SELECT * FROM witel INNER JOIN work_order ON WTEL_ID = WODE_WTEL_ID GROUP by WTEL_ID";
 		$query 	= $this->db->query($sql);
 		$return = $query->result_array();
 		return $return;	

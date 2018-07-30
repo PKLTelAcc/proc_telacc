@@ -53,7 +53,7 @@
                 ?>
                 <td><?=$total?></td>
                 <td>
-                  <a href="#" class="text-muted">
+                  <a href="<?php echo base_url()?>C_report/detailWitel/<?php echo $row['WTEL_ID']?>" class="text-muted">
                     <i class="fa fa-search"></i>
                   </a>
                 </td>
