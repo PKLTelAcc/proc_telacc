@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 30, 2018 at 08:49 AM
+-- Generation Time: Jul 30, 2018 at 08:54 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -939,7 +939,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`USER_ID`, `USER_NAME`, `USER_PASSWORD`, `USER_PICTURE`, `USER_TIMESTAMP`, `USER_LEVE_ID`, `USER_PEGA_ID`, `USER_WTEL_ID`) VALUES
-(1, 'SUDO', '28a4437b86f15b3e4204252dd75327fe', '-', '2018-07-17 01:23:23', 1, 1, 0);
+(1, 'SUDO', '28a4437b86f15b3e4204252dd75327fe', '-', '2018-07-30 06:54:40', 1, 1, 1);
 
 -- --------------------------------------------------------
 
