@@ -191,7 +191,7 @@
 //SAMPAI SINI
 							echo "<td>".$row['SURV_TANGGAL']."</td>";
 							echo "<td>".$row['STAT_NAME']."</td>";
-							echo "<td><a href='".base_url()."C_survey/formUpdate/".$row['SURV_ID']."'>Edit</a> | <a href='".base_url()."C_survey/delete/".$row['SURV_ID']."'>Delete</a></td>";
+							echo "<td><a href='".base_url()."C_survey/formUpdate/".$row['SURV_ID']."'>Edit</a> | <a href='".base_url()."C_survey/delete/".$row['SURV_ID']."' onclick='return confirm(\"Apa anda yakin akan menghapus data ini ?\")'>Delete</a></td>";
 							echo "</tr>";
 
 							$no++;

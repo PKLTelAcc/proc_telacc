@@ -120,7 +120,7 @@
 	 					echo "<td>".$row['LEVE_NAME']."</td>";
 	 					echo "<td>
 	 							<a href='".base_url()."C_user/FormUpdate/".$row['USER_ID']."'>Edit</a> |
-	 							<a  href='".base_url()."C_user/Delete/".$row['USER_ID']."'>Delete</a>
+	 							<a  href='".base_url()."C_user/Delete/".$row['USER_ID']."' onclick='return confirm(\"Apa anda yakin akan menghapus data ini ?\")'>Delete</a>
 	 						 </td>";
 
 	 			 		echo "</tr>";

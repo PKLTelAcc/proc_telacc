@@ -134,7 +134,7 @@
 							echo "<td>".$row['SPMT_TOTAL']."</td>";
 							echo "<td>".$row['SPMT_ODP']."</td>";
 							echo "<td>".$row['SPMT_NO_APM']."</td>";
-							echo "<td><a href='".base_url()."C_spMitra/formUpdate/".$row['SPMT_ID']."'>Edit</a> | <a href='".base_url()."C_spMitra/delete/".$row['SPMT_ID']."'>Delete</a></td>";
+							echo "<td><a href='".base_url()."C_spMitra/formUpdate/".$row['SPMT_ID']."'>Edit</a> | <a href='".base_url()."C_spMitra/delete/".$row['SPMT_ID']."' onclick='return confirm(\"Apa anda yakin akan menghapus data ini ?\")'>Delete</a></td>";
 							echo "</tr>";
 
 							$no++;

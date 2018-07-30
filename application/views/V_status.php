@@ -72,7 +72,7 @@
 		 					echo "<td>".$no."</td>";
 		 					echo "<td>".$row['STAT_NAME']."</td>";
 		 					echo "<td><a href='".base_url()."C_status/FormUpdate/".$row['STAT_ID']."'>Edit</a> | 
-		 						<a href='".base_url()."C_status/delete/".$row['STAT_ID']."'>Delete</a></td>";
+		 						<a href='".base_url()."C_status/delete/".$row['STAT_ID']."' onclick='return confirm(\"Apa anda yakin akan menghapus data ini ?\")'>Delete</a></td>";
 		 					echo "</tr>";
 		 					$no++;
 		 				}

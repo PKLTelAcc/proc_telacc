@@ -136,7 +136,7 @@
 							echo "<td>".$row['INST_TOTAL']."</td>";
 							echo "<td>".$row['INST_ODP']."</td>";
 							echo "<td>".$row['BAST_TANGGAL']."</td>";
-							echo "<td><a href='".base_url()."C_bast/formUpdate/".$row['BAST_ID']."'>Edit</a> | <a href='".base_url()."C_bast/delete/".$row['BAST_ID']."'>Delete</a></td>";
+							echo "<td><a href='".base_url()."C_bast/formUpdate/".$row['BAST_ID']."'>Edit</a> | <a href='".base_url()."C_bast/delete/".$row['BAST_ID']."' onclick='return confirm(\"Apa anda yakin akan menghapus data ini ?\")'>Delete</a></td>";
 							echo "</tr>";
 
 							$no++;

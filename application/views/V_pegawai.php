@@ -135,7 +135,7 @@
 		 					echo "<td>".$row['PEGA_PSA']."</td>";
 		 					echo "<td>".$row['WTEL_NAME']."</td>";
 		 					echo "<td><a href='".base_url()."C_pegawai/FormUpdate/".$row['PEGA_ID']."'>Edit</a> | 
-		 						<a href='".base_url()."C_pegawai/delete/".$row['PEGA_ID']."'>Delete</a></td>";
+		 						<a href='".base_url()."C_pegawai/delete/".$row['PEGA_ID']."' onclick='return confirm(\"Apa anda yakin akan menghapus data ini ?\")'>Delete</a></td>";
 		 					echo "</tr>";
 		 					$no++;
 		 				}

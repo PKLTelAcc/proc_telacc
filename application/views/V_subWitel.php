@@ -102,7 +102,7 @@
 				echo "<td>".$no."</td>";
 				echo "<td>".$row['WTEL_NAME']."</td>";
 				echo "<td>".$row['SWIT_NAME']."</td>";
-				echo "<td><a href='".base_url()."C_subWitel/formUpdate/".$row['SWIT_ID']."'>Edit</a> | <a href='".base_url()."C_subWitel/delete/".$row['SWIT_ID']."'>Delete</a></td>";
+				echo "<td><a href='".base_url()."C_subWitel/formUpdate/".$row['SWIT_ID']."'>Edit</a> | <a href='".base_url()."C_subWitel/delete/".$row['SWIT_ID']."' onclick='return confirm(\"Apa anda yakin akan menghapus data ini ?\")'>Delete</a></td>";
 				echo "</tr>";
 
 				$no++;
