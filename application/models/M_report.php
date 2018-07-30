@@ -174,7 +174,16 @@ class M_report extends CI_Model
 		$this->db->insert('survey',$idSurv);
 		
 	}
-
+	public function getMonth()
+	{
+		$month = date('m');
+		return $month;
+	}
+	public function getYear()
+	{
+		$year = date('Y');
+		return $year;
+	}
 	public function getReportByWitelId($id)
 	{
 		$sql 	= "SELECT * FROM instalasi INNER JOIN witel ON INST_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON INST_SWIT_ID = SWIT_ID INNER JOIN program ON INST_PROG_ID = PROG_ID INNER JOIN mitra ON INST_MTRA_ID = MTRA_ID INNER JOIN work_order ON INST_WODE_ID = WODE_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID AND WTEL_ID =".$id;
@@ -182,5 +191,6 @@ class M_report extends CI_Model
 		$return = $query->result_array();
 		return $return;
 	}
+	
 }
 ?>
