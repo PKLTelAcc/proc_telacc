@@ -34,7 +34,7 @@ class C_dashboard extends CI_Controller
 		$data = array(
 			'dataReportByWitel' 	=> $dataReportByWitel,
 			'content' 				=> 'V_reportDetailWitel',
-			'title'					=> 'Detail '.$dataReportByWitel[0]['WTEL_NAME'],
+			'title'					=> 'Detail Witel '.$dataReportByWitel[0]['WTEL_NAME'],
 		);
 		$this->load->view('tampilan/v_combine',$data);	
 	}
@@ -45,7 +45,18 @@ class C_dashboard extends CI_Controller
 		$data = array(
 			'dataReportByStatus' 	=> $dataReportByStatus,
 			'content' 				=> 'V_reportDetailStatus',
-			'title'					=> 'Detail '.$dataReportByStatus[0]['STAT_NAME'],
+			'title'					=> 'Detail Status '.$dataReportByStatus[0]['STAT_NAME'],
+		);
+		$this->load->view('tampilan/v_combine',$data);	
+	}
+
+	public function detail($wtelid,$statid)
+	{
+		$dataReportByWitelStatus		= $this->M_dashboard->getReportByWitelStatus($wtelid,$statid);
+		$data = array(
+			'dataReportByWitelStatus' 		=> $dataReportByWitelStatus,
+			'content' 				=> 'V_reportDetailWitelStatus',
+			'title'					=> 'Detail Witel '.$dataReportByWitelStatus[0]['WTEL_NAME'].' Status '.$dataReportByWitelStatus[0]['STAT_NAME'],
 		);
 		$this->load->view('tampilan/v_combine',$data);	
 	} 

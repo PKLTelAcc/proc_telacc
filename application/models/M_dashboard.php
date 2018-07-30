@@ -60,6 +60,14 @@ class M_dashboard extends CI_Model
 		$return = $query->result_array();
 		return $return;
 	}
+
+	public function getReportByWitelStatus($wtelid,$statid)
+	{
+		$sql 	= "SELECT * FROM instalasi INNER JOIN witel ON INST_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON INST_SWIT_ID = SWIT_ID INNER JOIN program ON INST_PROG_ID = PROG_ID INNER JOIN mitra ON INST_MTRA_ID = MTRA_ID INNER JOIN work_order ON INST_WODE_ID = WODE_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID AND WTEL_ID =".$wtelid." AND STAT_ID=".$statid;
+		$query = $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
 }
 
  ?>

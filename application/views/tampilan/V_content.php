@@ -39,7 +39,7 @@
                   $count = $this->M_dashboard->getCount($row['WTEL_ID']);
                   foreach ($count as $key) {
               ?>
-                    <td><?=$key['jumlah']?></td>
+                    <td><a href="<?php echo base_url().'C_dashboard/detail/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>"><?=$key['jumlah']?></a></td>
               <?php
                   $total = $total + $key['jumlah'];
                 }

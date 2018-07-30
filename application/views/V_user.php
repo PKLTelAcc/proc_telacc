@@ -156,7 +156,7 @@
                     </thead>
                     <tbody>
                       <?php 
-                      foreach ($dataUser as $row) {
+                      foreach ($dataPegawai as $row) {
                         ?>
                           <tr class="cari" data-namaPega="<?php echo $row['PEGA_ID']; ?>">
                             <td><?php echo $row['PEGA_ID']?></td>
