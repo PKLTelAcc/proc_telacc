@@ -36,19 +36,12 @@
               <?php
                   $count = $this->M_dashboard->getCount($row['WTEL_ID']);
                   foreach ($count as $key) {
-                    if($row['WTEL_ID'] != Null){
               ?>
                     <td><?=$key['jumlah']?></td>
               <?php
-                  }else{
-              ?>
-                  <td>0</td>
-              <?php
-                }
                   $total = $total + $key['jumlah'];
-                  }
+                }
               ?>
-                
                 <td><?=$total?></td>
                 <td>
                   <a href="<?php echo base_url().'C_report/detailWitel/'.$row['WTEL_ID'];?>" class="text-muted">
