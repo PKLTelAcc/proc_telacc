@@ -76,7 +76,8 @@
 		 			  		<td><?php echo $no; ?></td>
 		 			  		<td><?php echo $row['MTRA_NAME']; ?></td>
 					 			 <td class="center">
-					 			  <a href="<?php echo base_url().'C_mitra/delete/'.$row['MTRA_ID']; ?>">Delete</a>
+					 			 	<a onclick='return confirm("Apa anda yakin akan menghapus data ini ?")' 
+		 						href='<?=base_url()?>c_mitra/delete/<?=$row['MTRA_ID']?>'>Delete</a>
 					 			  |
 					 			  <a href="<?php echo base_url().'C_mitra/FormUpdate/'.$row['MTRA_ID']; ?>"> Edit</a>
 					 			 </td>

@@ -119,7 +119,7 @@
 							echo "<td>".$row['SURV_MATERIAL']."</td>";
 							echo "<td>".$row['SURV_JASA']."</td>";
 							echo "<td>".$row['SURV_TOTAL']."</td>";
-							echo "<td><a href='".base_url()."C_spTelkom/formUpdate/".$row['SPTL_ID']."'>Edit</a> | <a href='".base_url()."C_spTelkom/delete/".$row['SPTL_ID']."'>Delete</a></td>";
+							echo "<td><a href='".base_url()."C_spTelkom/formUpdate/".$row['SPTL_ID']."'>Edit</a> | <a href='".base_url()."C_spTelkom/delete/".$row['SPTL_ID']."' onclick='return confirm(\"Apa anda yakin akan menghapus data ini ?\")'>Delete</a></td>";
 							echo "</tr>";
 
 							$no++;

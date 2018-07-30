@@ -202,7 +202,7 @@
 				echo "<td>".$row['WODE_KOORDINAT']."</td>";
 				echo "<td>".$row['WODE_TANGGAL']."</td>";
 				echo "<td>".$row['STAT_NAME']."</td>";
-				echo "<td><a href='".base_url()."C_workOrder/formUpdate/".$row['WODE_ID']."'>Edit</a> | <a href='".base_url()."C_workOrder/delete/".$row['WODE_ID']."'>Delete</a></td>";
+				echo "<td><a href='".base_url()."C_workOrder/formUpdate/".$row['WODE_ID']."'>Edit</a> | <a href='".base_url()."C_workOrder/delete/".$row['WODE_ID']."' onclick='return confirm(\"Apa anda yakin akan menghapus data ini ?\")'>Delete</a></td>";
 				echo "</tr>";
 
 				$no++;

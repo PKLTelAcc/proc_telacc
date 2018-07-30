@@ -243,7 +243,7 @@
 							echo "<td>".$row['STAT_NAME']."</td>";
 							echo "<td>".$row['INST_PROGRES']."</td>";
 							echo "<td>".$row['INST_KENDALA']."</td>";
-							echo "<td><a href='".base_url()."C_instalasi/formUpdate/".$row['INST_ID']."'>Edit</a> | <a href='".base_url()."C_instalasi/delete/".$row['INST_ID']."'>Delete</a></td>";
+							echo "<td><a href='".base_url()."C_instalasi/formUpdate/".$row['INST_ID']."'>Edit</a> | <a href='".base_url()."C_instalasi/delete/".$row['INST_ID']."' onclick='return confirm(\"Apa anda yakin akan menghapus data ini ?\")'>Delete</a></td>";
 							echo "</tr>";
 
 							$no++;
