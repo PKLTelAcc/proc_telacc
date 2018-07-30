@@ -1,0 +1,39 @@
+<?php
+	$count = $this->M_dashboard->getCount($row['WTEL_ID']);
+	foreach ($count as $key) {
+?>
+	<td><?=$key['jumlah']?></td>
+<?php
+	$total = $total + $key['jumlah'];
+}
+?>
+	<td><?=$total?></td>
+
+
+<?php
+	$null = $this->M_dashboard->getStatus();
+	foreach ($null as $key) {
+?>
+	<td>0</td>
+<?php
+	}
+?>
+
+
+
+<?php
+	$count = $this->M_dashboard->getCount($row['WTEL_ID']);
+	foreach ($count as $key) {
+	if($row['WTEL_ID']!=null){
+?>
+	<td><?=$key['jumlah']?></td>
+<?php
+	}else{
+?>
+	<td>0</td>
+<?php
+	}
+	$total = $total + $key['jumlah'];
+	}
+?>
+	<td><?=$total?></td>
