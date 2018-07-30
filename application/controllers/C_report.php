@@ -214,8 +214,6 @@ class C_report extends CI_Controller
 			'title'					=> 'Detail '.$dataReportByWitel[0]['WTEL_NAME'],
 			'menu'         			=> 'Report'
 		);
-		var_dump($dataReportByWitel[0]['WTEL_NAME']);
-		exit();
 		$this->load->view('tampilan/v_combine',$data);	
 	} 
 }

@@ -1,13 +1,13 @@
 <div class="card">
   <div class="card-header no-border">
-    <h3 class="card-title">Products</h3>
+    <h3 class="card-title"></h3>
       <div class="card-tools">
-          <a href="#" class="btn btn-tool btn-sm">
+          <!-- <a href="#" class="btn btn-tool btn-sm">
             <i class="fa fa-download"></i>
           </a>
           <a href="#" class="btn btn-tool btn-sm">
             <i class="fa fa-bars"></i>
-          </a>
+          </a> -->
         </div>
       </div>
       <div class="card-body p-0">
@@ -33,27 +33,25 @@
               ?>
               <tr>
                 <th><?=$row['WTEL_NAME']?></th>
-                <?php
-                if(""){
+              <?php
                   $count = $this->M_dashboard->getCount($row['WTEL_ID']);
                   foreach ($count as $key) {
-                ?>
+                    if($row['WTEL_ID'] != Null){
+              ?>
                     <td><?=$key['jumlah']?></td>
-                <?php
-                    $total = $total + $key['jumlah'];
-                  }
-                }else{
-                  $null = $this->M_dashboard->getStatus();
-                  foreach ($null as $key) {
-                ?>
-                    <td>0</td>
-                <?php
-                  }
+              <?php
+                  }else{
+              ?>
+                  <td>0</td>
+              <?php
                 }
-                ?>
+                  $total = $total + $key['jumlah'];
+                  }
+              ?>
+                
                 <td><?=$total?></td>
                 <td>
-                  <a href="<?php echo base_url()?>C_report/detailWitel/<?php echo $row['WTEL_ID']?>" class="text-muted">
+                  <a href="<?php echo base_url().'C_report/detailWitel/'.$row['WTEL_ID'];?>" class="text-muted">
                     <i class="fa fa-search"></i>
                   </a>
                 </td>
