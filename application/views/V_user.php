@@ -53,10 +53,30 @@
 						  </div>
 						</div>
 					</div>
+					<div class="form-group">
+					<label class="control-label">Posisi Witel</label>
+						<div class="input-group">
+						  <!-- /btn-group -->
+						  <select name="cmbNamaWtel" id="cmbNamaWtel" class="form-control">
+						    <option value="0">== Pilih Witel ==</option>
+						    <?php  
+						      foreach ($dataWitel as $row){
+						        echo "<option value='".$row['WTEL_ID']."'>";
+						        echo $row ['WTEL_NAME'];
+						       echo "</option>";
+						      }
+						    ?>
+						  </select> 
+						  <div class="input-group-btn">
+						    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWtel">Search</button>
+						  </div>
+						</div>
+					</div>
 	              <div class="form-group">
 	                  <label >Level</label>
 	                  <div>
 	                      <select name="level" class="form-control">
+	                      	<option value="0">== Pilih Level ==</option>
 		 					<?php  
 		 					foreach ($dataLevel as $row){
 		 						echo "<option value='".$row['LEVE_ID']."'>";
@@ -103,7 +123,8 @@
 						<th>No.</th>
 						<th>Nama Pegawai</th>
 						<th>Username</th>
-						<th>Level</th>	
+						<th>Level</th>
+						<th>Posisi Witel</th>
 						<th style="text-align: center" >Action </th>
 					</tr>
 				</thead>
@@ -118,6 +139,7 @@
 	 					echo "<td>".$row['PEGA_NAME']."</td>";
 	 					echo "<td>".$row['USER_NAME']."</td>";
 	 					echo "<td>".$row['LEVE_NAME']."</td>";
+	 					echo "<td>".$row['WTEL_NAME']."</td>";
 	 					echo "<td>
 	 							<a href='".base_url()."C_user/FormUpdate/".$row['USER_ID']."'>Edit</a> |
 	 							<a  href='".base_url()."C_user/Delete/".$row['USER_ID']."' onclick='return confirm(\"Apa anda yakin akan menghapus data ini ?\")'>Delete</a>
@@ -150,19 +172,58 @@
                 <table id="registForm" class="table table-bordered table-hover table-striped">
                     <thead>
                       <tr>
-                        <th>ID Pegawai</th>
+                        <th>No.</th>
                         <th>Nama Pegawai</th>
                       </tr>
                     </thead>
                     <tbody>
                       <?php 
+                      $no=1;
                       foreach ($dataPegawai as $row) {
                         ?>
                           <tr class="cari" data-namaPega="<?php echo $row['PEGA_ID']; ?>">
-                            <td><?php echo $row['PEGA_ID']?></td>
+                            <td><?php echo $no?></td>
                             <td><?php echo $row['PEGA_NAME']?></td>
                           </tr>
                         <?php
+                        $no++;
+                      }
+                      ?>
+                    </tbody>
+                </table>  
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- modal  witel -->
+
+<div class="modal fade" id="modalWtel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:800px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Lookup Data Witel</h4>
+            </div>
+            <div class="modal-body">
+                <table id="tableWitel" class="table table-bordered table-hover table-striped">
+                    <thead>
+                      <tr>
+                        <th>No. </th>
+                        <th>Posisi Witel</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php 
+                      $no=1;
+                      foreach ($dataWitel as $row) {
+                        ?>
+                          <tr class="cari2" data-namaWtel="<?php echo $row['WTEL_ID']; ?>">
+                            <td><?php echo $no?></td>
+                            <td><?php echo $row['WTEL_NAME']?></td>
+                          </tr>
+                        <?php
+                        $no++;
                       }
                       ?>
                     </tbody>
@@ -184,6 +245,19 @@
 
     });
 </script>
+
+<script type="text/javascript">
+
+//            jika dipilih, kode obat akan masuk ke input dan modal di tutup
+    $(document).on('click', '.cari2', function (e) {
+        // alert("test");
+
+        // witel
+        document.getElementById("cmbNamaWtel").value = $(this).attr('data-namaWtel');
+        $('#modalWtel').modal('hide');
+    });
+</script>
+
 <?php
       }
       if ($_SESSION['level'] != 'SUPER USER') {
