@@ -86,7 +86,7 @@ class M_workOrder extends CI_Model
     }
     public function getView()
     {
-      $sql    = "SELECT * FROM pegawai inner join user on PEGA_ID = USER_PEGA_ID inner join witel on PEGA_WTEL_ID = WTEL_ID where PEGA_WTEL_ID" ;
+      $sql    = "SELECT * FROM work_order inner join witel on WODE_WTEL_ID = WTEL_ID inner join pegawai on WTEL_ID = PEGA_WTEL_ID INNER JOIN user on PEGA_ID = USER_PEGA_ID where PEGA_WTEL_ID";
       $query  = $this->db->query($sql);
       $return = $query->result_array();
       return $return; 
