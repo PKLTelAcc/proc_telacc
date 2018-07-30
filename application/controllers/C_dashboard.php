@@ -27,5 +27,27 @@ class C_dashboard extends CI_Controller
 		);
 			$this->load->view('tampilan/v_combine',$data);
 	}
+
+	public function detailWitel($id)
+	{
+		$dataReportByWitel		= $this->M_dashboard->getReportByWitelId($id);
+		$data = array(
+			'dataReportByWitel' 	=> $dataReportByWitel,
+			'content' 				=> 'V_reportDetailWitel',
+			'title'					=> 'Detail '.$dataReportByWitel[0]['WTEL_NAME'],
+		);
+		$this->load->view('tampilan/v_combine',$data);	
+	}
+
+	public function detailStatus($id)
+	{
+		$dataReportByStatus		= $this->M_dashboard->getReportByStatusId($id);
+		$data = array(
+			'dataReportByStatus' 	=> $dataReportByStatus,
+			'content' 				=> 'V_reportDetailStatus',
+			'title'					=> 'Detail '.$dataReportByStatus[0]['STAT_NAME'],
+		);
+		$this->load->view('tampilan/v_combine',$data);	
+	} 
 }
  ?>

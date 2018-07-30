@@ -37,3 +37,18 @@
 	}
 ?>
 	<td><?=$total?></td>
+
+
+=================================================
+
+<?php
+                  $count = $this->M_dashboard->getCount($row['WTEL_ID']);
+                  foreach ($count as $key) {
+              ?>
+                    <td><?=$key['jumlah']?></td>
+              <?php
+                  $total = $total + $key['jumlah'];
+                }
+              ?>
+                <td><?=$total?></td>
+                <td><?=$total?></td>

@@ -18,7 +18,9 @@
             <?php
             $thead=$this->M_dashboard->getStatus();
             foreach ($thead as $row) {
-              echo "<th>".$row['STAT_NAME']."</th>";
+            ?>
+              <th><a href="<?php echo base_url().'C_dashboard/detailStatus/'.$row['STAT_ID'];?>"><?php echo $row['STAT_NAME']; ?></a></th>
+            <?php
             }
              ?>
              <th>Total</th>
@@ -36,25 +38,18 @@
               <?php
                   $count = $this->M_dashboard->getCount($row['WTEL_ID']);
                   foreach ($count as $key) {
-                    if($row['WTEL_ID'] != Null){
               ?>
                     <td><?=$key['jumlah']?></td>
               <?php
-                  }else{
-              ?>
-                  <td>0</td>
-              <?php
-                }
                   $total = $total + $key['jumlah'];
-                  }
+                }
               ?>
-                
-                <td><?=$total?></td>
-                <td>
-                  <a href="<?php echo base_url().'C_report/detailWitel/'.$row['WTEL_ID'];?>" class="text-muted">
-                    <i class="fa fa-search"></i>
-                  </a>
-                </td>
+                  <td><?=$total?></td>
+                  <td>
+                    <a href="<?php echo base_url().'C_dashboard/detailWitel/'.$row['WTEL_ID'];?>" class="text-muted">
+                      <i class="fa fa-search"></i>
+                    </a>
+                  </td>
               </tr>
               <?php
               $total = 0;

@@ -205,16 +205,6 @@ class C_report extends CI_Controller
 		}  
 	}
 
-	public function detailWitel($id)
-	{
-		$dataReportByWitel		= $this->M_report->getReportByWitelId($id);
-		$data = array(
-			'dataReportByWitel' 	=> $dataReportByWitel,
-			'content' 				=> 'V_reportDetailWitel',
-			'title'					=> 'Detail '.$dataReportByWitel[0]['WTEL_NAME'],
-			'menu'         			=> 'Report'
-		);
-		$this->load->view('tampilan/v_combine',$data);	
-	} 
+	
 }
  ?>
