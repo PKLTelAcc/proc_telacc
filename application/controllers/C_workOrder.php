@@ -163,5 +163,9 @@ class C_workOrder extends CI_Controller
         </div>
 		<?php
 	}
+	public function getView()
+	{
+		$this->M_workOrder->getView();
+	}
 }
  ?>
