@@ -84,5 +84,12 @@ class M_workOrder extends CI_Model
       $return = $query->result_array();
       return $return; 
     }
+    public function getView()
+    {
+      $sql    = "SELECT * FROM pegawai inner join user on PEGA_ID = USER_PEGA_ID inner join witel on PEGA_WTEL_ID = WTEL_ID where PEGA_WTEL_ID" ;
+      $query  = $this->db->query($sql);
+      $return = $query->result_array();
+      return $return; 
+    }
 }
  ?>
