@@ -65,10 +65,11 @@ class C_survey extends CI_Controller
 			'SURV_TANGGAL' 		=> $date,
 			'SURV_PROG_ID' 		=> $program
 		);
-		$data2 = array(
+		$dataStat = array(
 			'WODE_STAT_ID' 		=> $status
 		);
-		$survey=$this->M_survey->insert($data,$data2);
+		$survey=$this->M_survey->insert($data);
+		$stat=$this->M_survey->updateStat($idta,$dataStat);
 		redirect('C_survey');
 	}
 
@@ -126,10 +127,12 @@ class C_survey extends CI_Controller
 			'SURV_TANGGAL' 		=> $date,
 			'SURV_PROG_ID' 		=> $program
 		);
-		$data2 = array(
+		$dataStat = array(
 			'WODE_STAT_ID' 		=> $status
 		);
-		$survey=$this->M_survey->updateData($id,$data, $data2);
+		$survey=$this->M_survey->updateData($id,$data);
+		$stat=$this->M_survey->updateStat($id,$dataStat);
+
 		redirect('C_survey');
 	}
 
