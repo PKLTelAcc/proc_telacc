@@ -108,8 +108,8 @@
                   <div class="form-group">
                   <label class="control-label">Status</label>
                   <div class="input-group">
-                    <input class="form-control readonly" placeholder="== Pilih Status ==" name="txtStatMuncul" id="myInput3" required="true" value="<?php echo($workOrder[0]['STAT_NAME'])?>">
-                    <input class="form-control" id="txtStat" type="hidden" name="txtStat" value="<?php echo($workOrder[0]['WODE_STAT_ID'])?>">
+                    <input class="form-control readonly" placeholder="== Pilih Status ==" name="txtStatMuncul" id="myInput3" required="true" value="<?php echo($survey[0]['STAT_NAME'])?>">
+                    <input class="form-control" id="txtStat" type="hidden" name="txtStat" value="<?php echo($survey[0]['WODE_STAT_ID'])?>">
                   <!-- <div>
                     <select name="txtStat" id="cmbStat" required="true" class="form-control">
                       <option value="0">== Pilih Status ==</option>

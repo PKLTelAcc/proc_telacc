@@ -17,7 +17,7 @@ class C_report extends CI_Controller
 		$dataReport			= $this->M_report->getReport();
 		date_default_timezone_set("Asia/Bangkok");
 		$data = array(
-			'title'			=> 'Report | '.date("l jS \of F Y h:i:s A"),
+			'title'			=> 'Report | '.date("l jS \of F Y h:i A"),
 			'content' 		=> 'V_report',
 			'dataReport'	=> $dataReport,
 			'menu'      	=>'Report'
