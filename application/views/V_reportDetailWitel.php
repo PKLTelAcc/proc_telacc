@@ -1,6 +1,9 @@
 <!-- Main content -->
 <div class="content">
 	<div class="row">
+		<?php
+      if ($_SESSION['level'] == 'SUPER USER') {
+        ?>
 	  <div class="col-md-12">
 	    <div class="box box-danger">
 	      <div class="box-header with-border">
@@ -68,3 +71,11 @@
         } );
   });
 </script>
+<?php
+      }
+      if ($_SESSION['level'] != 'SUPER USER') {
+        echo '<div class="col-md-12">';
+      }else{
+        echo '<div class="col-md-6">';
+      }
+    ?>

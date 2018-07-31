@@ -19,7 +19,7 @@
             $thead=$this->M_dashboard->getStatus();
             foreach ($thead as $row) {
             ?>
-              <th><a href="<?php echo base_url().'C_dashboard/detailStatus/'.$row['STAT_ID'];?>"><?php echo $row['STAT_NAME']; ?></a></th>
+              <th><a href="<?php echo base_url().'C_dashboard/detailStatus/'.$row['STAT_ID'];?>" class="text-info"><?php echo $row['STAT_NAME'];?></a></th>
             <?php
             }
              ?>
@@ -39,14 +39,14 @@
                   $count = $this->M_dashboard->getCount($row['WTEL_ID']);
                   foreach ($count as $key) {
               ?>
-                    <td><a href="<?php echo base_url().'C_dashboard/detail/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>"><?=$key['jumlah']?></a></td>
+                    <td><a href="<?php echo base_url().'C_dashboard/detail/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-info"><?=$key['jumlah']?></a></td>
               <?php
                   $total = $total + $key['jumlah'];
                 }
               ?>
                   <td><?=$total?></td>
                   <td>
-                    <a href="<?php echo base_url().'C_dashboard/detailWitel/'.$row['WTEL_ID'];?>" class="text-muted">
+                    <a href="<?php echo base_url().'C_dashboard/detailWitel/'.$row['WTEL_ID'];?>" class="text-info">
                       <i class="fa fa-search"></i>
                     </a>
                   </td>
