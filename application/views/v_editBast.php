@@ -17,7 +17,7 @@
 	      <div class="box-body">
 	        <div class="row">
 	          <div class="col-md-12 ">
-	            <form action="<?php echo base_url().'C_bast/updateData/'; ?>" method="POST">
+	            <form action="<?php echo base_url().'C_bast/updateData/'.$bast[0]["BAST_ID"]; ?>" method="POST">
 	            	<div class="form-group">
 	                  <label class=" control-label">ID TA</label>
 	                  <div class="input-group">

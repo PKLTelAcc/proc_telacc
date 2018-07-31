@@ -65,7 +65,6 @@
               $total = 0;
             }
             ?>
-            
           </tbody>
         </table>
        </div>

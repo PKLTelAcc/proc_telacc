@@ -44,7 +44,7 @@ class M_bast extends CI_Model
 		$return = $query->result_array();
 		return $return;
 	}
-	public function insert($data, $id)
+	public function insert($data)
 	{
 		$this->db->insert('bast',$data);
 	}
