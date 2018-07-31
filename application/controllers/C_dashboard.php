@@ -30,24 +30,52 @@ class C_dashboard extends CI_Controller
 
 	public function detailWitel($id)
 	{
-		$dataReportByWitel		= $this->M_dashboard->getReportByWitelId($id);
+		$dataReportByWitelWode		= $this->M_dashboard->getReportByWitelWodeId($id);
+		$dataReportByWitelSurv		= $this->M_dashboard->getReportByWitelSurvId($id);
+		$dataReportByWitelInst		= $this->M_dashboard->getReportByWitelInstId($id);
 		date_default_timezone_set("Asia/Bangkok");
 		$data = array(
-			'dataReportByWitel' 	=> $dataReportByWitel,
+			'dataReportByWitelWode' 	=> $dataReportByWitelWode,
+			'dataReportByWitelSurv' 	=> $dataReportByWitelSurv,
+			'dataReportByWitelInst' 	=> $dataReportByWitelInst,
 			'content' 				=> 'V_reportDetailWitel',
-			'title'					=> 'Detail Witel '.$dataReportByWitel[0]['WTEL_NAME'].' | '.date("l jS \of F Y h:i A"),
+			'title'					=> 'Detail Witel '.$dataReportByWitelWode[0]['WTEL_NAME'].' | '.date("l jS \of F Y h:i A"),
 		);
 		$this->load->view('tampilan/v_combine',$data);	
 	}
 
-	public function detailStatus($id)
+	public function detailStatusWode($id)
 	{
-		$dataReportByStatus		= $this->M_dashboard->getReportByStatusId($id);
+		$dataReportByStatusWode		= $this->M_dashboard->getReportByStatusWodeId($id);
 		date_default_timezone_set("Asia/Bangkok");
 		$data = array(
-			'dataReportByStatus' 	=> $dataReportByStatus,
-			'content' 				=> 'V_reportDetailStatus',
-			'title'					=> 'Detail Status '.$dataReportByStatus[0]['STAT_NAME'].' | '.date("l jS \of F Y h:i A"),
+			'dataReportByStatusWode' 	=> $dataReportByStatusWode,
+			'content' 				=> 'V_reportDetailStatusWode',
+			'title'					=> 'Detail Status '.$dataReportByStatusWode[0]['STAT_NAME'].' | '.date("l jS \of F Y h:i A"),
+		);
+		$this->load->view('tampilan/v_combine',$data);	
+	}
+
+	public function detailStatusSurv($id)
+	{
+		$dataReportByStatusSurv		= $this->M_dashboard->getReportByStatusSurvId($id);
+		date_default_timezone_set("Asia/Bangkok");
+		$data = array(
+			'dataReportByStatusSurv' 	=> $dataReportByStatusSurv,
+			'content' 				=> 'V_reportDetailStatusSurv',
+			'title'					=> 'Detail Status '.$dataReportByStatusSurv[0]['STAT_NAME'].' | '.date("l jS \of F Y h:i A"),
+		);
+		$this->load->view('tampilan/v_combine',$data);	
+	}
+
+	public function detailStatusInst($id)
+	{
+		$dataReportByStatusInst		= $this->M_dashboard->getReportByStatusInstId($id);
+		date_default_timezone_set("Asia/Bangkok");
+		$data = array(
+			'dataReportByStatusInst' 	=> $dataReportByStatusInst,
+			'content' 				=> 'V_reportDetailStatusInst',
+			'title'					=> 'Detail Status '.$dataReportByStatusInst[0]['STAT_NAME'].' | '.date("l jS \of F Y h:i A"),
 		);
 		$this->load->view('tampilan/v_combine',$data);	
 	}

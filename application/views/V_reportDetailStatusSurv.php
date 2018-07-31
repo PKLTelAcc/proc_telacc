@@ -28,14 +28,17 @@
 						<th>Nilai Material</th>
 						<th>Nilai Jasa</th>
 						<th>Nilai Total</th>
-						<th>Mitra</th>
+<!-- KOMEN INI JANGAN DIHAPUS -->
+						<!-- <th>Nama Waspang</th>
+						<th>NIK Waspang</th> -->
+<!-- SAMPAI SINI -->
 						<th>Status</th>
 					</tr>
 				</thead>
 				<tbody>
 					<?php
 					$no=1; 
-		 				foreach ($dataReportByStatus as $row) {
+		 				foreach ($dataReportByStatusSurv as $row) {
 		 					echo "<tr>";
 		 					echo "<td>".$no."</td>";
 		 					echo "<td>".$row['WODE_ID_TA']."</td>";
@@ -43,11 +46,14 @@
 		 					echo "<td>".$row['SWIT_NAME']."</td>";
 		 					echo "<td>".$row['PROG_NAME']."</td>";
 		 					echo "<td>".$row['WODE_NAMA_LOKASI']."</td>";
-		 					echo "<td>".$row['INST_ODP']."</td>";
-		 					echo "<td>".$row['INST_MATERIAL']."</td>";
-		 					echo "<td>".$row['INST_JASA']."</td>";
-		 					echo "<td>".$row['INST_TOTAL']."</td>";
-		 					echo "<td>".$row['MTRA_NAME']."</td>";
+		 					echo "<td>".$row['SURV_ODP']."</td>";
+		 					echo "<td>".$row['SURV_MATERIAL']."</td>";
+		 					echo "<td>".$row['SURV_JASA']."</td>";
+		 					echo "<td>".$row['SURV_TOTAL']."</td>";
+//KOMEN INI JANGAN DIHAPUS							
+							// echo "<td>".$row['PEGA_NAME']."</td>";
+							// echo "<td>".$row['PEGA_NIK']."</td>";
+//SAMPAI SINI
 		 					echo "<td>".$row['STAT_NAME']."</td>";
 		 					echo "</tr>";
 		 					$no++;

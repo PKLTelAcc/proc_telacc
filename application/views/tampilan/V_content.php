@@ -19,7 +19,17 @@
             $thead=$this->M_dashboard->getStatus();
             foreach ($thead as $row) {
             ?>
-              <th><a href="<?php echo base_url().'C_dashboard/detailStatus/'.$row['STAT_ID'];?>" class="text-info"><?php echo $row['STAT_NAME'];?></a></th>
+              <th>
+                <?php if($row['STAT_NAME']=='WORK ORDER'){ ?>
+                <a href="<?php echo base_url().'C_dashboard/detailStatusWode/'.$row['STAT_ID'];?>" class="text-info">
+                <?php }if($row['STAT_NAME']=='SURVEY'){ ?>
+                <a href="<?php echo base_url().'C_dashboard/detailStatusSurv/'.$row['STAT_ID'];?>" class="text-info">
+                <?php }if($row['STAT_NAME']=='INSTALASI'){ ?>
+                <a href="<?php echo base_url().'C_dashboard/detailStatusInst/'.$row['STAT_ID'];?>" class="text-info">
+                <?php } ?>
+                  <?php echo $row['STAT_NAME'];?>
+                </a>
+              </th>
             <?php
             }
              ?>
