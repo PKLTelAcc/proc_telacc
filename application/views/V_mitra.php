@@ -46,7 +46,6 @@
 			      <!-- /.box -->
 			  </div> <!-- col-input -->
 <!--'<div class="col-md-6">'; (itu di atas di echo) -->		
-	    }
 	    <div class="col-md-12">
 	    <div class="box box-danger">
 	      <div class="box-header with-border">
@@ -66,7 +65,6 @@
 						<th style="text-align: center">Action </th>
 					</tr>
 				</thead>
-					<tbody>
 					 <tbody>
 		 			  	<tr>
 		 			  		<?php
@@ -94,7 +92,6 @@
 	      <!-- /.box -->
 	  </div> <!-- col-input -->
 	</div>
-</div>
 <!-- /.content -->
 <?php
       }
