@@ -49,13 +49,14 @@ class C_bast extends CI_Controller
 		'BAST_TANGGAL'	=> $tanggal,
 		'BAST_INST_ID'	=> $instalasi
 		);
-	$id = array(
+	$dataInst= array(
 		'INST_ODP' 		=> $odp,
 		'INST_MATERIAL'	=> $material,
 		'INST_JASA'		=> $jasa,
 		'INST_TOTAL'	=> $total
 	);
 	$bast=$this->M_bast->insert($data);
+	$instalasi=$this->M_bast->updateInst($IdTa, $dataInst);
 	redirect('C_bast');
 	}
 	public function formUpdate($id)
@@ -97,13 +98,14 @@ class C_bast extends CI_Controller
 		'BAST_TANGGAL'	=> $tanggal,
 		'BAST_INST_ID'	=> $instalasi
 		);
-	$data2 = array(
+	$dataInst = array(
 		'INST_ODP' 		=> $odp,
 		'INST_MATERIAL'	=> $material,
 		'INST_JASA'		=> $jasa,
 		'INST_TOTAL'	=> $total
 	);
-	$bast=$this->M_bast->updateData($id, $data, $data2);
+	$bast=$this->M_bast->updateData($id, $data);
+	$instalasi=$this->M_bast->updateInst($id, $dataInst);
 	redirect('C_bast');
 	}
 	public function delete($id)

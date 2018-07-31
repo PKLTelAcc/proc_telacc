@@ -62,10 +62,6 @@ class M_instalasi extends CI_Model
 	{
 		$this->db->insert('instalasi',$data);
 	}
-	public function insertStat($dataStat)
-	{
-		$this->db->update('work_order',$dataStat);
-	}
 	public function update($data)
 	{
 		$sql="SELECT * FROM instalasi INNER JOIN work_order ON INST_WODE_ID = WODE_ID /*INNER JOIN pegawai ON INST_PEGA_ID = PEGA_ID*/ INNER JOIN witel ON INST_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON INST_SWIT_ID = SWIT_ID INNER JOIN program ON INST_PROG_ID = PROG_ID /*INNER JOIN status ON INST_STAT_ID = STAT_ID*/INNER JOIN status on WODE_STAT_ID = STAT_ID INNER JOIN mitra ON INST_MTRA_ID = MTRA_ID AND INST_ID =".$data;

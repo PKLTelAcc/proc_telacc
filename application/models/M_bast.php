@@ -47,7 +47,6 @@ class M_bast extends CI_Model
 	public function insert($data, $id)
 	{
 		$this->db->insert('bast',$data);
-		$this->db->update('instalasi', $id);
 	}
 	public function update($data)
 	{
@@ -57,13 +56,17 @@ class M_bast extends CI_Model
 		return $return;
 	}
 
-	public function updateData($id, $data, $data2)
+	public function updateData($id, $data)
 	{
 		$this->db->where('BAST_ID', $id);
 		$this->db->update('bast', $data);
-		$this->db->update('instalasi', $data2);
+		
 	}
-
+	public function updateInst($id, $dataInst)
+	{
+		$this->db->where('INST_ID', $id);
+		$this->db->update('instalasi', $dataInst);
+	}
 	public function delete($id)
 	{
 		$this->db->where('BAST_ID', $id);
