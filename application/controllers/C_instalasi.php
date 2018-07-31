@@ -76,10 +76,11 @@ class C_instalasi extends CI_Controller
 			'INST_PROGRES'		=> $progres,
 			'INST_KENDALA'		=> $kendala
 		);
-		$data2 = array(
+		$dataStat = array(
 			'WODE_STAT_ID' 		=> $status
 		);
-		$instalasi=$this->M_instalasi->insert($data,$data2);
+		$instalasi=$this->M_instalasi->insert($data);
+		$status=$this->M_instalasi->updateStat($idta,$dataStat);
 		redirect('C_instalasi');
 	}
 
@@ -147,10 +148,11 @@ class C_instalasi extends CI_Controller
 			'INST_PROGRES'		=> $progres,
 			'INST_KENDALA'		=> $kendala
 		);
-		$data2 = array(
+		$dataStat = array(
 			'WODE_STAT_ID' 		=> $status
 		);
-		$instalasi=$this->M_instalasi->updateData($id,$data,$data2);
+		$instalasi=$this->M_instalasi->updateData($id,$data);
+		$status=$this->M_instalasi->updateStat($id,$dataStat);
 		redirect('C_instalasi');
 	}
 
