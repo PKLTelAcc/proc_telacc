@@ -40,7 +40,7 @@ class M_dashboard extends CI_Model
 
 	public function getStatusInstalasi()
 	{
-		$sql 	= "SELECT * FROM status_instalasi";
+		$sql 	= "SELECT * FROM status_instalasi INNER JOIN instalasi ON INST_STIN_ID = STIN_ID ORDER BY STIN_ID ASC";
 		$query 	= $this->db->query($sql);
 		$return = $query->result_array();
 		return $return;
@@ -102,9 +102,25 @@ class M_dashboard extends CI_Model
 		return $return;
 	}
 
-	public function getReportByWitelStatus($wtelid,$statid)
+	public function getReportByWitelStatusWode($wtelid,$statid)
 	{
-		$sql 	= "SELECT * FROM instalasi INNER JOIN witel ON INST_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON INST_SWIT_ID = SWIT_ID INNER JOIN program ON INST_PROG_ID = PROG_ID INNER JOIN mitra ON INST_MTRA_ID = MTRA_ID INNER JOIN work_order ON INST_WODE_ID = WODE_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID AND WTEL_ID =".$wtelid." AND STAT_ID=".$statid;
+		$sql 	= "SELECT * FROM work_order INNER JOIN witel ON WODE_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON WODE_SWIT_ID = SWIT_ID INNER JOIN program ON WODE_PROG_ID = PROG_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID AND WTEL_ID =".$wtelid." AND STAT_ID=".$statid;
+		$query = $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
+
+	public function getReportByWitelStatusSurv($wtelid,$statid)
+	{
+		$sql 	= "SELECT * FROM survey INNER JOIN work_order ON SURV_WODE_ID = WODE_ID /*INNER JOIN pegawai ON SURV_PEGA_ID = PEGA_ID*/ INNER JOIN witel ON SURV_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON SURV_SWIT_ID = SWIT_ID INNER JOIN program ON SURV_PROG_ID = PROG_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID AND WTEL_ID =".$wtelid." AND STAT_ID=".$statid;
+		$query = $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
+
+	public function getReportByWitelStatusInst($wtelid,$statid)
+	{
+		$sql 	= "SELECT * FROM instalasi INNER JOIN work_order ON INST_WODE_ID = WODE_ID INNER JOIN mitra ON INST_MTRA_ID = MTRA_ID /*INNER JOIN pegawai on INST_PEGA_ID = PEGA_ID*/ INNER JOIN witel ON INST_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON INST_SWIT_ID = SWIT_ID INNER JOIN program ON INST_PROG_ID = PROG_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID INNER JOIN status_instalasi ON INST_STIN_ID = STIN_ID AND WTEL_ID =".$wtelid." AND STAT_ID=".$statid;
 		$query = $this->db->query($sql);
 		$return = $query->result_array();
 		return $return;

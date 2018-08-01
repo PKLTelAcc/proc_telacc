@@ -21,11 +21,11 @@
             ?>
               <th>
                 <?php if($row['STAT_NAME']=='WORK ORDER'){ ?>
-                <a href="<?php echo base_url().'C_dashboard/detailStatusWode/'.$row['STAT_ID'];?>" class="text-info">
-                <?php }if($row['STAT_NAME']=='SURVEY'){ ?>
-                <a href="<?php echo base_url().'C_dashboard/detailStatusSurv/'.$row['STAT_ID'];?>" class="text-info">
-                <?php }if($row['STAT_NAME']=='INSTALASI'){ ?>
-                <a href="<?php echo base_url().'C_dashboard/detailStatusInst/'.$row['STAT_ID'];?>" class="text-info">
+                <a href="<?php echo base_url().'C_dashboard/detailStatusWode/'.$row['STAT_ID'];?>" class="text-warning">
+                <?php }else if($row['STAT_NAME']=='SURVEY'){ ?>
+                <a href="<?php echo base_url().'C_dashboard/detailStatusSurv/'.$row['STAT_ID'];?>" class="text-warning">
+                <?php }else if($row['STAT_NAME']=='INSTALASI'){ ?>
+                <a href="<?php echo base_url().'C_dashboard/detailStatusInst/'.$row['STAT_ID'];?>" class="text-warning">
                 <?php } ?>
                   <?php echo $row['STAT_NAME'];?>
                 </a>
@@ -49,14 +49,24 @@
                   $count = $this->M_dashboard->getCount($row['WTEL_ID']);
                   foreach ($count as $key) {
               ?>
-                    <td><a href="<?php echo base_url().'C_dashboard/detail/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-info"><?=$key['jumlah']?></a></td>
+                    <td>
+                      <?php if($key['STAT_NAME']=='WORK ORDER'){ ?>
+                      <a href="<?php echo base_url().'C_dashboard/detailWode/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-warning">
+                      <?php }else if($key['STAT_NAME']=='SURVEY'){ ?>
+                      <a href="<?php echo base_url().'C_dashboard/detailSurv/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-warning">
+                      <?php }else if($key['STAT_NAME']=='INSTALASI'){ ?>
+                      <a href="<?php echo base_url().'C_dashboard/detailInst/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-warning">
+                      <?php } ?>
+                        <?=$key['jumlah']?>
+                      </a>
+                    </td>
               <?php
                   $total = $total + $key['jumlah'];
                 }
               ?>
                   <td><?=$total?></td>
                   <td>
-                    <a href="<?php echo base_url().'C_dashboard/detailWitel/'.$row['WTEL_ID'];?>" class="text-info">
+                    <a href="<?php echo base_url().'C_dashboard/detailWitel/'.$row['WTEL_ID'];?>" class="text-warning">
                       <i class="fa fa-search"></i>
                     </a>
                   </td>
