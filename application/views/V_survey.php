@@ -178,6 +178,7 @@
 					<?php 
 						$no=1;
 						foreach ($survey as $row) {
+							if($row['STAT_NAME']=='SURVEY'){
 							echo "<tr>";
 							echo "<td>".$no."</td>";
 							echo "<td>".$row['WODE_ID_TA']."</td>";
@@ -193,6 +194,7 @@
 							echo "<td>".$row['STAT_NAME']."</td>";
 							echo "<td><a href='".base_url()."C_survey/formUpdate/".$row['SURV_ID']."'>Edit</a> | <a href='".base_url()."C_survey/delete/".$row['SURV_ID']."' onclick='return confirm(\"Apa anda yakin akan menghapus data ini ?\")'>Delete</a></td>";
 							echo "</tr>";
+							}
 
 							$no++;
 						}

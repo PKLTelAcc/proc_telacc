@@ -239,6 +239,7 @@
 					<?php 
 						$no=1;
 						foreach ($instalasi as $row) {
+							if($row['STAT_NAME']=='INSTALASI' || $row['STAT_NAME']=='BAST' || $row['STAT_NAME']=='DROP'){
 							echo "<tr>";
 							echo "<td>".$no."</td>";
 							echo "<td>".$row['WODE_ID_TA']."</td>";
@@ -259,6 +260,7 @@
 							echo "<td>".$row['INST_KENDALA']."</td>";
 							echo "<td><a href='".base_url()."C_instalasi/formUpdate/".$row['INST_ID']."'>Edit</a> | <a href='".base_url()."C_instalasi/delete/".$row['INST_ID']."' onclick='return confirm(\"Apa anda yakin akan menghapus data ini ?\")'>Delete</a></td>";
 							echo "</tr>";
+							}
 
 							$no++;
 						}
