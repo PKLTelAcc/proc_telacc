@@ -21,11 +21,11 @@
             ?>
               <th>
                 <?php if($row['STAT_NAME']=='WORK ORDER'){ ?>
-                <a href="<?php echo base_url().'C_dashboard/detailStatusWode/'.$row['STAT_ID'];?>" class="text-warning">
+                <a href="<?php echo base_url().'C_dashboard/detailStatusWode/'.$row['STAT_ID'];?>" class="text-info">
                 <?php }else if($row['STAT_NAME']=='SURVEY'){ ?>
-                <a href="<?php echo base_url().'C_dashboard/detailStatusSurv/'.$row['STAT_ID'];?>" class="text-warning">
+                <a href="<?php echo base_url().'C_dashboard/detailStatusSurv/'.$row['STAT_ID'];?>" class="text-info">
                 <?php }else if($row['STAT_NAME']=='INSTALASI'){ ?>
-                <a href="<?php echo base_url().'C_dashboard/detailStatusInst/'.$row['STAT_ID'];?>" class="text-warning">
+                <a href="<?php echo base_url().'C_dashboard/detailStatusInst/'.$row['STAT_ID'];?>" class="text-info">
                 <?php } ?>
                   <?php echo $row['STAT_NAME'];?>
                 </a>
@@ -50,12 +50,12 @@
                   foreach ($count as $key) {
               ?>
                     <td>
-                      <?php if($key['STAT_NAME']=='WORK ORDER'){ ?>
-                      <a href="<?php echo base_url().'C_dashboard/detailWode/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-warning">
-                      <?php }else if($key['STAT_NAME']=='SURVEY'){ ?>
-                      <a href="<?php echo base_url().'C_dashboard/detailSurv/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-warning">
-                      <?php }else if($key['STAT_NAME']=='INSTALASI'){ ?>
-                      <a href="<?php echo base_url().'C_dashboard/detailInst/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-warning">
+                      <?php if($key['STAT_NAME']=='WORK ORDER' && $key['WODE_STAT_ID']!=null){ ?>
+                      <a href="<?php echo base_url().'C_dashboard/detailWode/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-info">
+                      <?php }else if($key['STAT_NAME']=='SURVEY' && $key['WODE_STAT_ID']!=null){ ?>
+                      <a href="<?php echo base_url().'C_dashboard/detailSurv/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-info">
+                      <?php }else if($key['STAT_NAME']=='INSTALASI' && $key['WODE_STAT_ID']!=null){ ?>
+                      <a href="<?php echo base_url().'C_dashboard/detailInst/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-info">
                       <?php } ?>
                         <?=$key['jumlah']?>
                       </a>
@@ -66,7 +66,7 @@
               ?>
                   <td><?=$total?></td>
                   <td>
-                    <a href="<?php echo base_url().'C_dashboard/detailWitel/'.$row['WTEL_ID'];?>" class="text-warning">
+                    <a href="<?php echo base_url().'C_dashboard/detailWitel/'.$row['WTEL_ID'];?>" class="text-info">
                       <i class="fa fa-search"></i>
                     </a>
                   </td>
