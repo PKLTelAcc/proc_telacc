@@ -145,10 +145,10 @@
                   <div class="form-group">
                   <label class="control-label">Status</label>
                   <div class="input-group">
-                      <input class="form-control readonly" placeholder="== Pilih Status ==" name="txtStatMuncul" id="myInput4" required="true" value="<?php echo($workOrder[0]['STAT_NAME'])?>">
-                      <input class="form-control" id="txtStat" type="hidden" name="txtStat" value="<?php echo($workOrder[0]['WODE_STAT_ID'])?>">
+                      <input class="form-control readonly" placeholder="== Pilih Status ==" name="txtStatMuncul" id="myInput4" required="true" value="<?php echo($instalasi[0]['STAT_NAME'])?>">
+                      <input class="form-control" id="txtStat" type="hidden" name="txtStat" value="<?php echo($instalasi[0]['WODE_STAT_ID'])?>">
                       <div class="input-group-btn">
-                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSta">Search</button>
+                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalInstStat">Search</button>
                       </div>
                     </div>
                   </div>
