@@ -155,6 +155,7 @@
 						<th>NIK Waspang</th> -->
 <!-- SAMPAI SINI -->
 						<th>Status</th>
+						<th>Status Instalasi</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -179,6 +180,7 @@
 							// echo "<td>".$row['PEGA_NIK']."</td>";
 //SAMPAI SINI
 		 					echo "<td>".$row['STAT_NAME']."</td>";
+		 					echo "<td>".$row['STIN_NAME']."</td>";
 		 					echo "</tr>";
 		 				}
 		 					$no++;

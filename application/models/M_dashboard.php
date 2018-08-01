@@ -1,17 +1,17 @@
-<?php 
+<?php
 
 /**
- * 
+ *
  */
 class M_dashboard extends CI_Model
 {
-	
+
 	function __construct()
 	{
 		parent::__construct();
 	}
 	public function viewData($id){
-		
+
 		$sql="SELECT * from user INNER JOIN level on USER_LEVE_ID = LEVE_ID where USER_ID =".$id;
 		$query=$this->db->query($sql);
 		$return = $query->result_array();
@@ -28,7 +28,7 @@ class M_dashboard extends CI_Model
 		$return = $query->result_array();
 		return $return;
 	}
-	
+
 
 	public function getStatus()
 	{
@@ -37,12 +37,21 @@ class M_dashboard extends CI_Model
 		$return = $query->result_array();
 		return $return;
 	}
+
+	public function getStatusInstalasi()
+	{
+		$sql 	= "SELECT * FROM status_instalasi";
+		$query 	= $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
+
 	public function getWitel()
 	{
 		$sql 	= "SELECT * FROM witel INNER JOIN work_order ON WTEL_ID = WODE_WTEL_ID INNER JOIN status ON wODE_STAT_ID = STAT_ID GROUP by WTEL_ID";
 		$query 	= $this->db->query($sql);
 		$return = $query->result_array();
-		return $return;	
+		return $return;
 	}
 
 	public function getReportByWitelWodeId($id)
@@ -63,7 +72,7 @@ class M_dashboard extends CI_Model
 
 	public function getReportByWitelInstId($id)
 	{
-		$sql 	= "SELECT * FROM instalasi INNER JOIN work_order ON INST_WODE_ID = WODE_ID INNER JOIN mitra ON INST_MTRA_ID = MTRA_ID /*INNER JOIN pegawai on INST_PEGA_ID = PEGA_ID*/ INNER JOIN witel ON INST_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON INST_SWIT_ID = SWIT_ID INNER JOIN program ON INST_PROG_ID = PROG_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID AND WTEL_ID =".$id;
+		$sql 	= "SELECT * FROM instalasi INNER JOIN work_order ON INST_WODE_ID = WODE_ID INNER JOIN mitra ON INST_MTRA_ID = MTRA_ID /*INNER JOIN pegawai on INST_PEGA_ID = PEGA_ID*/ INNER JOIN witel ON INST_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON INST_SWIT_ID = SWIT_ID INNER JOIN program ON INST_PROG_ID = PROG_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID INNER JOIN status_instalasi ON INST_STIN_ID = STIN_ID AND WTEL_ID =".$id;
 		$query = $this->db->query($sql);
 		$return = $query->result_array();
 		return $return;
@@ -87,7 +96,7 @@ class M_dashboard extends CI_Model
 
 	public function getReportByStatusInstId($id)
 	{
-		$sql 	= "SELECT * FROM instalasi INNER JOIN work_order ON INST_WODE_ID = WODE_ID INNER JOIN mitra ON INST_MTRA_ID = MTRA_ID /*INNER JOIN pegawai on INST_PEGA_ID = PEGA_ID*/ INNER JOIN witel ON INST_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON INST_SWIT_ID = SWIT_ID INNER JOIN program ON INST_PROG_ID = PROG_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID AND STAT_ID =".$id;
+		$sql 	= "SELECT * FROM instalasi INNER JOIN work_order ON INST_WODE_ID = WODE_ID INNER JOIN mitra ON INST_MTRA_ID = MTRA_ID /*INNER JOIN pegawai on INST_PEGA_ID = PEGA_ID*/ INNER JOIN witel ON INST_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON INST_SWIT_ID = SWIT_ID INNER JOIN program ON INST_PROG_ID = PROG_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID INNER JOIN status_instalasi ON INST_STIN_ID = STIN_ID AND STAT_ID =".$id;
 		$query = $this->db->query($sql);
 		$return = $query->result_array();
 		return $return;

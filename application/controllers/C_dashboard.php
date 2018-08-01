@@ -5,7 +5,7 @@
  */
 class C_dashboard extends CI_Controller
 {
-	
+
 	function __construct()
 	{
 		parent::__construct();
@@ -41,7 +41,7 @@ class C_dashboard extends CI_Controller
 			'content' 				=> 'V_reportDetailWitel',
 			'title'					=> 'Detail Witel '.$dataReportByWitelWode[0]['WTEL_NAME'].' | '.date("l jS \of F Y h:i A"),
 		);
-		$this->load->view('tampilan/v_combine',$data);	
+		$this->load->view('tampilan/v_combine',$data);
 	}
 
 	public function detailStatusWode($id)
@@ -53,7 +53,7 @@ class C_dashboard extends CI_Controller
 			'content' 				=> 'V_reportDetailStatusWode',
 			'title'					=> 'Detail Status '.$dataReportByStatusWode[0]['STAT_NAME'].' | '.date("l jS \of F Y h:i A"),
 		);
-		$this->load->view('tampilan/v_combine',$data);	
+		$this->load->view('tampilan/v_combine',$data);
 	}
 
 	public function detailStatusSurv($id)
@@ -65,7 +65,7 @@ class C_dashboard extends CI_Controller
 			'content' 				=> 'V_reportDetailStatusSurv',
 			'title'					=> 'Detail Status '.$dataReportByStatusSurv[0]['STAT_NAME'].' | '.date("l jS \of F Y h:i A"),
 		);
-		$this->load->view('tampilan/v_combine',$data);	
+		$this->load->view('tampilan/v_combine',$data);
 	}
 
 	public function detailStatusInst($id)
@@ -77,7 +77,7 @@ class C_dashboard extends CI_Controller
 			'content' 				=> 'V_reportDetailStatusInst',
 			'title'					=> 'Detail Status '.$dataReportByStatusInst[0]['STAT_NAME'].' | '.date("l jS \of F Y h:i A"),
 		);
-		$this->load->view('tampilan/v_combine',$data);	
+		$this->load->view('tampilan/v_combine',$data);
 	}
 
 	public function detail($wtelid,$statid)
@@ -89,7 +89,7 @@ class C_dashboard extends CI_Controller
 			'content' 				=> 'V_reportDetailWitelStatus',
 			'title'					=> 'Detail Witel '.$dataReportByWitelStatus[0]['WTEL_NAME'].' Status '.$dataReportByWitelStatus[0]['STAT_NAME'].' | '.date("l jS \of F Y h:i A"),
 		);
-		$this->load->view('tampilan/v_combine',$data);	
-	} 
+		$this->load->view('tampilan/v_combine',$data);
+	}
 }
  ?>
