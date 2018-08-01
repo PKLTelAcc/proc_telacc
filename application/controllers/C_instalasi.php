@@ -21,6 +21,7 @@ class C_instalasi extends CI_Controller
 		$workOrder=$this->M_instalasi->getWorkOrder();
 		$pegawai=$this->M_instalasi->getPegawai();
 		$mitra=$this->M_instalasi->getMitra();
+		$statusInstalasi=$this->M_instalasi->getStatusInstalasi();
 		$data = array(
 			'title' 	=> 'Input Instalasi',
 			'content'	=> 'V_instalasi',
@@ -32,6 +33,7 @@ class C_instalasi extends CI_Controller
 			'workOrder'	=> $workOrder,
 			'pegawai'	=> $pegawai,
 			'mitra'		=> $mitra,
+			'status_instalasi' => $statusInstalasi,
 			'menu'      =>'Input Instalasi'
 		);
 		$this->load->view('tampilan/V_combine',$data);
@@ -57,6 +59,7 @@ class C_instalasi extends CI_Controller
 		$program 	= $_POST['txtProg'];
 		$progres	= $_POST['txtprogres'];
 		$kendala	= $_POST['txtkendala'];
+		$statusInstalasi = $_POST['txtstin'];
 		
 		$data = array(
 			'INST_WODE_ID'		=> $idta,
@@ -74,7 +77,8 @@ class C_instalasi extends CI_Controller
 			'INST_TARGET'		=> $target,
 			'INST_PROG_ID' 		=> $program,
 			'INST_PROGRES'		=> $progres,
-			'INST_KENDALA'		=> $kendala
+			'INST_KENDALA'		=> $kendala,
+			'INST_STIN_ID'		=> $statusInstalasi
 		);
 		$dataStat = array(
 			'WODE_STAT_ID' 		=> $status
@@ -94,6 +98,7 @@ class C_instalasi extends CI_Controller
 		$workOrder=$this->M_instalasi->getWorkOrder();
 		$pegawai=$this->M_instalasi->getPegawai();
 		$mitra=$this->M_instalasi->getMitra();
+		$statusInstalasi=$this->M_instalasi->getStatusInstalasi();
 		$data = array(
 			'title' 	=> 'Edit Instalasi',
 			'content'	=> 'V_editInstalasi',
@@ -105,6 +110,7 @@ class C_instalasi extends CI_Controller
 			'workOrder'	=> $workOrder,
 			'pegawai'	=> $pegawai,
 			'mitra'		=> $mitra,
+			'status_instalasi' => $statusInstalasi,
 			'menu'      =>'Input Instalasi'
 		);
 		$this->load->view('tampilan/V_combine',$data);
@@ -129,6 +135,7 @@ class C_instalasi extends CI_Controller
 		$program 	= $_POST['txtProg'];
 		$progres	= $_POST['txtprogres'];
 		$kendala	= $_POST['txtkendala'];
+		$statusInstalasi = $_POST['txtstin'];
 		
 		$data = array(
 			'INST_WODE_ID'		=> $idta,
@@ -146,7 +153,8 @@ class C_instalasi extends CI_Controller
 			'INST_TARGET'		=> $target,
 			'INST_PROG_ID' 		=> $program,
 			'INST_PROGRES'		=> $progres,
-			'INST_KENDALA'		=> $kendala
+			'INST_KENDALA'		=> $kendala,
+			'INST_STIN_ID'		=> $statusInstalasi
 		);
 		$dataStat = array(
 			'WODE_STAT_ID' 		=> $status

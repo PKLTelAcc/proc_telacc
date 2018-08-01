@@ -67,6 +67,10 @@
 
         //regist
         $("#registForm").dataTable();
+
+        //stin
+        $("#tableStin").dataTable();
+        
     });
 </script>
 

@@ -7,7 +7,7 @@
 	  <div class="col-md-12">
 	    <div class="box box-danger">
 	      <div class="box-header with-border">
-	        <h3 class="box-title">Edit Status</h3>
+	        <h3 class="box-title">Edit Status Instalasi</h3>
 
 	        <div class="box-tools pull-right">
 	          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -17,12 +17,12 @@
 	      <div class="box-body">
 	        <div class="row">
 	          <div class="col-md-12 ">
-	            <form action="<?php echo base_url(). 'C_status/updateData/' .$status[0]["STAT_ID"]; ?>" method="POST">
+	            <form action="<?php echo base_url(). 'C_statusInstalasi/updateData/' .$status_instalasi[0]["STIN_ID"]; ?>" method="POST">
 	              <div class="form-group">
 	                  <label class=" control-label">Status</label>
 	                  <div>
 	                    <span id="qty">
-	                      <input class="form-control" type="text" placeholder="Status" name="txtNama" required placeholder="0" value="<?php echo($status[0]['STAT_NAME'])?>">  
+	                      <input class="form-control" type="text" placeholder="Status" name="txtNama" required placeholder="0" value="<?php echo($status_instalasi[0]['STIN_NAME'])?>">  
 	                    </span>
 	                  </div>
 	              </div>

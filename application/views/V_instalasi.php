@@ -153,6 +153,18 @@
 							</div>
 						</div>
 					</div>
+
+					<div class="form-group">
+					<label class="control-label">Status Instalasi</label>
+						<div class="input-group">
+							<input class="form-control readonly" placeholder="== Pilih Status Instalasi ==" name="txtStinMuncul" id="myInput5" required="true" >
+		                    <input class="form-control" id="txtstin" type="hidden" name="txtstin">
+							<div class="input-group-btn">
+								 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalStin">Search</button>
+							</div>
+						</div>
+					</div>
+
 	                  <div class="form-group">
 	                  <label class=" control-label">Progres</label>
 	                  <div>
@@ -217,6 +229,7 @@
 						<th>Tanggal Selesai Survey</th>
 						<th>Target Selesai</th>
 						<th>Status</th>
+						<th>Status Instalasi</th>
 						<th>Progres</th>
 						<th>Kendala</th>
 						<th style="text-align: center">Action</th>
@@ -241,6 +254,7 @@
 							echo "<td>".$row['INST_TANGGAL']."</td>";
 							echo "<td>".$row['INST_TARGET']."</td>";
 							echo "<td>".$row['STAT_NAME']."</td>";
+							echo "<td>".$row['STIN_NAME']."</td>";
 							echo "<td>".$row['INST_PROGRES']."</td>";
 							echo "<td>".$row['INST_KENDALA']."</td>";
 							echo "<td><a href='".base_url()."C_instalasi/formUpdate/".$row['INST_ID']."'>Edit</a> | <a href='".base_url()."C_instalasi/delete/".$row['INST_ID']."' onclick='return confirm(\"Apa anda yakin akan menghapus data ini ?\")'>Delete</a></td>";
@@ -423,6 +437,43 @@
     </div>
 </div>
 
+<!-- modal InstStat -->
+<div class="modal fade" id="modalStin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:800px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Data Status Instalasi</h4>
+            </div>
+            <div class="modal-body">
+                <table id="tableStin" class="table table-bordered table-hover table-striped">
+                    <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th>Status Instalasi</th>
+                      </tr>
+                    </thead>        
+                    <tbody>
+                      <?php 
+                      $no=1;
+                      foreach ($status_instalasi as $row) {
+                        ?>
+                          <tr class="isi5" style="cursor: pointer;" data-id5 = "<?=$row['STIN_ID']?>" data-stin = "<?=$row['STIN_NAME']?>">
+                            <td><?php echo $no?></td>
+                            <td><?php echo $row['STIN_NAME']?></td>
+                          </tr>
+                        <?php
+                        $no++;
+                      }
+                      ?>
+                    </tbody>
+                </table>  
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script type="text/javascript">
 	$(document).on('click', '.isi', function (e) {
 		document.getElementById("txtIDTA").value 		= $(this).attr('data-id');
@@ -459,6 +510,11 @@
 		document.getElementById("txtStat").value 		= $(this).attr('data-id4');
 		document.getElementById("myInput4").value 		= $(this).attr('data-stat');
         $('#modalInstStat').modal('hide');
+	});
+	$(document).on('click', '.isi5', function (e) {
+		document.getElementById("txtstin").value 		= $(this).attr('data-id5');
+		document.getElementById("myInput5").value 		= $(this).attr('data-stin');
+        $('#modalStin').modal('hide');
 	});
 </script>
 

@@ -147,6 +147,23 @@
                   <div class="input-group">
                       <input class="form-control readonly" placeholder="== Pilih Status ==" name="txtStatMuncul" id="myInput4" required="true" value="<?php echo($workOrder[0]['STAT_NAME'])?>">
                       <input class="form-control" id="txtStat" type="hidden" name="txtStat" value="<?php echo($workOrder[0]['WODE_STAT_ID'])?>">
+                      <div class="input-group-btn">
+                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalSta">Search</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                  <label class="control-label">Status Instalasi</label>
+                    <div class="input-group">
+                      <input class="form-control readonly" placeholder="== Pilih Status Instalasi ==" name="txtStinMuncul" id="myInput5" required="true" value="<?php echo($instalasi[0]['STIN_NAME'])?>">
+                        <input class="form-control" id="txtstin" type="hidden" name="txtstin" value="<?php echo($instalasi[0]['STIN_ID'])?>">
+                         <div class="input-group-btn">
+                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalStin">Search</button>
+                      </div>
+                    </div>
+                  </div>
+
                   <!-- <div>
                     <select name="txtStat" id="cmbStat" required="true" class="form-control">
                       <option value="0">== Pilih Status ==</option>
@@ -165,11 +182,7 @@
                       ?>
                     </select>
                   </div> -->
-                      <div class="input-group-btn">
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalInstStat">Search</button>
-                      </div>
-                </div>
-                </div>
+                     
                     <div class="form-group">
                     <label class=" control-label">Progres</label>
                     <div>
@@ -370,6 +383,42 @@
     </div>
 </div>
 
+<!-- modal InstStat -->
+<div class="modal fade" id="modalStin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:800px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Data Status Instalasi</h4>
+            </div>
+            <div class="modal-body">
+                <table id="tableStin" class="table table-bordered table-hover table-striped">
+                    <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th>Status Instalasi</th>
+                      </tr>
+                    </thead>        
+                    <tbody>
+                      <?php 
+                      $no=1;
+                      foreach ($status_instalasi as $row) {
+                        ?>
+                          <tr class="isi5" style="cursor: pointer;" data-id5 = "<?=$row['STIN_ID']?>" data-stin = "<?=$row['STIN_NAME']?>">
+                            <td><?php echo $no?></td>
+                            <td><?php echo $row['STIN_NAME']?></td>
+                          </tr>
+                        <?php
+                        $no++;
+                      }
+                      ?>
+                    </tbody>
+                </table>  
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
   $(document).on('click', '.isi', function (e) {
     document.getElementById("txtIDTA").value        = $(this).attr('data-id');
@@ -404,6 +453,11 @@
       document.getElementById("myInput4").value     = $(this).attr('data-stat');
       $('#modalInstStat').modal('hide');
     });
+    $(document).on('click', '.isi5', function (e) {
+    document.getElementById("txtstin").value    = $(this).attr('data-id5');
+    document.getElementById("myInput5").value     = $(this).attr('data-stin');
+        $('#modalStin').modal('hide');
+  });
 </script>
 
 
