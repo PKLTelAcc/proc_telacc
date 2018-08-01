@@ -29,6 +29,14 @@ class M_dashboard extends CI_Model
 		return $return;
 	}
 
+	public function getGolive($id)
+	{
+		$sql = "SELECT COUNT(WODE_STAT_ID) AS jumlah FROM work_order INNER JOIN witel ON WODE_WTEL_ID = WTEL_ID RIGHT JOIN status ON WODE_STAT_ID = STAT_ID WHERE (STAT_NAME = 'INSTALASI' AND WTEL_ID = $id) OR (STAT_NAME = 'BAST' AND WTEL_ID = $id) GROUP BY STAT_ID";
+		$query 	= $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
+
 
 	public function getStatus()
 	{

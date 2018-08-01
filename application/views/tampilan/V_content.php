@@ -33,6 +33,7 @@
             <?php
             }
              ?>
+             <th>GOLIVE</th>
              <th>Total</th>
              <th>Detail</th>
           </tr>
@@ -41,6 +42,7 @@
             <?php
             $witel=$this->M_dashboard->getWitel();
             $total = 0;
+            $totalGolive = 0;
             foreach ($witel as $row) {
               ?>
               <tr>
@@ -63,7 +65,12 @@
               <?php
                   $total = $total + $key['jumlah'];
                 }
+                $golive = $this->M_dashboard->getGolive($row['WTEL_ID']);
+                foreach ($golive as $key2) {
+                  $totalGolive = $totalGolive + $key2['jumlah'];
+                }
               ?>
+                  <td><?=$totalGolive?></td>
                   <td><?=$total?></td>
                   <td>
                     <a href="<?php echo base_url().'C_dashboard/detailWitel/'.$row['WTEL_ID'];?>" class="text-info">
@@ -73,6 +80,7 @@
               </tr>
               <?php
               $total = 0;
+              $totalGolive = 0;
             }
             ?>
           </tbody>
