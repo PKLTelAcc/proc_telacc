@@ -22,9 +22,9 @@
               <th>
                 <?php if($row['STAT_NAME']=='WORK ORDER'){ ?>
                 <a href="<?php echo base_url().'C_dashboard/detailStatusWode/'.$row['STAT_ID'];?>" class="text-info">
-                <?php }if($row['STAT_NAME']=='SURVEY'){ ?>
+                <?php }else if($row['STAT_NAME']=='SURVEY'){ ?>
                 <a href="<?php echo base_url().'C_dashboard/detailStatusSurv/'.$row['STAT_ID'];?>" class="text-info">
-                <?php }if($row['STAT_NAME']=='INSTALASI'){ ?>
+                <?php }else if($row['STAT_NAME']=='INSTALASI'){ ?>
                 <a href="<?php echo base_url().'C_dashboard/detailStatusInst/'.$row['STAT_ID'];?>" class="text-info">
                 <?php } ?>
                   <?php echo $row['STAT_NAME'];?>
@@ -33,6 +33,7 @@
             <?php
             }
              ?>
+             <th>GOLIVE</th>
              <th>Total</th>
              <th>Detail</th>
           </tr>
@@ -41,6 +42,7 @@
             <?php
             $witel=$this->M_dashboard->getWitel();
             $total = 0;
+            $totalGolive = 0;
             foreach ($witel as $row) {
               ?>
               <tr>
@@ -49,11 +51,26 @@
                   $count = $this->M_dashboard->getCount($row['WTEL_ID']);
                   foreach ($count as $key) {
               ?>
-                    <td><a href="<?php echo base_url().'C_dashboard/detail/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-info"><?=$key['jumlah']?></a></td>
+                    <td>
+                      <?php if($key['STAT_NAME']=='WORK ORDER' && $key['WODE_STAT_ID']!=null){ ?>
+                      <a href="<?php echo base_url().'C_dashboard/detailWode/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-info">
+                      <?php }else if($key['STAT_NAME']=='SURVEY' && $key['WODE_STAT_ID']!=null){ ?>
+                      <a href="<?php echo base_url().'C_dashboard/detailSurv/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-info">
+                      <?php }else if($key['STAT_NAME']=='INSTALASI' && $key['WODE_STAT_ID']!=null){ ?>
+                      <a href="<?php echo base_url().'C_dashboard/detailInst/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-info">
+                      <?php } ?>
+                        <?=$key['jumlah']?>
+                      </a>
+                    </td>
               <?php
                   $total = $total + $key['jumlah'];
                 }
+                $golive = $this->M_dashboard->getGolive($row['WTEL_ID']);
+                foreach ($golive as $key2) {
+                  $totalGolive = $totalGolive + $key2['jumlah'];
+                }
               ?>
+                  <td><?=$totalGolive?></td>
                   <td><?=$total?></td>
                   <td>
                     <a href="<?php echo base_url().'C_dashboard/detailWitel/'.$row['WTEL_ID'];?>" class="text-info">
@@ -63,6 +80,7 @@
               </tr>
               <?php
               $total = 0;
+              $totalGolive = 0;
             }
             ?>
           </tbody>

@@ -1,7 +1,7 @@
-<?php 
+<?php
 
 /**
- * 
+ *
  */
 class C_dashboard extends CI_Controller
 {
@@ -80,14 +80,38 @@ class C_dashboard extends CI_Controller
 		$this->load->view('tampilan/v_combine',$data);
 	}
 
-	public function detail($wtelid,$statid)
+public function detailWode($wtelid,$statid)
 	{
-		$dataReportByWitelStatus		= $this->M_dashboard->getReportByWitelStatus($wtelid,$statid);
+		$dataReportByWitelStatusWode		= $this->M_dashboard->getReportByWitelStatusWode($wtelid,$statid);
 		date_default_timezone_set("Asia/Bangkok");
 		$data = array(
-			'dataReportByWitelStatus' 		=> $dataReportByWitelStatus,
-			'content' 				=> 'V_reportDetailWitelStatus',
-			'title'					=> 'Detail Witel '.$dataReportByWitelStatus[0]['WTEL_NAME'].' Status '.$dataReportByWitelStatus[0]['STAT_NAME'].' | '.date("l jS \of F Y h:i A"),
+			'dataReportByWitelStatusWode' 		=> $dataReportByWitelStatusWode,
+			'content' 				=> 'V_reportDetailWitelStatusWode',
+			'title'					=> 'Detail Witel '.$dataReportByWitelStatusWode[0]['WTEL_NAME'].' Status '.$dataReportByWitelStatusWode[0]['STAT_NAME'].' | '.date("l jS \of F Y h:i A"),
+		);
+		$this->load->view('tampilan/v_combine',$data);
+	}
+
+	public function detailSurv($wtelid,$statid)
+	{
+		$dataReportByWitelStatusSurv		= $this->M_dashboard->getReportByWitelStatusSurv($wtelid,$statid);
+		date_default_timezone_set("Asia/Bangkok");
+		$data = array(
+			'dataReportByWitelStatusSurv' 		=> $dataReportByWitelStatusSurv,
+			'content' 				=> 'V_reportDetailWitelStatusSurv',
+			'title'					=> 'Detail Witel '.$dataReportByWitelStatusSurv[0]['WTEL_NAME'].' Status '.$dataReportByWitelStatusSurv[0]['STAT_NAME'].' | '.date("l jS \of F Y h:i A"),
+		);
+		$this->load->view('tampilan/v_combine',$data);
+	}
+
+	public function detailInst($wtelid,$statid)
+	{
+		$dataReportByWitelStatusInst		= $this->M_dashboard->getReportByWitelStatusInst($wtelid,$statid);
+		date_default_timezone_set("Asia/Bangkok");
+		$data = array(
+			'dataReportByWitelStatusInst' 		=> $dataReportByWitelStatusInst,
+			'content' 				=> 'V_reportDetailWitelStatusInst',
+			'title'					=> 'Detail Witel '.$dataReportByWitelStatusInst[0]['WTEL_NAME'].' Status '.$dataReportByWitelStatusInst[0]['STAT_NAME'].' | '.date("l jS \of F Y h:i A"),
 		);
 		$this->load->view('tampilan/v_combine',$data);
 	}
