@@ -248,7 +248,7 @@
 							echo "<td>".$row['INST_TOTAL']."</td>";
 							echo "<td>".$row['INST_ODP']."</td>";
 							echo "<td>".$row['MTRA_NAME']."</td>";
-//KOMEN INI JANGAN DIHAPUS							
+//KOMEN INI JANGAN DIHAPUS
 							// echo "<td>".$row['PEGA_NAME']."</td>";
 							// echo "<td>".$row['PEGA_NIK']."</td>";
 //SAMPAI SINI
@@ -294,9 +294,9 @@
                         <th>Program</th>
                        	<th>Nama Lokasi</th>
                       </tr>
-                    </thead>        
+                    </thead>
                     <tbody>
-                      <?php 
+                      <?php
                       $no=1;
                       foreach ($workOrder as $row) {
                         ?>
@@ -314,7 +314,7 @@
                       }
                       ?>
                     </tbody>
-                </table>  
+                </table>
             </div>
         </div>
     </div>
@@ -382,9 +382,9 @@
                         <th>No.</th>
                         <th>Nama Mitra</th>
                       </tr>
-                    </thead>        
+                    </thead>
                     <tbody>
-                      <?php 
+                      <?php
                       $no=1;
                       foreach ($mitra as $row) {
                         ?>
@@ -397,7 +397,7 @@
                       }
                       ?>
                     </tbody>
-                </table>  
+                </table>
             </div>
         </div>
     </div>
@@ -418,22 +418,24 @@
                         <th>No.</th>
                         <th>Status</th>
                       </tr>
-                    </thead>        
-                    <tbody>
-                      <?php 
+                    </thead>
+                    <tbody align="center">
+                      <?php
                       $no=1;
                       foreach ($status as $row) {
                         ?>
                           <tr class="isi4" style="cursor: pointer;" data-id4 = "<?=$row['STAT_ID']?>" data-stat = "<?=$row['STAT_NAME']?>">
+                          	<?php if($row['STAT_NAME']=='INSTALASI' || $row['STAT_NAME']=='BAST'){ ?>
                             <td><?php echo $no?></td>
                             <td><?php echo $row['STAT_NAME']?></td>
+                        	<?php } ?>
                           </tr>
                         <?php
                         $no++;
                       }
                       ?>
                     </tbody>
-                </table>  
+                </table>
             </div>
         </div>
     </div>

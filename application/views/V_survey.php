@@ -315,22 +315,24 @@
                         <th>No.</th>
                         <th>Status</th>
                       </tr>
-                    </thead>        
-                    <tbody>
-                      <?php 
+                    </thead>
+                    <tbody align="center">
+                      <?php
                       $no=1;
                       foreach ($status as $row) {
                         ?>
                           <tr class="isi3" style="cursor: pointer;" data-id3 = "<?=$row['STAT_ID']?>" data-stat = "<?=$row['STAT_NAME']?>">
+                          	<?php if($row['STAT_NAME']=='SURVEY'){ ?>
                             <td><?php echo $no?></td>
                             <td><?php echo $row['STAT_NAME']?></td>
+                        	<?php } ?>
                           </tr>
                         <?php
                         $no++;
                       }
                       ?>
                     </tbody>
-                </table>  
+                </table>
             </div>
         </div>
     </div>
