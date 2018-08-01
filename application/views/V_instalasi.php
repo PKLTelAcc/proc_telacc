@@ -425,7 +425,7 @@
                       foreach ($status as $row) {
                         ?>
                           <tr class="isi4" style="cursor: pointer;" data-id4 = "<?=$row['STAT_ID']?>" data-stat = "<?=$row['STAT_NAME']?>">
-                          	<?php if($row['STAT_NAME']=='INSTALASI' || $row['STAT_NAME']=='BAST'){ ?>
+                          	<?php if($row['STAT_NAME']=='INSTALASI' || $row['STAT_NAME']=='BAST' || $row['STAT_NAME']=='DROP'){ ?>
                             <td><?php echo $no?></td>
                             <td><?php echo $row['STAT_NAME']?></td>
                         	<?php } ?>

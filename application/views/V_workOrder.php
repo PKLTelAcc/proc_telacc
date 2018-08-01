@@ -321,7 +321,7 @@
                       foreach ($status as $row) {
                         ?>
                           <tr class="search4" style="cursor: pointer;" data-id4 = "<?=$row['STAT_ID']?>" data-stat = "<?=$row['STAT_NAME']?>">
-                            <?php if($row['STAT_NAME']=='WORK ORDER'){ ?>
+                            <?php if($row['STAT_NAME']=='WORK ORDER' || $row['STAT_NAME']=='DROP'){ ?>
                             <td><?php echo $no?></td>
                             <td><?php echo $row['STAT_NAME']?></td>
                         	<?php } ?>
