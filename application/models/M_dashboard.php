@@ -10,9 +10,9 @@ class M_dashboard extends CI_Model
 	{
 		parent::__construct();
 	}
-	public function viewData($id){
+	public function viewData($id, $id2){
 
-		$sql="SELECT * from user INNER JOIN level on USER_LEVE_ID = LEVE_ID where USER_ID =".$id;
+		$sql="SELECT * from user Inner JOIN witel on USER_WTEL_ID = WTEL_ID INNER JOIN level on USER_LEVE_ID = LEVE_ID where USER_WTEL_ID =".$id2."  AND USER_ID =".$id;
 		$query=$this->db->query($sql);
 		$return = $query->result_array();
 		return $return;

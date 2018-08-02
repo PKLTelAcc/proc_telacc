@@ -1,6 +1,6 @@
 <?php
 date_default_timezone_set('Asia/Bangkok');
-$user=$this->M_dashboard->viewData($_SESSION['USER_ID']);
+$user=$this->M_dashboard->viewData($_SESSION['USER_ID'], $_SESSION['WTEL_ID']);
 ?>
 <!DOCTYPE html>
 <html>
