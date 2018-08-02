@@ -20,12 +20,12 @@
               <form action="<?php echo base_url().'C_survey/updateData/' .$survey[0]["SURV_ID"]; ?>" method="POST">
                 <div class="form-group">
                     <label class=" control-label">ID TA</label>
-                    <div class="input-group">
+                    <div>
                         <input class="form-control readonly" placeholder="== Pilih ID TA ==" name="txtIDTAMuncul" id="myInput" required="true" value="<?php echo($survey[0]['WODE_ID_TA'])?>">
                         <input class="form-control" id="txtIDTA" type="hidden" name="txtIDTA" value="<?php echo($survey[0]['SURV_WODE_ID'])?>">
-            <div class="input-group-btn">
+            <!-- <div class="input-group-btn">
               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalIDTASurvey">Search</button>
-            </div>
+            </div> -->
                     </div>
                   </div>
                   <div class="form-group">

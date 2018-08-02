@@ -248,7 +248,7 @@
 							echo "<td>".$row['INST_TOTAL']."</td>";
 							echo "<td>".$row['INST_ODP']."</td>";
 							echo "<td>".$row['MTRA_NAME']."</td>";
-//KOMEN INI JANGAN DIHAPUS							
+//KOMEN INI JANGAN DIHAPUS
 							// echo "<td>".$row['PEGA_NAME']."</td>";
 							// echo "<td>".$row['PEGA_NIK']."</td>";
 //SAMPAI SINI
@@ -294,27 +294,29 @@
                         <th>Program</th>
                        	<th>Nama Lokasi</th>
                       </tr>
-                    </thead>        
+                    </thead>
                     <tbody>
-                      <?php 
+                      <?php
                       $no=1;
                       foreach ($workOrder as $row) {
                         ?>
                           <tr class="isi" style="cursor: pointer;" data-id = "<?=$row['WODE_ID']?>" data-lokasi="<?php echo $row['WODE_NAMA_LOKASI']; ?>" data-program="<?php echo $row['PROG_ID']; ?>" data-inputProgram="<?php echo $row['PROG_NAME']; ?>" data-subWitel="<?php echo $row['SWIT_ID']; ?>" data-inputSubWitel="<?php echo $row['SWIT_NAME']; ?>" data-witel="<?php echo $row['WTEL_ID']; ?>" data-idta="<?php echo $row['WODE_ID_TA']; ?>" data-inputWitel="<?php echo $row['WTEL_NAME']; ?>" data-survMaterial="<?php echo $row['SURV_MATERIAL']; ?>" data-survJasa="<?php echo $row['SURV_JASA']; ?>"
                           	data-survTotal="<?php echo $row['SURV_TOTAL']; ?>" data-survODP="<?php echo $row['SURV_ODP']; ?>" data-id4 = "<?=$row['STAT_ID']?>" data-stat = "<?=$row['STAT_NAME']?>">
+                          	<?php if($row['STAT_NAME']=='SURVEY'){ ?>
                             <td><?php echo $no?></td>
                             <td><?php echo $row['WODE_ID_TA']?></td>
                             <td><?php echo $row['WTEL_NAME']?></td>
                             <td><?php echo $row['SWIT_NAME']?></td>
                             <td><?php echo $row['PROG_NAME']?></td>
                             <td><?php echo $row['WODE_NAMA_LOKASI']?></td>
+                        	<?php } ?>
                           </tr>
                         <?php
                         $no++;
                       }
                       ?>
                     </tbody>
-                </table>  
+                </table>
             </div>
         </div>
     </div>
@@ -382,9 +384,9 @@
                         <th>No.</th>
                         <th>Nama Mitra</th>
                       </tr>
-                    </thead>        
+                    </thead>
                     <tbody>
-                      <?php 
+                      <?php
                       $no=1;
                       foreach ($mitra as $row) {
                         ?>
@@ -397,7 +399,7 @@
                       }
                       ?>
                     </tbody>
-                </table>  
+                </table>
             </div>
         </div>
     </div>
@@ -418,22 +420,24 @@
                         <th>No.</th>
                         <th>Status</th>
                       </tr>
-                    </thead>        
-                    <tbody>
-                      <?php 
+                    </thead>
+                    <tbody align="center">
+                      <?php
                       $no=1;
                       foreach ($status as $row) {
                         ?>
                           <tr class="isi4" style="cursor: pointer;" data-id4 = "<?=$row['STAT_ID']?>" data-stat = "<?=$row['STAT_NAME']?>">
+                          	<?php if($row['STAT_NAME']=='INSTALASI' || $row['STAT_NAME']=='BAST' || $row['STAT_NAME']=='DROP'){ ?>
                             <td><?php echo $no?></td>
                             <td><?php echo $row['STAT_NAME']?></td>
+                        	<?php } ?>
                           </tr>
                         <?php
                         $no++;
                       }
                       ?>
                     </tbody>
-                </table>  
+                </table>
             </div>
         </div>
     </div>
