@@ -13,7 +13,11 @@ class C_survey extends CI_Controller
 
 	public function index()
 	{
-		$survey=$this->M_survey->view();
+		if ($_SESSION['level'] == 'SUPER USER') {
+			$survey=$this->M_survey->view();
+		} else if($_SESSION['level'] == 'ADMIN SURVEY' &&  $_SESSION['WTEL_ID']){
+			$survey=$this->M_survey->viewByWitel($_SESSION['WTEL_ID']);
+		}
 		$witel=$this->M_survey->getWitel();
 		$subWitel=$this->M_survey->getSubWitel();
 		$program=$this->M_survey->getProgram();

@@ -16,6 +16,13 @@ class M_instalasi extends CI_Model
 		$return = $query->result_array();
 		return $return;
 	}
+	public function viewByWitel()
+	{
+		$sql = "SELECT * from instalasi inner join work_order on INST_WODE_ID = WODE_ID inner join mitra on INST_MTRA_ID = MTRA_ID /*inner join pegawai on INST_PEGA_ID = PEGA_ID*/ inner join witel on INST_WTEL_ID = WTEL_ID inner join sub_witel on INST_SWIT_ID = SWIT_ID inner join program on INST_PROG_ID = PROG_ID inner join status on WODE_STAT_ID = STAT_ID inner join status_instalasi on INST_STIN_ID = STIN_ID where INST_WTEL_ID =".$_SESSION['WTEL_ID'];
+		$query = $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
 	public function getWorkOrder()
 	{
 		$sql = "SELECT * FROM work_order INNER JOIN witel ON WODE_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON WODE_SWIT_ID = SWIT_ID INNER JOIN program ON WODE_PROG_ID = PROG_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID INNER JOIN survey ON WODE_ID = SURV_WODE_ID";

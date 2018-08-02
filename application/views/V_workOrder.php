@@ -2,7 +2,7 @@
 <div class="content">
 	<div class="row">
 		<?php
-	  	if ($_SESSION['level'] == 'SUPER USER' || $_SESSION['level'] == 'ADMIN WORK ORDER' ) {
+	  	if ($_SESSION['level'] == 'SUPER USER' || ($_SESSION['level'] == 'ADMIN WORK ORDER' &&  $_SESSION['WTEL_ID'])) {
 	  		?>
 	  	}
 	  <div class="col-md-12">
@@ -206,6 +206,8 @@
 				echo "<td><a href='".base_url()."C_workOrder/formUpdate/".$row['WODE_ID']."'>Edit</a> | <a href='".base_url()."C_workOrder/delete/".$row['WODE_ID']."' onclick='return confirm(\"Apa anda yakin akan menghapus data ini ?\")'>Delete</a></td>";
 				echo "</tr>";
 			}
+			
+			
 
 				$no++;
 				}

@@ -2,7 +2,7 @@
 <div class="content">
 	<div class="row">
 		 <?php
-      if ($_SESSION['level'] == 'SUPER USER' || $_SESSION['level'] == 'ADMIN INSTALASI') {
+      if ($_SESSION['level'] == 'SUPER USER' || ($_SESSION['level'] == 'ADMIN INSTALASI' &&  $_SESSION['WTEL_ID'])) {
         ?>
 	  <div class="col-md-12">
 	    <div class="box box-danger">

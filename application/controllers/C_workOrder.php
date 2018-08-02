@@ -13,7 +13,12 @@ class C_workOrder extends CI_Controller
 
 	public function index()
 	{
-		$workOrder=$this->M_workOrder->view();
+		if ($_SESSION['level'] == 'SUPER USER') {
+			$workOrder=$this->M_workOrder->view();
+		} else if($_SESSION['level'] == 'ADMIN WORK ORDER' &&  $_SESSION['WTEL_ID']){
+			$workOrder=$this->M_workOrder->viewByWitel($_SESSION['WTEL_ID']);
+		}
+		
 		$witel=$this->M_workOrder->getWitel();
 		$subWitel=$this->M_workOrder->getSubWitel();
 		$program=$this->M_workOrder->getProgram();

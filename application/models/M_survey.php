@@ -7,6 +7,13 @@ class M_survey extends CI_Model
 	
 	function view()
 	{
+		$sql = "SELECT * FROM survey INNER JOIN work_order ON SURV_WODE_ID = WODE_ID /*INNER JOIN pegawai ON SURV_PEGA_ID = PEGA_ID*/ INNER JOIN witel ON SURV_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON SURV_SWIT_ID = SWIT_ID INNER JOIN program ON SURV_PROG_ID = PROG_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID where SURV_WTEL_ID =".$_SESSION['WTEL_ID'];
+		$query = $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
+	function viewByWitel()
+	{
 		$sql = "SELECT * FROM survey INNER JOIN work_order ON SURV_WODE_ID = WODE_ID /*INNER JOIN pegawai ON SURV_PEGA_ID = PEGA_ID*/ INNER JOIN witel ON SURV_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON SURV_SWIT_ID = SWIT_ID INNER JOIN program ON SURV_PROG_ID = PROG_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID";
 		$query = $this->db->query($sql);
 		$return = $query->result_array();

@@ -13,7 +13,11 @@ class C_instalasi extends CI_Controller
 
 	public function index()
 	{
-		$instalasi=$this->M_instalasi->view();
+		if ($_SESSION['level'] == 'SUPER USER') {
+			$instalasi=$this->M_instalasi->view();
+		} else if($_SESSION['level'] == 'ADMIN INSTALASI' &&  $_SESSION['WTEL_ID']){
+			$instalasi=$this->M_instalasi->viewByWitel($_SESSION['WTEL_ID']);
+		}
 		$witel=$this->M_instalasi->getWitel();
 		$subWitel=$this->M_instalasi->getSubWitel();
 		$program=$this->M_instalasi->getProgram();
