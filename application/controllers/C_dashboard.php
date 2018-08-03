@@ -56,6 +56,18 @@ class C_dashboard extends CI_Controller
 		$this->load->view('tampilan/v_combine',$data);
 	}
 
+	public function detailStatusDrop($id)
+	{
+		$dataReportByStatusWode		= $this->M_dashboard->getReportByStatusWodeId($id);
+		date_default_timezone_set("Asia/Bangkok");
+		$data = array(
+			'dataReportByStatusWode' 	=> $dataReportByStatusWode,
+			'content' 				=> 'V_reportDetailStatusDrop',
+			'title'					=> 'Detail Status '.$dataReportByStatusWode[0]['STAT_NAME'].' | '.date("l jS \of F Y h:i A"),
+		);
+		$this->load->view('tampilan/v_combine',$data);
+	}
+
 	public function detailStatusSurv($id)
 	{
 		$dataReportByStatusSurv		= $this->M_dashboard->getReportByStatusSurvId($id);
@@ -80,13 +92,25 @@ class C_dashboard extends CI_Controller
 		$this->load->view('tampilan/v_combine',$data);
 	}
 
-public function detailWode($wtelid,$statid)
+	public function detailWode($wtelid,$statid)
 	{
 		$dataReportByWitelStatusWode		= $this->M_dashboard->getReportByWitelStatusWode($wtelid,$statid);
 		date_default_timezone_set("Asia/Bangkok");
 		$data = array(
 			'dataReportByWitelStatusWode' 		=> $dataReportByWitelStatusWode,
 			'content' 				=> 'V_reportDetailWitelStatusWode',
+			'title'					=> 'Detail Witel '.$dataReportByWitelStatusWode[0]['WTEL_NAME'].' Status '.$dataReportByWitelStatusWode[0]['STAT_NAME'].' | '.date("l jS \of F Y h:i A"),
+		);
+		$this->load->view('tampilan/v_combine',$data);
+	}
+
+	public function detailDrop($wtelid,$statid)
+	{
+		$dataReportByWitelStatusWode		= $this->M_dashboard->getReportByWitelStatusWode($wtelid,$statid);
+		date_default_timezone_set("Asia/Bangkok");
+		$data = array(
+			'dataReportByWitelStatusWode' 		=> $dataReportByWitelStatusWode,
+			'content' 				=> 'V_reportDetailWitelStatusDrop',
 			'title'					=> 'Detail Witel '.$dataReportByWitelStatusWode[0]['WTEL_NAME'].' Status '.$dataReportByWitelStatusWode[0]['STAT_NAME'].' | '.date("l jS \of F Y h:i A"),
 		);
 		$this->load->view('tampilan/v_combine',$data);

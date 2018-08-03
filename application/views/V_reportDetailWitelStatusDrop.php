@@ -5,7 +5,7 @@
       if ($_SESSION['level'] == 'SUPER USER') {
       	$table=$this->M_dashboard->getSubProgram();
 	      	foreach ($table as $key) {
-	      		if ($key['STAT_NAME']=='WORK ORDER') {
+	      		if ($key['STAT_NAME']=='DROP') {
         ?>
 	  <div class="col-md-12">
 	    <div class="box box-danger">
@@ -36,7 +36,7 @@
 				<tbody>
 					<?php
 					$no=1; 
-		 				foreach ($dataReportByStatusWode as $row) {
+		 				foreach ($dataReportByWitelStatusWode as $row) {
 		 					if ($key['PROG_NAME']==$row['PROG_NAME'] && $key['SUPR_NAME']==$row['SUPR_NAME']) {
 		 					echo "<tr>";
 		 					echo "<td>".$no."</td>";
@@ -61,8 +61,8 @@
 	      <!-- /.box -->
 	  </div> <!-- col-input -->
 	  <?php 
+				}
 			}
-		}
 	  ?>
 	</div>
 </div>

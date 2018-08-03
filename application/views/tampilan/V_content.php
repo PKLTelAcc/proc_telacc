@@ -22,6 +22,8 @@
               <th>
                 <?php if($row['STAT_NAME']=='WORK ORDER'){ ?>
                 <a href="<?php echo base_url().'C_dashboard/detailStatusWode/'.$row['STAT_ID'];?>" class="text-info">
+                <?php }else if($row['STAT_NAME']=='DROP'){ ?>
+                <a href="<?php echo base_url().'C_dashboard/detailStatusDrop/'.$row['STAT_ID'];?>" class="text-info">
                 <?php }else if($row['STAT_NAME']=='SURVEY'){ ?>
                 <a href="<?php echo base_url().'C_dashboard/detailStatusSurv/'.$row['STAT_ID'];?>" class="text-info">
                 <?php }else if($row['STAT_NAME']=='INSTALASI'){ ?>
@@ -54,6 +56,8 @@
                     <td>
                       <?php if($key['STAT_NAME']=='WORK ORDER' && $key['WODE_STAT_ID']!=null){ ?>
                       <a href="<?php echo base_url().'C_dashboard/detailWode/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-info">
+                      <?php }else if($key['STAT_NAME']=='DROP' && $key['WODE_STAT_ID']!=null){ ?>
+                      <a href="<?php echo base_url().'C_dashboard/detailDrop/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-info">
                       <?php }else if($key['STAT_NAME']=='SURVEY' && $key['WODE_STAT_ID']!=null){ ?>
                       <a href="<?php echo base_url().'C_dashboard/detailSurv/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-info">
                       <?php }else if($key['STAT_NAME']=='INSTALASI' && $key['WODE_STAT_ID']!=null){ ?>
