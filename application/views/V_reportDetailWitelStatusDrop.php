@@ -3,14 +3,11 @@
 	<div class="row">
 		<?php
       if ($_SESSION['level'] == 'SUPER USER') {
-      	$table=$this->M_dashboard->getSubProgram();
-	      	foreach ($table as $key) {
-	      		if ($key['STAT_NAME']=='DROP') {
         ?>
 	  <div class="col-md-12">
 	    <div class="box box-danger">
 	      <div class="box-header with-border">
-	        <h3 class="box-title">Report <?php echo $key['PROG_NAME'];?> <?php echo $key['SUPR_NAME']; ?></h3>
+	        <h3 class="box-title">Report?></h3>
 
 	        <div class="box-tools pull-right">
 	          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -18,7 +15,7 @@
 	      </div>
 	      <!-- /.box-header -->
 	      <div class="box-body">
-			<table class="table table-bordered table-hover table-striped" id="LAPORAN<?php echo $key['PROG_NAME'],$key['SUPR_ID'];?>">
+			<table class="table table-bordered table-hover table-striped" id="LAPORAN">
 				<thead>
 					<tr>
 						<th>No</th>
@@ -37,7 +34,6 @@
 					<?php
 					$no=1; 
 		 				foreach ($dataReportByWitelStatusWode as $row) {
-		 					if ($key['PROG_NAME']==$row['PROG_NAME'] && $key['SUPR_NAME']==$row['SUPR_NAME']) {
 		 					echo "<tr>";
 		 					echo "<td>".$no."</td>";
 		 					echo "<td>".$row['WODE_ID_TA']."</td>";
@@ -51,7 +47,6 @@
 		 					echo "<td>".$row['STAT_NAME']."</td>";
 		 					echo "</tr>";
 		 					$no++;
-		 					}
 		 				}
 		 			 ?>
 				</tbody>
@@ -60,29 +55,20 @@
 	    </div>
 	      <!-- /.box -->
 	  </div> <!-- col-input -->
-	  <?php 
-				}
-			}
-	  ?>
 	</div>
 </div>
 <!-- /.content -->
-<?php
-	$table=$this->M_dashboard->getSubProgram();
-	foreach ($table as $key) {
-?>
+
 <script type="text/javascript">
     $(function () {
-        $('#LAPORAN<?php echo $key['PROG_NAME'],$key['SUPR_ID'];?>').dataTable( {
+        $('#LAPORAN').dataTable( {
           "bSort": false,
           dom:'B <"content-header" <"col-sm-2"l> f>tipH',
           buttons: [ 'excel' ]
         } );
   });
 </script>
-<?php
-	}
-?>
+
 <?php
       }
       if ($_SESSION['level'] != 'SUPER USER') {

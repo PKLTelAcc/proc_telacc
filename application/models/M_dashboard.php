@@ -54,9 +54,9 @@ class M_dashboard extends CI_Model
 		return $return;
 	}
 
-	public function getSubProgram()
+	public function getProgram()
 	{
-		$sql 	= "SELECT * FROM sub_program INNER JOIN work_order ON WODE_SUPR_ID= SUPR_ID INNER JOIN program ON WODE_PROG_ID = PROG_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID ORDER BY PROG_ID ASC";
+		$sql 	= "SELECT * FROM program ORDER BY PROG_ID ASC";
 		$query 	= $this->db->query($sql);
 		$return = $query->result_array();
 		return $return;
