@@ -9,7 +9,7 @@
 	  <div class="col-md-12">
 	    <div class="box box-danger">
 	      <div class="box-header with-border">
-	        <h3 class="box-title">Report <?php echo $key['PROG_NAME']; ?></h3>
+	        <h3 class="box-title">Report <?php echo $key['PROG_NAME']; ?> <?php echo $key['SUPR_NAME']; ?></h3>
 
 	        <div class="box-tools pull-right">
 	          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -17,7 +17,7 @@
 	      </div>
 	      <!-- /.box-header -->
 	      <div class="box-body">
-			<table class="table table-bordered table-hover table-striped" id="LAPORAN<?php echo $key['PROG_NAME']; ?>">
+			<table class="table table-bordered table-hover table-striped" id="LAPORAN<?php echo $key['PROG_NAME'],$key['SUPR_ID']; ?>">
 				<thead>
 					<tr>
 						<th>No</th>
@@ -36,7 +36,7 @@
 					<?php
 					$no=1; 
 		 				foreach ($dataReportByStatusWode as $row) {
-		 					if ($key['PROG_NAME']==$row['PROG_NAME']) {
+		 					if ($key['PROG_NAME']==$row['PROG_NAME'] && $key['SUPR_NAME']==$row['SUPR_NAME']) {
 		 					echo "<tr>";
 		 					echo "<td>".$no."</td>";
 		 					echo "<td>".$row['WODE_ID_TA']."</td>";
@@ -72,7 +72,7 @@
 
 <script type="text/javascript">
     $(function () {
-        $('#LAPORAN<?php echo $key['PROG_NAME']; ?>').dataTable( {
+        $('#LAPORAN<?php echo $key['PROG_NAME'],$key['SUPR_ID']; ?>').dataTable( {
           "bSort": false,
           dom:'B <"content-header" <"col-sm-2"l> f>tipH',
           buttons: [ 'excel' ]
