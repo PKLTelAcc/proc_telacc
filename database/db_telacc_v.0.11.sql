@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 03, 2018 at 03:34 AM
+-- Generation Time: Aug 03, 2018 at 03:42 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -409,7 +409,8 @@ INSERT INTO `status` (`STAT_ID`, `STAT_NAME`) VALUES
 (1, 'WORK ORDER'),
 (2, 'SURVEY'),
 (3, 'INSTALASI'),
-(4, 'BAST');
+(4, 'BAST'),
+(5, 'DROP');
 
 -- --------------------------------------------------------
 
@@ -857,7 +858,7 @@ ALTER TABLE `sp_telkom`
 -- AUTO_INCREMENT for table `status`
 --
 ALTER TABLE `status`
-  MODIFY `STAT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `STAT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `status_instalasi`
