@@ -145,6 +145,7 @@ $user=$this->M_dashboard->viewData($_SESSION['USER_ID'], $_SESSION['WTEL_ID']);
                             <li><a href="<?php echo base_url()?>c_level">Input Level</a></li>
                             <li><a href="<?php echo base_url()?>c_status">Input Status</a></li>
                             <li><a href="<?php echo base_url()?>c_program">Input Program</a></li>
+                            <li><a href="<?php echo base_url()?>c_subProgram">Input Sub Program</a></li>
                             <li><a href="<?php echo base_url()?>c_statusInstalasi">Input Status Instalasi</a></li>
                           </ul>
                       </li>

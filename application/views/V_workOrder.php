@@ -88,6 +88,16 @@
 						</div>
 					</div>
 					<div class="form-group">
+						<label class="control-label">Sub Program</label>
+						<div class="input-group">
+						  <input class="form-control readonly" placeholder="== Pilih Program ==" name="txtSubProgMuncul" id="myInput5" required="true">
+	                      <input class="form-control" id="txtSupr" type="hidden" name="txtProg">
+	                      <div class="input-group-btn">
+							  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWodeSupr">Search</button>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
 	                  <label class=" control-label">Nama Lokasi</label>
 	                  <div>
 	                    <span id="qty">
@@ -179,6 +189,7 @@
 			<th>Nama Witel</th>
 			<th>Nama Sub Witel</th>
 			<th>Program</th>
+			<th>Sub Program</th>
 			<th>Nama Lokasi</th>
 			<th>Alamat Lokasi</th>
 			<th>Koordinat Lokasi</th>
@@ -198,6 +209,7 @@
 				echo "<td>".$row['WTEL_NAME']."</td>";
 				echo "<td>".$row['SWIT_NAME']."</td>";
 				echo "<td>".$row['PROG_NAME']."</td>";
+				echo "<td>".$row['SUPR_NAME']."</td>";
 				echo "<td>".$row['WODE_NAMA_LOKASI']."</td>";
 				echo "<td>".$row['WODE_ALAMAT']."</td>";
 				echo "<td>".$row['WODE_KOORDINAT']."</td>";
@@ -301,6 +313,41 @@
     </div>
 </div>
 
+<div class="modal fade" id="modalWodeSupr" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:800px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Data Sub Program</h4>
+            </div>
+            <div class="modal-body">
+                <table id="tableSubProgram" class="table table-bordered table-hover table-striped">
+                    <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th>Sub Program</th>
+                      </tr>
+                    </thead>        
+                    <tbody>
+                      <?php 
+                      $no=1;
+                      foreach ($subProgram as $row) {
+                        ?>
+                          <tr class="search5" style="cursor: pointer;" data-id5 = "<?=$row['SUPR_ID']?>" data-supr = "<?=$row['SUPR_NAME']?>">
+                            <td><?php echo $no?></td>
+                            <td><?php echo $row['SUPR_NAME']?></td>
+                          </tr>
+                        <?php
+                        $no++;
+                      }
+                      ?>
+                    </tbody>
+                </table>  
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- modal WodeStat -->
 <div class="modal fade" id="modalWodeStat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="width:800px">
@@ -390,6 +437,12 @@ function modalCariSwit() {
 		document.getElementById("txtStat").value 		= $(this).attr('data-id4');
 		document.getElementById("myInput4").value 		= $(this).attr('data-stat');
         $('#modalWodeStat').modal('hide');
+    });
+
+		$(document).on('click', '.search5', function (e) {
+		document.getElementById("txtSupr").value 		= $(this).attr('data-id5');
+		document.getElementById("myInput5").value 		= $(this).attr('data-supr');
+        $('#modalWodeSupr').modal('hide');
 	});
 </script>
 <?php

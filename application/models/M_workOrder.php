@@ -12,7 +12,7 @@ class M_workOrder extends CI_Model
 	
 	function viewByWitel()
 	{
-		$sql = "SELECT * FROM work_order INNER JOIN witel ON WODE_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON WODE_SWIT_ID = SWIT_ID INNER JOIN program ON WODE_PROG_ID = PROG_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID where WODE_WTEL_ID =".$_SESSION['WTEL_ID'];
+		$sql = "SELECT * FROM work_order INNER JOIN witel ON WODE_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON WODE_SWIT_ID = SWIT_ID INNER JOIN program ON WODE_PROG_ID = PROG_ID INNER JOIN sub_program on WODE_SUPR_ID = SUPR_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID where WODE_WTEL_ID =".$_SESSION['WTEL_ID'];
 		$query = $this->db->query($sql);
 		$return = $query->result_array();
 		return $return;
@@ -48,7 +48,13 @@ class M_workOrder extends CI_Model
 		$return = $query->result_array();
 		return $return;
 	}
-
+		public function getSubProgram()
+	{
+		$sql = "SELECT * FROM sub_program";
+		$query=$this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
 		public function getStatus()
 	{
 		$sql = "SELECT * FROM status";
@@ -64,7 +70,7 @@ class M_workOrder extends CI_Model
 
 	public function update($data)
 	{
-		$sql="SELECT * FROM work_order INNER JOIN witel ON WODE_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON WODE_SWIT_ID = SWIT_ID INNER JOIN program ON WODE_PROG_ID = PROG_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID AND WODE_ID=".$data; 
+		$sql="SELECT * FROM work_order INNER JOIN witel ON WODE_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON WODE_SWIT_ID = SWIT_ID INNER JOIN program ON WODE_PROG_ID = PROG_ID INNER JOIN sub_program ON WODE_SUPR_ID = SUPR_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID AND WODE_ID=".$data; 
 		$query=$this->db->query($sql);
 		$return = $query->result_array();
 		return $return;

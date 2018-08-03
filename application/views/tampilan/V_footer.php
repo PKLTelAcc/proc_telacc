@@ -70,6 +70,9 @@
 
         //stin
         $("#tableStin").dataTable();
+
+        //subProgram
+        $("#tableSubProgram").dataTable();
         
     });
 </script>

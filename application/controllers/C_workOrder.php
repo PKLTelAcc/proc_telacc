@@ -23,6 +23,7 @@ class C_workOrder extends CI_Controller
 		$subWitel=$this->M_workOrder->getSubWitel();
 		$program=$this->M_workOrder->getProgram();
 		$status=$this->M_workOrder->getStatus();
+		$subProgram=$this->M_workOrder->getSubProgram();
 		$data = array(
 			'title' 	=> 'Input Work Order',
 			'content'	=> 'V_workOrder',
@@ -31,6 +32,7 @@ class C_workOrder extends CI_Controller
 			'subWitel'	=> $subWitel,
 			'program'	=> $program,
 			'status'	=> $status,
+			'subProgram'=> $subProgram,
 			'menu'      =>'Input Work Order'
 		);
 		$this->load->view('tampilan/V_combine',$data);
@@ -42,6 +44,7 @@ class C_workOrder extends CI_Controller
 		$witel 		= $_POST['txtWtel'];
 		$subWitel 	= $_POST['txtSwit'];
 		$program 	= $_POST['txtProg'];
+		$subProgram = $_POST['txtSupr'];
 		$lokasi 	= $_POST['txtLokasi'];
 		$alamat 	= $_POST['txtAlamat'];
 		$koordinat 	= $_POST['txtKoordinat'];
@@ -52,6 +55,7 @@ class C_workOrder extends CI_Controller
 			'WODE_WTEL_ID' 		=> $witel,
 			'WODE_SWIT_ID' 		=> $subWitel,
 			'WODE_PROG_ID' 		=> $program,
+			'WODE_SUPR_ID'		=> $subProgram,
 			'WODE_NAMA_LOKASI' 	=> $lokasi,
 			'WODE_ALAMAT' 		=> $alamat,
 			'WODE_KOORDINAT' 	=> $koordinat,
@@ -68,6 +72,7 @@ class C_workOrder extends CI_Controller
 		$witel=$this->M_workOrder->getWitel();
 		$subWitel=$this->M_workOrder->getSubWitel();
 		$program=$this->M_workOrder->getProgram();
+		$subProgram=$this->M_workOrder->getSubProgram();
 		$status=$this->M_workOrder->getStatus();
 		$data = array(
 			'title' 	=> 'Edit Work Order',
@@ -76,6 +81,7 @@ class C_workOrder extends CI_Controller
 			'witel'		=> $witel,
 			'subWitel'	=> $subWitel,
 			'program'	=> $program,
+			'subProgram'=> $subProgram,
 			'status'	=> $status,
 			'menu'      =>'Input Work Order'
 		);
@@ -88,6 +94,7 @@ class C_workOrder extends CI_Controller
 		$witel 		= $_POST['txtWtel'];
 		$subWitel 	= $_POST['txtSwit'];
 		$program 	= $_POST['txtProg'];
+		$subProgram = $_POST['txtSupr'];
 		$lokasi 	= $_POST['txtLokasi'];
 		$alamat 	= $_POST['txtAlamat'];
 		$koordinat 	= $_POST['txtKoordinat'];
@@ -98,6 +105,7 @@ class C_workOrder extends CI_Controller
 			'WODE_WTEL_ID' 		=> $witel,
 			'WODE_SWIT_ID' 		=> $subWitel,
 			'WODE_PROG_ID' 		=> $program,
+			'WODE_SUPR_ID'		=> $subProgram,
 			'WODE_NAMA_LOKASI' 	=> $lokasi,
 			'WODE_ALAMAT' 		=> $alamat,
 			'WODE_KOORDINAT' 	=> $koordinat,
