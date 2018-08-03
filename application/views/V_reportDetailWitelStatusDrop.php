@@ -3,7 +3,7 @@
 	<div class="row">
 		<?php
       if ($_SESSION['level'] == 'SUPER USER') {
-      	$table=$this->M_dashboard->getProgram();
+      	$table=$this->M_dashboard->getSubProgram();
 	      	foreach ($table as $key) {
         ?>
 	  <div class="col-md-12">
@@ -66,7 +66,7 @@
 </div>
 <!-- /.content -->
 <?php
-	$table=$this->M_dashboard->getProgram();
+	$table=$this->M_dashboard->getSubProgram();
 	foreach ($table as $key) {
 ?>
 

@@ -54,7 +54,7 @@ class M_dashboard extends CI_Model
 		return $return;
 	}
 
-	public function getProgram()
+	public function getSubProgram()
 	{
 		$sql 	= "SELECT * FROM program,sub_program ORDER BY PROG_ID, SUPR_ID ASC";
 		$query 	= $this->db->query($sql);
