@@ -107,7 +107,7 @@
             <label class="control-label">Sub Program</label>
             <div class="input-group">
               <input class="form-control readonly" placeholder="== Pilih Program ==" name="txtSubProgMuncul" id="myInput5" required="true" value="<?php echo($workOrder[0]['SUPR_NAME'])?>">
-                        <input class="form-control" id="txtSupr" type="hidden" name="txtProg" value="<?php echo($workOrder[0]['WODE_SUPR_ID'])?>">
+                        <input class="form-control" id="txtSupr" type="hidden" name="txtSupr" value="<?php echo($workOrder[0]['WODE_SUPR_ID'])?>">
                         <div class="input-group-btn">
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWodeSupr">Search</button>
               </div>

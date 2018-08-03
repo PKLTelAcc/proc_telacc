@@ -90,8 +90,8 @@
 					<div class="form-group">
 						<label class="control-label">Sub Program</label>
 						<div class="input-group">
-						  <input class="form-control readonly" placeholder="== Pilih Program ==" name="txtSubProgMuncul" id="myInput5" required="true">
-	                      <input class="form-control" id="txtSupr" type="hidden" name="txtProg">
+						  <input class="form-control readonly" placeholder="== Pilih Sub Program ==" name="txtSpurMuncul" id="myInput5" required="true">
+	                      <input class="form-control" id="txtSupr" type="hidden" name="txtSupr">
 	                      <div class="input-group-btn">
 							  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalWodeSupr">Search</button>
 							</div>

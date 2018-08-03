@@ -71,9 +71,9 @@
         //stin
         $("#tableStin").dataTable();
 
-        //subProgram
+        //supr
         $("#tableSubProgram").dataTable();
-        
+
     });
 </script>
 
