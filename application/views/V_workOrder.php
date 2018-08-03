@@ -162,6 +162,19 @@
 	                </div>
 	              </div>
 	            </form>
+	            <form action="<?php echo base_url();?>C_workOrder/upload/" enctype="multipart/form-data" method="post">
+	            <div class="form-group">
+	            	<div class="row">
+	            		<div class="col-md-11">
+	            			<input type="file" name="file" class="btn btn-danger">
+	            		</div>
+	            		<div class="col-md-1">
+	            			<input type="submit" value="Import File" class="btn btn-danger pull-right">
+	            		</div>
+	            	</div>
+	            </div>
+	            </form>
+	            <?php echo $this->session->flashdata('msg'); ?> 
 	          </div>
 	          <!-- /.col -->
 	        </div>
