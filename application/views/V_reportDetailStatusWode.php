@@ -23,6 +23,7 @@
 						<th>Witel</th>
 						<th>Sub Witel</th>
 						<th>Program</th>
+						<th>Sub Program</th>
 						<th>Nama Lokasi</th>
 						<th>Alamat Lokasi</th>
 						<th>Koordinat Lokasi</th>
@@ -39,6 +40,7 @@
 		 					echo "<td>".$row['WTEL_NAME']."</td>";
 		 					echo "<td>".$row['SWIT_NAME']."</td>";
 		 					echo "<td>".$row['PROG_NAME']."</td>";
+		 					echo "<td>".$row['SUPR_NAME']."</td>";
 		 					echo "<td>".$row['WODE_NAMA_LOKASI']."</td>";
 		 					echo "<td>".$row['WODE_ALAMAT']."</td>";
 		 					echo "<td>".$row['WODE_KOORDINAT']."</td>";
