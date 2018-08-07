@@ -111,5 +111,23 @@
 		);
 		$this->load->view('V_filterSurvey',$data);
 	}
+	public function bast()
+	{
+		$awal 			= $this->input->post('awal');
+		$akhir 			= $this->input->post('akhir');
+		$bulan 			= $this->input->post('bulan');
+		$tahun 			= $this->input->post('tahun');
+		$bast	= $this->M_filter->getBastFilter($awal, $akhir, $bulan, $tahun);
+		$data = array(
+			'awal' 		=> $awal ,
+			'akhir' 	=> $akhir,
+			'bulan' 	=> $bulan,
+			'tahun' 	=> $tahun,
+			'bast' 	=> $bast,
+			'menu'      => 'Bast',
+			'controller' => 'C_bast'
+		);
+		$this->load->view('V_filterBast',$data);
+	}
 }
  ?>

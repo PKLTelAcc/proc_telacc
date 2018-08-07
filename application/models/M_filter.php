@@ -32,5 +32,11 @@ class M_filter extends CI_Model
 		$return = $query->result_array();
 		return $return;
 	}
+	public function getBastFilter($awal, $akhir, $bulan, $tahun)
+	{
+		$sql = "SELECT * from bast inner join work_order on BAST_WODE_ID = WODE_ID inner join instalasi on BAST_INST_ID = INST_ID inner join sp_telkom on BAST_SPTL_ID = SPTL_ID WHERE (DAY(BAST_TANGGAL) BETWEEN ".$awal." AND ".$akhir.") AND  MONTH(BAST_TANGGAL) = ".$bulan." AND YEAR(BAST_TANGGAL) = ".$tahun;
+		$query = $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
 }
  ?>
