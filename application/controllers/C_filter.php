@@ -13,6 +13,7 @@
 
 		public function index()
 		{
+			
 
 		}
 
@@ -128,6 +129,24 @@
 			'controller' => 'C_bast'
 		);
 		$this->load->view('V_filterBast',$data);
+	}
+	public function witelWode($id)
+	{
+		$awal 			= $this->input->post('awal');
+		$akhir 			= $this->input->post('akhir');
+		$bulan 			= $this->input->post('bulan');
+		$tahun 			= $this->input->post('tahun');
+		$dataReportByWitelWode	= $this->M_filter->getDataReportByWitelWodeId($id, $awal, $akhir, $bulan, $tahun);
+		$data = array(
+			'awal' 		=> $awal ,
+			'akhir' 	=> $akhir,
+			'bulan' 	=> $bulan,
+			'tahun' 	=> $tahun,
+			'dataReportByWitelWode' 	=> $dataReportByWitelWode,
+			'menu'      => '',
+			'controller' => 'C_dashboard'
+		);
+		$this->load->view('V_filterReportDetailWitelWode',$data);
 	}
 }
  ?>
