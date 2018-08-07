@@ -75,5 +75,23 @@
 		);
 		$this->load->view('V_filterWorkOrder',$data);
 	}
+	public function instalasi()
+	{
+		$awal 			= $this->input->post('awal');
+		$akhir 			= $this->input->post('akhir');
+		$bulan 			= $this->input->post('bulan');
+		$tahun 			= $this->input->post('tahun');
+		$instalasi	= $this->M_filter->getInstalasiFilter($awal, $akhir, $bulan, $tahun);
+		$data = array(
+			'awal' 		=> $awal ,
+			'akhir' 	=> $akhir,
+			'bulan' 	=> $bulan,
+			'tahun' 	=> $tahun,
+			'instalasi' 	=> $instalasi,
+			'menu'      => 'Instalasi',
+			'controller' => 'C_instalasi'
+		);
+		$this->load->view('V_filterInstalasi',$data);
+	}
 	}
  ?>
