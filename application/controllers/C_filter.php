@@ -93,5 +93,23 @@
 		);
 		$this->load->view('V_filterInstalasi',$data);
 	}
+	public function survey()
+	{
+		$awal 			= $this->input->post('awal');
+		$akhir 			= $this->input->post('akhir');
+		$bulan 			= $this->input->post('bulan');
+		$tahun 			= $this->input->post('tahun');
+		$survey	= $this->M_filter->getSurveyFilter($awal, $akhir, $bulan, $tahun);
+		$data = array(
+			'awal' 		=> $awal ,
+			'akhir' 	=> $akhir,
+			'bulan' 	=> $bulan,
+			'tahun' 	=> $tahun,
+			'survey' 	=> $survey,
+			'menu'      => 'Survey',
+			'controller' => 'C_survey'
+		);
+		$this->load->view('V_filterSurvey',$data);
 	}
+}
  ?>
