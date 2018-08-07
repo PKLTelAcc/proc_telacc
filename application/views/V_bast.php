@@ -192,7 +192,7 @@
 		        <!-- /.box -->
 		      </div>
 		    <div class="col-md-12">
-		    <div class="tableBast">
+		   	<div id="tableBast">
 			<table class="table table-bordered table-hover table-striped" id="lookup">
 				<thead>
 					<tr>
@@ -230,9 +230,9 @@
 					 ?>
 				</tbody>
 			</table>
+			</div>
+			</div>
 		  </div>
-		  </div>
-	      </div>
 	    </div>
 	      <!-- /.box -->
 	  </div> <!-- col-input -->
@@ -338,6 +338,7 @@
         $('#modalPo').modal('hide');        
     });
 </script>
+
 <script type="text/javascript">
   function filterTanggal() {
       var hariPertama = document.getElementById('cmbHariPertama').value;
@@ -352,7 +353,7 @@
             bulan: bulan,
             tahun: tahun,
           },
-          url: "<?php echo base_url()?>C_filter/Bast/",
+          url: "<?php echo base_url()?>C_filter/bast/",
           success: function(html) {
               var target      = '#tableBast';
               $(target).html(html);
