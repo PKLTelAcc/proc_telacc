@@ -130,23 +130,46 @@
 		);
 		$this->load->view('V_filterBast',$data);
 	}
-	public function witelWode($id)
+
+	public function dashboard()
 	{
 		$awal 			= $this->input->post('awal');
 		$akhir 			= $this->input->post('akhir');
 		$bulan 			= $this->input->post('bulan');
 		$tahun 			= $this->input->post('tahun');
-		$dataReportByWitelWode	= $this->M_filter->getDataReportByWitelWodeId($id, $awal, $akhir, $bulan, $tahun);
 		$data = array(
 			'awal' 		=> $awal ,
 			'akhir' 	=> $akhir,
 			'bulan' 	=> $bulan,
 			'tahun' 	=> $tahun,
-			'dataReportByWitelWode' 	=> $dataReportByWitelWode,
-			'menu'      => '',
 			'controller' => 'C_dashboard'
 		);
-		$this->load->view('V_filterReportDetailWitelWode',$data);
+		$this->load->view('V_filterDashboard',$data);
+	}
+
+	public function detailWitel($id, $awal, $akhir, $bulan, $tahun)
+	{
+		$dataReportByWitelWode		= $this->M_filter->getReportByWitelWodeId($id, $awal, $akhir, $bulan, $tahun);
+		$dataReportByWitelSurv		= $this->M_filter->getReportByWitelSurvId($id, $awal, $akhir, $bulan, $tahun);
+		$dataReportByWitelInst		= $this->M_filter->getReportByWitelInstId($id, $awal, $akhir, $bulan, $tahun);
+		$awal 			= $this->input->post('awal');
+		$akhir 			= $this->input->post('akhir');
+		$bulan 			= $this->input->post('bulan');
+		$tahun 			= $this->input->post('tahun');
+		date_default_timezone_set("Asia/Bangkok");
+		$data = array(
+			'dataReportByWitelWode' 	=> $dataReportByWitelWode,
+			'dataReportByWitelSurv' 	=> $dataReportByWitelSurv,
+			'dataReportByWitelInst' 	=> $dataReportByWitelInst,
+			'content' 				=> 'V_filterReportDetailWitel',
+			'title'					=> 'Detail Witel '.$dataReportByWitelWode[0]['WTEL_NAME'].' | '.$dataReportByWitelWode[0]['WODE_TANGGAL'],
+			'awal' 		=> $awal ,
+			'akhir' 	=> $akhir,
+			'bulan' 	=> $bulan,
+			'tahun' 	=> $tahun,
+			'controller' => 'C_dashboard'
+		);
+		$this->load->view('tampilan/v_combine',$data);
 	}
 }
  ?>

@@ -259,7 +259,6 @@
 <!-- /.content -->
 
 
-
 <script type="text/javascript">
     $(function () {
         $('#LAPORAN_Wode').dataTable( {
@@ -299,7 +298,6 @@
         } );
   });
 </script>
-
 
 <?php
       }
