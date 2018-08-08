@@ -258,7 +258,7 @@
 
 	public function detailWode($wtelid,$statid, $awal, $akhir, $bulan, $tahun)
 	{
-		$dataReportByWitelStatusWode		= $this->M_filter->getReportByWitelStatusWode($wtelid,$statid);
+		$dataReportByWitelStatusWode		= $this->M_filter->getReportByWitelStatusWode($wtelid,$statid, $awal, $akhir, $bulan, $tahun);
 		$awal 			= $this->input->post('awal');
 		$akhir 			= $this->input->post('akhir');
 		$bulan 			= $this->input->post('bulan');
@@ -279,7 +279,7 @@
 
 	public function detailDrop($wtelid,$statid, $awal, $akhir, $bulan, $tahun)
 	{
-		$dataReportByWitelStatusWode		= $this->M_filter->getReportByWitelStatusWode($wtelid,$statid);
+		$dataReportByWitelStatusWode		= $this->M_filter->getReportByWitelStatusWode($wtelid,$statid, $awal, $akhir, $bulan, $tahun);
 		$awal 			= $this->input->post('awal');
 		$akhir 			= $this->input->post('akhir');
 		$bulan 			= $this->input->post('bulan');
@@ -300,7 +300,7 @@
 
 	public function detailSurv($wtelid,$statid, $awal, $akhir, $bulan, $tahun)
 	{
-		$dataReportByWitelStatusSurv		= $this->M_filter->getReportByWitelStatusSurv($wtelid,$statid);
+		$dataReportByWitelStatusSurv		= $this->M_filter->getReportByWitelStatusSurv($wtelid,$statid, $awal, $akhir, $bulan, $tahun);
 		$awal 			= $this->input->post('awal');
 		$akhir 			= $this->input->post('akhir');
 		$bulan 			= $this->input->post('bulan');
@@ -321,7 +321,7 @@
 
 	public function detailInst($wtelid,$statid, $awal, $akhir, $bulan, $tahun)
 	{
-		$dataReportByWitelStatusInst		= $this->M_filter->getReportByWitelStatusInst($wtelid,$statid);
+		$dataReportByWitelStatusInst		= $this->M_filter->getReportByWitelStatusInst($wtelid,$statid, $awal, $akhir, $bulan, $tahun);
 		$awal 			= $this->input->post('awal');
 		$akhir 			= $this->input->post('akhir');
 		$bulan 			= $this->input->post('bulan');
