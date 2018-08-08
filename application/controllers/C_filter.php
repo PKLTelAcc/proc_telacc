@@ -277,7 +277,7 @@
 		$this->load->view('tampilan/v_combine',$data);
 	}
 
-	public function detailDrop($wtelid,$statid, $awal, $akhir, $bulan, $tahun, $awal, $akhir, $bulan, $tahun)
+	public function detailDrop($wtelid,$statid, $awal, $akhir, $bulan, $tahun)
 	{
 		$dataReportByWitelStatusWode		= $this->M_filter->getReportByWitelStatusWode($wtelid,$statid);
 		$awal 			= $this->input->post('awal');
