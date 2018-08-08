@@ -77,7 +77,6 @@ class M_filter extends CI_Model
 		return $return;
 	}
 
-	//Get Report By Detail Witel
 	public function getReportByWitelWodeId($id,$awal, $akhir, $bulan, $tahun)
 	{
 		$sql 	= "SELECT * FROM work_order INNER JOIN witel ON WODE_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON WODE_SWIT_ID = SWIT_ID INNER JOIN program ON WODE_PROG_ID = PROG_ID INNER JOIN sub_program ON WODE_SUPR_ID = SUPR_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID AND WTEL_ID =".$id." AND (DAY(WODE_TANGGAL) BETWEEN ".$awal." AND ".$akhir.") AND  MONTH(WODE_TANGGAL) = ".$bulan." AND YEAR(WODE_TANGGAL) = ".$tahun;
@@ -97,6 +96,54 @@ class M_filter extends CI_Model
 	public function getReportByWitelInstId($id,$awal, $akhir, $bulan, $tahun)
 	{
 		$sql 	= "SELECT * FROM instalasi INNER JOIN work_order ON INST_WODE_ID = WODE_ID INNER JOIN mitra ON INST_MTRA_ID = MTRA_ID /*INNER JOIN pegawai on INST_PEGA_ID = PEGA_ID*/ INNER JOIN witel ON INST_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON INST_SWIT_ID = SWIT_ID INNER JOIN program ON INST_PROG_ID = PROG_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID INNER JOIN status_instalasi ON INST_STIN_ID = STIN_ID AND WTEL_ID =".$id." AND (DAY(INST_TANGGAL) BETWEEN ".$awal." AND ".$akhir.") AND  MONTH(INST_TANGGAL) = ".$bulan." AND YEAR(INST_TANGGAL) = ".$tahun;
+		$query = $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
+
+	public function getReportByStatusWodeId($id,$awal, $akhir, $bulan, $tahun)
+	{
+		$sql 	= "SELECT * FROM work_order INNER JOIN witel ON WODE_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON WODE_SWIT_ID = SWIT_ID INNER JOIN program ON WODE_PROG_ID = PROG_ID INNER JOIN sub_program ON WODE_SUPR_ID = SUPR_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID AND STAT_ID =".$id." AND (DAY(WODE_TANGGAL) BETWEEN ".$awal." AND ".$akhir.") AND  MONTH(WODE_TANGGAL) = ".$bulan." AND YEAR(WODE_TANGGAL) = ".$tahun;
+		$query = $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
+
+	public function getReportByStatusSurvId($id,$awal, $akhir, $bulan, $tahun)
+	{
+		$sql 	= "SELECT * FROM survey INNER JOIN work_order ON SURV_WODE_ID = WODE_ID /*INNER JOIN pegawai ON SURV_PEGA_ID = PEGA_ID*/ INNER JOIN witel ON SURV_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON SURV_SWIT_ID = SWIT_ID INNER JOIN program ON SURV_PROG_ID = PROG_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID AND STAT_ID =".$id." AND (DAY(SURV_TANGGAL) BETWEEN ".$awal." AND ".$akhir.") AND  MONTH(SURV_TANGGAL) = ".$bulan." AND YEAR(SURV_TANGGAL) = ".$tahun;
+		$query = $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
+
+	public function getReportByStatusInstId($id,$awal, $akhir, $bulan, $tahun)
+	{
+		$sql 	= "SELECT * FROM instalasi INNER JOIN work_order ON INST_WODE_ID = WODE_ID INNER JOIN mitra ON INST_MTRA_ID = MTRA_ID /*INNER JOIN pegawai on INST_PEGA_ID = PEGA_ID*/ INNER JOIN witel ON INST_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON INST_SWIT_ID = SWIT_ID INNER JOIN program ON INST_PROG_ID = PROG_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID INNER JOIN status_instalasi ON INST_STIN_ID = STIN_ID AND STAT_ID =".$id." AND (DAY(INST_TANGGAL) BETWEEN ".$awal." AND ".$akhir.") AND  MONTH(INST_TANGGAL) = ".$bulan." AND YEAR(INST_TANGGAL) = ".$tahun;
+		$query = $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
+
+	public function getReportByWitelStatusWode($wtelid,$statid,$awal, $akhir, $bulan, $tahun)
+	{
+		$sql 	= "SELECT * FROM work_order INNER JOIN witel ON WODE_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON WODE_SWIT_ID = SWIT_ID INNER JOIN program ON WODE_PROG_ID = PROG_ID INNER JOIN sub_program ON WODE_SUPR_ID = SUPR_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID AND WTEL_ID =".$wtelid." AND STAT_ID=".$statid." AND (DAY(WODE_TANGGAL) BETWEEN ".$awal." AND ".$akhir.") AND  MONTH(WODE_TANGGAL) = ".$bulan." AND YEAR(WODE_TANGGAL) = ".$tahun;
+		$query = $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
+
+	public function getReportByWitelStatusSurv($wtelid,$statid,$awal, $akhir, $bulan, $tahun)
+	{
+		$sql 	= "SELECT * FROM survey INNER JOIN work_order ON SURV_WODE_ID = WODE_ID /*INNER JOIN pegawai ON SURV_PEGA_ID = PEGA_ID*/ INNER JOIN witel ON SURV_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON SURV_SWIT_ID = SWIT_ID INNER JOIN program ON SURV_PROG_ID = PROG_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID AND WTEL_ID =".$wtelid." AND STAT_ID=".$statid." AND (DAY(SURV_TANGGAL) BETWEEN ".$awal." AND ".$akhir.") AND  MONTH(SURV_TANGGAL) = ".$bulan." AND YEAR(SURV_TANGGAL) = ".$tahun;
+		$query = $this->db->query($sql);
+		$return = $query->result_array();
+		return $return;
+	}
+
+	public function getReportByWitelStatusInst($wtelid,$statid,$awal, $akhir, $bulan, $tahun)
+	{
+		$sql 	= "SELECT * FROM instalasi INNER JOIN work_order ON INST_WODE_ID = WODE_ID INNER JOIN mitra ON INST_MTRA_ID = MTRA_ID /*INNER JOIN pegawai on INST_PEGA_ID = PEGA_ID*/ INNER JOIN witel ON INST_WTEL_ID = WTEL_ID INNER JOIN sub_witel ON INST_SWIT_ID = SWIT_ID INNER JOIN program ON INST_PROG_ID = PROG_ID INNER JOIN status ON WODE_STAT_ID = STAT_ID INNER JOIN status_instalasi ON INST_STIN_ID = STIN_ID AND WTEL_ID =".$wtelid." AND STAT_ID=".$statid." AND (DAY(INST_TANGGAL) BETWEEN ".$awal." AND ".$akhir.") AND  MONTH(INST_TANGGAL) = ".$bulan." AND YEAR(INST_TANGGAL) = ".$tahun;
 		$query = $this->db->query($sql);
 		$return = $query->result_array();
 		return $return;
