@@ -30,6 +30,7 @@
                       <div>
                       <select class="form-control" name="cmbHariPertama" id="cmbHariPertama">
                         <option value="0">=== Pilih Tanggal ===</option>
+                        <option value="0">0</option>
                         <?php
                           for ($i=1; $i < 32; $i++) { 
                             echo "<option value = '$i'>$i</option>";
@@ -43,6 +44,7 @@
                       <div>
                       <select class="form-control" name="cmbHariKedua" id="cmbHariKedua">
                         <option value="31">=== Pilih Tanggal ===</option>
+                        <option value="0">0</option>
                         <?php
                           for ($i=1; $i < 32; $i++) { 
                             echo "<option value = '$i'>$i</option>";
@@ -57,6 +59,7 @@
                     <div>
                       <select name="cmbBulan" id="cmbBulan" class="form-control">
                         <option value="<?php echo date('m')?>">=== Pilih Bulan ====</option>
+                        <option value="0">0</option>
                         <option value="1">Januari</option>
                         <option value="2">Februari</option>
                         <option value="3">Maret</option>
@@ -77,6 +80,7 @@
                     <div>
                     <select class="form-control" name="cmbTahun" id="cmbTahun">
                       <option value="<?php echo date('Y'); ?>">=== Pilih Tahun ===</option>
+                      <option value="0">0</option>
                       <?php
                         $tahun_sekarang = date('Y');
                         $tahun_dulu     = date('Y')-25;
