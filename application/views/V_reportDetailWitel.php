@@ -258,6 +258,65 @@
 </div>
 <!-- /.content -->
 
+<!-- Report Bast -->
+<!-- Main content -->
+	  <div class="col-md-12">
+	    <div class="box box-danger">
+	      <div class="box-header with-border">
+	        <h3 class="box-title">Report Bast</h3>
+
+	        <div class="box-tools pull-right">
+	          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+	        </div>
+	      </div>
+	      <!-- /.box-header -->
+	      <div class="box-body">
+			<table class="table table-bordered table-hover table-striped" id="LAPORAN_Bast">
+				<thead>
+					<tr>
+						<th>No.</th>
+						<th>ID TA</th>
+						<th>No BAST</th>
+						<th>No Po</th>
+						<th>Nilai Material</th>
+						<th>Nilai Jasa</th>
+						<th>Nilai Total</th>
+						<th>Jumlah ODP</th>
+						<th>Tanggal Bast</th>
+						<th style="text-align: center">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php 
+						$no=1;
+						foreach ($dataReportByWitelBast as $row) {
+						if($row['STAT_NAME']=='BAST'){
+							echo "<tr>";
+							echo "<td>".$no."</td>";
+							echo "<td>".$row['WODE_ID_TA']."</td>";;
+							echo "<td>".$row['BAST_NO']."</td>";
+							echo "<td>".$row['SPTL_NO_PO']."</td>";
+							echo "<td>".$row['INST_MATERIAL']."</td>";
+							echo "<td>".$row['INST_JASA']."</td>";
+							echo "<td>".$row['INST_TOTAL']."</td>";
+							echo "<td>".$row['INST_ODP']."</td>";
+							echo "<td>".$row['BAST_TANGGAL']."</td>";
+							echo "<td><a href='".base_url()."C_bast/formUpdate/".$row['BAST_ID']."'>Edit</a> | <a href='".base_url()."C_bast/delete/".$row['BAST_ID']."' onclick='return confirm(\"Apa anda yakin akan menghapus data ini ?\")'>Delete</a></td>";
+							echo "</tr>";
+						}
+							$no++;
+						}
+					 ?>
+				</tbody>
+			</table>
+	      </div>
+	    </div>
+	      <!-- /.box -->
+	  </div> <!-- col-input -->
+	</div>
+</div>
+<!-- /.content -->
+
 
 
 <script type="text/javascript">
@@ -293,6 +352,16 @@
 <script type="text/javascript">
     $(function () {
         $('#LAPORAN_Inst').dataTable( {
+          "bSort": false,
+          dom:'B <"content-header" <"col-sm-2"l> f>tipH',
+          buttons: [ 'excel' ]
+        } );
+  });
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        $('#LAPORAN_Bast').dataTable( {
           "bSort": false,
           dom:'B <"content-header" <"col-sm-2"l> f>tipH',
           buttons: [ 'excel' ]

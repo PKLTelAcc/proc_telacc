@@ -142,6 +142,7 @@
 			'akhir' 	=> $akhir,
 			'bulan' 	=> $bulan,
 			'tahun' 	=> $tahun,
+			'menu'      => 'Report',
 			'controller' => 'C_dashboard'
 		);
 		$this->load->view('V_filterDashboard',$data);
@@ -152,6 +153,7 @@
 		$dataReportByWitelWode		= $this->M_filter->getReportByWitelWodeId($id, $awal, $akhir, $bulan, $tahun);
 		$dataReportByWitelSurv		= $this->M_filter->getReportByWitelSurvId($id, $awal, $akhir, $bulan, $tahun);
 		$dataReportByWitelInst		= $this->M_filter->getReportByWitelInstId($id, $awal, $akhir, $bulan, $tahun);
+		$dataReportByWitelBast		= $this->M_filter->getReportByWitelBastId($id, $awal, $akhir, $bulan, $tahun);
 		$awal 			= $this->input->post('awal');
 		$akhir 			= $this->input->post('akhir');
 		$bulan 			= $this->input->post('bulan');
@@ -161,12 +163,14 @@
 			'dataReportByWitelWode' 	=> $dataReportByWitelWode,
 			'dataReportByWitelSurv' 	=> $dataReportByWitelSurv,
 			'dataReportByWitelInst' 	=> $dataReportByWitelInst,
+			'dataReportByWitelBast' 	=> $dataReportByWitelBast,	
 			'content' 				=> 'V_reportDetailWitel',
 			'title'					=> 'Detail Witel '.$dataReportByWitelWode[0]['WTEL_NAME'].' | '.$dataReportByWitelWode[0]['WODE_TANGGAL'],
 			'awal' 		=> $awal ,
 			'akhir' 	=> $akhir,
 			'bulan' 	=> $bulan,
 			'tahun' 	=> $tahun,
+			'menu'      => 'Report',
 			'controller' => 'C_dashboard'
 		);
 		$this->load->view('tampilan/v_combine',$data);
@@ -188,6 +192,7 @@
 			'akhir' 	=> $akhir,
 			'bulan' 	=> $bulan,
 			'tahun' 	=> $tahun,
+			'menu'      => 'Report',
 			'controller' => 'C_dashboard'
 		);
 		$this->load->view('tampilan/v_combine',$data);
@@ -209,6 +214,7 @@
 			'akhir' 	=> $akhir,
 			'bulan' 	=> $bulan,
 			'tahun' 	=> $tahun,
+			'menu'      => 'Report',
 			'controller' => 'C_dashboard'
 		);
 		$this->load->view('tampilan/v_combine',$data);
@@ -230,6 +236,7 @@
 			'akhir' 	=> $akhir,
 			'bulan' 	=> $bulan,
 			'tahun' 	=> $tahun,
+			'menu'      => 'Report',
 			'controller' => 'C_dashboard'
 		);
 		$this->load->view('tampilan/v_combine',$data);
@@ -251,6 +258,29 @@
 			'akhir' 	=> $akhir,
 			'bulan' 	=> $bulan,
 			'tahun' 	=> $tahun,
+			'menu'      => 'Report',
+			'controller' => 'C_dashboard'
+		);
+		$this->load->view('tampilan/v_combine',$data);
+	}
+
+	public function detailStatusBast($id, $awal, $akhir, $bulan, $tahun)
+	{
+		$dataReportByStatusBast		= $this->M_filter->getReportByStatusBastId($id, $awal, $akhir, $bulan, $tahun);
+		$awal 			= $this->input->post('awal');
+		$akhir 			= $this->input->post('akhir');
+		$bulan 			= $this->input->post('bulan');
+		$tahun 			= $this->input->post('tahun');
+		date_default_timezone_set("Asia/Bangkok");
+		$data = array(
+			'dataReportByStatusBast' 	=> $dataReportByStatusBast,
+			'content' 				=> 'V_reportDetailStatusBast',
+			'title'					=> 'Detail Status '.$dataReportByStatusBast[0]['STAT_NAME'].' | '.$dataReportByStatusBast[0]['BAST_TANGGAL'],
+			'awal' 		=> $awal ,
+			'akhir' 	=> $akhir,
+			'bulan' 	=> $bulan,
+			'tahun' 	=> $tahun,
+			'menu'      => 'Report',
 			'controller' => 'C_dashboard'
 		);
 		$this->load->view('tampilan/v_combine',$data);
@@ -272,6 +302,7 @@
 			'akhir' 	=> $akhir,
 			'bulan' 	=> $bulan,
 			'tahun' 	=> $tahun,
+			'menu'      => 'Report',
 			'controller' => 'C_dashboard'
 		);
 		$this->load->view('tampilan/v_combine',$data);
@@ -293,6 +324,7 @@
 			'akhir' 	=> $akhir,
 			'bulan' 	=> $bulan,
 			'tahun' 	=> $tahun,
+			'menu'      => 'Report',
 			'controller' => 'C_dashboard'
 		);
 		$this->load->view('tampilan/v_combine',$data);
@@ -314,6 +346,7 @@
 			'akhir' 	=> $akhir,
 			'bulan' 	=> $bulan,
 			'tahun' 	=> $tahun,
+			'menu'      => 'Report',
 			'controller' => 'C_dashboard'
 		);
 		$this->load->view('tampilan/v_combine',$data);
@@ -335,6 +368,29 @@
 			'akhir' 	=> $akhir,
 			'bulan' 	=> $bulan,
 			'tahun' 	=> $tahun,
+			'menu'      => 'Report',
+			'controller' => 'C_dashboard'
+		);
+		$this->load->view('tampilan/v_combine',$data);
+	}
+
+	public function detailBast($wtelid,$statid, $awal, $akhir, $bulan, $tahun)
+	{
+		$dataReportByWitelStatusBast		= $this->M_filter->getReportByWitelStatusBast($wtelid,$statid, $awal, $akhir, $bulan, $tahun);
+		$awal 			= $this->input->post('awal');
+		$akhir 			= $this->input->post('akhir');
+		$bulan 			= $this->input->post('bulan');
+		$tahun 			= $this->input->post('tahun');
+		date_default_timezone_set("Asia/Bangkok");
+		$data = array(
+			'dataReportByWitelStatusBast' 		=> $dataReportByWitelStatusBast,
+			'content' 				=> 'V_reportDetailWitelStatusBast',
+			'title'					=> 'Detail Witel '.$dataReportByWitelStatusBast[0]['WTEL_NAME'].' Status '.$dataReportByWitelStatusBast[0]['STAT_NAME'].' | '.$dataReportByWitelStatusBast[0]['BAST_TANGGAL'],
+			'awal' 		=> $awal ,
+			'akhir' 	=> $akhir,
+			'bulan' 	=> $bulan,
+			'tahun' 	=> $tahun,
+			'menu'      => 'Report',
 			'controller' => 'C_dashboard'
 		);
 		$this->load->view('tampilan/v_combine',$data);

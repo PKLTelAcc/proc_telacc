@@ -192,7 +192,7 @@ $user=$this->M_dashboard->viewData($_SESSION['USER_ID'], $_SESSION['WTEL_ID']);
                 </li>
                 <!-- Report -->
                 <li class="<?php if(isset($menu)) if($menu == 'Report') echo 'active'?>">
-                  <a href="<?php echo base_url()?>c_report">
+                  <a href="<?php echo base_url()?>C_dashboard">
                     <i class="fa fa-bar-chart-o"></i>
                     Report
                   </a>
