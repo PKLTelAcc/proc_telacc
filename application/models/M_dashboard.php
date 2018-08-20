@@ -48,7 +48,7 @@ class M_dashboard extends CI_Model
 
 	public function getStatusInstalasi()
 	{
-		$sql 	= "SELECT * FROM status_instalasi INNER JOIN instalasi ON INST_STIN_ID = STIN_ID ORDER BY STIN_ID ASC";
+		$sql 	= "SELECT * FROM status_instalasi INNER JOIN instalasi ON INST_STIN_ID = STIN_ID GROUP BY STIN_ID ASC";
 		$query 	= $this->db->query($sql);
 		$return = $query->result_array();
 		return $return;

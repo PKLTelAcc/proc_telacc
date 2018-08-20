@@ -117,7 +117,7 @@
                 <?php }else if($row['STAT_NAME']=='SURVEY'){ ?>
                 <a href="<?php echo base_url().'C_dashboard/detailStatusSurv/'.$row['STAT_ID'];?>" class="text-info">
                 <?php }else if($row['STAT_NAME']=='INSTALASI'){ ?>
-                <a href="<?php echo base_url().'C_dashboard/detailStatusInst/'.$row['STAT_ID'];?>" class="text-info">
+                <a href="<?php echo base_url().'C_dashboardInstalasi/dashboardInstalasi';?>" class="text-info">
                 <?php }else if($row['STAT_NAME']=='BAST'){ ?>
                 <a href="<?php echo base_url().'C_dashboard/detailStatusBast/'.$row['STAT_ID'];?>" class="text-info">
                 <?php } ?>
@@ -153,7 +153,7 @@
                       <?php }else if($key['STAT_NAME']=='SURVEY' && $key['WODE_STAT_ID']!=null){ ?>
                       <a href="<?php echo base_url().'C_dashboard/detailSurv/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-info">
                       <?php }else if($key['STAT_NAME']=='INSTALASI' && $key['WODE_STAT_ID']!=null){ ?>
-                      <a href="<?php echo base_url().'C_dashboard/detailInst/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-info">
+                      <a href="<?php echo base_url().'C_dashboardInstalasi/dashboardInstalasiField/'.$key['WTEL_ID'];?>" class="text-info">
                       <?php }else if($key['STAT_NAME']=='BAST' && $key['WODE_STAT_ID']!=null){ ?>
                       <a href="<?php echo base_url().'C_dashboard/detailBast/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-info">
                       <?php } ?>
