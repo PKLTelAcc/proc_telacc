@@ -45,7 +45,7 @@ class M_dashboardInstalasi extends CI_Model
 
 	public function getWitelField($wtelid)
 	{
-		$sql 	= "SELECT * FROM witel WHERE WTEL_ID = $wtelid";
+		$sql 	= "SELECT * FROM witel INNER JOIN instalasi ON WTEL_ID = INST_WTEL_ID INNER JOIN status_instalasi ON INST_STIN_ID = STIN_ID WHERE WTEL_ID = $wtelid GROUP BY WTEL_ID";
 		$query 	= $this->db->query($sql);
 		$return = $query->result_array();
 		return $return;

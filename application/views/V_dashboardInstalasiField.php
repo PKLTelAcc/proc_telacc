@@ -39,7 +39,11 @@
                   foreach ($getCount as $key) {
               ?>
                     <td>
+                        <?php if ($key['INST_STIN_ID'] != null) { ?>
+                        <a href="<?php echo base_url().'C_dashboardInstalasi/detailInst/'.$row['WTEL_ID'].'/'.$row['STIN_ID'];?>" class="text-info">
+                        <?php } ?>
                         <?=$key['jumlah']?>
+                        </a>
                     </td>
               <?php
                   $total = $total + $key['jumlah'];
