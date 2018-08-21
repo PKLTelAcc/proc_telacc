@@ -61,18 +61,6 @@ class C_dashboard extends CI_Controller
 		$this->load->view('tampilan/v_combine',$data);
 	}
 
-	public function detailStatusDrop($id)
-	{
-		$dataReportByStatusWode		= $this->M_dashboard->getReportByStatusWodeId($id);
-		date_default_timezone_set("Asia/Bangkok");
-		$data = array(
-			'dataReportByStatusWode' 	=> $dataReportByStatusWode,
-			'content' 				=> 'V_reportDetailStatusDrop',
-			'title'					=> 'Detail Status '.$dataReportByStatusWode[0]['STAT_NAME'].' | '.date("l jS \of F Y h:i A"),
-			'menu'      => 'Report'
-		);
-		$this->load->view('tampilan/v_combine',$data);
-	}
 
 	public function detailStatusSurv($id)
 	{
@@ -87,18 +75,7 @@ class C_dashboard extends CI_Controller
 		$this->load->view('tampilan/v_combine',$data);
 	}
 
-	public function detailStatusInst($id)
-	{
-		$dataReportByStatusInst		= $this->M_dashboard->getReportByStatusInstId($id);
-		date_default_timezone_set("Asia/Bangkok");
-		$data = array(
-			'dataReportByStatusInst' 	=> $dataReportByStatusInst,
-			'content' 				=> 'V_reportDetailStatusInst',
-			'title'					=> 'Detail Status '.$dataReportByStatusInst[0]['STAT_NAME'].' | '.date("l jS \of F Y h:i A"),
-			'menu'      => 'Report'
-		);
-		$this->load->view('tampilan/v_combine',$data);
-	}
+	
 
 	public function detailStatusBast($id)
 	{
@@ -126,18 +103,6 @@ class C_dashboard extends CI_Controller
 		$this->load->view('tampilan/v_combine',$data);
 	}
 
-	public function detailDrop($wtelid,$statid)
-	{
-		$dataReportByWitelStatusWode		= $this->M_dashboard->getReportByWitelStatusWode($wtelid,$statid);
-		date_default_timezone_set("Asia/Bangkok");
-		$data = array(
-			'dataReportByWitelStatusWode' 		=> $dataReportByWitelStatusWode,
-			'content' 				=> 'V_reportDetailWitelStatusDrop',
-			'title'					=> 'Detail Witel '.$dataReportByWitelStatusWode[0]['WTEL_NAME'].' Status '.$dataReportByWitelStatusWode[0]['STAT_NAME'].' | '.date("l jS \of F Y h:i A"),
-			'menu'      => 'Report'
-		);
-		$this->load->view('tampilan/v_combine',$data);
-	}
 
 	public function detailSurv($wtelid,$statid)
 	{
@@ -152,18 +117,7 @@ class C_dashboard extends CI_Controller
 		$this->load->view('tampilan/v_combine',$data);
 	}
 
-	public function detailInst($wtelid,$statid)
-	{
-		$dataReportByWitelStatusInst		= $this->M_dashboard->getReportByWitelStatusInst($wtelid,$statid);
-		date_default_timezone_set("Asia/Bangkok");
-		$data = array(
-			'dataReportByWitelStatusInst' 		=> $dataReportByWitelStatusInst,
-			'content' 				=> 'V_reportDetailWitelStatusInst',
-			'title'					=> 'Detail Witel '.$dataReportByWitelStatusInst[0]['WTEL_NAME'].' Status '.$dataReportByWitelStatusInst[0]['STAT_NAME'].' | '.date("l jS \of F Y h:i A"),
-			'menu'      => 'Report'
-		);
-		$this->load->view('tampilan/v_combine',$data);
-	}
+	
 
 	public function detailBast($wtelid,$statid)
 	{

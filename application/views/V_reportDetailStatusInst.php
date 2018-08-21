@@ -3,8 +3,7 @@
 	<div class="row">
 		<?php
       if ($_SESSION['level'] == 'SUPER USER') {
-	      $table=$this->M_dashboard->getStatusInstalasi();
-	      	foreach ($table as $key) {
+	      	foreach ($statusInstalasi as $key) {
         ?>
 	  <div class="col-md-12">
 	    <div class="box box-danger">
@@ -81,8 +80,7 @@
 <!-- /.content -->
 
 <?php
-	$table=$this->M_dashboard->getStatusInstalasi();
-	foreach ($table as $key) {
+	foreach ($statusInstalasi as $key) {
 ?>
 <script type="text/javascript">
     $(function () {

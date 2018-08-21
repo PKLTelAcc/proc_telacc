@@ -16,7 +16,7 @@
           <tr>
             <th>WITEL</th>
             <?php
-            $thead=$this->M_dashboardInstalasi->getStatusInstalasi();
+            $thead=$this->M_dashboardInstalasi->getStatusInstalasiDasboard();
             foreach ($thead as $row) {
             ?>
               <th>

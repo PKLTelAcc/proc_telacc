@@ -16,11 +16,13 @@
           <tr>
             <th>WITEL</th>
             <?php
-            $thead=$this->M_dashboardInstalasi->getStatusInstalasi();
+            $thead=$this->M_dashboardInstalasi->getStatusInstalasiDasboard();
             foreach ($thead as $row) {
             ?>
               <th>
+                  <a href="<?php echo base_url().'C_dashboardInstalasi/detailStatusInst/'.$row['STIN_ID'];?>" class="text-info">
                   <?php echo $row['STIN_NAME'];?>
+                  </a>
               </th>
             <?php
             }
@@ -41,7 +43,9 @@
                   foreach ($count as $key) {
               ?>
                     <td>
+                      <a href="<?php echo base_url().'C_dashboardInstalasi/detailInst/'.$row['WTEL_ID'].'/'.$row['STIN_ID'];?>" class="text-info">
                         <?=$key['jumlah']?>
+                      </a>
                     </td>
               <?php
                   $total = $total + $key['jumlah'];
