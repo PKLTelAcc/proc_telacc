@@ -14,9 +14,9 @@
                 <?php }else if($row['STAT_NAME']=='SURVEY'){ ?>
                 <a href="<?php echo base_url().'C_filter/detailStatusSurv/'.$row['STAT_ID'].'/'.$awal.'/'.$akhir.'/'.$bulan.'/'.$tahun;?>" class="text-info">
                 <?php }else if($row['STAT_NAME']=='INSTALASI'){ ?>
-                <a href="<?php echo base_url().'C_filter/detailStatusInst/'.$row['STAT_ID'].'/'.$awal.'/'.$akhir.'/'.$bulan.'/'.$tahun;?>" class="text-info">
+                <a href="<?php echo base_url().'C_filterDashboardInstalasi/dashboardInstalasi/'.$awal.'/'.$akhir.'/'.$bulan.'/'.$tahun;?>" class="text-info">
                 <?php }else if($row['STAT_NAME']=='BAST'){ ?>
-                <a href="<?php echo base_url().'C_dashboard/detailStatusBast/'.$row['STAT_ID'].'/'.$awal.'/'.$akhir.'/'.$bulan.'/'.$tahun;?>" class="text-info">
+                <a href="<?php echo base_url().'C_filter/detailStatusBast/'.$row['STAT_ID'].'/'.$awal.'/'.$akhir.'/'.$bulan.'/'.$tahun;?>" class="text-info">
                 <?php } ?>
                   <?php echo $row['STAT_NAME'];?>
                 </a>
@@ -50,9 +50,9 @@
                       <?php }else if($key['STAT_NAME']=='SURVEY' && $key['WODE_STAT_ID']!=null){ ?>
                       <a href="<?php echo base_url().'C_filter/detailSurv/'.$key['WTEL_ID'].'/'.$key['STAT_ID'].'/'.$awal.'/'.$akhir.'/'.$bulan.'/'.$tahun;?>" class="text-info">
                       <?php }else if($key['STAT_NAME']=='INSTALASI' && $key['WODE_STAT_ID']!=null){ ?>
-                      <a href="<?php echo base_url().'C_filter/detailInst/'.$key['WTEL_ID'].'/'.$key['STAT_ID'].'/'.$awal.'/'.$akhir.'/'.$bulan.'/'.$tahun;?>" class="text-info">
+                      <a href="<?php echo base_url().'C_filterDashboardInstalasi/dashboardInstalasiField/'.$key['WTEL_ID'].'/'.$awal.'/'.$akhir.'/'.$bulan.'/'.$tahun;?>" class="text-info">
                       <?php }else if($key['STAT_NAME']=='BAST' && $key['WODE_STAT_ID']!=null){ ?>
-                      <a href="<?php echo base_url().'C_dashboard/detailBast/'.$key['WTEL_ID'].'/'.$key['STAT_ID'].'/'.$awal.'/'.$akhir.'/'.$bulan.'/'.$tahun;?>" class="text-info">
+                      <a href="<?php echo base_url().'C_filter/detailBast/'.$key['WTEL_ID'].'/'.$key['STAT_ID'].'/'.$awal.'/'.$akhir.'/'.$bulan.'/'.$tahun;?>" class="text-info">
                       <?php } ?>
                         <?=$key['jumlah']?>
                       </a>

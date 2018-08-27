@@ -405,8 +405,10 @@
                       foreach ($status_instalasi as $row) {
                         ?>
                           <tr class="isi5" style="cursor: pointer;" data-id5 = "<?=$row['STIN_ID']?>" data-stin = "<?=$row['STIN_NAME']?>">
+                            <?php if($row['STAT_NAME']=='INSTALASI' || $row['STAT_NAME']=='BAST' || $row['STAT_NAME']=='DROP'){ ?>
                             <td><?php echo $no?></td>
                             <td><?php echo $row['STIN_NAME']?></td>
+                            <?php } ?>
                           </tr>
                         <?php
                         $no++;

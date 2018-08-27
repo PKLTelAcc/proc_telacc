@@ -13,51 +13,9 @@
 
 		public function index()
 		{
-			
+
 
 		}
-
-		public static function format($timestamp = '', $date_format = 'd F Y', $suffix = '')
-		{
-			$real = $timestamp;
-		    if($timestamp == NULL)
-		      return '-';
-
-		    if($timestamp == '1970-01-01' || $timestamp == '0000-00-00' || $timestamp == '-25200')
-		      return '-';
-
-		    if (trim ($timestamp) == '')
-		    {
-		            $timestamp = time ();
-		    }
-		    elseif (!ctype_digit ($timestamp))
-		    {
-		        $timestamp = strtotime ($timestamp);
-		    }
-		    # remove S (st,nd,rd,th) there are no such things in indonesia :p
-		    $date_format = preg_replace ("/S/", "", $date_format);
-		    $pattern = array (
-		        '/Mon[^day]/','/Tue[^sday]/','/Wed[^nesday]/','/Thu[^rsday]/',
-		        '/Fri[^day]/','/Sat[^urday]/','/Sun[^day]/','/Monday/','/Tuesday/',
-		        '/Wednesday/','/Thursday/','/Friday/','/Saturday/','/Sunday/',
-		        '/Jan[^uary]/','/Feb[^ruary]/','/Mar[^ch]/','/Apr[^il]/','/May/',
-		        '/Jun[^e]/','/Jul[^y]/','/Aug[^ust]/','/Sep[^tember]/','/Oct[^ober]/',
-		        '/Nov[^ember]/','/Dec[^ember]/','/January/','/February/','/March/',
-		        '/April/','/June/','/July/','/August/','/September/','/October/',
-		        '/November/','/December/',
-		    );
-		    $replace = array ( 'Sen','Sel','Rab','Kam','Jum','Sab','Min',
-		        'Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu',
-		        'Jan','Feb','Mar','Apr','Mei','Jun','Jul','Ags','Sep','Okt','Nov','Des',
-		        'Januari','Februari','Maret','April','Juni','Juli','Agustus','September',
-		        'Oktober','November','Desember',
-		    );
-		    $date = date ($date_format, $timestamp);
-		    $date = preg_replace ($pattern, $replace, $date);
-		    $date = "{$date} {$suffix}";
-		    return $date;
-		}
-
 		public function workOrder()
 	{
 		$awal 			= $this->input->post('awal');
@@ -231,29 +189,7 @@
 		$data = array(
 			'dataReportByStatusSurv' 	=> $dataReportByStatusSurv,
 			'content' 				=> 'V_reportDetailStatusSurv',
-			'title'					=> 'Detail Status '.$dataReportByStatusSurv[0]['STAT_NAME'].' | '.$dataReportByStatusWode[0]['SURV_TANGGAL'],
-			'awal' 		=> $awal ,
-			'akhir' 	=> $akhir,
-			'bulan' 	=> $bulan,
-			'tahun' 	=> $tahun,
-			'menu'      => 'Report',
-			'controller' => 'C_dashboard'
-		);
-		$this->load->view('tampilan/v_combine',$data);
-	}
-
-	public function detailStatusInst($id, $awal, $akhir, $bulan, $tahun)
-	{
-		$dataReportByStatusInst		= $this->M_filter->getReportByStatusInstId($id, $awal, $akhir, $bulan, $tahun);
-		$awal 			= $this->input->post('awal');
-		$akhir 			= $this->input->post('akhir');
-		$bulan 			= $this->input->post('bulan');
-		$tahun 			= $this->input->post('tahun');
-		date_default_timezone_set("Asia/Bangkok");
-		$data = array(
-			'dataReportByStatusInst' 	=> $dataReportByStatusInst,
-			'content' 				=> 'V_reportDetailStatusInst',
-			'title'					=> 'Detail Status '.$dataReportByStatusInst[0]['STAT_NAME'].' | '.$dataReportByStatusWode[0]['INST_TANGGAL'],
+			'title'					=> 'Detail Status '.$dataReportByStatusSurv[0]['STAT_NAME'].' | '.$dataReportByStatusSurv[0]['SURV_TANGGAL'],
 			'awal' 		=> $awal ,
 			'akhir' 	=> $akhir,
 			'bulan' 	=> $bulan,
@@ -342,28 +278,6 @@
 			'dataReportByWitelStatusSurv' 		=> $dataReportByWitelStatusSurv,
 			'content' 				=> 'V_reportDetailWitelStatusSurv',
 			'title'					=> 'Detail Witel '.$dataReportByWitelStatusSurv[0]['WTEL_NAME'].' Status '.$dataReportByWitelStatusSurv[0]['STAT_NAME'].' | '.$dataReportByWitelStatusSurv[0]['SURV_TANGGAL'],
-			'awal' 		=> $awal ,
-			'akhir' 	=> $akhir,
-			'bulan' 	=> $bulan,
-			'tahun' 	=> $tahun,
-			'menu'      => 'Report',
-			'controller' => 'C_dashboard'
-		);
-		$this->load->view('tampilan/v_combine',$data);
-	}
-
-	public function detailInst($wtelid,$statid, $awal, $akhir, $bulan, $tahun)
-	{
-		$dataReportByWitelStatusInst		= $this->M_filter->getReportByWitelStatusInst($wtelid,$statid, $awal, $akhir, $bulan, $tahun);
-		$awal 			= $this->input->post('awal');
-		$akhir 			= $this->input->post('akhir');
-		$bulan 			= $this->input->post('bulan');
-		$tahun 			= $this->input->post('tahun');
-		date_default_timezone_set("Asia/Bangkok");
-		$data = array(
-			'dataReportByWitelStatusInst' 		=> $dataReportByWitelStatusInst,
-			'content' 				=> 'V_reportDetailWitelStatusInst',
-			'title'					=> 'Detail Witel '.$dataReportByWitelStatusInst[0]['WTEL_NAME'].' Status '.$dataReportByWitelStatusInst[0]['STAT_NAME'].' | '.$dataReportByWitelStatusInst[0]['INST_TANGGAL'],
 			'awal' 		=> $awal ,
 			'akhir' 	=> $akhir,
 			'bulan' 	=> $bulan,

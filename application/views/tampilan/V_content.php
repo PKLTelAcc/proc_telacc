@@ -205,5 +205,43 @@
               $(target).html(html);
           }
       });
+
+       $.ajax({
+          type: "POST",
+          data: {
+            awal : hariPertama,
+            akhir: hariKedua,
+            bulan: bulan,
+            tahun: tahun,
+          },
+          url: "<?php echo base_url()?>C_filterDashboardInstalasi/dashboardInstalasi",
+          success: function(x){
+            if (x) {
+              alert('data masuk');
+            }else{
+              alert('data gak masuk');
+            }
+          }
+      });
+
+      $.ajax({
+          type: "POST",
+          data: {
+            awal : hariPertama,
+            akhir: hariKedua,
+            bulan: bulan,
+            tahun: tahun,
+          },
+          url: "<?php echo base_url()?>C_filterDashboardInstalasi/dashboardInstalasiField",
+          success: function(x){
+            if (x) {
+              alert('data masuk');
+            }else{
+              alert('data gak masuk');
+            }
+          }
+      });
+
+       return false;
     }
 </script>

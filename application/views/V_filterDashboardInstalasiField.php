@@ -1,4 +1,4 @@
-<div class="card" id="tableDashboardInstalasi">
+<div class="card">
   <div class="card-header no-border">
     <h3 class="card-title"></h3>
       <div class="card-tools">
@@ -16,13 +16,11 @@
           <tr>
             <th>WITEL</th>
             <?php
-            $thead=$this->M_dashboardInstalasi->getStatusInstalasiDasboard();
+            $thead=$this->M_filterDashboardInstalasi->getStatusInstalasiDasboard();
             foreach ($thead as $row) {
             ?>
               <th>
-                  <a href="<?php echo base_url().'C_dashboardInstalasi/detailStatusInst/'.$row['STIN_ID'];?>" class="text-info">
                   <?php echo $row['STIN_NAME'];?>
-                  </a>
               </th>
             <?php
             }
@@ -32,22 +30,20 @@
           </thead>
           <tbody align="center">
             <?php
-            $witel=$this->M_dashboardInstalasi->getWitel();
             $total = 0;
-            foreach ($witel as $row) {
+            foreach ($getWitel as $row) {
               ?>
               <tr>
                 <th><?=$row['WTEL_NAME']?></th>
               <?php
-                  $count = $this->M_dashboardInstalasi->getCount($row['WTEL_ID']);
-                  foreach ($count as $key) {
+                  foreach ($getCount as $key) {
               ?>
                     <td>
-                      <?php if ($key['INST_STIN_ID'] != null) { ?>
-                      <a href="<?php echo base_url().'C_dashboardInstalasi/detailInst/'.$row['WTEL_ID'].'/'.$row['STIN_ID'];?>" class="text-info">
-                      <?php } ?>
+                        <?php if ($key['INST_STIN_ID'] != null) { ?>
+                        <a href="<?php echo base_url().'C_filterDashboardInstalasi/detailInst/'.$row['WTEL_ID'].'/'.$row['STIN_ID'].'/'.$awal.'/'.$akhir.'/'.$bulan.'/'.$tahun;?>" class="text-info">
+                        <?php } ?>
                         <?=$key['jumlah']?>
-                      </a>
+                        </a>
                     </td>
               <?php
                   $total = $total + $key['jumlah'];

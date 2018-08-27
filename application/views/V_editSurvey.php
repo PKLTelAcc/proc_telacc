@@ -269,8 +269,10 @@
                       foreach ($status as $row) {
                         ?>
                           <tr class="isi3" style="cursor: pointer;" data-id3 = "<?=$row['STAT_ID']?>" data-stat = "<?=$row['STAT_NAME']?>">
+                            <?php if($row['STAT_NAME']=='SURVEY'|| $row['STAT_NAME']=='DROP'){ ?>
                             <td><?php echo $no?></td>
                             <td><?php echo $row['STAT_NAME']?></td>
+                            <?php } ?>
                           </tr>
                         <?php
                         $no++;
