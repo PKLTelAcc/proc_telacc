@@ -2,9 +2,12 @@
 <div class="content">
 	<div class="row">
 		<?php
-      if ($_SESSION['level'] == 'SUPER USER') {
-        ?>
+      if ($_SESSION['level'] == 'SUPER USER' || $_SESSION['level'] == 'ADMIN WORK ORDER' || $_SESSION['level'] == 'ADMIN INSTALASI' || $_SESSION['level'] == 'ADMIN BAST' || $_SESSION['level'] == 'ADMIN SURVEY') {
+      	?>
 	  <div class="col-md-12">
+	  	<?php
+	      if ($_SESSION['level'] == 'SUPER USER' || $_SESSION['level'] == 'ADMIN WORK ORDER'){
+	      	?>
 	    <div class="box box-danger">
 	      <div class="box-header with-border">
 	        <h3 class="box-title">Report WORK ORDER (DROP)</h3>
@@ -48,6 +51,11 @@
 		 					echo "</tr>";
 		 					$no++;
 		 				}
+		 				}if ($_SESSION['level'] != 'SUPER USER' || $_SESSION['level'] != 'ADMIN WORK ORDER') {
+        					echo '<div class="col-md-12">';
+      						}else{
+        					echo '<div class="col-md-6">';
+      						}
 		 			 ?>
 				</tbody>
 			</table>
@@ -56,6 +64,9 @@
 	      <!-- /.box -->
 	  </div> <!-- col-input -->
 	  <div class="col-md-12">
+	  	<?php
+	      if ($_SESSION['level'] == 'SUPER USER' || $_SESSION['level'] == 'ADMIN SURVEY'){
+	      	?>
 	    <div class="box box-danger">
 	      <div class="box-header with-border">
 	        <h3 class="box-title">Report SURVEY (DROP)</h3>
@@ -109,6 +120,11 @@
 		 					echo "</tr>";
 		 					$no++;
 		 				}
+		 				}if ($_SESSION['level'] != 'SUPER USER' || $_SESSION['level'] != 'ADMIN SURVEY') {
+        					echo '<div class="col-md-12">';
+      						}else{
+        					echo '<div class="col-md-6">';
+      						}
 		 			 ?>
 				</tbody>
 			</table>
@@ -117,6 +133,9 @@
 	      <!-- /.box -->
 	  </div> <!-- col-input -->
 	  <div class="col-md-12">
+	  	<?php
+	      if ($_SESSION['level'] == 'SUPER USER' || $_SESSION['level'] == 'ADMIN INSTALASI'){
+	      	?>
 	    <div class="box box-danger">
 	      <div class="box-header with-border">
 	        <h3 class="box-title">Report INSTALASI (DROP)</h3>
@@ -175,6 +194,11 @@
 		 					echo "</tr>";
 		 					$no++;
 		 					}
+		 					}if ($_SESSION['level'] != 'SUPER USER' || $_SESSION['level'] != 'ADMIN INSTALASI') {
+        					echo '<div class="col-md-12">';
+      						}else{
+        					echo '<div class="col-md-6">';
+      						}
 		 				}
 		 			 ?>
 				</tbody>
@@ -210,9 +234,9 @@
 
 <?php
       }
-      if ($_SESSION['level'] != 'SUPER USER') {
+      if ($_SESSION['level'] != 'SUPER USER' || $_SESSION['level'] != 'ADMIN WORK ORDER' || $_SESSION['level'] != 'ADMIN INSTALASI' || $_SESSION['level'] != 'ADMIN BAST' || $_SESSION['level'] != 'ADMIN SURVEY' ) {
         echo '<div class="col-md-12">';
       }else{
         echo '<div class="col-md-6">';
       }
-    ?>
+?>

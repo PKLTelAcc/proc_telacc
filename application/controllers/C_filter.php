@@ -159,6 +159,8 @@
 	public function detailStatusDrop($id, $awal, $akhir, $bulan, $tahun)
 	{
 		$dataReportByStatusWode		= $this->M_filter->getReportByStatusWodeId($id, $awal, $akhir, $bulan, $tahun);
+		$dataReportByStatusSurv		= $this->M_filter->getReportByStatusSurvId($id, $awal, $akhir, $bulan, $tahun);
+		$dataReportByStatusInst		= $this->M_filter->getReportByStatusInstId($id, $awal, $akhir, $bulan, $tahun);
 		$awal 			= $this->input->post('awal');
 		$akhir 			= $this->input->post('akhir');
 		$bulan 			= $this->input->post('bulan');
@@ -166,6 +168,8 @@
 		date_default_timezone_set("Asia/Bangkok");
 		$data = array(
 			'dataReportByStatusWode' 	=> $dataReportByStatusWode,
+			'dataReportByStatusSurv' 	=> $dataReportByStatusSurv,
+			'dataReportByStatusInst' 	=> $dataReportByStatusInst,
 			'content' 				=> 'V_reportDetailStatusDrop',
 			'title'					=> 'Detail Status '.$dataReportByStatusWode[0]['STAT_NAME'].' | '.$dataReportByStatusWode[0]['WODE_TANGGAL'],
 			'awal' 		=> $awal ,
@@ -247,6 +251,8 @@
 	public function detailDrop($wtelid,$statid, $awal, $akhir, $bulan, $tahun)
 	{
 		$dataReportByWitelStatusWode		= $this->M_filter->getReportByWitelStatusWode($wtelid,$statid, $awal, $akhir, $bulan, $tahun);
+		$dataReportByWitelStatusSurv		= $this->M_filter->getReportByWitelStatusSurv($wtelid,$statid, $awal, $akhir, $bulan, $tahun);
+		$dataReportByWitelStatusInst		= $this->M_filter->getReportByWitelStatusInst($wtelid,$statid, $awal, $akhir, $bulan, $tahun);
 		$awal 			= $this->input->post('awal');
 		$akhir 			= $this->input->post('akhir');
 		$bulan 			= $this->input->post('bulan');
@@ -254,6 +260,8 @@
 		date_default_timezone_set("Asia/Bangkok");
 		$data = array(
 			'dataReportByWitelStatusWode' 		=> $dataReportByWitelStatusWode,
+			'dataReportByWitelStatusSurv' 		=> $dataReportByWitelStatusSurv,
+			'dataReportByWitelStatusInst' 		=> $dataReportByWitelStatusInst,
 			'content' 				=> 'V_reportDetailWitelStatusDrop',
 			'title'					=> 'Detail Witel '.$dataReportByWitelStatusWode[0]['WTEL_NAME'].' Status '.$dataReportByWitelStatusWode[0]['STAT_NAME'].' | '.$dataReportByWitelStatusWode[0]['WODE_TANGGAL'],
 			'awal' 		=> $awal ,
