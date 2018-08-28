@@ -120,7 +120,7 @@
           </div>
           <!-- Slide Two - Set the background image for this slide in the line below -->
           <div class="carousel-item">
-              <img src="/proj_telacc/asset1/dist/img/" class="img-fluid" alt="" width="100%" height="500">
+              <img src="/proj_telacc/asset1/dist/img/tel_acc1.png" class="img-fluid" alt="" width="100%" height="500">
             <div class="carousel-caption d-none d-md-block">
               <h3>Selamat Datang</h3>
               <p></p>
