@@ -2,7 +2,7 @@
 <div class="content">
 	<div class="row">
 		<?php
-      if ($_SESSION['level'] == 'SUPER USER') {
+      if ($_SESSION['level'] == 'SUPER USER' || $_SESSION['level'] == 'ADMIN WORK ORDER') {
       	$table=$this->M_dashboard->getSubProgram();
 	      	foreach ($table as $key) {
         ?>
@@ -85,7 +85,7 @@
 
 <?php
       }
-      if ($_SESSION['level'] != 'SUPER USER') {
+      if ($_SESSION['level'] != 'SUPER USER' || $_SESSION['level'] != 'ADMIN WORK ORDER') {
         echo '<div class="col-md-12">';
       }else{
         echo '<div class="col-md-6">';

@@ -110,7 +110,7 @@
             foreach ($thead as $row) {
             ?>
               <th>
-                <?php if($row['STAT_NAME']=='WORK ORDER' || $row['STAT_NAME']=='DROP'){ ?>
+                <?php if($row['STAT_NAME']=='WORK ORDER'){ ?>
                 <a href="<?php echo base_url().'C_dashboard/detailStatusWode/'.$row['STAT_ID'];?>" class="text-info">
                 <?php }else if($row['STAT_NAME']=='SURVEY'){ ?>
                 <a href="<?php echo base_url().'C_dashboard/detailStatusSurv/'.$row['STAT_ID'];?>" class="text-info">
@@ -118,6 +118,8 @@
                 <a href="<?php echo base_url().'C_dashboardInstalasi/dashboardInstalasi';?>" class="text-info">
                 <?php }else if($row['STAT_NAME']=='BAST'){ ?>
                 <a href="<?php echo base_url().'C_dashboard/detailStatusBast/'.$row['STAT_ID'];?>" class="text-info">
+                <?php }else if($row['STAT_NAME']=='DROP'){ ?>
+                <a href="<?php echo base_url().'C_dashboard/detailStatusDrop/'.$row['STAT_ID'];?>" class="text-info">
                 <?php } ?>
                   <?php echo $row['STAT_NAME'];?>
                 </a>
@@ -144,7 +146,7 @@
                   foreach ($count as $key) {
               ?>
                     <td>
-                      <?php if(($key['STAT_NAME']=='WORK ORDER' && $key['WODE_STAT_ID']!=null) || ($key['STAT_NAME']=='DROP' && $key['WODE_STAT_ID']!=null)){ ?>
+                      <?php if(($key['STAT_NAME']=='WORK ORDER' && $key['WODE_STAT_ID']!=null)){ ?>
                       <a href="<?php echo base_url().'C_dashboard/detailWode/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-info">
                       <?php }else if($key['STAT_NAME']=='SURVEY' && $key['WODE_STAT_ID']!=null){ ?>
                       <a href="<?php echo base_url().'C_dashboard/detailSurv/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-info">
@@ -152,6 +154,8 @@
                       <a href="<?php echo base_url().'C_dashboardInstalasi/dashboardInstalasiField/'.$key['WTEL_ID'];?>" class="text-info">
                       <?php }else if($key['STAT_NAME']=='BAST' && $key['WODE_STAT_ID']!=null){ ?>
                       <a href="<?php echo base_url().'C_dashboard/detailBast/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-info">
+                      <?php }else if($key['STAT_NAME']=='DROP' && $key['WODE_STAT_ID']!=null){ ?>
+                      <a href="<?php echo base_url().'C_dashboard/detailDrop/'.$key['WTEL_ID'].'/'.$key['STAT_ID'];?>" class="text-info">
                       <?php } ?>
                         <?=$key['jumlah']?>
                       </a>

@@ -1,5 +1,8 @@
 <div class="card" id="tableDashboardInstalasi">
   <div class="card-header no-border">
+    <?php 
+     if ($_SESSION['level'] == 'SUPER USER' || $_SESSION['level'] == 'ADMIN INSTALASI') {
+     ?>
     <h3 class="card-title"></h3>
       <div class="card-tools">
           <!-- <a href="#" class="btn btn-tool btn-sm">
@@ -59,6 +62,14 @@
               $total = 0;
             }
             ?>
+            <?php
+      }
+      if ($_SESSION['level'] != 'SUPER USER' || $_SESSION['level'] != 'ADMIN INSTALASI') {
+        echo '<div class="col-md-12">';
+      }else{
+        echo '<div class="col-md-6">';
+      }
+    ?>
           </tbody>
         </table>
        </div>

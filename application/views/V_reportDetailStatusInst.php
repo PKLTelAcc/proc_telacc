@@ -2,7 +2,7 @@
 <div class="content">
 	<div class="row">
 		<?php
-      if ($_SESSION['level'] == 'SUPER USER') {
+      if ($_SESSION['level'] == 'SUPER USER' || $_SESSION['level'] == 'ADMIN INSTALASI') {
 	      	foreach ($statusInstalasi as $key) {
         ?>
 	  <div class="col-md-12">
@@ -98,7 +98,7 @@
 
 <?php
       }
-      if ($_SESSION['level'] != 'SUPER USER') {
+      if ($_SESSION['level'] != 'SUPER USER' || $_SESSION['level'] != 'ADMIN INSTALASI') {
         echo '<div class="col-md-12">';
       }else{
         echo '<div class="col-md-6">';

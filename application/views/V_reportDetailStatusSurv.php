@@ -2,7 +2,7 @@
 <div class="content">
 	<div class="row">
 		<?php
-      if ($_SESSION['level'] == 'SUPER USER') {
+      if ($_SESSION['level'] == 'SUPER USER' || $_SESSION['level'] == 'ADMIN SURVEY') {
         ?>
 	  <div class="col-md-12">
 	    <div class="box box-danger">
@@ -79,7 +79,7 @@
 </script>
 <?php
       }
-      if ($_SESSION['level'] != 'SUPER USER') {
+      if ($_SESSION['level'] != 'SUPER USER' || $_SESSION['level'] != 'ADMIN SURVEY') {
         echo '<div class="col-md-12">';
       }else{
         echo '<div class="col-md-6">';

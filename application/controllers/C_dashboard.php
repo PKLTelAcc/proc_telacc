@@ -16,7 +16,7 @@ class C_dashboard extends CI_Controller
 		if (empty($_SESSION['level'])) {
 			redirect('c_login','refresh');
 		}
-		if ($_SESSION['level'] == 'SUPER USER' || $_SESSION['level'] == 'ADMIN' ) {
+		if ($_SESSION['level'] == 'SUPER USER' || $_SESSION['level'] == 'ADMIN WORK ORDER' || $_SESSION['level'] == 'ADMIN INSTALASI' || $_SESSION['level'] == 'ADMIN BAST' || $_SESSION['level'] == 'ADMIN SURVEY' ) {
 			$view = 'tampilan/v_content';
 			}else{
 			$view = 'tampilan/index';
@@ -90,6 +90,23 @@ class C_dashboard extends CI_Controller
 		$this->load->view('tampilan/v_combine',$data);
 	}
 
+	public function detailStatusDrop($id)
+	{
+		$dataReportByStatusWode		= $this->M_dashboard->getReportByStatusWodeId($id);
+		$dataReportByStatusSurv		= $this->M_dashboard->getReportByStatusSurvId($id);
+		$dataReportByStatusInst		= $this->M_dashboard->getReportByStatusInstId($id);
+		date_default_timezone_set("Asia/Bangkok");
+		$data = array(
+			'dataReportByStatusWode' 	=> $dataReportByStatusWode,
+			'dataReportByStatusSurv' 	=> $dataReportByStatusSurv,
+			'dataReportByStatusInst' 	=> $dataReportByStatusInst,
+			'content' 				=> 'V_reportDetailStatusDrop',
+			'title'					=> 'Detail Status '.$dataReportByStatusWode[0]['STAT_NAME'].' | '.date("l jS \of F Y h:i A"),
+			'menu'      => 'Report'
+		);
+		$this->load->view('tampilan/v_combine',$data);
+	}
+
 	public function detailWode($wtelid,$statid)
 	{
 		$dataReportByWitelStatusWode		= $this->M_dashboard->getReportByWitelStatusWode($wtelid,$statid);
@@ -127,6 +144,23 @@ class C_dashboard extends CI_Controller
 			'dataReportByWitelStatusBast' 		=> $dataReportByWitelStatusBast,
 			'content' 				=> 'V_reportDetailWitelStatusBast',
 			'title'					=> 'Detail Witel '.$dataReportByWitelStatusBast[0]['WTEL_NAME'].' Status '.$dataReportByWitelStatusBast[0]['STAT_NAME'].' | '.date("l jS \of F Y h:i A"),
+			'menu'      => 'Report'
+		);
+		$this->load->view('tampilan/v_combine',$data);
+	}
+
+	public function detailDrop($wtelid,$statid)
+	{
+		$dataReportByWitelStatusWode		= $this->M_dashboard->getReportByWitelStatusWode($wtelid,$statid);
+		$dataReportByWitelStatusSurv		= $this->M_dashboard->getReportByWitelStatusSurv($wtelid,$statid);
+		$dataReportByWitelStatusInst		= $this->M_dashboard->getReportByWitelStatusInst($wtelid,$statid);
+		date_default_timezone_set("Asia/Bangkok");
+		$data = array(
+			'dataReportByWitelStatusWode' 		=> $dataReportByWitelStatusWode,
+			'dataReportByWitelStatusSurv' 		=> $dataReportByWitelStatusSurv,
+			'dataReportByWitelStatusInst' 		=> $dataReportByWitelStatusInst,
+			'content' 				=> 'V_reportDetailWitelStatusDrop',
+			'title'					=> 'Detail Witel '.$dataReportByWitelStatusWode[0]['WTEL_NAME'].' Status '.$dataReportByWitelStatusWode[0]['STAT_NAME'].' | '.date("l jS \of F Y h:i A"),
 			'menu'      => 'Report'
 		);
 		$this->load->view('tampilan/v_combine',$data);
