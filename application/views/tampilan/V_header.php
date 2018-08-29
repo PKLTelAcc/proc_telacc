@@ -237,6 +237,16 @@ $user=$this->M_dashboard->viewData($_SESSION['USER_ID'], $_SESSION['WTEL_ID']);
                     BAST
                   </a>
                 </li>
+                 <li class="<?php if(isset($menu)) if($menu == 'SP') echo 'active'?>">
+                  <a class="dropdown-toggle" style="cursor: pointer;" type="button" data-toggle="dropdown">
+                    <i class="glyphicon glyphicon-list-alt"></i>
+                    SP
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">  
+                      <li><a href="<?php echo base_url()?>c_spTelkom">SP Telkom</a></li>
+                      <li><a href="<?php echo base_url()?>c_spMitra">SP Mitra</a></li>
+                    </ul>
+                </li>
                 <?php
                   }
                   ?>
